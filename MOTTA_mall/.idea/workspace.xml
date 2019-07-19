@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f4f5e824-f915-406a-baff-bfc79cca7e19" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/0002_auto_20190708_1302.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/0003_auto_20190710_1059.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/0004_addressconfig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/0005_auto_20190711_1719.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/0006_addressconfig_divice_ip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/migrations/0002_divices_user_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/utils_jwt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/users/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/migrations/0002_auto_20190708_1504.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/test1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/email/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/email/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/sms/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/sms/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/logs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/settings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/templates/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/templates/static/jquery-1.12.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/jwt_token.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Create_Data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Ftp_File_Data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Get_File_Data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Modbus_Data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Storage_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/tjws.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/CCPRestSDK.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/sendSMS.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/xmltojson.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/map_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/suanfa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/.idea/MOTTA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MOTTA_mall.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/MOTTA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/MOTTA/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/MOTTA/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/MOTTA/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MOTTA/manage.py" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="261" column="40" selection-start-line="261" selection-start-column="40" selection-end-line="261" selection-end-column="40" />
+              <folding>
+                <element signature="e#367#4443#0" />
+                <element signature="e#4463#17945#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/users/tests.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/users/serializers.py" />
+        <option value="$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/client.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Storage_data.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="82" />
+    <option name="y" value="27" />
+    <option name="width" value="1491" />
+    <option name="height" value="839" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="wsdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="sjk_data" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="consents" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.Storage_data">
+    <configuration name="Storage_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MOTTA_mall" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Storage_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MOTTA_mall" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MOTTA_mall/apps/users" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MOTTA_mall/apps/users/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MOTTA_mall" type="Python.DjangoServer" factoryName="Django server">
+      <module name="MOTTA_mall" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Storage_data" />
+        <item itemvalue="Python.tests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4f5e824-f915-406a-baff-bfc79cca7e19" name="默认更改列表" comment="" />
+      <created>1563439863749</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563439863749</updated>
+      <workItem from="1563439872980" duration="1573000" />
+      <workItem from="1563441450021" duration="10616000" />
+      <workItem from="1563497549267" duration="10006000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="22195000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1851" height="841" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15435869" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32956153" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32956153" />
+      <window_info anchor="bottom" id="Python Console" order="3" weight="0.32956153" />
+      <window_info anchor="bottom" id="TODO" order="4" weight="0.3281471" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.49972144" visible="true" weight="0.34512022" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50027853" side_tool="true" weight="0.44992742" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.329927" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="调试" order="12" />
+      <window_info anchor="bottom" id="Run" order="13" weight="0.36350778" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/client.py</url>
+          <line>423</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/client.py</url>
+          <line>823</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/client.py</url>
+          <line>755</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/client.py</url>
+          <line>969</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/client.py</url>
+          <line>451</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MOTTA_mall$tests.coverage" NAME="tests Coverage Results" MODIFIED="1563456769876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/users" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$Storage_data.coverage" NAME="Storage_data Coverage Results" MODIFIED="1563506851364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings.py" />
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/modbus_map.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Create_Data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1166">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#314#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Modbus_Data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="143" column="18" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="972" lean-forward="true" selection-start-line="972" selection-end-line="972" />
+          <folding>
+            <element signature="e#31972#33210#0" />
+            <element signature="e#33392#33649#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Storage_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1759">
+          <caret line="151" column="75" lean-forward="true" selection-start-line="151" selection-start-column="75" selection-end-line="151" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#313#1285#0" />
+            <element signature="e#3899#4112#0" />
+            <element signature="e#4150#4391#0" />
+            <element signature="e#7071#11029#0" />
+            <element signature="e#11041#25665#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="261" column="40" selection-start-line="261" selection-start-column="40" selection-end-line="261" selection-end-column="40" />
+          <folding>
+            <element signature="e#367#4443#0" />
+            <element signature="e#4463#17945#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

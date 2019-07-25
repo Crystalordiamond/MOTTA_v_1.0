@@ -16,7 +16,7 @@ class Storage_Data(object):
         # self.port = int(input("请输入端口号："))
         # self.username = input("请输入用户名：")
         # self.password = input("请输入密码：")
-        self.host = "192.168.1.200"
+        self.host = "192.168.1.201"
         self.port = 2121
         self.username = "ftp"
         self.password = "ftp"

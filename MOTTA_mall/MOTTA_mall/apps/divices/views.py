@@ -40,8 +40,6 @@ def post_newAddress(request):
     divices_obj = divices.objects.create(
         divice_ip=divices_data["ip"],
         divice_name=divices_data["address"],
-        divice_email=divices_data["add_email"],
-        divice_phone=divices_data["add_phone"]
     )
     # 2.通过站点对象的user_id字段添加关联的站点
     """
@@ -91,7 +89,6 @@ def get_newuser_addresss(request):
 # 2.1获取用户信息
 def get_address_user(request):
     user_obj = User.objects.filter().all()
-
     list_data = []
     for users in user_obj:
         id = users.id
@@ -200,8 +197,3 @@ def put_address(request):
             address_obj.user_id.add(obj)
     return JsonResponse("站点创建完成", safe=False)
 
-
-# 查询站点列表
-def nav_get(request):
-    divices_obj = divices.objects.filter().all()
-    pass

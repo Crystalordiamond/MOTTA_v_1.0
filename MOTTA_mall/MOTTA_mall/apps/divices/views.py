@@ -10,7 +10,7 @@ import json
 def post_newUser(request):
     json_str = request.body.decode()
     user_data = json.loads(json_str)
-    # print(user_data)
+    print(user_data)
     # 1.存储user用户数据
     user_obj = User.objects.create(
         is_superuser=user_data["level"],
@@ -99,11 +99,14 @@ def get_address_user(request):
         email = users.email
         phone = users.mobile
         # 获取关联的站点列表
+        # todo
         site_list = []
-        site = users.divices_set.all().values("divice_name")
+        site = users.divices_set.all()
+        print(site)
         for i in site:
-            site_list.append(i["divice_name"])
-        # print(site_list)
+            print(i)
+            site_list.append(i.divice_name)
+        print(site_list)
         data_dict = {"id": id,
                      "user": user,
                      "level": level,
@@ -113,7 +116,6 @@ def get_address_user(request):
                      }
         list_data.append(data_dict)
     return JsonResponse(list_data, safe=False)
-
 
 # 删除用户
 def post_delete_user(request):
@@ -131,9 +133,9 @@ def post_delete_user(request):
 def post_delete_address(request):
     address_str = request.body.decode()  # 字符串
     req_data = json.loads(address_str)  # 字典
-    print(req_data)
+    # print(req_data)
     address_obj = divices.objects.get(id=req_data["id"])
-    print(address_obj)
+    # print(address_obj)
     address_obj.user_id.clear()  # 删除站点的关联关系
     address_obj.delete()  # 删除站点
     return JsonResponse("站点删除成功", safe=False)
@@ -167,7 +169,7 @@ def put_user(request):
         # print(user_data["site"])
         # divices_obj = divices.objects.filter(id__in=user_data["site"]).all()
         divices_obj = divices.objects.filter(Q(id__in=user_data["site"]) | Q(divice_name__in=user_data["site"])).all()
-        print(divices_obj)
+        # print(divices_obj)
         for divice in divices_obj:
             divice.user_id.add(user_obj)
     return JsonResponse("修改用户信息成功", safe=False)

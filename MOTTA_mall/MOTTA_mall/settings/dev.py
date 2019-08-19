@@ -173,6 +173,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "templates"),
+]
 
 # 异常处理
 REST_FRAMEWORK = {
@@ -236,12 +240,14 @@ AUTH_USER_MODEL = 'users.User'
 
 # 3.CORS 跨域请求  添加白名单
 CORS_ORIGIN_WHITELIST = (
-    'http://192.168.1.165:8080',    # 前端访问
+    'http://192.168.1.165:8080',  # 前端访问
     'http://localhost:8080',
     'http://www.motta.site:8080',
     'http://api.motta.site:8000',
     'http://127.0.0.1:8000',
-    'http://192.168.208.137:8000'
+    'http://192.168.44.1:8080',
+    'http://192.168.208.1:8020',
+    'http://192.168.1.47:8080'
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
 

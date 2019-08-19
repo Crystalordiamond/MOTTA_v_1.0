@@ -76,7 +76,6 @@ class AddressConfig(models.Model):
     COM_phone = models.CharField(max_length=50, verbose_name='电话端口号')
     other_config = models.CharField(max_length=50, verbose_name='其他设置')
     divice_ip = models.CharField(default=False, max_length=50, verbose_name='关联ip字段')
-    divices = models.OneToOneField(divices, on_delete=models.CASCADE, to_field="divice_ip", verbose_name='关联站点')
 
     class Meta:
         db_table = 'tb_addressconfig'

@@ -2,22 +2,122 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f5e824-f915-406a-baff-bfc79cca7e19" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/css/app.9aa3a87655071837b5553d30eca4da5f.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/css/app.9aa3a87655071837b5553d30eca4da5f.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/element-icons.535877f.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/element-icons.732389d.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.448c34a.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.e18bbf6.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.f4769f9.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.fa27723.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/img/glyphicons-halflings-regular.8988968.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/app.d329e7cbbac7f7791a10.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/app.d329e7cbbac7f7791a10.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/manifest.3ad1d5771e9b13dbdad2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/templates/js/manifest.3ad1d5771e9b13dbdad2.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/css/app.947cd526586f64e37fdbe6f9fedd7892.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/css/app.947cd526586f64e37fdbe6f9fedd7892.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/app.988af6e94c1e6a1ad476.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/app.988af6e94c1e6a1ad476.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/manifest.3ad1d5771e9b13dbdad2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/manifest.3ad1d5771e9b13dbdad2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/purple-passion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/vendor.7408594b3f6d3e331621.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/vendor.7408594b3f6d3e331621.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/js/vintage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/purple-passion.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/1/1/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/2/2/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/2/3/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/3/5/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/3/5/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/3/6/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/3/6/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/11/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/11/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/12/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/12/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/12/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/13/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/13/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/4/13/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/22/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/22/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/22/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/23/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/23/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/23/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/23/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/24/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/24/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/24/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/24/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/25/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/25/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/25/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/25/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/26/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/26/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/26/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/26/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/26/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/27/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/27/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/5/27/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/45/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/45/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/45/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/45/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/46/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/46/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/46/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/46/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/46/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/47/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/47/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/47/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/47/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/47/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/47/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/48/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/48/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/48/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/48/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/48/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/49/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/49/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/49/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/49/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/49/27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/49/28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/50/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/50/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/50/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/50/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/50/27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/50/28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/51/29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/52/29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/53/29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/54/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/54/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/54/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/54/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/54/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/55/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/55/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/static/中国_瓦片：谷歌/tiles/6/55/23.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,20 +142,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MOTTA_mall/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="247">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-765">
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="249" column="31" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
+            <state relative-caret-position="176">
+              <caret line="245" column="33" selection-start-line="245" selection-start-column="33" selection-end-line="245" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -139,7 +250,19 @@
               <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
               <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
               <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
               <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -349,12 +472,12 @@
       <workItem from="1566026637837" duration="2490000" />
       <workItem from="1566183095564" duration="3898000" />
       <workItem from="1566214894267" duration="1954000" />
-      <workItem from="1566281059687" duration="2446000" />
+      <workItem from="1566281059687" duration="5060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201149000" />
+    <option name="totallyTimeSpent" value="203763000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,9 +490,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1851" height="841" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123128116" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19134775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -377,7 +499,7 @@
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32816902" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32816902" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32676056" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.49972144" visible="true" weight="0.3859155" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49972144" visible="true" weight="0.3859155" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50027853" side_tool="true" weight="0.44992742" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.329927" />
@@ -490,15 +612,6 @@
         <state>
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -779,17 +892,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="249" column="31" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
+        <state relative-caret-position="247">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="-765">
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="245" column="33" selection-start-line="245" selection-start-column="33" selection-end-line="245" selection-end-column="33" />
         </state>
       </provider>
     </entry>

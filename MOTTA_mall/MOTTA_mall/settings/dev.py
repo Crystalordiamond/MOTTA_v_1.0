@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'divices.apps.DivicesConfig',
     'wsdata.apps.WsdataConfig',
     'warning.apps.WarningConfig',
+    'logins.apps.LoginsConfig',
 
     'rest_framework',
     'corsheaders',  # 跨域 白名单

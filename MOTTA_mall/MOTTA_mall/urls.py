@@ -19,12 +19,14 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('^login/', include('logins.urls')),
     url('^', include('users.urls')),
     url('^', include('smscode.urls')),
     url('^', include('createdata.urls')),
     url('^', include('wsdata.urls')),
     url('^', include('warning.urls')),
     url('^', include('divices.urls')),
-    url(r'^$', TemplateView.as_view(template_name='index.html'))
+
+    # url(r'^$', TemplateView.as_view(template_name='index.html'))
 
 ]

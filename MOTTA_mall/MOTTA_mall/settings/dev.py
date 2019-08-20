@@ -247,7 +247,8 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:8000',
     'http://192.168.44.1:8080',
     'http://192.168.208.1:8020',
-    'http://192.168.1.47:8080'
+    'http://192.168.1.47:8080',
+    'http://192.168.208.146:8000'
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
 

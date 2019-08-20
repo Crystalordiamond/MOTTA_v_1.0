@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f5e824-f915-406a-baff-bfc79cca7e19" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/modbus_map.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/css/app.9aa3a87655071837b5553d30eca4da5f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/css/app.9aa3a87655071837b5553d30eca4da5f.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/element-icons.535877f.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/element-icons.732389d.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.448c34a.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.e18bbf6.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.f4769f9.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fonts/glyphicons-halflings-regular.fa27723.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/img/glyphicons-halflings-regular.8988968.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/app.d329e7cbbac7f7791a10.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/app.d329e7cbbac7f7791a10.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/manifest.3ad1d5771e9b13dbdad2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/templates/js/manifest.3ad1d5771e9b13dbdad2.js.map" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,22 +31,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2078">
-              <caret line="175" column="46" lean-forward="true" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
+            <state relative-caret-position="616">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="e#644#685#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-              <folding>
-                <element signature="e#644#685#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="286">
+              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="249" column="31" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -53,6 +76,8 @@
       <find>sleep</find>
       <find>deleteRepeat</find>
       <find>STATICFILES_DIRS</find>
+      <find>DJANGO_SETTINGS_MODULE</find>
+      <find>ALLOWED_HOSTS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,8 +105,8 @@
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/urls.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
       </list>
     </option>
   </component>
@@ -97,6 +122,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -119,7 +145,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,11 +349,12 @@
       <workItem from="1566026637837" duration="2490000" />
       <workItem from="1566183095564" duration="3898000" />
       <workItem from="1566214894267" duration="1954000" />
+      <workItem from="1566281059687" duration="2446000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195241000" />
+    <option name="totallyTimeSpent" value="201149000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -343,7 +369,7 @@
     <frame x="67" y="25" width="1851" height="841" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12201886" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123128116" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -351,7 +377,7 @@
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32816902" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32816902" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32676056" />
-      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49972144" visible="true" weight="0.37887323" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.49972144" visible="true" weight="0.3859155" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50027853" side_tool="true" weight="0.44992742" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.329927" />
@@ -739,26 +765,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/dist/index.html" />
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/templates/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2078">
-          <caret line="175" column="46" lean-forward="true" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="616">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#644#685#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="249" column="31" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>

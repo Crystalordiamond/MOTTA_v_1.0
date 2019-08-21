@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'divices.apps.DivicesConfig',
     'wsdata.apps.WsdataConfig',
     'warning.apps.WarningConfig',
-    'logins.apps.LoginsConfig',
 
     'rest_framework',
     'corsheaders',  # 跨域 白名单
@@ -77,6 +76,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
+# 跨域问题
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'MOTTA_mall.urls'
 
@@ -84,6 +86,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 'DIRS': ['front_end_pc/dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,6 +98,20 @@ TEMPLATES = [
         },
     },
 ]
+STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "front_end_pc"),
+# ]
+
+# 在settings末尾添加  执行 collectstatic 时 文件路径
+# STATIC_ROOT = '/home/xufang/Desktop/motta_project/MOTTA_v_1.0/MOTTA_mall/front_end_pc'
+# 把STATICFILES_DIRS注释掉
+'''
+STATICFILES_DIRS =[
+   os.path.join(BASE_DIR, 'static'),
+]
+'''
 
 WSGI_APPLICATION = 'MOTTA_mall.wsgi.application'
 
@@ -173,11 +190,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "templates"),
-]
 
 # 异常处理
 REST_FRAMEWORK = {
@@ -245,11 +257,12 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
     'http://www.motta.site:8080',
     'http://api.motta.site:8000',
-    'http://127.0.0.1:8000',
+    'http://127.0.0.1:8080',
     'http://192.168.44.1:8080',
     'http://192.168.208.1:8020',
     'http://192.168.1.47:8080',
-    'http://192.168.208.146:8000'
+    'http://192.168.208.146:8000',
+    'http://192.168.1.47:9000'
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
 

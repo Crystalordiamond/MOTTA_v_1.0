@@ -262,7 +262,7 @@ def echo(request):
             return HttpResponse(message)
         except:
             print("普通的http方法报错")
-            return render(request, 'index.html')
+            return HttpResponse("普通的http方法报错")
     else:
         for message in request.websocket:
             # print(request.websocket)

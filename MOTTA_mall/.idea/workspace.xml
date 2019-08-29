@@ -2,42 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f5e824-f915-406a-baff-bfc79cca7e19" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MOTTA_mall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MOTTA_mall.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/93a7ee95-dfb8-4845-8386-98d3dc073fd8.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/uwsgi.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/logins/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/448c34a56d699c29117adc64c43affeb.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/535877f50039c0cb49a6196a5b7517cd.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/732389ded34cb9c52dd88271f1345af9.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/89889688147bd7575d6327160d64e760.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/css/app.73802218755b6bbc0aecc599d31a6545.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/css/app.73802218755b6bbc0aecc599d31a6545.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/e18bbf611f2a2e43afc071aa2f4e1512.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/f4769f9bdb7466be65088239c12046d1.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/fa2772327f55d8198301fdb8bcfc8158.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/app.a2500e6e616d4faf0c55.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/app.a2500e6e616d4faf0c55.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/manifest.3ad1d5771e9b13dbdad2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/manifest.3ad1d5771e9b13dbdad2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/purple-passion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/vendor.7408594b3f6d3e331621.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/vendor.7408594b3f6d3e331621.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/js/vintage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/templates/purple-passion.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/448c34a56d699c29117adc64c43affeb.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/535877f50039c0cb49a6196a5b7517cd.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/732389ded34cb9c52dd88271f1345af9.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/89889688147bd7575d6327160d64e760.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/e18bbf611f2a2e43afc071aa2f4e1512.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/f4769f9bdb7466be65088239c12046d1.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/fa2772327f55d8198301fdb8bcfc8158.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/css/app.4eb5e051c5af0acc55dbba21f6a3f006.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/css/app.4eb5e051c5af0acc55dbba21f6a3f006.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/js/app.768fb445f94ad04c4419.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/js/app.768fb445f94ad04c4419.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/js/manifest.3ad1d5771e9b13dbdad2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/js/manifest.3ad1d5771e9b13dbdad2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/js/vendor.7408594b3f6d3e331621.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end_pc/static/js/vendor.7408594b3f6d3e331621.js.map" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +51,41 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="113" column="3" lean-forward="true" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+            <state relative-caret-position="126">
+              <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1364">
+              <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="23" column="22" selection-start-line="23" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -100,6 +119,8 @@
       <find>ALLOWED_HOSTS</find>
       <find>STATIC_ROOT</find>
       <find>CORS_ORIGIN_ALLOW_ALL</find>
+      <find>CORS_ALLOW_CREDENTIALS</find>
+      <find>web</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,10 +147,12 @@
         <option value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Storage_data.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/logins/views.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/logins/urls.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/urls.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/wsgi.py" />
+        <option value="$PROJECT_DIR$/uwsgi.ini" />
         <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
       </list>
     </option>
@@ -140,7 +163,9 @@
     <option name="width" value="1491" />
     <option name="height" value="839" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="添加" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -372,12 +397,24 @@
       <workItem from="1566360061031" duration="3707000" />
       <workItem from="1566372835299" duration="5092000" />
       <workItem from="1566381413902" duration="1745000" />
-      <workItem from="1566383672761" duration="129000" />
+      <workItem from="1566383672761" duration="237000" />
+      <workItem from="1566385492172" duration="1282000" />
+      <workItem from="1566439393253" duration="8599000" />
+      <workItem from="1566457025925" duration="1568000" />
+      <workItem from="1566609361816" duration="779000" />
+      <workItem from="1566868097790" duration="3826000" />
+      <workItem from="1566879683127" duration="6020000" />
+      <workItem from="1566899696343" duration="7000" />
+      <workItem from="1566910020096" duration="905000" />
+      <workItem from="1566911671349" duration="583000" />
+      <workItem from="1566955533991" duration="1792000" />
+      <workItem from="1566962422093" duration="272000" />
+      <workItem from="1566962898089" duration="11040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224319000" />
+    <option name="totallyTimeSpent" value="261100000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,9 +427,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1851" height="841" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18080977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19855796" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -400,7 +436,7 @@
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32816902" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32816902" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32676056" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.49972144" visible="true" weight="0.28169015" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="5" sideWeight="0.49972144" visible="true" weight="0.34366196" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50027853" side_tool="true" weight="0.44992742" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.329927" />
@@ -744,19 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3405">
-          <caret line="285" column="70" lean-forward="true" selection-start-line="285" selection-start-column="70" selection-end-line="285" selection-end-column="70" />
-          <folding>
-            <element signature="e#24#76#0" expanded="true" />
-            <element signature="e#4463#17945#0" />
-            <element signature="e#36815#38634#0" />
-            <element signature="e#39105#41363#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Storage_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3718">
@@ -770,39 +793,52 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/dist/index.html" />
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/front_end_pc/static/index.html" />
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/logins/views.py" />
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/logins/urls.py" />
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/views.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/templates/index.html" />
+    <entry file="file://$PROJECT_DIR$/nginx" />
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+        <state relative-caret-position="22">
+          <caret line="264" column="46" selection-start-line="264" selection-start-column="46" selection-end-line="264" selection-end-column="46" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#24#76#0" expanded="true" />
+            <element signature="e#367#4443#0" />
+            <element signature="e#4463#17945#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding>
             <element signature="e#644#685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/wsdata/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -814,10 +850,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/dwebsocket/backends/uwsgi/factory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-449">
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="22" selection-start-line="23" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="113" column="3" lean-forward="true" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
+        <state relative-caret-position="126">
+          <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
         </state>
       </provider>
     </entry>

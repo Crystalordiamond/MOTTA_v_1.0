@@ -37,3 +37,6 @@ num(li)
 print("最大值：", max)
 print("最小值：", min)
 print(value)
+
+
+

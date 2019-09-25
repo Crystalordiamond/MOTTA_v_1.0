@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Login</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/BuildHtml.js"></script>
+<script type="text/javascript">
+//$(document).ready(function(c) {
+//	$('.alert-close').on('click', function(c){
+//		$('.message').fadeOut('slow', function(c){
+//	  		$('.message').remove();
+//		});
+//	});	  
+//});
+            function fun() {
+			
+			   
+			   var user=$("input.text").val();
+			   var password=$("#passsword").val();
+			   
+			 
+			   
+			   
+			   $.ajax({
+                    url :  "login",	//请求url
+                    type : "POST",	//请求类型  post|get
+                    data : "user="+user+"&password="+password,	//后台用 request.getParameter("key");
+                    dataType : "json",  //返回数据的 类型 text|json|html--
+                    success : function(users){	//回调函数 和 后台返回的 数据
+
+					
+					         
+                              window.location.href=users.html;
+							  setCookie("user",users.user,1);
+							 
+						    
+
+                    },
+					
+					error:function(){
+                    
+					
+					          alert("Fail"); 
+                           
+                    }
+                });
+                				
+			   
+			                     
+            }
+			
+			
+
+
+
+</script>
+
+</head>
+<body>
+
+<div class="message warning">
+	<div class="inset">
+		<div class="login-head">
+			<h1>Login</h1>
+			<div class="alert-close"></div> 			
+		</div>
+		
+		<form>
+			<ul>
+				<li><input type="text"      class="text"  placeholder="user" ><a href="#" class=" icon user"></a></li>
+				<li><input type="password"  id="passsword" placeholder="*****"/> <a href="#" class="icon lock"></a></li>
+			</ul>
+			
+			<div class="submit">
+				<input type="button" onClick="return fun()" value="Login" >			
+				<h4><a href="#"><font class="faliFont"></font></a></h4>
+				<div class="clear">  </div>	
+			</div>
+		</form>
+	</div>					
+</div>
+
+
+
+
+</body>
+</html>

@@ -29,9 +29,7 @@ SECRET_KEY = 'v+-)rv3a&j@y2fjgwk8wb3f1@-@b*#ld!9i4@a+_)s@%b$!w1m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.motta.site',
-                 '192.168.208.150'
-                 ]
+ALLOWED_HOSTS = ['*']
 # 以防止黑客构造包来发送请求。只有在列表中的host才能访问
 # ALLOWED_HOSTS = [
 #     'api.motta.site',
@@ -60,6 +58,7 @@ INSTALLED_APPS = [
     'divices.apps.DivicesConfig',
     'wsdata.apps.WsdataConfig',
     'warning.apps.WarningConfig',
+    'xmldata.apps.XmldataConfig',
 
     'rest_framework',
     'corsheaders',  # 跨域 白名单
@@ -207,7 +206,7 @@ REST_FRAMEWORK = {
 # 配置jwt
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),  # JWT_EXPIRATION_DELTA 指明token的有效期
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'users.utils_jwt.jwt_response_payload_handler',  # 自定义jwt认证成功返回数据
+    # 'JWT_RESPONSE_PAYLOAD_HANDLER': 'users.utils_jwt.jwt_response_payload_handler',  # 自定义jwt认证成功返回数据
 }
 # 1.日志文件
 LOGGING = {
@@ -255,18 +254,19 @@ AUTH_USER_MODEL = 'users.User'
 
 # 3.CORS 跨域请求  添加白名单
 CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:8080',  # 前端访问
-    'http://localhost:8080',
-    'http://www.motta.com:8080',
-    'http://api.motta.site:8000',
-    'http://127.0.0.1:8080',
-    'http://192.168.44.1:8080',
-    'http://192.168.208.1:8020',
-    'http://192.168.1.47:8080',
-    # 'http://192.168.208.150:8000/',
-    'http://192.168.1.47:8080',
-    'http://192.168.1.47:8081',
-    'http://www.motta.site'
+    'http://192.168.1.47:8080',  # windows 前端访问
+    'http://localhost',
+    # 'http://www.motta.com:8080',
+    # 'http://api.motta.site:8000',
+    # 'http://127.0.0.1:39303',  # 打包后 live-server每次启动端口不一样 端口如何固定
+    # 'http://192.168.44.1:8080',
+    # 'http://192.168.208.1:8020',
+    # 'http://192.168.1.47:8080',
+    # # 'http://192.168.208.150:8000/',
+    # 'http://192.168.1.47:8080',
+    # 'http://192.168.1.47:8081',
+    # 'http://www.motta.site',
+    # 'http://192.168.211.132'
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
 
@@ -276,5 +276,5 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # 设置WEBSOCKET_ACCEPT_ALL=True可以允许每一个单独的视图使用websockets
-WEBSOCKET_ACCEPT_ALL=True
+WEBSOCKET_ACCEPT_ALL = True
 # WEBSOCKET_FACTORY_CLASS = 'dwebsocket.backends.uwsgi.factory.uWsgiWebSocketFactory'

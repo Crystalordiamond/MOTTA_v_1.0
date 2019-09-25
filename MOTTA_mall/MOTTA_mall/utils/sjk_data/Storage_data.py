@@ -16,7 +16,7 @@ class Storage_Data(object):
         # self.port = int(input("请输入端口号："))
         # self.username = input("请输入用户名：")
         # self.password = input("请输入密码：")
-        self.host = "192.168.1.200"
+        self.host = "192.168.1.30"
         self.port = 2121
         self.username = "ftp"
         self.password = "ftp"
@@ -160,6 +160,7 @@ class Storage_Data(object):
                     # 4位16进制数 转浮点数
                     d = "%.2f" % struct.unpack('<f', bytes.fromhex(c))[0]
                     # print("%d正在获取(%s)的数据: %s" % (self.i, self.name_list[self.i], d))
+                    print(d)
                     self.input_data(d)
                     self.i += 1
                 self.__address += 50

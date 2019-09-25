@@ -4,8 +4,11 @@ from divices.models import divices
 from django.db.models import Q, F
 from django.http import HttpResponse
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 
+from rest_framework.authtoken.models import Token
+# from rest_framework_jwt.settings import api_settings
 # 1.新增用户
 def post_newUser(request):
     json_str = request.body.decode()
@@ -17,8 +20,10 @@ def post_newUser(request):
         username=user_data["user"],
         password=user_data["password"],
         email=user_data["email"],
-        mobile=user_data["phone"]
+        mobile=user_data["phone"],
     )
+    # 创建tocken
+
     # 2.存储user用户和与之关联的站点
     """
     1.多对多表的查询逻辑 （针对manytomany字段） 只在一边做处理，
@@ -117,6 +122,7 @@ def get_address_user(request):
         list_data.append(data_dict)
     return JsonResponse(list_data, safe=False)
 
+
 # 删除用户
 def post_delete_user(request):
     user_str = request.body.decode()  # 字符串
@@ -199,3 +205,44 @@ def put_address(request):
             address_obj.user_id.add(obj)
     return JsonResponse("站点创建完成", safe=False)
 
+
+"""使用Django登入"""
+
+def post_login(request):
+    # 设置sessio
+    request.session['session_id'] = 'user_id'
+    # 获取session
+    hello = request.session.get('session_id')
+    print(hello)
+    # 获取cookie
+    # cookie1 = request.COOKIES.get('cookie_id')
+    # if cookie1:
+    #     print(cookie1)
+    # else:
+    #     pass
+    # print(111111111111111111111)
+    # print(request)
+    json_str = request.body.decode()
+    user_data = json.loads(json_str)
+    # print(user_data)
+    username = user_data["username"]
+    password = user_data["password"]
+    user = User.objects.filter(username=username, password=password)
+    # print(type(user))
+    if user:
+        dict_data = {}
+        for i in user:
+            dict_data = {
+                "user_id": i.id,
+                "username": i.username,
+                # 'token': Token.objects.create(user=user)
+            }
+        # print(Token.objects.create(user=user).key)
+        response = JsonResponse(dict_data, safe=False)
+        # 设置cookie
+        # response.set_cookie('cookie_id', value=dict_data['user_id'], max_age=60)
+
+        return response
+
+    else:
+        return JsonResponse("error", safe=False)

@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^ondelete_address/$', views.post_delete_address),
     url(r'^onmodify_user/$', views.put_user),
     url(r'^onmodify_address/$', views.put_address),
+    url(r'^user_login/$', views.post_login),
 
 ]

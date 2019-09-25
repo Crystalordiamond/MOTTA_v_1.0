@@ -32,8 +32,7 @@ class Xml_Data(object):
         dom = xmldom.parse(self.__file)
         # 得到文档元素对象
         root = dom.documentElement
-        itemlist = root.getElementsByTagName('signal')  # 是一个文档对象
-
+        itemlist = root.getElementsByTagName('signal')
         for item in itemlist:
             equipid = item.getAttribute("equipid")
             self.equipid_list.append(equipid)

@@ -278,3 +278,14 @@ AUTHENTICATION_BACKENDS = [
 # 设置WEBSOCKET_ACCEPT_ALL=True可以允许每一个单独的视图使用websockets
 WEBSOCKET_ACCEPT_ALL = True
 # WEBSOCKET_FACTORY_CLASS = 'dwebsocket.backends.uwsgi.factory.uWsgiWebSocketFactory'
+
+# 邮件配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+# 发送邮件的邮箱
+EMAIL_HOST_USER = 'luochenxi163@163.com'
+# 在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = 'luochenxi163'
+# 收件人看到的发件人
+EMAIL_FROM = 'MOTTA<luochenxi163@163.com>'

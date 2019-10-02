@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EquipTemplateInfo>
+  <EquipTemplate EquipTemplateId="177" EquipTemplateName="VTUIOxx" EquipTemplateType="45" EquipBaseTemplateId="-1" ParentTemplateId="-1" Property="0" LibName="VTUIOxx" TemplateCode="" TemplateLog="" Description="" LastUpdateTime="20160314044307">
+    <Signals>
+      <EquipSignal SignalId="1" SignalName="烟感" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="0" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="告警" />
+          <SignalMeaning StateValue="1" Meaning="正常" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="2" SignalName="漏水" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="1" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="告警" />
+          <SignalMeaning StateValue="1" Meaning="正常" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="3" SignalName="机柜门" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="2" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="关闭" />
+          <SignalMeaning StateValue="1" Meaning="打开" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="4" SignalName="DI4" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="3" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="无输入" />
+          <SignalMeaning StateValue="0" Meaning="有输入" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="5" SignalName="DI5" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="4" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="有输入" />
+          <SignalMeaning StateValue="1" Meaning="无输入" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="10001" SignalName="通讯状态" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="-1" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="正常" />
+          <SignalMeaning StateValue="0" Meaning="中断" />
+        </Meanings>
+      </EquipSignal>
+    </Signals>
+    <Events>
+      <EquipEvent EventId="1" EventName="烟雾" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,1]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="有告警" EventSeverity="3" StartOperation="=" StartCompareValue="0" StartDelay="5" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="2" EventName="漏水" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,2]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="有告警" EventSeverity="3" StartOperation="=" StartCompareValue="0" StartDelay="5" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="3" EventName="机柜门" EventBaseId="" EventType="" RelatedSignalId="" StartExpression="[-1,3]" SuppressExpression="" Reversal="" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="打开" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FreqThreshold="" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="10001" EventName="通讯状态" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,10001]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="告警" EventSeverity="2" StartOperation="=" StartCompareValue="0" StartDelay="5" EndOperation="" EndCompareValue="" EndDelay="5" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+    </Events>
+    <Commands>
+      <EquipCommand CommandId="1" CommandName="DO1" CommandBaseId="-1" CommandType="1" ControlType="0" RelatedSignalId="-1" CommandToken="11" Priority="0" Timeout="0" Retry="0" Enable="true" Description="">
+        <CommandParameter ParameterId="1" ParameterName="状态控制" UIControlType="1" DataType="0" DefaultValue="0" MaxValue="0" MinValue="0">
+          <CommandMeaning ParameterValue="1" Meaning="闭合" />
+          <CommandMeaning ParameterValue="0" Meaning="打开" />
+        </CommandParameter>
+      </EquipCommand>
+      <EquipCommand CommandId="2" CommandName="DO2" CommandBaseId="-1" CommandType="1" ControlType="0" RelatedSignalId="-1" CommandToken="12" Priority="0" Timeout="0" Retry="0" Enable="true" Description="">
+        <CommandParameter ParameterId="1" ParameterName="状态控制" UIControlType="1" DataType="0" DefaultValue="0" MaxValue="0" MinValue="0">
+          <CommandMeaning ParameterValue="0" Meaning="打开" />
+          <CommandMeaning ParameterValue="1" Meaning="闭合" />
+        </CommandParameter>
+      </EquipCommand>
+    </Commands>
+  </EquipTemplate>
+</EquipTemplateInfo>

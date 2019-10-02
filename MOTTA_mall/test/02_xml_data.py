@@ -1,8 +1,11 @@
 from ftplib import FTP
 from xml.dom import minidom
 from pyModbusTCP.client import ModbusClient
+from pyModbusTCP import utils
+import threading
 import struct
-import os, time
+import os, time, datetime
+from pymysql import connect
 
 
 class Ftp_Data(object):
@@ -10,8 +13,8 @@ class Ftp_Data(object):
     用来获取xml文件和替换需要更改的文件
     """
 
-    def __init__(self):
-        self.host = "192.168.1.30"
+    def __init__(self, ip):
+        self.host = ip
         self.port = 2121
         self.username = "ftp"
         self.password = "ftp"
@@ -24,40 +27,50 @@ class Ftp_Data(object):
         self.__new_str = "-"
 
         # self.__client = ModbusClient(host=self.host, port=502)
-        self.__client = ModbusClient(host=self.host, port=502, debug=True, auto_open=True)
+        self.__client = ModbusClient(host=self.host, port=502, debug=True)
         self.modbus_map_list = []  # 存储modbus_map_list表数据[{},{},{}...]
         self.MonitorUnitVTU = []  # 存储MonitorUnitVTU表数据[{},{},{}...]
 
-        self.name_list = []
+        self.__conn = connect(host='localhost', port=3306, database="MOTTA_data", user="root", password="mysql",
+                              charset="utf8")
+        self.__cur = self.__conn.cursor()
+
         self.__address = 0
-        self.__register = 50
+        self.__register = 1
         self.i = 0
+
+        self.ftp = None  # 设置self.ftp=None的时候 ftp才能自动重新连接上
 
     def ftp_connect(self):
         """ 连接ftp """
         # 实例化FTP对象
+
         self.ftp = FTP()
         # ftp.set_debuglevel(2)         #打开调试级别2，显示详细信息
         try:
             self.ftp.connect(self.host, self.port)  # 连接
         except:
-            raise IOError("ftp connect failed!")
+            raise IOError("%s ftp connect failed!" % self.host)
         try:
             self.ftp.login(self.username, self.password)  # 登录，如果匿名登录则用空串代替即可
         except:
-            raise IOError("ftp login failed!")
+            raise IOError("%s ftp login failed!" % self.host)
         else:
-            print("FTP connection successful......")
+            print("%s FTP connection successful......" % self.host)
 
     def download_file(self):
         # 连接ftp()
         self.ftp_connect()
         """
-        下载modbus_map.xml文件
+        1.下载modbus_map.xml文件
         """
+        # print(self.host)
         # exists()判断当前路径 是否有self.host文件夹
         if os.path.exists(os.path.join(self.localpath, self.host)):
-            pass
+            # 清空文件夹里面的数据
+            for i in os.listdir(os.path.join(self.localpath, self.host)):
+                os.remove(os.path.join(self.localpath, self.host, i))
+            print("%s:文件夹已经存在" % self.host)
         else:
             # 创建当前文件夹
             os.mkdir(os.path.join(self.localpath, self.host))
@@ -70,18 +83,9 @@ class Ftp_Data(object):
         # ftp.set_debuglevel(0)  # 关闭调试
         fp.close()  # 关闭文件
         print("-------------------------Modbus_map.xml download completes-------------------------")
-        # 关闭连接
-
-    def download_files(self):
-        # 连接ftp()
-        self.ftp_connect()
-        # exists()判断当前路径 是否有self.host文件夹
-        if os.path.exists(os.path.join(self.localpath, self.host)):
-            pass
-        else:
-            # 创建当前文件夹
-            os.mkdir(os.path.join(self.localpath, self.host))
-        """批量下载XmlCfg中xml文件"""
+        """
+        2.批量下载XmlCfg中xml文件
+        """
         file_list = self.ftp.nlst(self.XmlCfg_ftp_path)  # 获取下载的文件目录
         # print(file_list)
         files_list = []
@@ -99,7 +103,6 @@ class Ftp_Data(object):
             # 接收服务器上文件并写入本地打开的文件
             self.ftp.retrbinary('RETR ' + self.XmlCfg_ftp_path + '/' + i, fp.write, bufsize)
             # ftp.set_debuglevel(0)  # 关闭调试
-            fp.close()  # 关闭文件
             print("文件%s下载完成" % i)
         print("-------------------------File download completes-------------------------")
 
@@ -124,7 +127,8 @@ class Ftp_Data(object):
             f.write(file_data)
         print("modbus_map.xml中特殊字符替换完成!")
 
-    def get_document(self):
+    # 获取map.xml数据结构
+    def get_document_map(self):
         """
         获取modbus_map.xml数据
         :return: map数据
@@ -137,16 +141,9 @@ class Ftp_Data(object):
             # print(dom)
             # 获取根节点
             root = dom.documentElement
-            # # 打印根节点名称 <conf>
-            # print("打印根节点名称:%s" % root.nodeName)
-            # # 打印根节点类型
-            # print("打印根节点类型:%s" % root.nodeType)
-            # # 打印根节点属性
-            # print("打印根节点属性:%s" % root.nodeValue)
-
             # 获取root根节点下所有子节点
             # child_list = root.childNodes
-            signal_list = root.getElementsByTagName('signal')  # 是一个文档对象 todo 最好是能自动获取到这个标签名称
+            signal_list = root.getElementsByTagName('signal')  # 是一个文档对象
             for signal in signal_list:
                 dict_attr = {}  # 存储 数据 键值对的
                 # 获取signal中所有属性名称得到一个列表  attributes.keys()
@@ -155,10 +152,13 @@ class Ftp_Data(object):
                     dict_attr[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
                 self.modbus_map_list.append(dict_attr)  # 添加到列表
                 # print(dict_attr)
+            # print(self.modbus_map_list[0])
+            # print(self.modbus_map_list[0][key])
             print("modbus_map.xml表的数据有：%s条" % len(self.modbus_map_list))
             return self.modbus_map_list
 
-    def get_documents(self):
+    # 将MonitorUnitVTU.xml表存入数据库
+    def get_document_vtu(self):
         """
         解析多个文档数据
         :return:
@@ -175,88 +175,248 @@ class Ftp_Data(object):
             # 获取根节点下所有子节点的名称  根目录下节点对象：root.childNodes  遍历得到节点名称：i.nodeName
             for i in root.childNodes:
                 # print(i.nodeName)
+                # 得到一个子标签的文档对象
                 tag_list = root.getElementsByTagName(i.nodeName)
+                # print(tag_list)
+                # 如果这个文档对象存在
                 if tag_list:
                     for tag in tag_list:
-                        print(tag.nodeName)
+                        # tag.childNodes得到Ports，Equipments，LogActions下的子标签对象
+                        # print(tag.childNodes)
+                        for child_tag in tag.childNodes:
+                            # print(child_tag.nodeName)
+                            # 排除#text
+                            if child_tag.nodeName == "CfgPort":
+                                port_dict = {}
+                                # 获取子标签对象的属性名称: child_tag.attributes.keys()
+                                for child_key in child_tag.attributes.keys():
+                                    key_add = child_tag.attributes[child_key]
+                                    port_dict[key_add.name] = key_add.value
+                                # print(port_dict)
+                                # 存入数据库
+                                # 格式化当前时间
+                                nowTime = datetime.datetime.now()
+                                strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                data = [port_dict["PortId"], port_dict["PortNo"], port_dict["PortType"],
+                                        port_dict["PortSetting"], port_dict["PortLibName"], port_dict["Description"],
+                                        strTime, self.host]
+                                # REPLACE存在就更新不存在就插入
+                                sql_str = '''insert into tb_port (PortId, PortNo, PortType, PortSetting, PortLibName, Description, port_time, port_ip) values(%s, %s, %s, %s, %s, %s, %s, %s);'''
+                                self.__cur.execute(sql_str, data)
+                                self.__conn.commit()
 
-            # print(root.attributes.keys())
-            signal_list = root.getElementsByTagName('signal')  # 是一个文档对象 todo 最好是能自动获取到这个标签名称
-            for signal in signal_list:
-                dict_attr = {}  # 存储 数据 键值对的
-                # 获取signal中所有属性名称得到一个列表  attributes.keys()
-                for key in signal.attributes.keys():
-                    key_add = signal.attributes[key]  # 这样得到的是一个地址
-                    dict_attr[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
-                self.modbus_map_list.append(dict_attr)  # 添加到列表
-                # print(dict_attr)
-            # print("modbus_map.xml表的数据有：%s条" % len(self.modbus_map_list))
-            return self.modbus_map_list
-        # 5.实时更新数据并添加到数据库(实时通过while循环反复存储)
+                            elif child_tag.nodeName == "CfgEquipment":
+                                quipment_dict = {}
+                                # 获取子标签对象的属性名称: child_tag.attributes.keys()
+                                for child_key in child_tag.attributes.keys():
+                                    key_add = child_tag.attributes[child_key]
+                                    quipment_dict[key_add.name] = key_add.value
+                                # print(quipment_dict)
+                                nowTime = datetime.datetime.now()
+                                strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                data = [quipment_dict["EquipId"], quipment_dict["EquipTemplateId"],
+                                        quipment_dict["EquipmentName"], quipment_dict["EquipAddress"],
+                                        quipment_dict["LibName"], strTime, self.host]
+                                sql_str = '''insert into tb_equipments (EquipId, EquipTemplateId, EquipmentName, EquipAddress, LibName, Equipment_time, Equipment_ip) values(%s, %s, %s, %s, %s, %s, %s);'''
+                                self.__cur.execute(sql_str, data)
+                                self.__conn.commit()
+                            elif child_tag.nodeName == "EventLogAction":
+                                pass
+        print("-------------------------Document_vtu 文件数据存入到数据库成功-------------------------")
 
+    # 批量存入EquipmentTemplate....表数据
+    def get_documents(self):
+        # 在增加传感器的时候 先清空表的数据 (如果有多台机器，删除会删除其他机器的数据，根据最新的时间取值)
+        # self.__cur.execute('''delete from tb_equiptemplate''')
+        # self.__conn.commit()
+        # 获取xml名称列表
+        catalog_list = os.listdir(os.path.join(self.localpath, self.host))
+        child_dict_list = []  # 这个列表存储所有的.xml文件信息
+        for catalog in catalog_list:
+            # 判断以EquipmentTemplate开头的.xml文件
+            if catalog.startswith("EquipmentTemplate"):
+                with open(os.path.join(self.localpath, self.host, catalog), 'r', encoding='utf-8') as f:
+                    # print(catalog)
+                    # parse()获取DOM对象
+                    dom = minidom.parse(f)
+                    # 获取dom的根节点
+                    root = dom.documentElement
+                    # 遍历dom根节点下还有一个根节点
+                    # print(root.childNodes)
+                    root_dict = {}  # 根节点的属性
+                    child_dict = {}
+                    # 1.获取根目录的属性值
+                    for i in root.childNodes:
+                        # print(i.nodeName)
+                        # 判断当子目录有值时候（过滤）=>  获取根节点的属性
+                        if i.childNodes:
+                            # print(i.nodeName)
+                            for key in i.attributes.keys():
+                                key_add = i.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
+                                root_dict[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
+                    # 2. 获取EquipSignal子节点
+                    EquipSignal_list = root.getElementsByTagName('EquipSignal')
+                    # print(len(EquipSignal_list))
+                    # print("&"*100)
+                    for EquipSignal in EquipSignal_list:
+                        # 1.获取每个子节点属性
+                        # 子节点的属性
+                        # print(EquipSignal.attributes.keys())
+                        for key in EquipSignal.attributes.keys():
+                            key_add = EquipSignal.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
+                            child_dict[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
+                        child_dict.update(root_dict)  # 使用update合并 root目录的属性值   返回值是一个None
+                        # 2.获取子节点Meanings下一级的属性 告警的状态
+                        for meation in EquipSignal.childNodes:
+                            # Meanings下一级的节点可能会不存在
+                            # print(meation.childNodes)
+                            if meation.childNodes:
+                                for sig_mean in meation.childNodes:
+                                    if sig_mean.nodeName != "#text":
+                                        # print(sig_mean.nodeName)
+                                        Meanings_dict = {}
+                                        for key in sig_mean.attributes.keys():
+                                            key_add = sig_mean.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
+                                            Meanings_dict[
+                                                key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
+                                        # print(Meanings_dict)
+                                        child_dict.update(Meanings_dict)
+                                        # print(child_dict["SignalId"], child_dict["SignalName"],
+                                        #       child_dict["EquipTemplateId"], child_dict["EquipTemplateName"],
+                                        #       child_dict["StateValue"], child_dict["Meaning"])
+                                        # 3.存入数据库
+                                        nowTime = datetime.datetime.now()
+                                        # 格式化当前时间
+                                        strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                        data = [child_dict["SignalId"], child_dict["SignalName"],
+                                                child_dict["EquipTemplateId"],
+                                                child_dict["EquipTemplateName"],
+                                                child_dict["StateValue"], child_dict["Meaning"], strTime, self.host]
+                                        sql_str = '''insert into tb_equiptemplate (SignalId, SignalName, EquipTemplateId, EquipTemplateName, StateValue, Meaning, equiptemplate_time, equiptemplate_ip) values(%s, %s, %s, %s, %s, %s, %s, %s);'''
+                                        self.__cur.execute(sql_str, data)
+                                        self.__conn.commit()
+                                        # print(" => %s => 数据导入成功......" % child_dict["SignalName"])
+        print("-------------------------Xml文件集数据存入到数据库成功-------------------------")
+
+    # 将数据实时存入
     def get_realtime_data(self):
         """
         通过modbus_tcp获取实时数据
         :return:
         """
-        # 判断是否连接成功 （否 否为真）
-        # is_open()取TCP连接状态    open()连接到Modbus服务器（开放的TCP连接）
-        # print(self.__client.is_open())
-        # print(self.__client.open())
-        if not self.__client.is_open() and not self.__client.open():
-            # 在次连接一次，没有连接上则抛出错误
-            raise RuntimeError('无法连接：请检查端口或IP地址是否正确')
-        while True:
-            # time.sleep(3)
-            # if self.__address < len(self.name_list):
-            """
-            返回的源码：[FA 80 00 00 00 17 01] 03 14 00 00 3F 80 00 00 3F 80 00 00 3F 80 00 00 3F 80 66 66 41 E2 
-            自动解析的数据：[0, 16256, 0, 16256, 0]
-            1.改写方法(read_holding_registers)：源码返回的数据为 00 00 3F 80位 只解析00 00位和3F 80位，通过调试模式返Rx数据，返回数据为（registers, re_debug）
-            2.开启调试模式获re_debug 
-            """
-            # registers, re_debug = self.__client.read_holding_registers(self.__address, self.__register)
-            registers, debug_data = self.__client.read_holding_registers(self.__address, self.__register)
-            # 获取50个数据（字符串类型）
-            # print(debug_data)
-            # print(registers)
-            str_list = debug_data.split(" ")[9:-1]
-            # print(str_list)
-            a = [str_list[x:x + 4] for x in range(0, len(str_list), 4)]
-            # 这里打印接收的数量条数。
-            print(len(a))
-            for x in a:
-                # 将每一个数据合并成一个字符串
-                b = "".join(x)
-                # print(b)
-                # 调整字符串的位置前面四位不动 后面四位两两交换位置（注意转浮点数时候大端小端问题）
-                c = b[0:4] + b[-2:] + b[4:6]
-                # print(c)
-                # 4位16进制数 转浮点数
-                d = "%.2f" % struct.unpack('<f', bytes.fromhex(c))[0]
-                # print("%d正在获取(%s)的数据: %s" % (self.i, self.name_list[self.i], d))
-                print(d)
-                self.i += 1
-            self.__address += 50
+        try:
+            # 判断是否连接成功 （否 否为真）
+            # is_open()取TCP连接状态    open()连接到Modbus服务器（开放的TCP连接）
+            # print(self.__client.is_open())
+            # print(self.__client.open())
+            if not self.__client.is_open() and not self.__client.open():
+                # 在次连接一次，没有连接上则抛出错误
+                raise RuntimeError('无法连接：请检查端口或IP地址是否正确')
+            while True:
+                # add_list = []
+                if self.__address < len(self.modbus_map_list):
+
+                    # time.sleep(3)
+                    # if self.__address < len(self.modbus_map_list):
+                    """
+                    返回的源码：[FA 80 00 00 00 17 01] 03 14 00 00 3F 80 00 00 3F 80 00 00 3F 80 00 00 3F 80 66 66 41 E2 
+                    自动解析的数据：[0, 16256, 0, 16256, 0]
+                    1.改写方法(read_holding_registers)：源码返回的数据为 00 00 3F 80位 只解析00 00位和3F 80位，通过调试模式返Rx数据，返回数据为（registers, re_debug）
+                    2.开启调试模式获re_debug
+                    3.
+                    """
+                    # registers, re_debug = self.__client.read_holding_registers(self.__address, self.__register)
+                    registers, debug_data = self.__client.read_holding_registers(self.__address, self.__register)
+                    # 获取50个数据（字符串类型）
+                    # print(utils.word_list_to_long(debug_data))
+                    str_list = debug_data.split(" ")[9:-1]
+                    # print(str_list)
+                    a = [str_list[x:x + 4] for x in range(0, len(str_list), 4)]
+                    # 这里打印接收的数量条数。
+                    for x in a:
+                        # 将每一个数据合并成一个字符串
+                        b = "".join(x)
+                        # print(b)
+                        # 调整字符串的位置前面四位不动 后面四位两两交换位置（注意转浮点数时候大端小端问题）
+                        c = b[0:4] + b[-2:] + b[4:6]
+                        # print(c)
+                        # 4位16进制数 转浮点数
+                        d = "%.2f" % struct.unpack('<f', bytes.fromhex(c))[0]
+                        # print("%d正在获取(%s)的数据: %s" % (self.i, self.modbus_map_list[self.i], d))
+                        print("%s的第%s数据为%s" % (self.host, self.i, d))
+                        # add_list.append(d)
+                        self.input_data(d)
+                        self.i += 1
+                    # self.__address += 50
+                    self.__address += 1
+                    # print(add_list)
+                else:
+                    self.i = 0
+                    self.__address = 0
+                    # time.sleep(3)
+                    break
+        except:
+            pass
+
+    # 6.map表存入数据库
+    def input_data(self, float_data):
+        # 将得到的浮点数数据存入到数据库
+        # 获取当前时间
+        nowTime = datetime.datetime.now()
+        # 格式化当前时间
+        strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+        # print(strTime)
+        # 逻辑删除（在drf中自定义模型，逻辑删除健，设置了默认值，但是只有通过drf存储时才会有默认值，直接在数据库中存储是不会添加默认值的）
+        # is_delete = False
+        # divice_ip = self.iptoint(self.host)
+        # divice_ip = self.host
+        # print(type(divice_ip))
+        data = [self.modbus_map_list[self.i]["equipid"], self.modbus_map_list[self.i]["sigid"],
+                self.modbus_map_list[self.i]["reg_addr"],
+                self.modbus_map_list[self.i]["name"], float_data, strTime, False, self.host]
+        sql_str = '''insert into tb_xmldata (equipid, sigid, reg_addr, name, float_data, data_time, is_delete, divice_ip) values(%s, %s, %s, %s, %s, %s, %s, %s);'''
+        self.__cur.execute(sql_str, data)
+        self.__conn.commit()
 
 
 if __name__ == "__main__":
-    ftp = Ftp_Data()
-    # ftp.get_document()  # 获取modbus_map.xml数据
-    ftp.get_documents()  # 批量下载xml文件
-    # ftp.get_realtime_data()  # 事实获取数据
+    def run(ip):
+        ftp = Ftp_Data(ip)
+        ftp.get_document_map()  # 1.获取map表 需要先运行这个函数
+        ftp.get_document_vtu()  # 将MonitorUnitVTU.xml数据存入mysql数据库 一次性
+        ftp.get_documents()  # 批量存入EquipmentTemplate....表数据
+        while True:
+            ftp.get_realtime_data()  # 2.获取事实数据
 
-    # ftp.download_files()  # 批量下载xml文件
-    # ftp.delete_file() # 重启机器
-"""
-ftp.cwd(pathname)#设置FTP当前操作的路径
-ftp.dir()#显示目录下文件信息
-ftp.nlst()#获取目录下的文件
-ftp.mkd(pathname)#新建远程目录
-ftp.pwd()#返回当前所在位置
-ftp.rmd(dirname)#删除远程目录
-ftp.delete(filename)#删除远程文件
-ftp.rename(fromname, toname)#将fromname修改名称为toname。
-ftp.storbinaly("STOR filename.txt",file_handel,bufsize)#上传目标文件e
-ftp.retrbinary("RETR filename.txt",file_handel,bufsize)#下载FTP
-"""
+
+    # 配置线程
+    ip_list = []  # ip池要是元组("192.168.1.20",), ("192.168.1.30",), ("192.168.1.40",)
+    threads = []  # 线程池
+    # 1.查询数据库设备表所有信息 得到ip池
+    conn = connect(host='localhost', port=3306, database="MOTTA_data", user="root", password="mysql", charset="utf8")
+    cur = conn.cursor()
+    sql_str = ''' select * from tb_divices;'''
+    cur.execute(sql_str)
+    # 遍历输出所有的结果 t是元组
+    for t in cur.fetchall():
+        ip_list.append((t[1],))  # 添加元组到列表
+    # 2.添加线程到线程池
+    for i in range(len(ip_list)):
+        t = threading.Thread(target=run, args=ip_list[i])
+        threads.append((t, i))
+    print(ip_list)
+    print(threads)
+    for i in threads:
+        i[0].start()
+        print("开启线程：%s" % i[0])
+    while True:
+        for i in threads:
+            if i[0].is_alive() is False:
+                print("%s线程的状态为：%s" % (i[0], i[0].is_alive()))
+                threads.remove(i)
+                t = threading.Thread(target=run, args=ip_list[i[1]])
+                threads.append(t)  # 将挂掉的进程添加 到进程池
+                t.start()
+        time.sleep(20)  # 120秒检测一次
+        print(ip_list)
+        print(threads)

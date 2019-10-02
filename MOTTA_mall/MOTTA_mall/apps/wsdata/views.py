@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from createdata.models import XmlData, EquipmentData
+from xmldata.models import XmlData
+from createdata.models import EquipmentData
 from warning.models import Warning
 from divices.models import divices
 from django.shortcuts import render

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EquipTemplateInfo>
+  <EquipTemplate EquipTemplateId="169" EquipTemplateName="FS102HT" EquipTemplateType="46" EquipBaseTemplateId="1006" ParentTemplateId="-1" Property="0" LibName="FS102HT温湿度传感器.dll" TemplateCode="" TemplateLog="" Description="" LastUpdateTime="20140225063816">
+    <Signals>
+      <EquipSignal SignalId="1" SignalName="Temperature" SignalBaseId="1006001001" SignalType="0" SignalProperty="0" ChannelNo="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="℃" StoreInterval="2880" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="2" SignalName="Humidity" SignalBaseId="1006003001" SignalType="0" SignalProperty="0" ChannelNo="2" Expression="" DataType="0" ShowPrecision="0.0" Unit="%Rh" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="3" SignalName="DoorOpenTemp" SignalBaseId="" SignalType="0" SignalProperty="" ChannelNo="3" Expression="45" DataType="0" ShowPrecision="0" Unit="℃" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="4" SignalName="DoorCloseTemp" SignalBaseId="" SignalType="0" SignalProperty="" ChannelNo="4" Expression="35" DataType="0" ShowPrecision="0" Unit="℃" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="10001" SignalName="CommunicationStatus" SignalBaseId="1006999001" SignalType="1" SignalProperty="0" ChannelNo="-1" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Normal" />
+          <SignalMeaning StateValue="0" Meaning="Lost" />
+        </Meanings>
+      </EquipSignal>
+    </Signals>
+    <Events>
+      <EquipEvent EventId="1" EventName="High Temp" EventBaseId="" EventType="" RelatedSignalId="" StartExpression="[-1,1]" SuppressExpression="" Reversal="" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="3" StartOperation="&gt;" StartCompareValue="41" StartDelay="10" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FreqThreshold="" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="2" EventName="Low Temp" EventBaseId="" EventType="" RelatedSignalId="" StartExpression="[-1,1]" SuppressExpression="" Reversal="" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="&lt;" StartCompareValue="10" StartDelay="10" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FreqThreshold="" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="3" EventName="High Humidity" EventBaseId="" EventType="" RelatedSignalId="" StartExpression="[-1,2]" SuppressExpression="" Reversal="" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="&gt;" StartCompareValue="95" StartDelay="10" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FreqThreshold="" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="4" EventName="Low Humidity" EventBaseId="" EventType="" RelatedSignalId="" StartExpression="[-1,2]" SuppressExpression="" Reversal="" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="&lt;" StartCompareValue="10" StartDelay="10" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FreqThreshold="" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="10001" EventName="Communication Status" EventBaseId="" EventType="" RelatedSignalId="" StartExpression="[-1,10001]" SuppressExpression="" Reversal="" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Lost" EventSeverity="3" StartOperation="=" StartCompareValue="0" StartDelay="5" EndOperation="" EndCompareValue="" EndDelay="5" Frequency="" FreqThreshold="" />
+        </Conditions>
+      </EquipEvent>
+    </Events>
+    <Commands />
+  </EquipTemplate>
+</EquipTemplateInfo>

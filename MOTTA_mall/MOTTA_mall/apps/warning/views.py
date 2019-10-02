@@ -5,7 +5,8 @@ from django.http.response import JsonResponse
 from django.db.models import Q, F, Max, Count
 from django.http import HttpResponse
 from .models import Warning
-from createdata.models import XmlData, EquipmentData
+from xmldata.models import XmlData
+from createdata.models import EquipmentData
 import json, copy
 
 

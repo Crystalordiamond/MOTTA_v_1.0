@@ -6,320 +6,172 @@
 <conf>
 	<basic debug_level="1" listen_port="502" float_type="0" />
 	<signals>
-		<signal equipid="1" sigid="1" reg_addr="0x0000" name="VTU-IO, Smoke" />
-		<signal equipid="1" sigid="2" reg_addr="0x0001" name="VTU-IO, Leakage" />
-		<signal equipid="1" sigid="3" reg_addr="0x0002" name="VTU-IO, Door" />
-		<signal equipid="1" sigid="10001" reg_addr="0x0003" name="VTU-IO, CommunicationStatus" />
-		<signal equipid="2" sigid="1" reg_addr="0x0004" name="Temp-Humidity, Temperature" />
-		<signal equipid="2" sigid="2" reg_addr="0x0005" name="Temp-Humidity, Humidity" />
-		<signal equipid="2" sigid="3" reg_addr="0x0006" name="Temp-Humidity, DoorOpenTemp" />
-		<signal equipid="2" sigid="4" reg_addr="0x0007" name="Temp-Humidity, DoorCloseTemp" />
-		<signal equipid="2" sigid="10001" reg_addr="0x0008" name="Temp-Humidity, CommunicationStatus" />
-		<signal equipid="3" sigid="1" reg_addr="0x0009" name="UPS, Communication address:1~247" />
-		<signal equipid="3" sigid="2" reg_addr="0x000a" name="UPS, Measurement system wiring mode:0~5 04NBL1" />
-		<signal equipid="3" sigid="3" reg_addr="0x000b" name="UPS, Check digit
-
-: 0:None 1:odd 2:even" />
-		<signal equipid="3" sigid="4" reg_addr="0x000c" name="UPS, Baud rate
-
-: 01200 12400 2480" />
-		<signal equipid="3" sigid="5" reg_addr="0x000d" name="UPS, Voltage range 0150 1600" />
-		<signal equipid="3" sigid="6" reg_addr="0x000e" name="UPS, PT1~10000" />
-		<signal equipid="3" sigid="7" reg_addr="0x000f" name="UPS, CT1~10000" />
-		<signal equipid="3" sigid="8" reg_addr="0x0010" name="UPS, Phase voltage1 " />
-		<signal equipid="3" sigid="9" reg_addr="0x0011" name="UPS, Line voltage U12" />
-		<signal equipid="3" sigid="10" reg_addr="0x0012" name="UPS, Phase 1 current" />
-		<signal equipid="3" sigid="11" reg_addr="0x0013" name="UPS, Phase 1 active power" />
-		<signal equipid="3" sigid="12" reg_addr="0x0014" name="UPS, Phase 1 power factor" />
-		<signal equipid="3" sigid="13" reg_addr="0x0015" name="UPS, Phase 1 reactive power" />
-		<signal equipid="3" sigid="14" reg_addr="0x0016" name="UPS, Phase 1 apparent power" />
-		<signal equipid="3" sigid="15" reg_addr="0x0017" name="UPS, Phase voltage2      " />
-		<signal equipid="3" sigid="16" reg_addr="0x0018" name="UPS, Line voltage U23" />
-		<signal equipid="3" sigid="17" reg_addr="0x0019" name="UPS, Phase 2 current" />
-		<signal equipid="3" sigid="18" reg_addr="0x001a" name="UPS, Phase 2 active power" />
-		<signal equipid="3" sigid="19" reg_addr="0x001b" name="UPS, Phase 2 power factor" />
-		<signal equipid="3" sigid="20" reg_addr="0x001c" name="UPS, Phase 2 reactive power" />
-		<signal equipid="3" sigid="21" reg_addr="0x001d" name="UPS, Phase 2 apparent power" />
-		<signal equipid="3" sigid="22" reg_addr="0x001e" name="UPS, Phase voltage3    " />
-		<signal equipid="3" sigid="23" reg_addr="0x001f" name="UPS, Line voltage U31  " />
-		<signal equipid="3" sigid="24" reg_addr="0x0020" name="UPS, Phase 3 current" />
-		<signal equipid="3" sigid="25" reg_addr="0x0021" name="UPS, N-PE voltage   " />
-		<signal equipid="3" sigid="26" reg_addr="0x0022" name="UPS, Phase 3 active power" />
-		<signal equipid="3" sigid="27" reg_addr="0x0023" name="UPS, Phase 3 power factor" />
-		<signal equipid="3" sigid="28" reg_addr="0x0024" name="UPS, Phase 3 reactive power" />
-		<signal equipid="3" sigid="29" reg_addr="0x0025" name="UPS, Phase 3 apparent power" />
-		<signal equipid="3" sigid="30" reg_addr="0x0026" name="UPS, Three-phase mean line voltage" />
-		<signal equipid="3" sigid="31" reg_addr="0x0027" name="UPS, Three-phase mean phase voltage" />
-		<signal equipid="3" sigid="32" reg_addr="0x0028" name="UPS, Three-phase mean phase current" />
-		<signal equipid="3" sigid="33" reg_addr="0x0029" name="UPS, Frequency" />
-		<signal equipid="3" sigid="34" reg_addr="0x002a" name="UPS, Three phase active power" />
-		<signal equipid="3" sigid="35" reg_addr="0x002b" name="UPS, Three-phase total power factor" />
-		<signal equipid="3" sigid="36" reg_addr="0x002c" name="UPS, Three phase reactive power
-
-" />
-		<signal equipid="3" sigid="37" reg_addr="0x002d" name="UPS, Three phase apparent power
-
-" />
-		<signal equipid="3" sigid="38" reg_addr="0x002e" name="UPS, Zero sequence current
-
-       " />
-		<signal equipid="3" sigid="39" reg_addr="0x002f" name="UPS, Positive active energy
-
-" />
-		<signal equipid="3" sigid="40" reg_addr="0x0030" name="UPS, Negative active energy
-
- " />
-		<signal equipid="3" sigid="41" reg_addr="0x0031" name="UPS, Positive reactive energy
-
-    " />
-		<signal equipid="3" sigid="42" reg_addr="0x0032" name="UPS, Negative reactive energy
-
-  " />
-		<signal equipid="3" sigid="43" reg_addr="0x0033" name="UPS, DI1-Main power" />
-		<signal equipid="3" sigid="44" reg_addr="0x0034" name="UPS, DI2-Backup power" />
-		<signal equipid="3" sigid="45" reg_addr="0x0035" name="UPS, A phase lose" />
-		<signal equipid="3" sigid="46" reg_addr="0x0036" name="UPS, B phase lose" />
-		<signal equipid="3" sigid="47" reg_addr="0x0037" name="UPS, C phase lose" />
-		<signal equipid="3" sigid="48" reg_addr="0x0038" name="UPS, Main power fault" />
-		<signal equipid="3" sigid="49" reg_addr="0x0039" name="UPS, Fundamental wave
-
- I1" />
-		<signal equipid="3" sigid="50" reg_addr="0x003a" name="UPS, Fundamental wave I2" />
-		<signal equipid="3" sigid="51" reg_addr="0x003b" name="UPS, Fundamental wave I3" />
-		<signal equipid="3" sigid="52" reg_addr="0x003c" name="UPS, Fundamental wave V1" />
-		<signal equipid="3" sigid="53" reg_addr="0x003d" name="UPS, Fundamental wave V2" />
-		<signal equipid="3" sigid="54" reg_addr="0x003e" name="UPS, Fundamental wave V3" />
-		<signal equipid="3" sigid="55" reg_addr="0x003f" name="UPS, Aphase current total distortion rate
-
-THD I1" />
-		<signal equipid="3" sigid="56" reg_addr="0x0040" name="UPS, Bphase current total distortion rateTHD I2" />
-		<signal equipid="3" sigid="57" reg_addr="0x0041" name="UPS, Cphase current total distortion rateTHD I3" />
-		<signal equipid="3" sigid="58" reg_addr="0x0042" name="UPS, Aphase voltage total distortion rateTHD V1" />
-		<signal equipid="3" sigid="59" reg_addr="0x0043" name="UPS, Bphase voltage total distortion rateTHD V2" />
-		<signal equipid="3" sigid="60" reg_addr="0x0044" name="UPS, Cphase voltage total distortion rateTHD V3" />
-		<signal equipid="3" sigid="61" reg_addr="0x0045" name="UPS, 3 times harmonic contentI1 " />
-		<signal equipid="3" sigid="62" reg_addr="0x0046" name="UPS, 5 times harmonic contentI1 " />
-		<signal equipid="3" sigid="63" reg_addr="0x0047" name="UPS, 7 times harmonic contentI1 " />
-		<signal equipid="3" sigid="64" reg_addr="0x0048" name="UPS, 9 times harmonic contentI1 " />
-		<signal equipid="3" sigid="65" reg_addr="0x0049" name="UPS, 11 times harmonic contentI1" />
-		<signal equipid="3" sigid="66" reg_addr="0x004a" name="UPS, 13 times harmonic contentI1" />
-		<signal equipid="3" sigid="67" reg_addr="0x004b" name="UPS, 15 times harmonic contentI1" />
-		<signal equipid="3" sigid="68" reg_addr="0x004c" name="UPS, 17 times harmonic contentI1" />
-		<signal equipid="3" sigid="69" reg_addr="0x004d" name="UPS, 19 times harmonic contentI1" />
-		<signal equipid="3" sigid="70" reg_addr="0x004e" name="UPS, 21 times harmonic contentI1" />
-		<signal equipid="3" sigid="71" reg_addr="0x004f" name="UPS, 23 times harmonic contentI1" />
-		<signal equipid="3" sigid="72" reg_addr="0x0050" name="UPS, 25 times harmonic contentI1" />
-		<signal equipid="3" sigid="73" reg_addr="0x0051" name="UPS, 27 times harmonic contentI1" />
-		<signal equipid="3" sigid="74" reg_addr="0x0052" name="UPS, 29 times harmonic contentI1" />
-		<signal equipid="3" sigid="75" reg_addr="0x0053" name="UPS, 31 times harmonic contentI1" />
-		<signal equipid="3" sigid="76" reg_addr="0x0054" name="UPS, 3 times harmonic contentI2 " />
-		<signal equipid="3" sigid="77" reg_addr="0x0055" name="UPS, 5 times harmonic contentI2 " />
-		<signal equipid="3" sigid="78" reg_addr="0x0056" name="UPS, 7 times harmonic contentI2 " />
-		<signal equipid="3" sigid="79" reg_addr="0x0057" name="UPS, 9 times harmonic contentI2 " />
-		<signal equipid="3" sigid="80" reg_addr="0x0058" name="UPS, 11 times harmonic contentI2" />
-		<signal equipid="3" sigid="81" reg_addr="0x0059" name="UPS, 13 times harmonic contentI2" />
-		<signal equipid="3" sigid="82" reg_addr="0x005a" name="UPS, 15 times harmonic contentI2" />
-		<signal equipid="3" sigid="83" reg_addr="0x005b" name="UPS, 17 times harmonic contentI2" />
-		<signal equipid="3" sigid="84" reg_addr="0x005c" name="UPS, 19 times harmonic contentI2" />
-		<signal equipid="3" sigid="85" reg_addr="0x005d" name="UPS, 21 times harmonic contentI2" />
-		<signal equipid="3" sigid="86" reg_addr="0x005e" name="UPS, 23 times harmonic contentI2" />
-		<signal equipid="3" sigid="87" reg_addr="0x005f" name="UPS, 25 times harmonic contentI2" />
-		<signal equipid="3" sigid="88" reg_addr="0x0060" name="UPS, 27 times harmonic contentI2" />
-		<signal equipid="3" sigid="89" reg_addr="0x0061" name="UPS, 29 times harmonic contentI2" />
-		<signal equipid="3" sigid="90" reg_addr="0x0062" name="UPS, 31 times harmonic contentI2" />
-		<signal equipid="3" sigid="91" reg_addr="0x0063" name="UPS, 3 times harmonic contentI3  " />
-		<signal equipid="3" sigid="92" reg_addr="0x0064" name="UPS, 5 times harmonic contentI3  " />
-		<signal equipid="3" sigid="93" reg_addr="0x0065" name="UPS, 7 times harmonic contentI3  " />
-		<signal equipid="3" sigid="94" reg_addr="0x0066" name="UPS, 9 times harmonic contentI3  " />
-		<signal equipid="3" sigid="95" reg_addr="0x0067" name="UPS, 11 times harmonic contentI3 " />
-		<signal equipid="3" sigid="96" reg_addr="0x0068" name="UPS, 13 times harmonic contentI3 " />
-		<signal equipid="3" sigid="97" reg_addr="0x0069" name="UPS, 15 times harmonic contentI3 " />
-		<signal equipid="3" sigid="98" reg_addr="0x006a" name="UPS, 17 times harmonic contentI3 " />
-		<signal equipid="3" sigid="99" reg_addr="0x006b" name="UPS, 19 times harmonic contentI3 " />
-		<signal equipid="3" sigid="100" reg_addr="0x006c" name="UPS, 21 times harmonic contentI3 " />
-		<signal equipid="3" sigid="101" reg_addr="0x006d" name="UPS, 23 times harmonic contentI3 " />
-		<signal equipid="3" sigid="102" reg_addr="0x006e" name="UPS, 25 times harmonic contentI3 " />
-		<signal equipid="3" sigid="103" reg_addr="0x006f" name="UPS, 27 times harmonic contentI3 " />
-		<signal equipid="3" sigid="104" reg_addr="0x0070" name="UPS, 29 times harmonic contentI3 " />
-		<signal equipid="3" sigid="105" reg_addr="0x0071" name="UPS, 31 times harmonic contentI3 " />
-		<signal equipid="3" sigid="106" reg_addr="0x0072" name="UPS, 3 times harmonic contentV1 " />
-		<signal equipid="3" sigid="107" reg_addr="0x0073" name="UPS, 5 times harmonic contentV1 " />
-		<signal equipid="3" sigid="108" reg_addr="0x0074" name="UPS, 7 times harmonic contentV1 " />
-		<signal equipid="3" sigid="109" reg_addr="0x0075" name="UPS, 9 times harmonic contentV1 " />
-		<signal equipid="3" sigid="110" reg_addr="0x0076" name="UPS, 11 times harmonic contentV1" />
-		<signal equipid="3" sigid="111" reg_addr="0x0077" name="UPS, 13 times harmonic contentV1" />
-		<signal equipid="3" sigid="112" reg_addr="0x0078" name="UPS, 15 times harmonic contentV1" />
-		<signal equipid="3" sigid="113" reg_addr="0x0079" name="UPS, 17 times harmonic contentV1" />
-		<signal equipid="3" sigid="114" reg_addr="0x007a" name="UPS, 19 times harmonic contentV1" />
-		<signal equipid="3" sigid="115" reg_addr="0x007b" name="UPS, 21 times harmonic contentV1" />
-		<signal equipid="3" sigid="116" reg_addr="0x007c" name="UPS, 23 times harmonic contentV1" />
-		<signal equipid="3" sigid="117" reg_addr="0x007d" name="UPS, 25 times harmonic contentV1" />
-		<signal equipid="3" sigid="118" reg_addr="0x007e" name="UPS, 27 times harmonic contentV1" />
-		<signal equipid="3" sigid="119" reg_addr="0x007f" name="UPS, 29 times harmonic contentV1" />
-		<signal equipid="3" sigid="120" reg_addr="0x0080" name="UPS, 31 times harmonic contentV1" />
-		<signal equipid="3" sigid="121" reg_addr="0x0081" name="UPS, 3 times harmonic contentV2  " />
-		<signal equipid="3" sigid="122" reg_addr="0x0082" name="UPS, 5 times harmonic contentV2  " />
-		<signal equipid="3" sigid="123" reg_addr="0x0083" name="UPS, 7 times harmonic contentV2  " />
-		<signal equipid="3" sigid="124" reg_addr="0x0084" name="UPS, 9 times harmonic contentV2  " />
-		<signal equipid="3" sigid="125" reg_addr="0x0085" name="UPS, 11 times harmonic contentV2 " />
-		<signal equipid="3" sigid="126" reg_addr="0x0086" name="UPS, 13 times harmonic contentV2 " />
-		<signal equipid="3" sigid="127" reg_addr="0x0087" name="UPS, 15 times harmonic contentV2 " />
-		<signal equipid="3" sigid="128" reg_addr="0x0088" name="UPS, 17 times harmonic contentV2 " />
-		<signal equipid="3" sigid="129" reg_addr="0x0089" name="UPS, 19 times harmonic contentV2 " />
-		<signal equipid="3" sigid="130" reg_addr="0x008a" name="UPS, 21 times harmonic contentV2 " />
-		<signal equipid="3" sigid="131" reg_addr="0x008b" name="UPS, 23 times harmonic contentV2 " />
-		<signal equipid="3" sigid="132" reg_addr="0x008c" name="UPS, 25 times harmonic contentV2 " />
-		<signal equipid="3" sigid="133" reg_addr="0x008d" name="UPS, 27 times harmonic contentV2 " />
-		<signal equipid="3" sigid="134" reg_addr="0x008e" name="UPS, 29 times harmonic contentV2 " />
-		<signal equipid="3" sigid="135" reg_addr="0x008f" name="UPS, 31 times harmonic contentV2 " />
-		<signal equipid="3" sigid="136" reg_addr="0x0090" name="UPS, 3 times harmonic contentV3  " />
-		<signal equipid="3" sigid="137" reg_addr="0x0091" name="UPS, 5 times harmonic contentV3  " />
-		<signal equipid="3" sigid="138" reg_addr="0x0092" name="UPS, 7 times harmonic contentV3  " />
-		<signal equipid="3" sigid="139" reg_addr="0x0093" name="UPS, 9 times harmonic contentV3  " />
-		<signal equipid="3" sigid="140" reg_addr="0x0094" name="UPS, 11 times harmonic contentV3 " />
-		<signal equipid="3" sigid="141" reg_addr="0x0095" name="UPS, 13 times harmonic contentV3 " />
-		<signal equipid="3" sigid="142" reg_addr="0x0096" name="UPS, 15 times harmonic contentV3 " />
-		<signal equipid="3" sigid="143" reg_addr="0x0097" name="UPS, 17 times harmonic contentV3 " />
-		<signal equipid="3" sigid="144" reg_addr="0x0098" name="UPS, 19 times harmonic contentV3 " />
-		<signal equipid="3" sigid="145" reg_addr="0x0099" name="UPS, 21 times harmonic contentV3 " />
-		<signal equipid="3" sigid="146" reg_addr="0x009a" name="UPS, 23 times harmonic contentV3 " />
-		<signal equipid="3" sigid="147" reg_addr="0x009b" name="UPS, 25 times harmonic contentV3 " />
-		<signal equipid="3" sigid="148" reg_addr="0x009c" name="UPS, 27 times harmonic contentV3 " />
-		<signal equipid="3" sigid="149" reg_addr="0x009d" name="UPS, 29 times harmonic contentV3 " />
-		<signal equipid="3" sigid="150" reg_addr="0x009e" name="UPS, 31 times harmonic contentV3 " />
-		<signal equipid="3" sigid="157" reg_addr="0x009f" name="UPS, The main overvoltage
-
-" />
-		<signal equipid="3" sigid="158" reg_addr="0x00a0" name="UPS, The main undervoltage
-
-" />
-		<signal equipid="3" sigid="159" reg_addr="0x00a1" name="UPS, The main losephase
-
-" />
-		<signal equipid="3" sigid="160" reg_addr="0x00a2" name="UPS, The main overcurrent" />
-		<signal equipid="3" sigid="161" reg_addr="0x00a3" name="UPS, Overfrequency" />
-		<signal equipid="3" sigid="162" reg_addr="0x00a4" name="UPS, Phase 1 rated current
-
-" />
-		<signal equipid="3" sigid="163" reg_addr="0x00a5" name="UPS, Phase 2 rated current
-
-" />
-		<signal equipid="3" sigid="164" reg_addr="0x00a6" name="UPS, Phase 3 rated current
-
-" />
-		<signal equipid="3" sigid="165" reg_addr="0x00a7" name="UPS, Phase 1 load rate" />
-		<signal equipid="3" sigid="166" reg_addr="0x00a8" name="UPS, Phase 2 load rate" />
-		<signal equipid="3" sigid="167" reg_addr="0x00a9" name="UPS, Phase 3 load rate" />
-		<signal equipid="3" sigid="168" reg_addr="0x00aa" name="UPS, Three phase average load rate
-
-" />
-		<signal equipid="3" sigid="10001" reg_addr="0x00ab" name="UPS, CommunicationStatus" />
-		<signal equipid="4" sigid="1" reg_addr="0x00ac" name="Primary Meter, TotalActiveEnergy" />
-		<signal equipid="4" sigid="2" reg_addr="0x00ad" name="Primary Meter, ImportActiveEnergy" />
-		<signal equipid="4" sigid="3" reg_addr="0x00ae" name="Primary Meter, ExportActiveEnergy" />
-		<signal equipid="4" sigid="4" reg_addr="0x00af" name="Primary Meter, Voltage" />
-		<signal equipid="4" sigid="5" reg_addr="0x00b0" name="Primary Meter, Current" />
-		<signal equipid="4" sigid="6" reg_addr="0x00b1" name="Primary Meter, Power" />
-		<signal equipid="4" sigid="7" reg_addr="0x00b2" name="Primary Meter, PowerFactor" />
-		<signal equipid="4" sigid="8" reg_addr="0x00b3" name="Primary Meter, Frequency" />
-		<signal equipid="4" sigid="10001" reg_addr="0x00b4" name="Primary Meter, CommunicationStatus" />
-		<signal equipid="5" sigid="1" reg_addr="0x00b5" name="IT Meter1, TotalActiveEnergy" />
-		<signal equipid="5" sigid="2" reg_addr="0x00b6" name="IT Meter1, ImportActiveEnergy" />
-		<signal equipid="5" sigid="3" reg_addr="0x00b7" name="IT Meter1, ExportActiveEnergy" />
-		<signal equipid="5" sigid="4" reg_addr="0x00b8" name="IT Meter1, Voltage" />
-		<signal equipid="5" sigid="5" reg_addr="0x00b9" name="IT Meter1, Current" />
-		<signal equipid="5" sigid="6" reg_addr="0x00ba" name="IT Meter1, Power" />
-		<signal equipid="5" sigid="7" reg_addr="0x00bb" name="IT Meter1, PowerFactor" />
-		<signal equipid="5" sigid="8" reg_addr="0x00bc" name="IT Meter1, Frequency" />
-		<signal equipid="5" sigid="10001" reg_addr="0x00bd" name="IT Meter1, CommunicationStatus" />
-		<signal equipid="6" sigid="1" reg_addr="0x00be" name="Air Conditioner, InletTempSensorFault" />
-		<signal equipid="6" sigid="2" reg_addr="0x00bf" name="Air Conditioner, OutletTempSensorFault" />
-		<signal equipid="6" sigid="3" reg_addr="0x00c0" name="Air Conditioner, InletPressureSensorFault" />
-		<signal equipid="6" sigid="4" reg_addr="0x00c1" name="Air Conditioner, OutletPressureSensorFault" />
-		<signal equipid="6" sigid="5" reg_addr="0x00c2" name="Air Conditioner, ReturnTempSensorFault" />
-		<signal equipid="6" sigid="6" reg_addr="0x00c3" name="Air Conditioner, ReturnHumdSensorFault" />
-		<signal equipid="6" sigid="7" reg_addr="0x00c4" name="Air Conditioner, OverTemp" />
-		<signal equipid="6" sigid="8" reg_addr="0x00c5" name="Air Conditioner, OutTempLow" />
-		<signal equipid="6" sigid="9" reg_addr="0x00c6" name="Air Conditioner, OverHumidity" />
-		<signal equipid="6" sigid="10" reg_addr="0x00c7" name="Air Conditioner, UnderHumidity" />
-		<signal equipid="6" sigid="11" reg_addr="0x00c8" name="Air Conditioner, Overflow" />
-		<signal equipid="6" sigid="12" reg_addr="0x00c9" name="Air Conditioner, Leakage" />
-		<signal equipid="6" sigid="13" reg_addr="0x00ca" name="Air Conditioner, HighPressureProtectSwitch" />
-		<signal equipid="6" sigid="14" reg_addr="0x00cb" name="Air Conditioner, LowPressureProtectSwitch" />
-		<signal equipid="6" sigid="15" reg_addr="0x00cc" name="Air Conditioner, Smoke" />
-		<signal equipid="6" sigid="16" reg_addr="0x00cd" name="Air Conditioner, FanFault" />
-		<signal equipid="6" sigid="17" reg_addr="0x00ce" name="Air Conditioner, HumidifierFault" />
-		<signal equipid="6" sigid="18" reg_addr="0x00cf" name="Air Conditioner, HeaterFault" />
-		<signal equipid="6" sigid="19" reg_addr="0x00d0" name="Air Conditioner, WaterPumpFault" />
-		<signal equipid="6" sigid="20" reg_addr="0x00d1" name="Air Conditioner, LowPressure" />
-		<signal equipid="6" sigid="21" reg_addr="0x00d2" name="Air Conditioner, OverCurrent" />
-		<signal equipid="6" sigid="22" reg_addr="0x00d3" name="Air Conditioner, OutOverPressure" />
-		<signal equipid="6" sigid="23" reg_addr="0x00d4" name="Air Conditioner, CompressorInsideFault" />
-		<signal equipid="6" sigid="24" reg_addr="0x00d5" name="Air Conditioner, CompressorCommunicationFault" />
-		<signal equipid="6" sigid="25" reg_addr="0x00d6" name="Air Conditioner, Fan" />
-		<signal equipid="6" sigid="26" reg_addr="0x00d7" name="Air Conditioner, Compressor" />
-		<signal equipid="6" sigid="27" reg_addr="0x00d8" name="Air Conditioner, CondensatedWaterPump" />
-		<signal equipid="6" sigid="28" reg_addr="0x00d9" name="Air Conditioner, LowTempSolenoidValve" />
-		<signal equipid="6" sigid="29" reg_addr="0x00da" name="Air Conditioner, Fault" />
-		<signal equipid="6" sigid="30" reg_addr="0x00db" name="Air Conditioner, CondensatedWaterPump" />
-		<signal equipid="6" sigid="31" reg_addr="0x00dc" name="Air Conditioner, Leakage" />
-		<signal equipid="6" sigid="32" reg_addr="0x00dd" name="Air Conditioner, CompressorHighPressureProtect" />
-		<signal equipid="6" sigid="33" reg_addr="0x00de" name="Air Conditioner, CompressorLowPressureProtect" />
-		<signal equipid="6" sigid="34" reg_addr="0x00df" name="Air Conditioner, Smoke" />
-		<signal equipid="6" sigid="35" reg_addr="0x00e0" name="Air Conditioner, Fan" />
-		<signal equipid="6" sigid="36" reg_addr="0x00e1" name="Air Conditioner, RemoteControl" />
-		<signal equipid="6" sigid="37" reg_addr="0x00e2" name="Air Conditioner, RunningStatus" />
-		<signal equipid="6" sigid="38" reg_addr="0x00e3" name="Air Conditioner, TempSet" />
-		<signal equipid="6" sigid="39" reg_addr="0x00e4" name="Air Conditioner, HumiditySet" />
-		<signal equipid="6" sigid="40" reg_addr="0x00e5" name="Air Conditioner, PowerOnRun" />
-		<signal equipid="6" sigid="41" reg_addr="0x00e6" name="Air Conditioner, TempThreshold" />
-		<signal equipid="6" sigid="42" reg_addr="0x00e7" name="Air Conditioner, HumidityThreshold" />
-		<signal equipid="6" sigid="43" reg_addr="0x00e8" name="Air Conditioner, DehumdEnable" />
-		<signal equipid="6" sigid="44" reg_addr="0x00e9" name="Air Conditioner, Address" />
-		<signal equipid="6" sigid="45" reg_addr="0x00ea" name="Air Conditioner, CompressorOverCurrent" />
-		<signal equipid="6" sigid="46" reg_addr="0x00eb" name="Air Conditioner, ControlMode" />
-		<signal equipid="6" sigid="47" reg_addr="0x00ec" name="Air Conditioner, InPressureRange" />
-		<signal equipid="6" sigid="48" reg_addr="0x00ed" name="Air Conditioner, MinOutTempSet" />
-		<signal equipid="6" sigid="49" reg_addr="0x00ee" name="Air Conditioner, MaxOutTempSet" />
-		<signal equipid="6" sigid="50" reg_addr="0x00ef" name="Air Conditioner, HighTempSet" />
-		<signal equipid="6" sigid="51" reg_addr="0x00f0" name="Air Conditioner, OutLowTempSet" />
-		<signal equipid="6" sigid="52" reg_addr="0x00f1" name="Air Conditioner, HighHumiditySet" />
-		<signal equipid="6" sigid="53" reg_addr="0x00f2" name="Air Conditioner, LowHumiditySet" />
-		<signal equipid="6" sigid="54" reg_addr="0x00f3" name="Air Conditioner, InAlarmPressureSet" />
-		<signal equipid="6" sigid="55" reg_addr="0x00f4" name="Air Conditioner, OutPressureRangeSet" />
-		<signal equipid="6" sigid="56" reg_addr="0x00f5" name="Air Conditioner, OutAlarmPressureSet" />
-		<signal equipid="6" sigid="57" reg_addr="0x00f6" name="Air Conditioner, FanRate" />
-		<signal equipid="6" sigid="58" reg_addr="0x00f7" name="Air Conditioner, UnitRunningTime" />
-		<signal equipid="6" sigid="59" reg_addr="0x00f8" name="Air Conditioner, CompressorRunningTime" />
-		<signal equipid="6" sigid="60" reg_addr="0x00f9" name="Air Conditioner, OverTemp" />
-		<signal equipid="6" sigid="61" reg_addr="0x00fa" name="Air Conditioner, EEV Opening" />
-		<signal equipid="6" sigid="62" reg_addr="0x00fb" name="Air Conditioner, InletTemp" />
-		<signal equipid="6" sigid="63" reg_addr="0x00fc" name="Air Conditioner, OutletTemp" />
-		<signal equipid="6" sigid="64" reg_addr="0x00fd" name="Air Conditioner, InletPressure" />
-		<signal equipid="6" sigid="65" reg_addr="0x00fe" name="Air Conditioner, OutletPressure" />
-		<signal equipid="6" sigid="66" reg_addr="0x00ff" name="Air Conditioner, IndoorTemp" />
-		<signal equipid="6" sigid="67" reg_addr="0x0100" name="Air Conditioner, IndoorHumidity" />
-		<signal equipid="6" sigid="68" reg_addr="0x0101" name="Air Conditioner, CompressorFrequency" />
-		<signal equipid="6" sigid="73" reg_addr="0x0102" name="Air Conditioner, EvaporationTemp" />
-		<signal equipid="6" sigid="10001" reg_addr="0x0103" name="Air Conditioner, CommunicationStatus" />
+		<signal equipid="1" sigid="1" reg_addr="0x0000" name="监控屏IO, 烟感" />
+		<signal equipid="1" sigid="2" reg_addr="0x0001" name="监控屏IO, 漏水" />
+		<signal equipid="1" sigid="3" reg_addr="0x0002" name="监控屏IO, 机柜门" />
+		<signal equipid="1" sigid="4" reg_addr="0x0003" name="监控屏IO, DI4" />
+		<signal equipid="1" sigid="5" reg_addr="0x0004" name="监控屏IO, DI5" />
+		<signal equipid="1" sigid="10001" reg_addr="0x0005" name="监控屏IO, 通讯状态" />
+		<signal equipid="2" sigid="1" reg_addr="0x0006" name="温湿度, 温度" />
+		<signal equipid="2" sigid="2" reg_addr="0x0007" name="温湿度, 湿度" />
+		<signal equipid="2" sigid="3" reg_addr="0x0008" name="温湿度, 门开启温度" />
+		<signal equipid="2" sigid="4" reg_addr="0x0009" name="温湿度, 门关闭温度" />
+		<signal equipid="2" sigid="10001" reg_addr="0x000a" name="温湿度, 设备通讯状态" />
+		<signal equipid="3" sigid="1" reg_addr="0x000b" name="UPS, 输入电压" />
+		<signal equipid="3" sigid="2" reg_addr="0x000c" name="UPS, 输入频率" />
+		<signal equipid="3" sigid="3" reg_addr="0x000d" name="UPS, 输出电压" />
+		<signal equipid="3" sigid="4" reg_addr="0x000e" name="UPS, 输出频率" />
+		<signal equipid="3" sigid="5" reg_addr="0x000f" name="UPS, 输出电流" />
+		<signal equipid="3" sigid="6" reg_addr="0x0010" name="UPS, 输出负载率" />
+		<signal equipid="3" sigid="7" reg_addr="0x0011" name="UPS, 正母线电压" />
+		<signal equipid="3" sigid="8" reg_addr="0x0012" name="UPS, 负母线电压" />
+		<signal equipid="3" sigid="9" reg_addr="0x0013" name="UPS, 电池电压" />
+		<signal equipid="3" sigid="11" reg_addr="0x0014" name="UPS, 最大检测温度" />
+		<signal equipid="3" sigid="12" reg_addr="0x0015" name="UPS, UPS类型" />
+		<signal equipid="3" sigid="13" reg_addr="0x0016" name="UPS, 市电异常" />
+		<signal equipid="3" sigid="14" reg_addr="0x0017" name="UPS, 电池低压" />
+		<signal equipid="3" sigid="15" reg_addr="0x0018" name="UPS, 旁路/逆变" />
+		<signal equipid="3" sigid="16" reg_addr="0x0019" name="UPS, UPS故障" />
+		<signal equipid="3" sigid="17" reg_addr="0x001a" name="UPS, EPO" />
+		<signal equipid="3" sigid="18" reg_addr="0x001b" name="UPS, 测试状态" />
+		<signal equipid="3" sigid="19" reg_addr="0x001c" name="UPS, 关机有效" />
+		<signal equipid="3" sigid="20" reg_addr="0x001d" name="UPS, 电池静音" />
+		<signal equipid="3" sigid="21" reg_addr="0x001e" name="UPS, 电池测试失败" />
+		<signal equipid="3" sigid="22" reg_addr="0x001f" name="UPS, 电池测试正常" />
+		<signal equipid="3" sigid="30" reg_addr="0x0020" name="UPS, 电池未接" />
+		<signal equipid="3" sigid="36" reg_addr="0x0021" name="UPS, 电池过充" />
+		<signal equipid="3" sigid="37" reg_addr="0x0022" name="UPS, 电池低压" />
+		<signal equipid="3" sigid="38" reg_addr="0x0023" name="UPS, 输出过载" />
+		<signal equipid="3" sigid="39" reg_addr="0x0024" name="UPS, 风扇堵转" />
+		<signal equipid="3" sigid="40" reg_addr="0x0025" name="UPS, EPO激活" />
+		<signal equipid="3" sigid="42" reg_addr="0x0026" name="UPS, 过温" />
+		<signal equipid="3" sigid="43" reg_addr="0x0027" name="UPS, 充电器故障" />
+		<signal equipid="3" sigid="45" reg_addr="0x0028" name="UPS, L1输入保险开路" />
+		<signal equipid="3" sigid="87" reg_addr="0x0029" name="UPS, 维护开关盖打开" />
+		<signal equipid="3" sigid="100" reg_addr="0x002a" name="UPS, UPS模式" />
+		<signal equipid="3" sigid="180" reg_addr="0x002b" name="UPS, 电池电压" />
+		<signal equipid="3" sigid="181" reg_addr="0x002c" name="UPS, 电池节数" />
+		<signal equipid="3" sigid="182" reg_addr="0x002d" name="UPS, 电池组数" />
+		<signal equipid="3" sigid="183" reg_addr="0x002e" name="UPS, 电池容量" />
+		<signal equipid="3" sigid="184" reg_addr="0x002f" name="UPS, 电池剩余时间" />
+		<signal equipid="3" sigid="190" reg_addr="0x0030" name="UPS, 输出功率因素" />
+		<signal equipid="3" sigid="191" reg_addr="0x0031" name="UPS, 输入相数" />
+		<signal equipid="3" sigid="192" reg_addr="0x0032" name="UPS, 输出相数" />
+		<signal equipid="3" sigid="193" reg_addr="0x0033" name="UPS, 输入故障电压" />
+		<signal equipid="3" sigid="194" reg_addr="0x0034" name="UPS, 输出故障电压" />
+		<signal equipid="3" sigid="195" reg_addr="0x0035" name="UPS, 额定电池节数" />
+		<signal equipid="3" sigid="196" reg_addr="0x0036" name="UPS, 额定电池单体电压" />
+		<signal equipid="3" sigid="200" reg_addr="0x0037" name="UPS, 错误码" />
+		<signal equipid="3" sigid="201" reg_addr="0x0038" name="UPS, UPS简化模式" />
+		<signal equipid="3" sigid="10001" reg_addr="0x0039" name="UPS, 设备通讯状态" />
+		<signal equipid="4" sigid="1" reg_addr="0x003a" name="主路电表, 当前组合有功电能" />
+		<signal equipid="4" sigid="2" reg_addr="0x003b" name="主路电表, 当前正向有功电能" />
+		<signal equipid="4" sigid="3" reg_addr="0x003c" name="主路电表, 当前反向有功电能" />
+		<signal equipid="4" sigid="4" reg_addr="0x003d" name="主路电表, 电压" />
+		<signal equipid="4" sigid="5" reg_addr="0x003e" name="主路电表, 电流" />
+		<signal equipid="4" sigid="6" reg_addr="0x003f" name="主路电表, 功率" />
+		<signal equipid="4" sigid="7" reg_addr="0x0040" name="主路电表, 功率因数" />
+		<signal equipid="4" sigid="8" reg_addr="0x0041" name="主路电表, 频率" />
+		<signal equipid="4" sigid="10001" reg_addr="0x0042" name="主路电表, 设备通讯状态" />
+		<signal equipid="5" sigid="1" reg_addr="0x0043" name="IT负载电表, 当前组合有功电能" />
+		<signal equipid="5" sigid="2" reg_addr="0x0044" name="IT负载电表, 当前正向有功电能" />
+		<signal equipid="5" sigid="3" reg_addr="0x0045" name="IT负载电表, 当前反向有功电能" />
+		<signal equipid="5" sigid="4" reg_addr="0x0046" name="IT负载电表, 电压" />
+		<signal equipid="5" sigid="5" reg_addr="0x0047" name="IT负载电表, 电流" />
+		<signal equipid="5" sigid="6" reg_addr="0x0048" name="IT负载电表, 功率" />
+		<signal equipid="5" sigid="7" reg_addr="0x0049" name="IT负载电表, 功率因数" />
+		<signal equipid="5" sigid="8" reg_addr="0x004a" name="IT负载电表, 频率" />
+		<signal equipid="5" sigid="10001" reg_addr="0x004b" name="IT负载电表, 设备通讯状态" />
+		<signal equipid="6" sigid="1" reg_addr="0x004c" name="空调, 吸气温度探头故障" />
+		<signal equipid="6" sigid="2" reg_addr="0x004d" name="空调, 送风温度探头故障" />
+		<signal equipid="6" sigid="3" reg_addr="0x004e" name="空调, 吸气压力探头故障" />
+		<signal equipid="6" sigid="4" reg_addr="0x004f" name="空调, 排气压力探头故障" />
+		<signal equipid="6" sigid="5" reg_addr="0x0050" name="空调, 回风温度探头故障" />
+		<signal equipid="6" sigid="6" reg_addr="0x0051" name="空调, 回风湿度探头故障" />
+		<signal equipid="6" sigid="7" reg_addr="0x0052" name="空调, 温度过高" />
+		<signal equipid="6" sigid="8" reg_addr="0x0053" name="空调, 送风温度过低" />
+		<signal equipid="6" sigid="9" reg_addr="0x0054" name="空调, 湿度过高" />
+		<signal equipid="6" sigid="10" reg_addr="0x0055" name="空调, 湿度过低" />
+		<signal equipid="6" sigid="11" reg_addr="0x0056" name="空调, 水溢报警" />
+		<signal equipid="6" sigid="12" reg_addr="0x0057" name="空调, 漏水报警" />
+		<signal equipid="6" sigid="13" reg_addr="0x0058" name="空调, 高压保护开关" />
+		<signal equipid="6" sigid="14" reg_addr="0x0059" name="空调, 低压保护开关" />
+		<signal equipid="6" sigid="15" reg_addr="0x005a" name="空调, 烟雾报警" />
+		<signal equipid="6" sigid="16" reg_addr="0x005b" name="空调, 送风机故障" />
+		<signal equipid="6" sigid="17" reg_addr="0x005c" name="空调, 加湿器故障" />
+		<signal equipid="6" sigid="18" reg_addr="0x005d" name="空调, 电加热故障" />
+		<signal equipid="6" sigid="19" reg_addr="0x005e" name="空调, 水泵故障" />
+		<signal equipid="6" sigid="20" reg_addr="0x005f" name="空调, 低压压力报警" />
+		<signal equipid="6" sigid="21" reg_addr="0x0060" name="空调, 电流过载" />
+		<signal equipid="6" sigid="22" reg_addr="0x0061" name="空调, 排气压力过高报警" />
+		<signal equipid="6" sigid="23" reg_addr="0x0062" name="空调, 压缩机内部故障" />
+		<signal equipid="6" sigid="24" reg_addr="0x0063" name="空调, 压缩机通讯故障" />
+		<signal equipid="6" sigid="25" reg_addr="0x0064" name="空调, 送风机" />
+		<signal equipid="6" sigid="26" reg_addr="0x0065" name="空调, 压缩机" />
+		<signal equipid="6" sigid="27" reg_addr="0x0066" name="空调, 冷凝水泵" />
+		<signal equipid="6" sigid="28" reg_addr="0x0067" name="空调, 低温电磁阀" />
+		<signal equipid="6" sigid="29" reg_addr="0x0068" name="空调, 故障" />
+		<signal equipid="6" sigid="36" reg_addr="0x0069" name="空调, 远控" />
+		<signal equipid="6" sigid="37" reg_addr="0x006a" name="空调, 开关机" />
+		<signal equipid="6" sigid="38" reg_addr="0x006b" name="空调, 温度设定" />
+		<signal equipid="6" sigid="39" reg_addr="0x006c" name="空调, 湿度设置" />
+		<signal equipid="6" sigid="40" reg_addr="0x006d" name="空调, 来电自启动" />
+		<signal equipid="6" sigid="41" reg_addr="0x006e" name="空调, 温度回差" />
+		<signal equipid="6" sigid="42" reg_addr="0x006f" name="空调, 湿度回差" />
+		<signal equipid="6" sigid="43" reg_addr="0x0070" name="空调, 除湿使能" />
+		<signal equipid="6" sigid="44" reg_addr="0x0071" name="空调, 联网地址设置" />
+		<signal equipid="6" sigid="45" reg_addr="0x0072" name="空调, 压缩机电流过载" />
+		<signal equipid="6" sigid="46" reg_addr="0x0073" name="空调, 控制方式" />
+		<signal equipid="6" sigid="47" reg_addr="0x0074" name="空调, 吸气压力量程" />
+		<signal equipid="6" sigid="48" reg_addr="0x0075" name="空调, 最低送风温度" />
+		<signal equipid="6" sigid="49" reg_addr="0x0076" name="空调, 最高送风温度" />
+		<signal equipid="6" sigid="50" reg_addr="0x0077" name="空调, 高温报警" />
+		<signal equipid="6" sigid="51" reg_addr="0x0078" name="空调, 送风低温报警" />
+		<signal equipid="6" sigid="52" reg_addr="0x0079" name="空调, 高湿报警" />
+		<signal equipid="6" sigid="53" reg_addr="0x007a" name="空调, 低湿报警" />
+		<signal equipid="6" sigid="54" reg_addr="0x007b" name="空调, 吸气压力报警" />
+		<signal equipid="6" sigid="55" reg_addr="0x007c" name="空调, 排气压力量程" />
+		<signal equipid="6" sigid="56" reg_addr="0x007d" name="空调, 排压压力报警" />
+		<signal equipid="6" sigid="57" reg_addr="0x007e" name="空调, 送风机输出" />
+		<signal equipid="6" sigid="58" reg_addr="0x007f" name="空调, 机组运行时间" />
+		<signal equipid="6" sigid="59" reg_addr="0x0080" name="空调, 压机运行时间" />
+		<signal equipid="6" sigid="60" reg_addr="0x0081" name="空调, 过热度" />
+		<signal equipid="6" sigid="61" reg_addr="0x0082" name="空调, EEV开度" />
+		<signal equipid="6" sigid="62" reg_addr="0x0083" name="空调, 吸气温度" />
+		<signal equipid="6" sigid="63" reg_addr="0x0084" name="空调, 送风温度" />
+		<signal equipid="6" sigid="64" reg_addr="0x0085" name="空调, 吸气压力" />
+		<signal equipid="6" sigid="65" reg_addr="0x0086" name="空调, 排气压力" />
+		<signal equipid="6" sigid="66" reg_addr="0x0087" name="空调, 室内温度" />
+		<signal equipid="6" sigid="67" reg_addr="0x0088" name="空调, 室内湿度" />
+		<signal equipid="6" sigid="68" reg_addr="0x0089" name="空调, 压缩机频率" />
+		<signal equipid="6" sigid="73" reg_addr="0x008a" name="空调, 蒸发温度" />
+		<signal equipid="6" sigid="74" reg_addr="0x008b" name="空调, 滤网维护故障" />
+		<signal equipid="6" sigid="85" reg_addr="0x008c" name="空调, 制热开偏差" />
+		<signal equipid="6" sigid="86" reg_addr="0x008d" name="空调, 制热关偏差" />
+		<signal equipid="6" sigid="87" reg_addr="0x008e" name="空调, 加湿使能" />
+		<signal equipid="6" sigid="88" reg_addr="0x008f" name="空调, 加热使能" />
+		<signal equipid="6" sigid="89" reg_addr="0x0090" name="空调, 变频器工作状态" />
+		<signal equipid="6" sigid="100" reg_addr="0x0091" name="空调, 电加热" />
+		<signal equipid="6" sigid="101" reg_addr="0x0092" name="空调, 加湿器" />
+		<signal equipid="6" sigid="102" reg_addr="0x0093" name="空调, 旁通电磁阀" />
+		<signal equipid="6" sigid="103" reg_addr="0x0094" name="空调, 液管温度" />
+		<signal equipid="6" sigid="10001" reg_addr="0x0095" name="空调, 设备通讯状态" />
 	</signals>
 	<controls>
-		<control equipid="1" ctrlid="1" reg_addr="0x0000" name="VTU-IO, DO1" />
-		<control equipid="1" ctrlid="2" reg_addr="0x0001" name="VTU-IO, DO2" />
-		<control equipid="3" ctrlid="1" reg_addr="0x0002" name="UPS, Communication address1~247" />
-		<control equipid="3" ctrlid="6" reg_addr="0x0003" name="UPS, PT1~10000" />
-		<control equipid="3" ctrlid="7" reg_addr="0x0004" name="UPS, CT1~10000" />
-		<control equipid="3" ctrlid="9" reg_addr="0x0005" name="UPS, DO1" />
-		<control equipid="3" ctrlid="10" reg_addr="0x0006" name="UPS, DO2" />
-		<control equipid="4" ctrlid="3" reg_addr="0x0007" name="Primary Meter, 电能清零" />
-		<control equipid="5" ctrlid="3" reg_addr="0x0008" name="IT Meter1, 电能清零" />
-		<control equipid="6" ctrlid="1" reg_addr="0x0009" name="Air Conditioner, 开关机" />
-		<control equipid="6" ctrlid="2" reg_addr="0x000a" name="Air Conditioner, 温度设定" />
-		<control equipid="6" ctrlid="3" reg_addr="0x000b" name="Air Conditioner, 湿度设置" />
-		<control equipid="6" ctrlid="4" reg_addr="0x000c" name="Air Conditioner, 控制方式" />
-		<control equipid="6" ctrlid="5" reg_addr="0x000d" name="Air Conditioner, 来电自启动" />
-		<control equipid="6" ctrlid="6" reg_addr="0x000e" name="Air Conditioner, 故障复位" />
-		<control equipid="6" ctrlid="7" reg_addr="0x000f" name="Air Conditioner, 温度回差" />
-		<control equipid="6" ctrlid="8" reg_addr="0x0010" name="Air Conditioner, 湿度回差" />
+		<control equipid="1" ctrlid="1" reg_addr="0x0000" name="监控屏IO, DO1" />
+		<control equipid="1" ctrlid="2" reg_addr="0x0001" name="监控屏IO, DO2" />
+		<control equipid="4" ctrlid="3" reg_addr="0x0002" name="主路电表, 电能清零" />
+		<control equipid="5" ctrlid="3" reg_addr="0x0003" name="IT负载电表, 电能清零" />
+		<control equipid="6" ctrlid="1" reg_addr="0x0004" name="空调, 开关机" />
+		<control equipid="6" ctrlid="2" reg_addr="0x0005" name="空调, 温度设定" />
+		<control equipid="6" ctrlid="3" reg_addr="0x0006" name="空调, 湿度设置" />
+		<control equipid="6" ctrlid="4" reg_addr="0x0007" name="空调, 控制方式" />
+		<control equipid="6" ctrlid="5" reg_addr="0x0008" name="空调, 来电自启动" />
+		<control equipid="6" ctrlid="6" reg_addr="0x0009" name="空调, 故障复位" />
+		<control equipid="6" ctrlid="7" reg_addr="0x000a" name="空调, 温度回差" />
+		<control equipid="6" ctrlid="8" reg_addr="0x000b" name="空调, 湿度回差" />
+		<control equipid="6" ctrlid="9" reg_addr="0x000c" name="空调, 出厂复位" />
+		<control equipid="6" ctrlid="10" reg_addr="0x000d" name="空调, 加湿使能" />
+		<control equipid="6" ctrlid="11" reg_addr="0x000e" name="空调, 加热使能" />
 	</controls>
 </conf>

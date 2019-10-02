@@ -1,5 +1,4 @@
 from django.db import models
-from createdata.models import XmlData
 from divices.models import divices
 
 

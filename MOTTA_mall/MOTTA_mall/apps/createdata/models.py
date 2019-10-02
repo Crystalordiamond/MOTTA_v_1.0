@@ -2,27 +2,6 @@ from django.db import models
 from divices.models import divices
 
 
-class XmlData(models.Model):
-    equipid = models.CharField(max_length=20, verbose_name="设备ID")
-    sigid = models.CharField(max_length=20, verbose_name="信号ID")
-    reg_addr = models.CharField(max_length=20, verbose_name="寄存器地址")
-    name = models.CharField(max_length=50, verbose_name="信号名称")
-    float_data = models.FloatField(verbose_name="获取数据")
-    # data_time = models.DateTimeField(verbose_name="时间戳")  # Django 项目中的自动获取时间 是需要用户来操作保存的。项目外的py文件保存数据库需要手动添加，不然回报错
-    data_time = models.CharField(max_length=50, verbose_name="时间戳")
-    divice_ip = models.CharField(max_length=50, verbose_name="IP地址")
-    # 先注销关联性
-    # divice_id = models.ForeignKey(divices, on_delete=models.CASCADE, verbose_name='站点ID')
-    is_delete = models.BooleanField(default=False, verbose_name='逻辑删除')
-
-    class Meta:
-        db_table = "tb_xmldata"
-        verbose_name = "监控设备详细信息"
-        verbose_name_plural = verbose_name
-
-    def __str__(self):
-        return self.equipid
-
 
 # 用于展示历史数据
 class EquipmentData(models.Model):

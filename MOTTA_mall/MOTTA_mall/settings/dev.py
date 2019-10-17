@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'wsdata.apps.WsdataConfig',
     'warning.apps.WarningConfig',
     'xmldata.apps.XmldataConfig',
+    'rbac.apps.RbacConfig',
 
     'rest_framework',
     'corsheaders',  # 跨域 白名单
@@ -254,19 +255,8 @@ AUTH_USER_MODEL = 'users.User'
 
 # 3.CORS 跨域请求  添加白名单
 CORS_ORIGIN_WHITELIST = (
-    'http://192.168.1.47:8080',  # windows 前端访问
+    'http://192.168.1.17:8080',  # windows 前端访问
     'http://localhost',
-    # 'http://www.motta.com:8080',
-    # 'http://api.motta.site:8000',
-    # 'http://127.0.0.1:39303',  # 打包后 live-server每次启动端口不一样 端口如何固定
-    # 'http://192.168.44.1:8080',
-    # 'http://192.168.208.1:8020',
-    # 'http://192.168.1.47:8080',
-    # # 'http://192.168.208.150:8000/',
-    # 'http://192.168.1.47:8080',
-    # 'http://192.168.1.47:8081',
-    # 'http://www.motta.site',
-    # 'http://192.168.211.132'
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
 

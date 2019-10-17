@@ -26,4 +26,6 @@ urlpatterns = [
     url('^', include('warning.urls')),
     url('^', include('divices.urls')),
 
+    url('^', include('rbac.urls')),
+
 ]

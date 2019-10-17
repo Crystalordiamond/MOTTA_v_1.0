@@ -1,7 +1,7 @@
 from django.db import models
 
 
-# 1、map数据表
+# map数据表
 class XmlData(models.Model):
     equipid = models.CharField(max_length=20, verbose_name="设备ID")
     sigid = models.CharField(max_length=20, verbose_name="信号ID")
@@ -25,46 +25,7 @@ class XmlData(models.Model):
         return self.name
 
 
-# 2、 设备中间表
-class equipments(models.Model):
-    EquipId = models.CharField(max_length=50)
-    EquipTemplateId = models.CharField(max_length=50)
-    EquipmentName = models.CharField(max_length=50)
-    EquipAddress = models.CharField(max_length=50)
-    LibName = models.CharField(max_length=50)
-    Equipment_ip = models.CharField(max_length=50)
-    Equipment_time = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'tb_equipments'
-        verbose_name = "设备中间表"
-        verbose_name_plural = verbose_name
-
-    def __str__(self):
-        return self.LibName
-
-
-# 3、状态信息表
-class equiptemplate(models.Model):
-    SignalId = models.CharField(max_length=50)
-    SignalName = models.CharField(max_length=150)
-    EquipTemplateId = models.CharField(max_length=50)
-    EquipTemplateName = models.CharField(max_length=50)
-    StateValue = models.CharField(max_length=50, null=True, blank=True)
-    Meaning = models.CharField(max_length=50, null=True, blank=True)
-    equiptemplate_ip = models.CharField(max_length=50)
-    equiptemplate_time = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'tb_equiptemplate'
-        verbose_name = "状态信息表"
-        verbose_name_plural = verbose_name
-
-    def __str__(self):
-        return self.EquipTemplateName
-
-
-# 端口表
+# 1、端口表<Ports>
 class port(models.Model):
     PortId = models.CharField(max_length=50)
     PortNo = models.CharField(max_length=50)
@@ -82,3 +43,122 @@ class port(models.Model):
 
     def __str__(self):
         return self.PortId
+
+
+# 2、 设备中间表<Equipments>
+class equipments(models.Model):
+    EquipId = models.CharField(max_length=50)
+    EquipTemplateId = models.CharField(max_length=50)
+    EquipmentName = models.CharField(max_length=50)
+    PortId = models.CharField(null=True,max_length=25)
+    EquipAddress = models.CharField(max_length=25)
+    LibName = models.CharField(max_length=50)
+    Equipment_ip = models.CharField(max_length=50)
+    Equipment_time = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'tb_equipments'
+        verbose_name = "设备中间表"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.LibName
+
+
+# 3、 <LogActions>
+class logactions(models.Model):
+    LogActionId = models.CharField(max_length=50)
+    ActionName = models.CharField(max_length=50)
+    TriggerType = models.CharField(max_length=50)
+    ActionId = models.CharField(max_length=25)
+    EquipmentId = models.CharField(max_length=25)
+    ActionValue = models.CharField(max_length=50)
+    logactions_ip = models.CharField(max_length=50)
+    logactions_time = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'tb_logactions'
+        verbose_name = "设备第三张表<LogActions>"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.ActionName
+
+
+#  1、<Signals>状态信息表
+class Signals(models.Model):
+    EquipTemplateId = models.CharField(max_length=50)
+    EquipTemplateName = models.CharField(max_length=50)
+    EquipTemplateType = models.CharField(max_length=50)
+    LibName = models.CharField(max_length=50)
+
+    SignalId = models.CharField(max_length=50)
+    SignalName = models.CharField(max_length=150)
+    SignalBaseId = models.CharField(max_length=150)
+    SignalType = models.CharField(max_length=150)
+
+    StateValue = models.CharField(max_length=50, null=True, blank=True)
+    Meaning = models.CharField(max_length=50, null=True, blank=True)
+
+    Signals_ip = models.CharField(max_length=50)
+    Signals_time = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'tb_Signals'
+        verbose_name = "状态信息表"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.EquipTemplateName
+
+
+#  2、<Events>状态信息表
+class Events(models.Model):
+    EquipTemplateId = models.CharField(max_length=50)
+    EquipTemplateName = models.CharField(max_length=50)
+    EquipTemplateType = models.CharField(max_length=50)
+    LibName = models.CharField(max_length=50)
+
+    EventId = models.CharField(max_length=50)
+    EventName = models.CharField(max_length=150)
+    ConditionId = models.CharField(max_length=50)
+    Meaning = models.CharField(max_length=50)
+    EventSeverity = models.CharField(max_length=50)
+
+    Events_ip = models.CharField(max_length=50)
+    Events_time = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'tb_Events'
+        verbose_name = "告警信息表"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.EventName
+
+
+#  3、<Commands>控制信息表
+class Commands(models.Model):
+    EquipTemplateId = models.CharField(max_length=50)
+    EquipTemplateName = models.CharField(max_length=50)
+    EquipTemplateType = models.CharField(max_length=50)
+    LibName = models.CharField(max_length=50)
+
+    CommandId = models.CharField(max_length=50)
+    CommandName = models.CharField(max_length=150)
+    CommandToken = models.CharField(max_length=50)
+    ParameterId = models.CharField(max_length=50)
+    ParameterName = models.CharField(max_length=50)
+    ParameterValue = models.CharField(max_length=50)
+    Meaning = models.CharField(max_length=50)
+
+    Commands_ip = models.CharField(max_length=50)
+    Commands_time = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'tb_Commands'
+        verbose_name = "控制信息表"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.ParameterName

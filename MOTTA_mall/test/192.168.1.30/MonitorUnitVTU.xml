@@ -1,27 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<CfgMonitorUnit MonitorUnitId="1" MonitorUnitName="VTU" MonitorUnitType="401" IPAddress="attom_ATM-06T_cn" EventLocked="false" ControlLocked="false" Description="" LastUpdateTime="20190321183618" EXTENDFIELD1="">
+<CfgMonitorUnit MonitorUnitId="1" MonitorUnitName="VTU" MonitorUnitType="401" IPAddress="attom_ATM06F_ATM10S_two phase_en" EventLocked="false" ControlLocked="false" Description="" LastUpdateTime="20190507210802" EXTENDFIELD1="">
   <Ports>
     <CfgPort PortId="1" PortNo="1" PortType="2" PortSetting="9600,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="2" PortNo="2" PortType="0" PortSetting="2400,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="3" PortNo="3" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="4" PortNo="4" PortType="0" PortSetting="2400,e,8,1" PortLibName="" Description="" />
     <CfgPort PortId="5" PortNo="5" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
-    <CfgPort PortId="6" PortNo="6" PortType="0" PortSetting="2400,n,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="6" PortNo="6" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="7" PortNo="7" PortType="0" PortSetting="19200,n,8,1" PortLibName="" Description="SMS" />
   </Ports>
   <Equipments>
-    <CfgEquipment EquipId="1" EquipTemplateId="177" EquipmentName="监控屏IO" PortId="1" EquipAddress="1" ExtPortSetting="" LibName="VTUIO.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="2" EquipTemplateId="169" EquipmentName="温湿度" PortId="3" EquipAddress="1" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="3" EquipTemplateId="176" EquipmentName="UPS" PortId="2" EquipAddress="1" ExtPortSetting="" LibName="UPS_6-10K.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="4" EquipTemplateId="174" EquipmentName="主路电表" PortId="4" EquipAddress="1" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="5" EquipTemplateId="174" EquipmentName="IT负载电表" PortId="4" EquipAddress="2" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="6" EquipTemplateId="179" EquipmentName="空调" PortId="5" EquipAddress="1" ExtPortSetting="" LibName="SL1600F_FC.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="1" EquipTemplateId="177" EquipmentName="VTU-IO" PortId="1" EquipAddress="1" ExtPortSetting="" LibName="VTUIO.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="2" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity" PortId="3" EquipAddress="1" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="3" EquipTemplateId="180" EquipmentName="UPS" PortId="6" EquipAddress="1" ExtPortSetting="" LibName="UPS_GXT4.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="4" EquipTemplateId="174" EquipmentName="Primary Meter1" PortId="4" EquipAddress="1" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="5" EquipTemplateId="174" EquipmentName="IT Meter1" PortId="4" EquipAddress="2" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="6" EquipTemplateId="178" EquipmentName="Air Conditioner" PortId="5" EquipAddress="1" ExtPortSetting="" LibName="SL1600F_FC.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="7" EquipTemplateId="174" EquipmentName="Primary Meter2" PortId="4" EquipAddress="3" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="8" EquipTemplateId="174" EquipmentName="IT Meter2" PortId="4" EquipAddress="4" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
   </Equipments>
   <LogActions>
-    <EventLogAction LogActionId="1" ActionName="门开启" TriggerType="1" StartExpression="[2,1]&gt;[2,3]" SuppressExpression="">
+    <EventLogAction LogActionId="1" ActionName="DoorOpen" TriggerType="1" StartExpression="[2,1]&gt;[2,3]" SuppressExpression="">
       <Action ActionId="1" ActionName="DO1" EquipmentId="1" ControlId="1" Token="11" ActionValue="1" />
     </EventLogAction>
-    <EventLogAction LogActionId="2" ActionName="门关闭" TriggerType="1" StartExpression="[2,1]&lt;[2,4]" SuppressExpression="">
+    <EventLogAction LogActionId="2" ActionName="DoorClose" TriggerType="1" StartExpression="[2,1]&lt;[2,4]" SuppressExpression="">
       <Action ActionId="2" ActionName="DO1" EquipmentId="1" ControlId="1" Token="11" ActionValue="0" />
     </EventLogAction>
   </LogActions>

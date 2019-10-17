@@ -1,262 +1,377 @@
-from ftplib import FTP
-from xml.dom import minidom
-from pyModbusTCP.client import ModbusClient
-import struct
-import os, time
+# -*- coding: utf-8 -*-
+from xmldata.models import XmlData
+from createdata.models import EquipmentData
+from warning.models import Warning
+from divices.models import divices
+from django.shortcuts import render
+from dwebsocket.decorators import accept_websocket, require_websocket
+from django.http import HttpResponse
+import json
+import time
+from django.db.models import Q, F
 
 
-class Ftp_Data(object):
-    """
-    用来获取xml文件和替换需要更改的文件
-    """
 
-    def __init__(self):
-        self.host = "192.168.1.30"
-        self.port = 2121
-        self.username = "ftp"
-        self.password = "ftp"
-        self.localpath = "./"
-        self.modbus_xml = "/data/mgrid/sampler/modbus_map.xml"
-        self.XmlCfg_ftp_path = "/data/mgrid/sampler/XmlCfg"
-        self.vtu_pagelist_ftp_path = "/sdcard/vtu_pagelist/"
-
-        self.__old_str = "&"
-        self.__new_str = "-"
-
-        # self.__client = ModbusClient(host=self.host, port=502)
-        self.__client = ModbusClient(host=self.host, port=502, debug=True, auto_open=True)
-        self.modbus_map_list = []  # 存储modbus_map_list表数据[{},{},{}...]
-        self.MonitorUnitVTU = []  # 存储MonitorUnitVTU表数据[{},{},{}...]
-
-        self.name_list = []
-        self.__address = 0
-        self.__register = 50
-        self.i = 0
-
-    def ftp_connect(self):
-        """ 连接ftp """
-        # 实例化FTP对象
-        self.ftp = FTP()
-        # ftp.set_debuglevel(2)         #打开调试级别2，显示详细信息
-        try:
-            self.ftp.connect(self.host, self.port)  # 连接
+# 告警实时数据
+@accept_websocket
+def echo(request):
+    if not request.is_websocket():  # 如果不是socket链接
+        try:  # 如果是普通的http方法
+            message = request.GET['message']
+            print("普通的http方法")
+            return HttpResponse(message)
         except:
-            raise IOError("ftp connect failed!")
-        try:
-            self.ftp.login(self.username, self.password)  # 登录，如果匿名登录则用空串代替即可
-        except:
-            raise IOError("ftp login failed!")
-        else:
-            print("FTP connection successful......")
+            print("普通的http方法报错")
+            return HttpResponse("普通的http方法报错")
+    else:
+        for message in request.websocket:
+            # print(request.websocket)
+            # print(message)
+            # websockt传递的是二进制数据
+            print("前端传过来的数据：%s" % message.decode())
+            # 通过DataConfigTool收集 这些标准信息
+            while True:
+                list_data = []  # 严重告警列表
+                list_data1 = []  # 一般告警列表
+                # 获取模块的字典对象[{"监控屏IO":[{},{},{},...]},...,...]
+                for item in list_war:
+                    # 获取模块名称"equipment=监控屏IO"，及模块里面的设备列表value = [{"监控屏IO, 烟感": ["烟雾告警", "有告警", "严重告警", "-", 1]},{...},{...},...]
+                    for equipment, value in item.items():
+                        # 获得字典对象
+                        # print(equipment)
+                        for value_list in value:
+                            # 获得告警设备和告警信息
+                            for eq_name, alarm in value_list.items():
+                                # print(alarm)
+                                # ---------------------《 严重告警存入数据库 》----------------------
+                                if alarm[2] == "严重告警" and eq_name == "温湿度, 温度":
+                                    data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
+                                    # 获取最新的ID 将其保存到全局变量“max1_id”，然后来做第二次对比判断
+                                    # 防止将重复的数据存入告警表中，拿id做比对
+                                    if alarm[5]["max_id"] != data.id:
+                                        alarm[5]["max_id"] = data.id
+                                        # 将告警存入数据库
+                                        Warning.objects.create(
+                                            warn_level=alarm[2],
+                                            warn_text=alarm[0],
+                                            warn_time=data.data_time,
+                                            warn_name=equipment,
+                                            warn_data=data.float_data,
+                                            unit=alarm[3],
+                                            is_delete=False,
+                                            warn_ip=data.divice_ip,
+                                            # 查询到对应站点（通过ip）
+                                            equip_id=divices.objects.get(divice_ip=data.divice_ip)
+                                        )
+                                    if alarm[5]["max_id"] == data.id:
+                                        pass
+                                    if data.float_data >= alarm[4]:
+                                    # if data.float_data >= 20:
+                                        # 告警站点
+                                        divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
+                                            values("divice_name")[0]["divice_name"]
+                                        # 告警设备
+                                        alarm_model = equipment
+                                        # 告警名称
+                                        alarm_divice = alarm[0]
+                                        # 告警内容
+                                        # print(type(data.float_data))
+                                        # print(type(alarm[3]))
+                                        alarm_data = str(data.float_data) + alarm[3]
+                                        # 告警时间
+                                        alarm_time = data.data_time
+                                        # 告警等级
+                                        alarm_level = alarm[2]
+                                        # 传给前端的数据
+                                        data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
+                                                     "alarm_divice": alarm_divice, "alarm_data": alarm_data,
+                                                     "alarm_time": alarm_time, "alarm_level": alarm_level}
+                                        # 将每一条数据添加到列表
+                                        list_data.append(data_dict)
+                                # 判断
+                                if alarm[2] == "严重告警" and eq_name != "温湿度, 温度":
+                                    data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
+                                    # 获取最新的ID 将其保存到全局变量“max1_id”，然后来做第二次对比判断
+                                    if alarm[5]["max_id"] != data.id:
+                                        alarm[5]["max_id"] = data.id
+                                        Warning.objects.create(
+                                            warn_level=alarm[2],
+                                            warn_text=alarm[0],
+                                            warn_time=data.data_time,
+                                            warn_name=equipment,
+                                            warn_data=data.float_data,
+                                            unit=alarm[3],
+                                            is_delete=False,
+                                            warn_ip=data.divice_ip,
+                                            # 查询到对应站点（通过ip）
+                                            equip_id=divices.objects.get(divice_ip=data.divice_ip)
+                                        )
+                                    if alarm[5]["max_id"] == data.id:
+                                        pass
+                                    if data.float_data != alarm[4]:
+                                    # if data.float_data == alarm[4]:
+                                        # 告警站点
+                                        divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
+                                            values("divice_name")[0]["divice_name"]
+                                        # 告警设备
+                                        alarm_model = equipment
+                                        # 告警名称
+                                        alarm_divice = alarm[0]
+                                        # 告警内容
+                                        alarm_data = alarm[1]
+                                        # 告警时间
+                                        alarm_time = data.data_time
+                                        # 告警等级
+                                        alarm_level = alarm[2]
+                                        # 传给前端的数据
+                                        data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
+                                                     "alarm_divice": alarm_divice, "alarm_data": alarm_data,
+                                                     "alarm_time": alarm_time, "alarm_level": alarm_level}
+                                        # 将每一条数据添加到列表
+                                        list_data.append(data_dict)
 
-    def download_file(self):
-        # 连接ftp()
-        self.ftp_connect()
-        """
-        下载modbus_map.xml文件
-        """
-        # exists()判断当前路径 是否有self.host文件夹
-        if os.path.exists(os.path.join(self.localpath, self.host)):
-            pass
-        else:
-            # 创建当前文件夹
-            os.mkdir(os.path.join(self.localpath, self.host))
-        # 下载文件
-        bufsize = 1024  # 设置缓冲块大小
-        # 以写模式在本地打开文件
-        fp = open(os.path.join(self.localpath, self.host, "modbus_map.xml"), 'wb')
-        # 接收服务器上文件并写入本地打开的文件
-        self.ftp.retrbinary('RETR ' + self.modbus_xml, fp.write, bufsize)
-        # ftp.set_debuglevel(0)  # 关闭调试
-        fp.close()  # 关闭文件
-        print("-------------------------Modbus_map.xml download completes-------------------------")
-        # 关闭连接
+                                # ---------------------《一般告警存入数据库 》----------------------
+                                if alarm[2] != "严重告警":
+                                    if eq_name == "温湿度, 温度" and alarm[0] == "低温告警":
+                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
+                                        # 获取最新的ID 将其保存到全局变量“max1_id”，然后来做第二次对比判断
+                                        if alarm[5]["max_id"] != data.id:
+                                            alarm[5]["max_id"] = data.id
+                                            Warning.objects.create(
+                                                warn_level=alarm[2],
+                                                warn_text=alarm[0],
+                                                warn_time=data.data_time,
+                                                warn_name=equipment,
+                                                warn_data=data.float_data,
+                                                unit=alarm[3],
+                                                is_delete=False,
+                                                warn_ip=data.divice_ip,
+                                                # 查询到对应站点（通过ip）
+                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
+                                            )
+                                        if alarm[5]["max_id"] == data.id:
+                                            pass
+                                        if data.float_data <= alarm[4]:
+                                        # if data.float_data <= 30:
+                                            # 告警站点
+                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
+                                                values("divice_name")[0]["divice_name"]
+                                            # 告警设备
+                                            alarm_model = equipment
+                                            # 告警名称
+                                            alarm_divice = alarm[0]
+                                            # 告警内容
+                                            alarm_data = str(data.float_data) + alarm[3]
+                                            # 告警时间
+                                            alarm_time = data.data_time
+                                            # 告警等级
+                                            alarm_level = alarm[2]
+                                            # 传给前端的数据
+                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
+                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
+                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
+                                            # 将每一条数据添加到列表
+                                            list_data1.append(data_dict)
+                                    if eq_name == "温湿度, 湿度" and alarm[0] == "高湿告警":
+                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
+                                        if alarm[5]["max_id"] != data.id:
+                                            alarm[5]["max_id"] = data.id
+                                            Warning.objects.create(
+                                                warn_level=alarm[2],
+                                                warn_text=alarm[0],
+                                                warn_time=data.data_time,
+                                                warn_name=equipment,
+                                                warn_data=data.float_data,
+                                                unit=alarm[3],
+                                                is_delete=False,
+                                                warn_ip=data.divice_ip,
+                                                # 查询到对应站点（通过ip）
+                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
+                                            )
+                                        if alarm[5].get("max_id") == data.id:
+                                            pass
+                                        if data.float_data >= alarm[4]:
+                                        # if data.float_data >= 30:
+                                            # 告警站点
+                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
+                                                values("divice_name")[0]["divice_name"]
+                                            # 告警设备
+                                            alarm_model = equipment
+                                            # 告警名称
+                                            alarm_divice = alarm[0]
+                                            # 告警内容
+                                            alarm_data = str(data.float_data) + alarm[3]
+                                            # 告警时间
+                                            alarm_time = data.data_time
+                                            # 告警等级
+                                            alarm_level = alarm[2]
+                                            # 传给前端的数据
+                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
+                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
+                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
+                                            # 将每一条数据添加到列表
+                                            list_data1.append(data_dict)
+                                    if eq_name == "温湿度, 湿度" and alarm[0] == "低湿告警":
+                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
+                                        if alarm[5]["max_id"] != data.id:
+                                            alarm[5]["max_id"] = data.id
+                                            Warning.objects.create(
+                                                warn_level=alarm[2],
+                                                warn_text=alarm[0],
+                                                warn_time=data.data_time,
+                                                warn_name=equipment,
+                                                warn_data=data.float_data,
+                                                unit=alarm[3],
+                                                is_delete=False,
+                                                warn_ip=data.divice_ip,
+                                                # 查询到对应站点（通过ip）
+                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
+                                            )
+                                        if alarm[5].get("max_id") == data.id:
+                                            pass
+                                        if data.float_data <= alarm[4]:
+                                        # if data.float_data <= 30:
+                                            # 告警站点
+                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
+                                                values("divice_name")[0]["divice_name"]
+                                            # 告警设备
+                                            alarm_model = equipment
+                                            # 告警名称
+                                            alarm_divice = alarm[0]
+                                            # 告警内容
+                                            alarm_data = str(data.float_data) + alarm[3]
+                                            # 告警时间
+                                            alarm_time = data.data_time
+                                            # 告警等级
+                                            alarm_level = alarm[2]
+                                            # 传给前端的数据
+                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
+                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
+                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
+                                            # 将每一条数据添加到列表
+                                            list_data1.append(data_dict)
+                                    if eq_name != "温湿度, 温度":
+                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
+                                        if alarm[5]["max_id"] != data.id:
+                                            alarm[5]["max_id"] = data.id
+                                            Warning.objects.create(
+                                                warn_level=alarm[2],
+                                                warn_text=alarm[0],
+                                                warn_time=data.data_time,
+                                                warn_name=equipment,
+                                                warn_data=data.float_data,
+                                                unit=alarm[3],
+                                                is_delete=False,
+                                                warn_ip=data.divice_ip,
+                                                # 查询到对应站点（通过ip）
+                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
+                                            )
+                                        if alarm[5].get("max_id") == data.id:
+                                            pass
+                                        if data.float_data != alarm[4]:
+                                        # if data.float_data == alarm[4]:
+                                            # 告警站点
+                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
+                                                values("divice_name")[0]["divice_name"]
+                                            # 告警设备
+                                            alarm_model = equipment
+                                            # 告警名称
+                                            alarm_divice = alarm[0]
+                                            # 告警内容
+                                            alarm_data = alarm[1]
+                                            # 告警时间
+                                            alarm_time = data.data_time
+                                            # 告警等级
+                                            alarm_level = alarm[2]
+                                            # 传给前端的数据
+                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
+                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
+                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
+                                            # 将每一条数据添加到列表
+                                            list_data1.append(data_dict)
+                # ----------------------------------<存入历史数据>--------------------------------------
+                store_historyData()
+                # ----------------------------------<详情页面 实时更新数据 环境实时数据数据>--------------------------------------
+                data_dict = {
+                    # 环境
+                    "AC_SAT": XmlData.objects.filter(name="空调, 送风温度").order_by("-id").first().float_data,
+                    "AC_RAT": XmlData.objects.filter(name="空调, 吸气温度").order_by("-id").first().float_data,
+                    "AC_RAH": XmlData.objects.filter(name="空调, 室内湿度").order_by("-id").first().float_data,
+                    "AC_ST": "开" if int(
+                        XmlData.objects.filter(name="空调, 设备通讯状态").order_by("-id").first().float_data) == 1 else "关",
+                    # 电力
+                    "PW_MV": XmlData.objects.filter(name="UPS, 输入电压").order_by("-id").first().float_data,
+                    "PW_OV": XmlData.objects.filter(name="UPS, 输出电压").order_by("-id").first().float_data,
+                    "PW_LR": XmlData.objects.filter(name="UPS, 输出负载率").order_by("-id").first().float_data,
+                    "PW_BT": XmlData.objects.filter(name="UPS, 电池剩余时间").order_by("-id").first().float_data,
+                    "PW_ROW": XmlData.objects.filter(name="主路电表, 功率").order_by("-id").first().float_data,
+                    "PW_EC": XmlData.objects.filter(name="UPS, 输出功率因素").order_by("-id").first().float_data,
+                    # 安防
+                    "DR_ST": "开" if int(
+                        XmlData.objects.filter(name="监控屏IO, 机柜门").order_by("-id").first().float_data) == 1 else "关",
+                    # "DR_VD": XmlData.objects.filter(name="UPS, 输出功率因素").order_by("-id").first().float_data,
+                    # 其他
+                    "DR_MW": "无" if int(
+                        XmlData.objects.filter(name="监控屏IO, 漏水").order_by("-id").first().float_data) == 1 else "有",
+                    "DR_SD": "无" if int(
+                        XmlData.objects.filter(name="监控屏IO, 烟感").order_by("-id").first().float_data) == 1 else "有",
 
-    def download_files(self):
-        # 连接ftp()
-        self.ftp_connect()
-        # exists()判断当前路径 是否有self.host文件夹
-        if os.path.exists(os.path.join(self.localpath, self.host)):
-            pass
-        else:
-            # 创建当前文件夹
-            os.mkdir(os.path.join(self.localpath, self.host))
-        """批量下载XmlCfg中xml文件"""
-        file_list = self.ftp.nlst(self.XmlCfg_ftp_path)  # 获取下载的文件目录
-        # print(file_list)
-        files_list = []
-        # 过滤非.xml文件结尾的文件
-        for i in file_list:
-            # 匹配以.xml结尾的文件名称
-            if i.endswith('.xml') == True:
-                files_list.append(i)
-        bufsize = 1024 * 1024
-        print("-------------------------Start the download-------------------------")
-        # print(files_list)
-        for i in files_list:
-            # 以写模式在本地打开文件
-            fp = open(os.path.join(self.localpath, self.host, i), 'wb')
-            # 接收服务器上文件并写入本地打开的文件
-            self.ftp.retrbinary('RETR ' + self.XmlCfg_ftp_path + '/' + i, fp.write, bufsize)
-            # ftp.set_debuglevel(0)  # 关闭调试
-            fp.close()  # 关闭文件
-            print("文件%s下载完成" % i)
-        print("-------------------------File download completes-------------------------")
-
-    def replace_str(self):
-        """
-        1、获取远程xml文档，到本地
-        2、打开读取本地xml文件，修改字符串，保存到变量
-        3、打开本地同名的xml文件，然后讲变量保存的值 写入到文档
-        """
-        self.download_file()
-        # 将xml文件中的&替换成-    XML文件有五个不允许出现的特殊字符
-        file_data = ""
-        with open(os.path.join(self.localpath, self.host, "modbus_map.xml"), "r", encoding="utf-8") as f:
-            # 遍历的每一行
-            for line in f:
-                if self.__old_str in line:
-                    # Python replace() 方法把字符串中的 old（旧字符串） 替换成 new(新字符串)，如果指定第三个参数max，则替换不超过 max 次。
-                    line = line.replace(self.__old_str, self.__new_str)
-                file_data += line
-        # print(file_data)
-        with open(os.path.join(self.localpath, self.host, "modbus_map.xml"), "w", encoding="utf-8") as f:
-            f.write(file_data)
-        print("modbus_map.xml中特殊字符替换完成!")
-
-    def get_document(self):
-        """
-        获取modbus_map.xml数据
-        :return: map数据
-        """
-        # 替换特殊字符
-        self.replace_str()
-        with open(os.path.join(self.localpath, self.host, "modbus_map.xml"), 'r', encoding='utf-8') as f:
-            # parse()获取DOM对象
-            dom = minidom.parse(f)
-            # print(dom)
-            # 获取根节点
-            root = dom.documentElement
-            # # 打印根节点名称 <conf>
-            # print("打印根节点名称:%s" % root.nodeName)
-            # # 打印根节点类型
-            # print("打印根节点类型:%s" % root.nodeType)
-            # # 打印根节点属性
-            # print("打印根节点属性:%s" % root.nodeValue)
-
-            # 获取root根节点下所有子节点
-            # child_list = root.childNodes
-            signal_list = root.getElementsByTagName('signal')  # 是一个文档对象 todo 最好是能自动获取到这个标签名称
-            for signal in signal_list:
-                dict_attr = {}  # 存储 数据 键值对的
-                # 获取signal中所有属性名称得到一个列表  attributes.keys()
-                for key in signal.attributes.keys():
-                    key_add = signal.attributes[key]  # 这样得到的是一个地址
-                    dict_attr[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
-                self.modbus_map_list.append(dict_attr)  # 添加到列表
-                # print(dict_attr)
-            print("modbus_map.xml表的数据有：%s条" % len(self.modbus_map_list))
-            return self.modbus_map_list
-
-    def get_documents(self):
-        """
-        解析多个文档数据
-        :return:
-        """
-        # 下载多个xml文件
-        # self.download_files()
-        # 获取中间xml文件数据(MonitorUnitVTU.xml)
-        with open(os.path.join(self.localpath, self.host, "MonitorUnitVTU.xml"), 'r', encoding='utf-8') as f:
-            # parse()获取DOM对象
-            dom = minidom.parse(f)
-            # print(dom)
-            # 获取根节点
-            root = dom.documentElement
-            # 获取根节点下所有子节点的名称  根目录下节点对象：root.childNodes  遍历得到节点名称：i.nodeName
-            for i in root.childNodes:
-                # print(i.nodeName)
-                tag_list = root.getElementsByTagName(i.nodeName)
-                if tag_list:
-                    for tag in tag_list:
-                        print(tag.nodeName)
-
-            # print(root.attributes.keys())
-            signal_list = root.getElementsByTagName('signal')  # 是一个文档对象 todo 最好是能自动获取到这个标签名称
-            for signal in signal_list:
-                dict_attr = {}  # 存储 数据 键值对的
-                # 获取signal中所有属性名称得到一个列表  attributes.keys()
-                for key in signal.attributes.keys():
-                    key_add = signal.attributes[key]  # 这样得到的是一个地址
-                    dict_attr[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
-                self.modbus_map_list.append(dict_attr)  # 添加到列表
-                # print(dict_attr)
-            # print("modbus_map.xml表的数据有：%s条" % len(self.modbus_map_list))
-            return self.modbus_map_list
-        # 5.实时更新数据并添加到数据库(实时通过while循环反复存储)
-
-    def get_realtime_data(self):
-        """
-        通过modbus_tcp获取实时数据
-        :return:
-        """
-        # 判断是否连接成功 （否 否为真）
-        # is_open()取TCP连接状态    open()连接到Modbus服务器（开放的TCP连接）
-        # print(self.__client.is_open())
-        # print(self.__client.open())
-        if not self.__client.is_open() and not self.__client.open():
-            # 在次连接一次，没有连接上则抛出错误
-            raise RuntimeError('无法连接：请检查端口或IP地址是否正确')
-        while True:
-            # time.sleep(3)
-            # if self.__address < len(self.name_list):
-            """
-            返回的源码：[FA 80 00 00 00 17 01] 03 14 00 00 3F 80 00 00 3F 80 00 00 3F 80 00 00 3F 80 66 66 41 E2 
-            自动解析的数据：[0, 16256, 0, 16256, 0]
-            1.改写方法(read_holding_registers)：源码返回的数据为 00 00 3F 80位 只解析00 00位和3F 80位，通过调试模式返Rx数据，返回数据为（registers, re_debug）
-            2.开启调试模式获re_debug 
-            """
-            # registers, re_debug = self.__client.read_holding_registers(self.__address, self.__register)
-            registers, debug_data = self.__client.read_holding_registers(self.__address, self.__register)
-            # 获取50个数据（字符串类型）
-            # print(debug_data)
-            # print(registers)
-            str_list = debug_data.split(" ")[9:-1]
-            # print(str_list)
-            a = [str_list[x:x + 4] for x in range(0, len(str_list), 4)]
-            # 这里打印接收的数量条数。
-            print(len(a))
-            for x in a:
-                # 将每一个数据合并成一个字符串
-                b = "".join(x)
-                # print(b)
-                # 调整字符串的位置前面四位不动 后面四位两两交换位置（注意转浮点数时候大端小端问题）
-                c = b[0:4] + b[-2:] + b[4:6]
-                # print(c)
-                # 4位16进制数 转浮点数
-                d = "%.2f" % struct.unpack('<f', bytes.fromhex(c))[0]
-                # print("%d正在获取(%s)的数据: %s" % (self.i, self.name_list[self.i], d))
-                print(d)
-                self.i += 1
-            self.__address += 50
+                }
+                # 将“严重告警”和“一般告警”发送前端
+                data_dict = {"严重告警": list_data, "一般告警": list_data1, "data_dict": data_dict}
+                # 转换成json格式传送
+                str_list = json.dumps(data_dict)
+                # print("返回给前端的数据", str_list)
+                # 发送消息到客户端
+                request.websocket.send(str_list.encode())
+                list_data.clear()
+                list_data1.clear()
 
 
-if __name__ == "__main__":
-    ftp = Ftp_Data()
-    # ftp.get_document()  # 获取modbus_map.xml数据
-    ftp.get_documents()  # 批量下载xml文件
-    # ftp.get_realtime_data()  # 事实获取数据
+# 用于展示历史数据(结合list_eq查询xmldata)
+def store_historyData():
+    for item in list_eq:
+        # 获取模块名称"equipment=监控屏IO"，及模块里面的设备列表value = [{...},{...},{...},...]
+        for equipment, value in item.items():
+            # 获得字典对象
+            # print(equipment)
+            for value_list in value:
+                # 获得告警设备和告警信息
+                for eq_name, alarm in value_list.items():
+                    # print(eq_name)
+                    # print(alarm)
+                    xmldata_obj = XmlData.objects.filter(name=eq_name).order_by("-id").first()
+                    # print(xmldata_obj[0])
+                    # print(xmldata_obj.id)
+                    if alarm[0]["max_id"] != xmldata_obj.id:
+                        alarm[0]["max_id"] = xmldata_obj.id
+                        # print(alarm[0]["max_id"])
+                        # 先得到所有的key 然后判断float_data==key
+                        key_list = list(alarm[0].keys())
+                        # print(key_list)
+                        # 遍历key_list 与取得的浮点数（转化后）相等，通过key取得对应的value
+                        value_data = [alarm[0][key] for key in key_list if str(int(xmldata_obj.float_data)) == key]
+                        # 判断value_data 为空则赋值null
+                        value_data_lsit = value_data[0] if value_data != [] else str(xmldata_obj.float_data)
+                        # print(value_data_lsit)
+                        EquipmentData.objects.create(
+                            # 设备
+                            equipment=equipment,
+                            # 设备名称
+                            equipment_name=alarm[0]["name"],
+                            # 信息值
+                            equipment_folat=xmldata_obj.float_data,
+                            # 内容根据信息值判断
+                            equipment_text=value_data_lsit,
+                            # 单位
+                            equipment_unit=alarm[0]["unit"],
+                            # 时间
+                            equipment_time=xmldata_obj.data_time,
+                            # 关联IP
+                            equipment_ip=xmldata_obj.divice_ip,
+                            # 外建
+                            divices=divices.objects.get(divice_ip=xmldata_obj.divice_ip)
 
-    # ftp.download_files()  # 批量下载xml文件
-    # ftp.delete_file() # 重启机器
-"""
-ftp.cwd(pathname)#设置FTP当前操作的路径
-ftp.dir()#显示目录下文件信息
-ftp.nlst()#获取目录下的文件
-ftp.mkd(pathname)#新建远程目录
-ftp.pwd()#返回当前所在位置
-ftp.rmd(dirname)#删除远程目录
-ftp.delete(filename)#删除远程文件
-ftp.rename(fromname, toname)#将fromname修改名称为toname。
-ftp.storbinaly("STOR filename.txt",file_handel,bufsize)#上传目标文件e
-ftp.retrbinary("RETR filename.txt",file_handel,bufsize)#下载FTP
-"""
+                        )
+                    if alarm[0]["max_id"] == xmldata_obj.id:
+                        pass

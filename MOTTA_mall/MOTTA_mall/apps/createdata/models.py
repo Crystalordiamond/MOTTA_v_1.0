@@ -2,7 +2,6 @@ from django.db import models
 from divices.models import divices
 
 
-
 # 用于展示历史数据
 class EquipmentData(models.Model):
     equipment = models.CharField(max_length=50, verbose_name="设备")

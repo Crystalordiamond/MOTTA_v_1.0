@@ -67,12 +67,27 @@ class Ftp_Data(object):
         # print(self.host)
         # exists()判断当前路径 是否有self.host文件夹
         if os.path.exists(os.path.join(self.localpath, self.host)):
-            # 清空文件夹里面的数据
+            # 清空文件夹里面的数据及删除之前数据
+
             for i in os.listdir(os.path.join(self.localpath, self.host)):
                 os.remove(os.path.join(self.localpath, self.host, i))
+                # print("....移除文件%s" % i)
+            params = self.host
+            sql_list = []
+            sql_list.append('''delete from tb_port where port_ip=%s;''')
+            sql_list.append('''delete from tb_equipments where Equipment_ip=%s;''')
+            sql_list.append('''delete from tb_logactions where logactions_ip=%s;''')
+            sql_list.append('''delete from tb_Signals where Signals_ip=%s;''')
+            sql_list.append('''delete from tb_Events where Events_ip=%s;''')
+            sql_list.append('''delete from tb_Commands where Commands_ip=%s;''')
+            for i in sql_list:
+                # print(i)
+                self.__cur.execute(i, params)
+                self.__conn.commit()
             print("%s:文件夹已经存在" % self.host)
+
         else:
-            # 创建当前文件夹
+            # 创建当前文件
             os.mkdir(os.path.join(self.localpath, self.host))
         # 下载文件
         bufsize = 1024  # 设置缓冲块大小
@@ -95,7 +110,7 @@ class Ftp_Data(object):
             if i.endswith('.xml') == True:
                 files_list.append(i)
         bufsize = 1024 * 1024
-        print("-------------------------Start the download-------------------------")
+        # print("-------------------------Start the download-------------------------")
         # print(files_list)
         for i in files_list:
             # 以写模式在本地打开文件
@@ -103,8 +118,8 @@ class Ftp_Data(object):
             # 接收服务器上文件并写入本地打开的文件
             self.ftp.retrbinary('RETR ' + self.XmlCfg_ftp_path + '/' + i, fp.write, bufsize)
             # ftp.set_debuglevel(0)  # 关闭调试
-            print("文件%s下载完成" % i)
-        print("-------------------------File download completes-------------------------")
+            # print("文件%s下载完成" % i)
+        print("-------------------------批量下载XmlCfg中xml文件成功-------------------------")
 
     def replace_str(self):
         """
@@ -127,7 +142,6 @@ class Ftp_Data(object):
             f.write(file_data)
         print("modbus_map.xml中特殊字符替换完成!")
 
-    # 获取map.xml数据结构
     def get_document_map(self):
         """
         获取modbus_map.xml数据
@@ -184,8 +198,8 @@ class Ftp_Data(object):
                         # tag.childNodes得到Ports，Equipments，LogActions下的子标签对象
                         # print(tag.childNodes)
                         for child_tag in tag.childNodes:
-                            # print(child_tag.nodeName)
-                            # 排除#text
+                            # [‘CfgPort’,'CfgPort','CfgPort','#text','CfgEquipment','CfgEquipment',#text','EventLogAction','EventLogAction']
+                            # 排除#text  遍历上述列表将得到的标签和==“CfgPort”作比对，满足条件
                             if child_tag.nodeName == "CfgPort":
                                 port_dict = {}
                                 # 获取子标签对象的属性名称: child_tag.attributes.keys()
@@ -206,6 +220,7 @@ class Ftp_Data(object):
                                 self.__conn.commit()
 
                             elif child_tag.nodeName == "CfgEquipment":
+                                # print(child_tag.nodeName)
                                 quipment_dict = {}
                                 # 获取子标签对象的属性名称: child_tag.attributes.keys()
                                 for child_key in child_tag.attributes.keys():
@@ -215,25 +230,47 @@ class Ftp_Data(object):
                                 nowTime = datetime.datetime.now()
                                 strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
                                 data = [quipment_dict["EquipId"], quipment_dict["EquipTemplateId"],
-                                        quipment_dict["EquipmentName"], quipment_dict["EquipAddress"],
-                                        quipment_dict["LibName"], strTime, self.host]
-                                sql_str = '''insert into tb_equipments (EquipId, EquipTemplateId, EquipmentName, EquipAddress, LibName, Equipment_time, Equipment_ip) values(%s, %s, %s, %s, %s, %s, %s);'''
+                                        quipment_dict["EquipmentName"], quipment_dict["PortId"],
+                                        quipment_dict["EquipAddress"], quipment_dict["LibName"], strTime, self.host]
+                                sql_str = '''insert into tb_equipments (EquipId, EquipTemplateId, EquipmentName, PortId, EquipAddress, LibName, Equipment_time, Equipment_ip) values(%s, %s, %s, %s, %s, %s, %s, %s);'''
                                 self.__cur.execute(sql_str, data)
                                 self.__conn.commit()
                             elif child_tag.nodeName == "EventLogAction":
-                                pass
+                                logaction_dict = {}
+                                # 获取子标签对象的属性名称: child_tag.attributes.keys()
+                                for child_key in child_tag.attributes.keys():
+                                    key_add = child_tag.attributes[child_key]
+                                    logaction_dict[key_add.name] = key_add.value
+                                # 然后获取子标签的值
+                                for i in child_tag.childNodes:
+                                    if i.nodeName == 'Action':
+                                        # print(i.nodeName)
+                                        for key in i.attributes.keys():
+                                            key_adds = i.attributes[key]
+                                            # 因为子标签和上级标签有相同的属性名，为了避免覆盖掉，做判断。
+                                            if key_adds.name != 'ActionName':
+                                                logaction_dict[key_adds.name] = key_adds.value
+                                            else:
+                                                pass
+                                # print('111111111111',logaction_dict)
+                                nowTime = datetime.datetime.now()
+                                strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                data = [logaction_dict["LogActionId"], logaction_dict["ActionName"],
+                                        logaction_dict["TriggerType"], logaction_dict["ActionId"],
+                                        logaction_dict["EquipmentId"], logaction_dict["ActionValue"], strTime,
+                                        self.host]
+                                sql_str = '''insert into tb_logactions (LogActionId, ActionName, TriggerType, ActionId, EquipmentId, ActionValue, logactions_time, logactions_ip) values(%s, %s, %s, %s, %s, %s, %s, %s);'''
+                                self.__cur.execute(sql_str, data)
+                                self.__conn.commit()
         print("-------------------------Document_vtu 文件数据存入到数据库成功-------------------------")
 
     # 批量存入EquipmentTemplate....表数据
     def get_documents(self):
-        # 在增加传感器的时候 先清空表的数据 (如果有多台机器，删除会删除其他机器的数据，根据最新的时间取值)
-        # self.__cur.execute('''delete from tb_equiptemplate''')
-        # self.__conn.commit()
-        # 获取xml名称列表
+        # 1.通过lsitdir获取xml名称列表
         catalog_list = os.listdir(os.path.join(self.localpath, self.host))
-        child_dict_list = []  # 这个列表存储所有的.xml文件信息
+        # child_dict_list = []  # 这个列表存储所有的.xml文件信息
         for catalog in catalog_list:
-            # 判断以EquipmentTemplate开头的.xml文件
+            # 2.判断以EquipmentTemplate开头的.xml文件
             if catalog.startswith("EquipmentTemplate"):
                 with open(os.path.join(self.localpath, self.host, catalog), 'r', encoding='utf-8') as f:
                     # print(catalog)
@@ -247,55 +284,112 @@ class Ftp_Data(object):
                     child_dict = {}
                     # 1.获取根目录的属性值
                     for i in root.childNodes:
-                        # print(i.nodeName)
+                        # print(i.nodeName)  # ['#text','<EquipTemplate>','#text']
                         # 判断当子目录有值时候（过滤）=>  获取根节点的属性
                         if i.childNodes:
                             # print(i.nodeName)
                             for key in i.attributes.keys():
                                 key_add = i.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
                                 root_dict[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
-                    # 2. 获取EquipSignal子节点
-                    EquipSignal_list = root.getElementsByTagName('EquipSignal')
-                    # print(len(EquipSignal_list))
-                    # print("&"*100)
-                    for EquipSignal in EquipSignal_list:
-                        # 1.获取每个子节点属性
-                        # 子节点的属性
-                        # print(EquipSignal.attributes.keys())
-                        for key in EquipSignal.attributes.keys():
-                            key_add = EquipSignal.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
-                            child_dict[key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
-                        child_dict.update(root_dict)  # 使用update合并 root目录的属性值   返回值是一个None
-                        # 2.获取子节点Meanings下一级的属性 告警的状态
-                        for meation in EquipSignal.childNodes:
-                            # Meanings下一级的节点可能会不存在
-                            # print(meation.childNodes)
-                            if meation.childNodes:
-                                for sig_mean in meation.childNodes:
-                                    if sig_mean.nodeName != "#text":
-                                        # print(sig_mean.nodeName)
-                                        Meanings_dict = {}
-                                        for key in sig_mean.attributes.keys():
-                                            key_add = sig_mean.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
-                                            Meanings_dict[
+                    # print(root_dict)  # 得到EquipTemplate节点内的所有属性
+                    # print(root.childNodes.EquipTemplate)
+                    for i in root.getElementsByTagName('EquipTemplate'):
+                        for j in i.childNodes:
+                            # print(j.nodeName)
+                            """1、如果是Signals标签"""
+                            if j.nodeName == 'Signals':
+                                EquipSignal_list = j.childNodes
+                                for EquipSignal in EquipSignal_list:
+                                    if EquipSignal.nodeName == "EquipSignal":
+                                        # 1.获取每个子节点属性
+                                        # 子节点的属性
+                                        # print(EquipSignal.attributes.keys())
+                                        for key in EquipSignal.attributes.keys():
+                                            key_add = EquipSignal.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
+                                            child_dict[
                                                 key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
-                                        # print(Meanings_dict)
-                                        child_dict.update(Meanings_dict)
-                                        # print(child_dict["SignalId"], child_dict["SignalName"],
-                                        #       child_dict["EquipTemplateId"], child_dict["EquipTemplateName"],
-                                        #       child_dict["StateValue"], child_dict["Meaning"])
-                                        # 3.存入数据库
-                                        nowTime = datetime.datetime.now()
-                                        # 格式化当前时间
-                                        strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
-                                        data = [child_dict["SignalId"], child_dict["SignalName"],
-                                                child_dict["EquipTemplateId"],
-                                                child_dict["EquipTemplateName"],
-                                                child_dict["StateValue"], child_dict["Meaning"], strTime, self.host]
-                                        sql_str = '''insert into tb_equiptemplate (SignalId, SignalName, EquipTemplateId, EquipTemplateName, StateValue, Meaning, equiptemplate_time, equiptemplate_ip) values(%s, %s, %s, %s, %s, %s, %s, %s);'''
-                                        self.__cur.execute(sql_str, data)
-                                        self.__conn.commit()
-                                        # print(" => %s => 数据导入成功......" % child_dict["SignalName"])
+                                        child_dict.update(root_dict)  # 使用update合并 root目录的属性值   返回值是一个None
+                                        # 2.获取子节点Meanings下一级的属性 告警的状态
+                                        for meation in EquipSignal.childNodes:
+                                            # Meanings下一级的节点可能会不存在
+                                            # print(meation.childNodes)
+                                            if meation.childNodes:
+                                                for sig_mean in meation.childNodes:
+                                                    if sig_mean.nodeName != "#text":
+                                                        # print(sig_mean.nodeName)
+                                                        Meanings_dict = {}
+                                                        for key in sig_mean.attributes.keys():
+                                                            key_add = sig_mean.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
+                                                            Meanings_dict[
+                                                                key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
+                                                        # print(Meanings_dict)
+                                                        child_dict.update(Meanings_dict)
+                                                        # print(child_dict["SignalId"], child_dict["SignalName"],
+                                                        #       child_dict["EquipTemplateId"], child_dict["EquipTemplateName"],
+                                                        #       child_dict["StateValue"], child_dict["Meaning"])
+                                                        # 3.存入数据库
+                                                        nowTime = datetime.datetime.now()
+                                                        # 格式化当前时间
+                                                        strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                                        # print('111111111111111111111111', child_dict)
+                                                        data = [child_dict["EquipTemplateId"],
+                                                                child_dict["EquipTemplateName"],
+                                                                child_dict["EquipTemplateType"], child_dict["LibName"],
+                                                                child_dict["SignalId"], child_dict["SignalName"],
+                                                                child_dict["SignalBaseId"], child_dict["SignalType"],
+                                                                child_dict["StateValue"], child_dict["Meaning"],
+                                                                self.host, strTime]
+                                                        sql_str = '''insert into tb_Signals (EquipTemplateId, EquipTemplateName, EquipTemplateType, LibName, SignalId, SignalName, SignalBaseId, SignalType, StateValue, Meaning, Signals_ip, Signals_time) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);'''
+                                                        self.__cur.execute(sql_str, data)
+                                                        self.__conn.commit()
+                            """2、如果是Events标签"""
+                            if j.nodeName == 'Events':
+                                Events_list = j.childNodes
+                                for EquipSignal in Events_list:
+                                    if EquipSignal.nodeName == "EquipEvent":
+                                        # 1.获取每个子节点属性
+                                        # 子节点的属性
+                                        # print(EquipSignal.attributes.keys())
+                                        for key in EquipSignal.attributes.keys():
+                                            key_add = EquipSignal.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
+                                            child_dict[
+                                                key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
+                                        child_dict.update(root_dict)  # 使用update合并 root目录的属性值   返回值是一个None
+                                        # 2.获取子节点Meanings下一级的属性 告警的状态
+                                        for meation in EquipSignal.childNodes:
+                                            # Meanings下一级的节点可能会不存在
+                                            # print(meation.childNodes)
+                                            if meation.childNodes:
+                                                for sig_mean in meation.childNodes:
+                                                    if sig_mean.nodeName != "#text":
+                                                        # print(sig_mean.nodeName)
+                                                        Meanings_dict = {}
+                                                        for key in sig_mean.attributes.keys():
+                                                            key_add = sig_mean.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
+                                                            Meanings_dict[
+                                                                key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
+                                                        # print(Meanings_dict)
+                                                        child_dict.update(Meanings_dict)
+                                                        # print(child_dict["SignalId"], child_dict["SignalName"],
+                                                        #       child_dict["EquipTemplateId"], child_dict["EquipTemplateName"],
+                                                        #       child_dict["StateValue"], child_dict["Meaning"])
+                                                        # 3.存入数据库
+                                                        nowTime = datetime.datetime.now()
+                                                        # 格式化当前时间
+                                                        strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                                        # print('111111111111111111111111', child_dict)
+                                                        data = [child_dict["EquipTemplateId"],
+                                                                child_dict["EquipTemplateName"],
+                                                                child_dict["EquipTemplateType"], child_dict["LibName"],
+                                                                child_dict["EventId"], child_dict["EventName"],
+                                                                child_dict["ConditionId"], child_dict["Meaning"],
+                                                                child_dict["EventSeverity"], self.host, strTime]
+                                                        sql_str = '''insert into tb_Events (EquipTemplateId, EquipTemplateName, EquipTemplateType, LibName, EventId, EventName, ConditionId, Meaning, EventSeverity, Events_ip, Events_time) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);'''
+                                                        self.__cur.execute(sql_str, data)
+                                                        self.__conn.commit()
+                            """3、如果是Commands标签"""
+                            if j.nodeName == 'Commands':
+                                pass
         print("-------------------------Xml文件集数据存入到数据库成功-------------------------")
 
     # 将数据实时存入
@@ -380,6 +474,10 @@ class Ftp_Data(object):
 
 
 if __name__ == "__main__":
+    # ftp = Ftp_Data("192.168.1.30")
+    # ftp.get_document_map()
+    # ftp.get_document_vtu()
+    # ftp.get_documents()
     def run(ip):
         ftp = Ftp_Data(ip)
         ftp.get_document_map()  # 1.获取map表 需要先运行这个函数
@@ -387,7 +485,6 @@ if __name__ == "__main__":
         ftp.get_documents()  # 批量存入EquipmentTemplate....表数据
         while True:
             ftp.get_realtime_data()  # 2.获取事实数据
-
 
     # 配置线程
     ip_list = []  # ip池要是元组("192.168.1.20",), ("192.168.1.30",), ("192.168.1.40",)
@@ -404,8 +501,8 @@ if __name__ == "__main__":
     for i in range(len(ip_list)):
         t = threading.Thread(target=run, args=ip_list[i])
         threads.append((t, i))
-    print(ip_list)
-    print(threads)
+    print("从tb_port表获取ip列表：%s" % ip_list)
+    print("打印生成的线程列表：%s" % threads)
     for i in threads:
         i[0].start()
         print("开启线程：%s" % i[0])
@@ -418,5 +515,6 @@ if __name__ == "__main__":
                 threads.append(t)  # 将挂掉的进程添加 到进程池
                 t.start()
         time.sleep(20)  # 120秒检测一次
-        print(ip_list)
-        print(threads)
+        print("间隔20秒，检测线程池的状态....")
+        # print(ip_list)
+        # print(threads)

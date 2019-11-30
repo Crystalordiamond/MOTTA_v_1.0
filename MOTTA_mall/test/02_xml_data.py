@@ -21,7 +21,6 @@ class Ftp_Data(object):
         self.localpath = "./"
         self.modbus_xml = "/data/mgrid/sampler/modbus_map.xml"
         self.XmlCfg_ftp_path = "/data/mgrid/sampler/XmlCfg"
-        self.vtu_pagelist_ftp_path = "/sdcard/vtu_pagelist/"
 
         self.__old_str = "&"
         self.__new_str = "-"
@@ -46,7 +45,7 @@ class Ftp_Data(object):
         # 实例化FTP对象
 
         self.ftp = FTP()
-        # ftp.set_debuglevel(2)         #打开调试级别2，显示详细信息
+        # ftp.set_debuglevel(2) 1        #打开调试级别2，显示详细信息
         try:
             self.ftp.connect(self.host, self.port)  # 连接
         except:
@@ -77,9 +76,10 @@ class Ftp_Data(object):
             sql_list.append('''delete from tb_port where port_ip=%s;''')
             sql_list.append('''delete from tb_equipments where Equipment_ip=%s;''')
             sql_list.append('''delete from tb_logactions where logactions_ip=%s;''')
-            sql_list.append('''delete from tb_Signals where Signals_ip=%s;''')
             sql_list.append('''delete from tb_Events where Events_ip=%s;''')
             sql_list.append('''delete from tb_Commands where Commands_ip=%s;''')
+            sql_list.append('''delete from tb_Signals_meaing where Signals_ip=%s;''')
+            sql_list.append('''delete from tb_xmldata where divice_ip=%s;''')
             for i in sql_list:
                 # print(i)
                 self.__cur.execute(i, params)
@@ -97,12 +97,12 @@ class Ftp_Data(object):
         self.ftp.retrbinary('RETR ' + self.modbus_xml, fp.write, bufsize)
         # ftp.set_debuglevel(0)  # 关闭调试
         fp.close()  # 关闭文件
-        print("-------------------------Modbus_map.xml download completes-------------------------")
+        print("-------------------------%sModbus_map.xml download completes-------------------------" % self.host)
         """
         2.批量下载XmlCfg中xml文件
         """
         file_list = self.ftp.nlst(self.XmlCfg_ftp_path)  # 获取下载的文件目录
-        # print(file_list)
+        # print("批量下载XmlCfg中xml文件",file_list)
         files_list = []
         # 过滤非.xml文件结尾的文件
         for i in file_list:
@@ -119,8 +119,9 @@ class Ftp_Data(object):
             self.ftp.retrbinary('RETR ' + self.XmlCfg_ftp_path + '/' + i, fp.write, bufsize)
             # ftp.set_debuglevel(0)  # 关闭调试
             # print("文件%s下载完成" % i)
-        print("-------------------------批量下载XmlCfg中xml文件成功-------------------------")
+        print("-------------------------批量下载%s:XmlCfg中xml文件成功-------------------------" % self.host)
 
+    # 替换modbus_map.xml中的特殊字符
     def replace_str(self):
         """
         1、获取远程xml文档，到本地
@@ -140,9 +141,30 @@ class Ftp_Data(object):
         # print(file_data)
         with open(os.path.join(self.localpath, self.host, "modbus_map.xml"), "w", encoding="utf-8") as f:
             f.write(file_data)
-        print("modbus_map.xml中特殊字符替换完成!")
+        print("%s:modbus_map.xml中特殊字符替换完成!" % self.host)
 
+    # 批量替换特殊字符&#xA;
+    def replaces_str(self):
+        xml_list = os.listdir(os.path.join(self.localpath, self.host))
+        for xml in xml_list:
+            file_data = ""
+            with open(os.path.join(self.localpath, self.host, xml), "r", encoding="utf-8") as f:
+                # 遍历的每一行
+                for line in f:
+                    if "&#xA;" in line:
+                        # Python replace() 方法把字符串中的 old（旧字符串） 替换成 new(新字符串)，如果指定第三个参数max，则替换不超过 max 次。
+                        line = line.replace("&#xA;", "")
+                    file_data += line
+            # print(file_data)
+            with open(os.path.join(self.localpath, self.host, xml), "w", encoding="utf-8") as f:
+                f.write(file_data)
+            print("%s:中%s特殊字符替换完成!" % (self.host, xml))
+
+    # 处理modbus_map.xml表
     def get_document_map(self):
+        # todo 这里先设置mysql数据的全局变量 存储时候会报字符串太长的错误
+        # self.__cur.execute('''set @@global.sql_mode='';''')
+        # self.__conn.commit()
         """
         获取modbus_map.xml数据
         :return: map数据
@@ -168,7 +190,7 @@ class Ftp_Data(object):
                 # print(dict_attr)
             # print(self.modbus_map_list[0])
             # print(self.modbus_map_list[0][key])
-            print("modbus_map.xml表的数据有：%s条" % len(self.modbus_map_list))
+            print("%s:modbus_map.xml表的数据有：%s条" % (self.host, len(self.modbus_map_list)))
             return self.modbus_map_list
 
     # 将MonitorUnitVTU.xml表存入数据库
@@ -262,10 +284,11 @@ class Ftp_Data(object):
                                 sql_str = '''insert into tb_logactions (LogActionId, ActionName, TriggerType, ActionId, EquipmentId, ActionValue, logactions_time, logactions_ip) values(%s, %s, %s, %s, %s, %s, %s, %s);'''
                                 self.__cur.execute(sql_str, data)
                                 self.__conn.commit()
-        print("-------------------------Document_vtu 文件数据存入到数据库成功-------------------------")
+        print("-------------------------%s:Document_vtu 文件数据存入到数据库成功-------------------------" % self.host)
 
     # 批量存入EquipmentTemplate....表数据
     def get_documents(self):
+        self.replaces_str()
         # 1.通过lsitdir获取xml名称列表
         catalog_list = os.listdir(os.path.join(self.localpath, self.host))
         # child_dict_list = []  # 这个列表存储所有的.xml文件信息
@@ -300,6 +323,7 @@ class Ftp_Data(object):
                             if j.nodeName == 'Signals':
                                 EquipSignal_list = j.childNodes
                                 for EquipSignal in EquipSignal_list:
+                                    # print(EquipSignal.nodeName)
                                     if EquipSignal.nodeName == "EquipSignal":
                                         # 1.获取每个子节点属性
                                         # 子节点的属性
@@ -309,14 +333,29 @@ class Ftp_Data(object):
                                             child_dict[
                                                 key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
                                         child_dict.update(root_dict)  # 使用update合并 root目录的属性值   返回值是一个None
+                                        """这里有个问题 如果是<Meanings />下面没有子节点的也要存储。
+                                        """
+                                        nowTime = datetime.datetime.now()
+                                        # 格式化当前时间
+                                        strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                        data = [child_dict.get("EquipTemplateId"),
+                                                child_dict.get("EquipTemplateName"),
+                                                child_dict.get("SignalId"),
+                                                child_dict.get("SignalName"), child_dict.get("Unit"),
+                                                self.host, strTime]
+                                        sql_str = '''insert into tb_Signals_meaing (EquipTemplateId, EquipTemplateName, SignalId, SignalName, Unit, Signals_ip, Signals_time) values(%s, %s, %s, %s, %s, %s, %s);'''
+                                        self.__cur.execute(sql_str, data)
+                                        self.__conn.commit()
+                                        # print(child_dict)
                                         # 2.获取子节点Meanings下一级的属性 告警的状态
+
+                                        # if EquipSignal.nodeName == "SignalMeaning":
                                         for meation in EquipSignal.childNodes:
                                             # Meanings下一级的节点可能会不存在
                                             # print(meation.childNodes)
                                             if meation.childNodes:
                                                 for sig_mean in meation.childNodes:
                                                     if sig_mean.nodeName != "#text":
-                                                        # print(sig_mean.nodeName)
                                                         Meanings_dict = {}
                                                         for key in sig_mean.attributes.keys():
                                                             key_add = sig_mean.attributes[key]  # 这样得到的是一个地址  得到根节点的属性
@@ -324,22 +363,20 @@ class Ftp_Data(object):
                                                                 key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
                                                         # print(Meanings_dict)
                                                         child_dict.update(Meanings_dict)
-                                                        # print(child_dict["SignalId"], child_dict["SignalName"],
-                                                        #       child_dict["EquipTemplateId"], child_dict["EquipTemplateName"],
-                                                        #       child_dict["StateValue"], child_dict["Meaning"])
+                                                        # print(child_dict)
                                                         # 3.存入数据库
                                                         nowTime = datetime.datetime.now()
                                                         # 格式化当前时间
                                                         strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
                                                         # print('111111111111111111111111', child_dict)
-                                                        data = [child_dict["EquipTemplateId"],
-                                                                child_dict["EquipTemplateName"],
-                                                                child_dict["EquipTemplateType"], child_dict["LibName"],
-                                                                child_dict["SignalId"], child_dict["SignalName"],
-                                                                child_dict["SignalBaseId"], child_dict["SignalType"],
-                                                                child_dict["StateValue"], child_dict["Meaning"],
+                                                        data = [child_dict.get("EquipTemplateId"),
+                                                                child_dict.get("EquipTemplateName"),
+                                                                child_dict.get("SignalId"),
+                                                                child_dict.get("SignalName"), child_dict.get("Unit"),
+                                                                child_dict.get("StateValue"), child_dict.get("Meaning"),
                                                                 self.host, strTime]
-                                                        sql_str = '''insert into tb_Signals (EquipTemplateId, EquipTemplateName, EquipTemplateType, LibName, SignalId, SignalName, SignalBaseId, SignalType, StateValue, Meaning, Signals_ip, Signals_time) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);'''
+                                                        # print(data)
+                                                        sql_str = '''insert into tb_Signals_meaing (EquipTemplateId, EquipTemplateName, SignalId, SignalName, Unit, StateValue, Meaning, Signals_ip, Signals_time) values(%s, %s, %s, %s, %s, %s, %s, %s, %s);'''
                                                         self.__cur.execute(sql_str, data)
                                                         self.__conn.commit()
                             """2、如果是Events标签"""
@@ -355,6 +392,21 @@ class Ftp_Data(object):
                                             child_dict[
                                                 key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
                                         child_dict.update(root_dict)  # 使用update合并 root目录的属性值   返回值是一个None
+                                        """这里有个问题 如果是<EventCondition />下面没有子节点的也要存储。
+                                                                                """
+                                        nowTime = datetime.datetime.now()
+                                        # 格式化当前时间
+                                        strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
+                                        data = [child_dict.get("EquipTemplateId"),
+                                                child_dict.get("EquipTemplateName"),
+                                                child_dict.get("EventId"),
+                                                child_dict.get("EventName"),
+                                                self.host, strTime]
+                                        # print(data)
+                                        sql_str = '''insert into tb_Events (EquipTemplateId, EquipTemplateName, EventId, EventName, Events_ip, Events_time) values(%s, %s, %s, %s, %s, %s);'''
+                                        self.__cur.execute(sql_str, data)
+                                        self.__conn.commit()
+
                                         # 2.获取子节点Meanings下一级的属性 告警的状态
                                         for meation in EquipSignal.childNodes:
                                             # Meanings下一级的节点可能会不存在
@@ -370,27 +422,29 @@ class Ftp_Data(object):
                                                                 key_add.name] = key_add.value  # key_add.name为属性名称 key_add.value为属性值
                                                         # print(Meanings_dict)
                                                         child_dict.update(Meanings_dict)
-                                                        # print(child_dict["SignalId"], child_dict["SignalName"],
-                                                        #       child_dict["EquipTemplateId"], child_dict["EquipTemplateName"],
-                                                        #       child_dict["StateValue"], child_dict["Meaning"])
+                                                        # print(child_dict["EquipTemplateName"], child_dict["EventId"], child_dict["LibName"])
                                                         # 3.存入数据库
                                                         nowTime = datetime.datetime.now()
                                                         # 格式化当前时间
                                                         strTime = nowTime.strftime("%Y-%m-%d %H:%M:%S")
                                                         # print('111111111111111111111111', child_dict)
-                                                        data = [child_dict["EquipTemplateId"],
-                                                                child_dict["EquipTemplateName"],
-                                                                child_dict["EquipTemplateType"], child_dict["LibName"],
-                                                                child_dict["EventId"], child_dict["EventName"],
-                                                                child_dict["ConditionId"], child_dict["Meaning"],
-                                                                child_dict["EventSeverity"], self.host, strTime]
-                                                        sql_str = '''insert into tb_Events (EquipTemplateId, EquipTemplateName, EquipTemplateType, LibName, EventId, EventName, ConditionId, Meaning, EventSeverity, Events_ip, Events_time) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);'''
+                                                        data = [child_dict.get("EquipTemplateId"),
+                                                                child_dict.get("EquipTemplateName"),
+                                                                child_dict.get("EventId"),
+                                                                child_dict.get("EventName"),
+                                                                child_dict.get("ConditionId"),
+                                                                child_dict.get("Meaning"),
+                                                                child_dict.get("EventSeverity"),
+                                                                child_dict.get("StartCompareValue"),
+                                                                child_dict.get("StartOperation"),
+                                                                self.host, strTime]
+                                                        sql_str = '''insert into tb_Events (EquipTemplateId, EquipTemplateName, EventId, EventName, ConditionId, Meaning, EventSeverity,StartCompareValue,StartOperation,Events_ip, Events_time) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);'''
                                                         self.__cur.execute(sql_str, data)
                                                         self.__conn.commit()
                             """3、如果是Commands标签"""
                             if j.nodeName == 'Commands':
                                 pass
-        print("-------------------------Xml文件集数据存入到数据库成功-------------------------")
+        print("-------------------------%sXml文件集数据存入到数据库成功-------------------------" % self.host)
 
     # 将数据实时存入
     def get_realtime_data(self):
@@ -405,7 +459,7 @@ class Ftp_Data(object):
             # print(self.__client.open())
             if not self.__client.is_open() and not self.__client.open():
                 # 在次连接一次，没有连接上则抛出错误
-                raise RuntimeError('无法连接：请检查端口或IP地址是否正确')
+                raise RuntimeError('无法连接：请检查%s端口或IP地址是否正确' % self.host)
             while True:
                 # add_list = []
                 if self.__address < len(self.modbus_map_list):
@@ -438,7 +492,11 @@ class Ftp_Data(object):
                         d = "%.2f" % struct.unpack('<f', bytes.fromhex(c))[0]
                         # print("%d正在获取(%s)的数据: %s" % (self.i, self.modbus_map_list[self.i], d))
                         print("%s的第%s数据为%s" % (self.host, self.i, d))
+
                         # add_list.append(d)
+                        print(d)
+                        print(str(d))
+                        # 存入数据库
                         self.input_data(d)
                         self.i += 1
                     # self.__address += 50
@@ -447,7 +505,7 @@ class Ftp_Data(object):
                 else:
                     self.i = 0
                     self.__address = 0
-                    # time.sleep(3)
+                    time.sleep(0.5)
                     break
         except:
             pass
@@ -486,6 +544,7 @@ if __name__ == "__main__":
         while True:
             ftp.get_realtime_data()  # 2.获取事实数据
 
+
     # 配置线程
     ip_list = []  # ip池要是元组("192.168.1.20",), ("192.168.1.30",), ("192.168.1.40",)
     threads = []  # 线程池
@@ -514,7 +573,7 @@ if __name__ == "__main__":
                 t = threading.Thread(target=run, args=ip_list[i[1]])
                 threads.append(t)  # 将挂掉的进程添加 到进程池
                 t.start()
-        time.sleep(20)  # 120秒检测一次
+        time.sleep(20)  # 20秒检测一次
         print("间隔20秒，检测线程池的状态....")
         # print(ip_list)
         # print(threads)

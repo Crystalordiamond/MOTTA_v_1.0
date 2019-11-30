@@ -1,23 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<CfgMonitorUnit MonitorUnitId="1" MonitorUnitName="VTU" MonitorUnitType="401" IPAddress="attom_ATM06F_ATM10S_two phase_en" EventLocked="false" ControlLocked="false" Description="" LastUpdateTime="20190507210802" EXTENDFIELD1="">
+<CfgMonitorUnit MonitorUnitId="1" MonitorUnitName="VTU" MonitorUnitType="401" IPAddress="attom_ATM06F_ATM10S_en" EventLocked="false" ControlLocked="false" Description="" LastUpdateTime="20190427170747" EXTENDFIELD1="">
   <Ports>
     <CfgPort PortId="1" PortNo="1" PortType="2" PortSetting="9600,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="2" PortNo="2" PortType="0" PortSetting="2400,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="3" PortNo="3" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="4" PortNo="4" PortType="0" PortSetting="2400,e,8,1" PortLibName="" Description="" />
     <CfgPort PortId="5" PortNo="5" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
-    <CfgPort PortId="6" PortNo="6" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="6" PortNo="6" PortType="0" PortSetting="2400,n,8,1" PortLibName="" Description="" />
     <CfgPort PortId="7" PortNo="7" PortType="0" PortSetting="19200,n,8,1" PortLibName="" Description="SMS" />
   </Ports>
   <Equipments>
     <CfgEquipment EquipId="1" EquipTemplateId="177" EquipmentName="VTU-IO" PortId="1" EquipAddress="1" ExtPortSetting="" LibName="VTUIO.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
     <CfgEquipment EquipId="2" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity" PortId="3" EquipAddress="1" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="3" EquipTemplateId="180" EquipmentName="UPS" PortId="6" EquipAddress="1" ExtPortSetting="" LibName="UPS_GXT4.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="4" EquipTemplateId="174" EquipmentName="Primary Meter1" PortId="4" EquipAddress="1" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="3" EquipTemplateId="180" EquipmentName="UPS" PortId="2" EquipAddress="1" ExtPortSetting="" LibName="UPS_DeltaV155.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="4" EquipTemplateId="174" EquipmentName="Primary Meter" PortId="4" EquipAddress="1" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
     <CfgEquipment EquipId="5" EquipTemplateId="174" EquipmentName="IT Meter1" PortId="4" EquipAddress="2" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="6" EquipTemplateId="178" EquipmentName="Air Conditioner" PortId="5" EquipAddress="1" ExtPortSetting="" LibName="SL1600F_FC.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="7" EquipTemplateId="174" EquipmentName="Primary Meter2" PortId="4" EquipAddress="3" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
-    <CfgEquipment EquipId="8" EquipTemplateId="174" EquipmentName="IT Meter2" PortId="4" EquipAddress="4" ExtPortSetting="" LibName="DDS3366D-1P.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="6" EquipTemplateId="179" EquipmentName="Air Conditioner" PortId="5" EquipAddress="1" ExtPortSetting="" LibName="SmoothAir_Carel_DX.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
   </Equipments>
   <LogActions>
     <EventLogAction LogActionId="1" ActionName="DoorOpen" TriggerType="1" StartExpression="[2,1]&gt;[2,3]" SuppressExpression="">

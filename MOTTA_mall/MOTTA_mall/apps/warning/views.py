@@ -1,134 +1,230 @@
-import random
-import re
-
 from django.http.response import JsonResponse
 from django.db.models import Q, F, Max, Count
 from django.http import HttpResponse
-from .models import Warning
-from xmldata.models import XmlData
-from createdata.models import EquipmentData
+from .models import Warning, HistoryData
+from rbac.models import User
+from xmldata.models import XmlData, equipments
 import json, copy
+from functools import reduce
 
 
-# 查询设备列表(监控屏，温湿度，ups)
+# 0、查询现有站点的 site equipment parameter alarmlevel 列表
 def get_equipment(request):
-    ip_str = request.GET.get('ip')
-    """
-    方法一：
-    name_obj = Warning.objects.filter(warn_ip=ip_str)
-    name_set = list(set([obj.warn_name for obj in name_obj]))
-    print(name_set)
-    """
-    # 方法二
-    # json_list = []
-    name_queryset = Warning.objects.values('warn_name').distinct()
-    json_list = [obj["warn_name"] for obj in name_queryset]
-    # print(json_list)
+    json_str = request.body
+    json_str = json_str.decode()
+    request_data = json.loads(json_str)
+    # 获取equipment
+    equipment_list = []
+    for i in equipments.objects.filter(Equipment_ip__in=request_data["ip"]):
+        data_dict = {
+            "equipment": i.EquipmentName
+        }
+        equipment_list.append(data_dict)
+    # 对equipment_list去重 ，利用reduce
+    run_function = lambda x, y: x if y in x else x + [y]
+    a = reduce(run_function, [[], ] + equipment_list)
+
+    """distinct()方法是同一列去重"""
+    data_dict = {
+        "site": [{"site": i.divice_site} for i in
+                 User.objects.filter(username=request_data["user"])[0].divices_set.all()],
+        "equipment": a,
+        "parameter": [{"parameter": i['warn_parameter']} for i in
+                      Warning.objects.filter(warn_ip__in=request_data["ip"]).values('warn_parameter').distinct()],
+        "level": [{"level": i['warn_level']} for i in Warning.objects.values('warn_level').distinct()],
+        # 这个是给历史数据列表使用的  parameter
+        "history_parameter": [{"parameter": i['equipment_parameter']} for i in
+                              HistoryData.objects.filter(equipment_ip__in=request_data["ip"]).values(
+                                  'equipment_parameter').distinct()],
+    }
     #  转换成json格式传送
-    json_list = json.dumps(json_list)
+    json_list = json.dumps(data_dict)
     return JsonResponse(json_list, safe=False)
 
 
-# 历史数据页面 对应的曲线图
-def post_historydata(request):
-    json_str = request.body
-    json_str = json_str.decode()  # python3.6 版本以上不需要解码了
-    request_data = json.loads(json_str)
-    ip = request_data['ip']
-    equipment = request_data['item']
-    starttime = request_data['starttime']
-    endtime = request_data['endtime']
-    # print(equipment)
-    # 得到一个区间列表
-    print(ip)
-    """
-    1.通过equipment名称和日期区间，得到一个查询集对象
-    2.把对象通过equipment_name字段分组 得到8个分组对象
-    3.分别把8个分组对象，按日期进行去重
-    4.合并数据
-    """
-    # 1.
-    obj_data = EquipmentData.objects.filter(Q(equipment_ip=ip) &
-                                            Q(equipment__contains=equipment) &
-                                            Q(equipment_time__gt=starttime) &
-                                            Q(equipment_time__lt=endtime))[:100]
-    # print(len(obj_data))
-    """  使用随机数 变得更加慢 """
-    # sample = random.sample(range(obj_data.count()), 20)
-    # obj_list = [obj_data.all()[i] for i in sample]
-
-    # obj_list = obj_data.order_by('?')[:2]
-    # print(obj_list)
-
-    # 发送数据列表
-    Eqdata_list = []
-    for obj_eq in obj_data:
-        # print(obj_eq)
-        data = {}
-        data["equipment"] = obj_eq.equipment
-        data["name"] = obj_eq.equipment_name
-        data["sigid"] = obj_eq.equipment_folat
-        data["unit"] = obj_eq.equipment_unit
-        data["float_data"] = obj_eq.equipment_text
-        data["data_time"] = obj_eq.equipment_time
-        Eqdata_list.append(data)
-
-    # name_queryset = obj_list.values('equipment_name').distinct()
-    # json_list = [obj["equipment_name"] for obj in name_queryset]
-    # print(len(json_list))
-
-    # for i in Eqdata_list:
-    #     a = i["data_time"]
-    #     i["data_time"] = re.match(r'^\S+', a).group()
-    #     data_list = []
-    #     # if i["name"] in json_list:
-    #     #     data_list.append(i)
-
-    return JsonResponse(Eqdata_list, safe=False)
-
-
-# 历史告警
+# 1、历史告警
 def post_historyalarm(request):
     json_str = request.body
-    json_str = json_str.decode()  # python3.6 版本以上不需要解码了
+    json_str = json_str.decode()
     request_data = json.loads(json_str)
-    ip = request_data['ip']
-    equipment = request_data['item']
-    starttime = request_data['starttime']
-    endtime = request_data['endtime']
+    # print(request_data)
+    # 此处的equipment和site在数据库中位置调换了
+    site = request_data['site']
+    equipment = request_data['equipment']
+    parameter = request_data['parameter']
+    level = request_data['level']
+    start_time = request_data['start_time']
+    end_time = request_data['end_time']
+
     warning_list = Warning.objects.filter(
-        Q(warn_ip=ip) & Q(warn_name__contains=equipment) & Q(warn_time__gt=starttime) & Q(warn_time__lt=endtime))
-    # 当值为 0 1变化时
+        Q(warn_site=site) & Q(warn_equipment=equipment) & Q(warn_parameter=parameter) & Q(warn_level=level) & Q(
+            warn_time__gt=start_time) & Q(warn_time__lt=end_time))
+    # print(warning_list)
     data_list = []
-    start_time = []  # 所有的告警时间
-    end_time = []  #
-    flag = True
-    # print(len(warning_list))
-    # print(warning_list[len(warning_list) - 1].warn_data)
-    for index, i in enumerate(warning_list):
-        if flag and int(i.warn_data) == 0:
-            pass
-        if flag and int(i.warn_data) == 1:
-            start_time.append(i.warn_time)
-            flag = False
-        if not flag and int(i.warn_data) == 0:
-            end_time.append(i.warn_time)
-            flag = True
-        if index == (len(warning_list) - 1) and int(warning_list[len(warning_list) - 1].warn_data) == 1:
-            end_time.append("Null")
-    # print(start_time)
-    # print(end_time)
-    for index, item in enumerate(start_time):
-        warn_obj = Warning.objects.filter(warn_time=item).first()
-        data = {}
-        data["equipment"] = warn_obj.warn_name
-        data["information"] = warn_obj.warn_data
-        data["unit"] = warn_obj.unit
-        data["warn_level"] = warn_obj.warn_level
-        data["warn_text"] = warn_obj.warn_text
-        data["start_time"] = item
-        data["end_time"] = end_time[index]
-        data_list.append(data)
+    for item in warning_list:
+        data_dict = {
+            "site": item.warn_site,
+            "equipment": item.warn_equipment,
+            "parameter": item.warn_parameter,
+            "alarm": item.warn_alarm,
+            "value": item.warn_value,
+            "unit": item.warn_unit,
+            "level": item.warn_level,
+            "time": item.warn_time,
+        }
+        data_list.append(data_dict)
+    # print(data_list)
+    return JsonResponse(data_list, safe=False)
 
-    return JsonResponse("ok", safe=False)
 
+# 2、历史数据页面
+def post_historydata(request):
+    json_str = request.body
+    json_str = json_str.decode()
+    request_data = json.loads(json_str)
+    # print(request_data)
+    site = request_data['site']
+    equipment = request_data['equipment']
+    parameter = request_data['parameter']
+    start_time = request_data['start_time']
+    end_time = request_data['end_time']
+
+    data = HistoryData.objects.filter(
+        Q(equipment_site=site) & Q(equipment_equipment=equipment) & Q(equipment_parameter=parameter) & Q(
+            equipment_time__gt=start_time) & Q(
+            equipment_time__lt=end_time))
+    # print(data)
+    data_list = []
+    for item in data:
+        data_dict = {
+            "site": item.equipment_site,
+            "equipment": item.equipment_equipment,
+            "parameter": item.equipment_parameter,
+            "value": item.equipment_value,
+            "unit": item.equipment_unit,
+            "time": item.equipment_time,
+        }
+        data_list.append(data_dict)
+    # print(data_list)
+    return JsonResponse(data_list, safe=False)
+
+
+# 3、历史数据图表展示
+def signaldata(request):
+    json_str = request.body
+    json_str = json_str.decode()
+    request_data = json.loads(json_str)
+    if len(request_data) == 1:
+        print("len(request_data) == 1", request_data)
+        data = HistoryData.objects.filter(equipment_site=request_data["site"])
+        data_list = []
+        for i in data:
+            data_dict = {
+                "equipment": i.equipment_equipment
+            }
+            data_list.append(data_dict)
+        # 去重
+        run_function = lambda x, y: x if y in x else x + [y]
+        a = reduce(run_function, [[], ] + data_list)
+        return JsonResponse(a, safe=False)
+    elif len(request_data) == 2:
+        print("len(request_data) == 2", request_data)
+        data = HistoryData.objects.filter(equipment_site=request_data["site"]).filter(
+            equipment_equipment=request_data["equipment"])
+        data_list = []
+        for i in data:
+            data_dict = {
+                "parameter": i.equipment_parameter
+            }
+            data_list.append(data_dict)
+        # 去重
+        run_function = lambda x, y: x if y in x else x + [y]
+        a = reduce(run_function, [[], ] + data_list)
+        return JsonResponse(a, safe=False)
+    else:
+        data1 = HistoryData.objects.filter(
+            Q(equipment_site=request_data["site1"]) & Q(equipment_equipment=request_data["equipment1"]) & Q(
+                equipment_parameter=request_data["parameter1"]) & Q(
+                equipment_time__gt=request_data["start_time"]) & Q(
+                equipment_time__lt=request_data["end_time"]))
+        data2 = HistoryData.objects.filter(
+            Q(equipment_site=request_data["site2"]) & Q(equipment_equipment=request_data["equipment2"]) & Q(
+                equipment_parameter=request_data["parameter2"]) & Q(
+                equipment_time__gt=request_data["start_time"]) & Q(
+                equipment_time__lt=request_data["end_time"]))
+        data3 = HistoryData.objects.filter(
+            Q(equipment_site=request_data["site3"]) & Q(equipment_equipment=request_data["equipment3"]) & Q(
+                equipment_parameter=request_data["parameter3"]) & Q(
+                equipment_time__gt=request_data["start_time"]) & Q(
+                equipment_time__lt=request_data["end_time"]))
+        data4 = HistoryData.objects.filter(
+            Q(equipment_site=request_data["site4"]) & Q(equipment_equipment=request_data["equipment4"]) & Q(
+                equipment_parameter=request_data["parameter4"]) & Q(
+                equipment_time__gt=request_data["start_time"]) & Q(
+                equipment_time__lt=request_data["end_time"]))
+        data_time = HistoryData.objects.filter(
+            Q(equipment_time__gt=request_data["start_time"]) & Q(equipment_time__lt=request_data["end_time"]))
+        data_list = []
+        data_list2 = []
+        data_list3 = []
+        data_list4 = []
+        time_list = []
+        for item in data1:
+            data_dict = {
+                "site": item.equipment_site,
+                "equipment": item.equipment_equipment,
+                "parameter": item.equipment_parameter,
+                "value": item.equipment_value,
+                "unit": item.equipment_unit,
+                "time": item.equipment_time,
+            }
+            data_list.append(data_dict)
+        for item in data2:
+            data_dict = {
+                "site": item.equipment_site,
+                "equipment": item.equipment_equipment,
+                "parameter": item.equipment_parameter,
+                "value": item.equipment_value,
+                "unit": item.equipment_unit,
+                "time": item.equipment_time,
+            }
+            data_list2.append(data_dict)
+        for item in data3:
+            data_dict = {
+                "site": item.equipment_site,
+                "equipment": item.equipment_equipment,
+                "parameter": item.equipment_parameter,
+                "value": item.equipment_value,
+                "unit": item.equipment_unit,
+                "time": item.equipment_time,
+            }
+            data_list3.append(data_dict)
+        for item in data4:
+            data_dict = {
+                "site": item.equipment_site,
+                "equipment": item.equipment_equipment,
+                "parameter": item.equipment_parameter,
+                "value": item.equipment_value,
+                "unit": item.equipment_unit,
+                "time": item.equipment_time,
+            }
+            data_list4.append(data_dict)
+        for item in data_time:
+            data_dict = {
+                "time": item.equipment_time,
+            }
+            time_list.append(data_dict)
+        # 给时间字段去重
+        run_function = lambda x, y: x if y in x else x + [y]
+        a = reduce(run_function, [[], ] + time_list)
+        print(a)
+        print(type(a))
+        data_dicts = {
+            "signal1": data_list,
+            "signal2": data_list2,
+            "signal3": data_list3,
+            "signal4": data_list4,
+            "time": a
+        }
+        data_dicts = json.dumps(data_dicts)
+        return JsonResponse(data_dicts, safe=False)

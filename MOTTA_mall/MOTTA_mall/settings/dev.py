@@ -52,11 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'users.apps.UsersConfig',
-    'smscode.apps.SmscodeConfig',
-    'createdata.apps.CreatedataConfig',
     'divices.apps.DivicesConfig',
-    'wsdata.apps.WsdataConfig',
     'warning.apps.WarningConfig',
     'xmldata.apps.XmldataConfig',
     'rbac.apps.RbacConfig',
@@ -251,7 +247,7 @@ LOGGING = {
     }
 }
 # 2.自定义用户模型类
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'rbac.User'
 
 # 3.CORS 跨域请求  添加白名单
 CORS_ORIGIN_WHITELIST = (
@@ -260,10 +256,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
 
-# 4.告知Django使用我们自定义的 认证后端
-AUTHENTICATION_BACKENDS = [
-    'users.utils_jwt.UsernameMobileAuthBackend',
-]
+
 
 # 设置WEBSOCKET_ACCEPT_ALL=True可以允许每一个单独的视图使用websockets
 WEBSOCKET_ACCEPT_ALL = True

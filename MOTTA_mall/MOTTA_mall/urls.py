@@ -19,13 +19,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^', include('users.urls')),
-    url('^', include('smscode.urls')),
-    url('^', include('createdata.urls')),
-    url('^', include('wsdata.urls')),
     url('^', include('warning.urls')),
     url('^', include('divices.urls')),
 
     url('^', include('rbac.urls')),
+    url('^', include('xmldata.urls')),
 
 ]

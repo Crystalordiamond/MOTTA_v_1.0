@@ -1,377 +1,328 @@
-# -*- coding: utf-8 -*-
+import datetime
+
 from xmldata.models import XmlData
-from createdata.models import EquipmentData
-from warning.models import Warning
+from .models import equipments, Signals_meaing, Events
 from divices.models import divices
+from rbac.models import User
+from warning.models import AlarmContent, Warning, HistoryData
 from django.shortcuts import render
 from dwebsocket.decorators import accept_websocket, require_websocket
 from django.http import HttpResponse
-import json
-import time
+import json, time
 from django.db.models import Q, F
 
+list_ip = []  # 定义一个全局变量,用来接收http请求查询的ip
 
 
-# 告警实时数据
+# 将告警数据存入数据表
 @accept_websocket
-def echo(request):
-    if not request.is_websocket():  # 如果不是socket链接
-        try:  # 如果是普通的http方法
-            message = request.GET['message']
-            print("普通的http方法")
-            return HttpResponse(message)
-        except:
-            print("普通的http方法报错")
-            return HttpResponse("普通的http方法报错")
-    else:
-        for message in request.websocket:
-            # print(request.websocket)
-            # print(message)
-            # websockt传递的是二进制数据
-            print("前端传过来的数据：%s" % message.decode())
-            # 通过DataConfigTool收集 这些标准信息
-            while True:
-                list_data = []  # 严重告警列表
-                list_data1 = []  # 一般告警列表
-                # 获取模块的字典对象[{"监控屏IO":[{},{},{},...]},...,...]
-                for item in list_war:
-                    # 获取模块名称"equipment=监控屏IO"，及模块里面的设备列表value = [{"监控屏IO, 烟感": ["烟雾告警", "有告警", "严重告警", "-", 1]},{...},{...},...]
-                    for equipment, value in item.items():
-                        # 获得字典对象
-                        # print(equipment)
-                        for value_list in value:
-                            # 获得告警设备和告警信息
-                            for eq_name, alarm in value_list.items():
-                                # print(alarm)
-                                # ---------------------《 严重告警存入数据库 》----------------------
-                                if alarm[2] == "严重告警" and eq_name == "温湿度, 温度":
-                                    data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
-                                    # 获取最新的ID 将其保存到全局变量“max1_id”，然后来做第二次对比判断
-                                    # 防止将重复的数据存入告警表中，拿id做比对
-                                    if alarm[5]["max_id"] != data.id:
-                                        alarm[5]["max_id"] = data.id
-                                        # 将告警存入数据库
-                                        Warning.objects.create(
-                                            warn_level=alarm[2],
-                                            warn_text=alarm[0],
-                                            warn_time=data.data_time,
-                                            warn_name=equipment,
-                                            warn_data=data.float_data,
-                                            unit=alarm[3],
-                                            is_delete=False,
-                                            warn_ip=data.divice_ip,
-                                            # 查询到对应站点（通过ip）
-                                            equip_id=divices.objects.get(divice_ip=data.divice_ip)
-                                        )
-                                    if alarm[5]["max_id"] == data.id:
+def websocket(request):
+    # print(request.is_websocket())
+    if request.is_websocket() == False:  # 如果不是socket链接
+        global list_ip
+        list_ip = []
+        # 如果是普通的http方法
+        data = request.body.decode()
+        data_dict = json.loads(data)
+        # 1.获取前端传过来的用户名
+        user = data_dict['user']
+        # 2.查询数据库获得用户关联的站点ip
+        # print('ws的用户名称',user)
+        ip_list = User.objects.filter(username=user)[0].divices_set.all()
+        for i in ip_list:
+            list_ip.append(i.divice_ip)
+        return HttpResponse(json.dumps(list_ip))
+
+    elif request.is_websocket() == True:
+        print('通过http请求获取的ip列表：', list_ip)
+        ip_flag = None  # 设置最新数据的默认id，防止取到重复值
+        while True:
+            # 确保ip有值
+            if list_ip != []:
+                # 通过遍历ip池，通过ip查询
+                for ip in list_ip:
+                    # 得到对应ip设备的最新一条信息
+                    data = XmlData.objects.filter(divice_ip=ip).last()
+                    # data存在且 data.id不存在[判断data存在，新增了站点，没有实际数据的设备的情况]
+                    if data and data.id != ip_flag:
+                        ip_flag = data.id
+                        # 1、通过map表的equipid得到设备中间表的EquipId，然后得到EquipTemplateId
+                        equipments_data = equipments.objects.filter(
+                            Q(Equipment_ip=data.divice_ip) & Q(EquipId=data.equipid))
+                        # 将浮点数转化为字符串
+                        a = '%.f' % data.float_data
+
+                        """这里存入历史数据"""
+                        history_data = HistoryData.objects.first()
+                        unit_data = Signals_meaing.objects.filter(Q(Signals_ip=data.divice_ip) & Q(
+                            EquipTemplateId=equipments_data[0].EquipTemplateId) & Q(SignalId=data.sigid))[
+                            0]
+                        if history_data:
+                            history_data_time = HistoryData.objects.filter(equipment_time=data.data_time)
+                            if history_data_time.count() == 0:
+                                # 一分钟存储一次
+                                history_data = datetime.timedelta(days=1 / 24 / 60)
+                                # 取最新的一条数据判断
+                                history_list = HistoryData.objects.all().last().equipment_time
+
+                                history_new = datetime.datetime.strptime(data.data_time, "%Y-%m-%d %H:%M:%S")
+                                history_old = datetime.datetime.strptime(history_list, "%Y-%m-%d %H:%M:%S")
+                                if history_new - history_old > history_data:
+                                    HistoryData.objects.create(
+                                        equipment_site=divices.objects.filter(divice_ip=data.divice_ip)[0].divice_site,
+                                        equipment_equipment=equipments_data[0].EquipmentName,
+                                        equipment_parameter=unit_data.SignalName,
+                                        equipment_value=a,
+                                        equipment_unit='-' if unit_data.Unit == '' else unit_data.Unit,
+                                        equipment_time=data.data_time,
+                                        equipment_ip=data.divice_ip,
+
+                                    )
+                        else:
+                            HistoryData.objects.create(
+                                equipment_site=divices.objects.filter(divice_ip=data.divice_ip)[0].divice_site,
+                                equipment_equipment=equipments_data[0].EquipmentName,
+                                equipment_parameter=unit_data.SignalName,
+                                equipment_value=a,
+                                equipment_unit='-' if unit_data.Unit == '' else unit_data.Unit,
+                                equipment_time=data.data_time,
+                                equipment_ip=data.divice_ip
+                            )
+                        """"""
+                        # 2、根据xmldata里面的sigid值来查找，注意 不是所有的sigid值都有对应的数据 这是告警数据 event会有除了ConditionId不同的重复值
+                        evn_data = Events.objects.filter(
+                            Q(Events_ip=data.divice_ip) & Q(EquipTemplateId=equipments_data[0].EquipTemplateId) & Q(
+                                EventId=data.sigid))
+                        if evn_data.count() != 0:
+                            # 1个event信号有多个值
+                            for evn in evn_data:
+                                # print(evn.Meaning)
+                                # 必须要有告警信息
+                                if evn.Meaning:
+                                    data_dict = {
+                                        'location': divices.objects.filter(divice_ip=data.divice_ip)[0].divice_location,
+                                        # 告警的站点位置
+                                        'site': divices.objects.filter(divice_ip=data.divice_ip)[0].divice_site,
+                                        # 告警的站点
+                                        'alarm': evn.EventName,  # 告警的名称
+                                        'alarm_text': evn.Meaning,  # 告警的内容
+                                        'equipment': equipments_data[0].EquipmentName,  # 告警的设备
+                                        'level': 'Critical' if evn.EventSeverity == '3' else 'General',  # 告警等级
+                                        'manage': [i.username for i in
+                                                   divices.objects.filter(divice_ip=data.divice_ip)[0].user_id.all()],
+                                        # 该站点关联的用户
+                                        'lssue_time': data.data_time,  # 告警时间
+                                        'alarm_id': evn.EventId,  # 告警的ID
+                                        'alarm_ip': data.divice_ip,  # 告警的IP
+                                        'EquipTemplateId': evn.EquipTemplateId,  # EquipTemplateId
+
+                                        'value': a,  # 告警的值
+                                        'unit': '-' if unit_data.Unit == '' else unit_data.Unit,  # 告警的单位
+                                    }
+                                    b = evn.StartCompareValue
+                                    c = evn.StartOperation
+                                    if c == "=":
+                                        c = "=="
+                                    # print('%s %s %s' % (a, c, b))
+                                    # 3、eval() 函数用来执行一个字符串表达式，并返回表达式的值。表达式的值返回True则为告警
+                                    """实时告警列表"""
+                                    # 这里已经达成告警的条件了。 要保证时间是唯一的，不然时间字段会重复有多个。这是是遍历操作，不用考虑其他设备的重复。
+                                    time_str = AlarmContent.objects.filter(lssue_time=data.data_time)
+                                    if time_str.count() == 0:
+                                        if eval('%s %s %s' % (a, c, b)) == True:
+                                            alarm_data = AlarmContent.objects.filter(Q(alarm_ip=data.divice_ip) & Q(
+                                                EquipTemplateId=equipments_data[0].EquipTemplateId) & Q(
+                                                alarm_id=data.sigid) & Q(equipment=equipments_data[0].EquipmentName))
+                                            # if alarm_data.count() > 1:
+                                            #     print("alarm_data值大于2了")
+                                            #     break
+                                            # print("alarm_data的值", alarm_data)
+                                            # print("alarm_data的值", alarm_data.count())
+
+                                            if alarm_data.count() != 0:
+                                                if alarm_data.count() > 1:
+                                                    print("alarm_data大于1了啊")
+                                                    for i in alarm_data:
+                                                        print(i.alarm_ip, i.EquipTemplateId, i.alarm_id, i.equipment)
+                                                alarm_data.update(
+                                                    site=data_dict['site'],
+                                                    alarm=data_dict['alarm'],
+                                                    alarm_text=data_dict['alarm_text'],
+                                                    equipment=data_dict['equipment'],
+                                                    level=data_dict['level'],
+                                                    manage=data_dict['manage'],
+                                                    lssue_time=data_dict['lssue_time'],
+                                                    alarm_id=data_dict['alarm_id'],
+                                                    alarm_ip=data_dict['alarm_ip'],
+                                                    EquipTemplateId=data_dict['EquipTemplateId'],
+                                                    alarm_flag='1',  # 告警唯一标识 告警为1 非告警为0
+                                                )
+                                            else:
+                                                AlarmContent.objects.create(
+                                                    site=data_dict['site'],
+                                                    alarm=data_dict['alarm'],
+                                                    alarm_text=data_dict['alarm_text'],
+                                                    equipment=data_dict['equipment'],
+                                                    level=data_dict['level'],
+                                                    manage=data_dict['manage'],
+                                                    lssue_time=data_dict['lssue_time'],
+                                                    alarm_id=data_dict['alarm_id'],
+                                                    alarm_ip=data_dict['alarm_ip'],
+                                                    EquipTemplateId=data_dict['EquipTemplateId'],
+                                                    alarm_flag='1',
+                                                )
+                                        # 表达式的值返回False则为非告警
+                                        if eval('%s %s %s' % (a, c, b)) == False:
+                                            # alarm_data2 = AlarmContent.objects.filter(
+                                            #     Q(alarm_ip=evn.Events_ip) & Q(alarm_id=evn.EventId) & Q(
+                                            #         equipment=equipments_data[0].EquipmentName))
+                                            alarm_data2 = AlarmContent.objects.filter(Q(alarm_ip=data.divice_ip) & Q(
+                                                EquipTemplateId=equipments_data[0].EquipTemplateId) & Q(
+                                                alarm_id=data.sigid) & Q(equipment=equipments_data[0].EquipmentName))
+                                            # if alarm_data2.count() > 1:
+                                            #     print(alarm_data2)
+                                            #     print("alarm_data2值大于2了")
+                                            #     break
+                                            # print("alarm_data2的值", alarm_data2)
+                                            # print("alarm_data2的值", alarm_data2.count())
+                                            if alarm_data2.count() != 0:
+                                                if alarm_data2.count() > 1:
+                                                    print("alarm_data2大于1了啊")
+                                                    for i in alarm_data2:
+                                                        print(i.alarm_ip, i.EquipTemplateId, i.alarm_id, i.equipment)
+                                                alarm_data2.update(
+                                                    site=data_dict['site'],
+                                                    alarm=data_dict['alarm'],
+                                                    alarm_text=data_dict['alarm_text'],
+                                                    equipment=data_dict['equipment'],
+                                                    level=data_dict['level'],
+                                                    manage=data_dict['manage'],
+                                                    lssue_time=data_dict['lssue_time'],
+                                                    alarm_id=data_dict['alarm_id'],
+                                                    alarm_ip=data_dict['alarm_ip'],
+                                                    EquipTemplateId=data_dict['EquipTemplateId'],
+                                                    alarm_flag='0',
+                                                )
+                                            else:
+                                                AlarmContent.objects.create(
+                                                    site=data_dict['site'],
+                                                    alarm=data_dict['alarm'],
+                                                    alarm_text=data_dict['alarm_text'],
+                                                    equipment=data_dict['equipment'],
+                                                    level=data_dict['level'],
+                                                    manage=data_dict['manage'],
+                                                    lssue_time=data_dict['lssue_time'],
+                                                    alarm_id=data_dict['alarm_id'],
+                                                    alarm_ip=data_dict['alarm_ip'],
+                                                    EquipTemplateId=data_dict['EquipTemplateId'],
+                                                    alarm_flag='0',
+                                                )
+                                    else:
                                         pass
-                                    if data.float_data >= alarm[4]:
-                                    # if data.float_data >= 20:
-                                        # 告警站点
-                                        divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
-                                            values("divice_name")[0]["divice_name"]
-                                        # 告警设备
-                                        alarm_model = equipment
-                                        # 告警名称
-                                        alarm_divice = alarm[0]
-                                        # 告警内容
-                                        # print(type(data.float_data))
-                                        # print(type(alarm[3]))
-                                        alarm_data = str(data.float_data) + alarm[3]
-                                        # 告警时间
-                                        alarm_time = data.data_time
-                                        # 告警等级
-                                        alarm_level = alarm[2]
-                                        # 传给前端的数据
-                                        data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
-                                                     "alarm_divice": alarm_divice, "alarm_data": alarm_data,
-                                                     "alarm_time": alarm_time, "alarm_level": alarm_level}
-                                        # 将每一条数据添加到列表
-                                        list_data.append(data_dict)
-                                # 判断
-                                if alarm[2] == "严重告警" and eq_name != "温湿度, 温度":
-                                    data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
-                                    # 获取最新的ID 将其保存到全局变量“max1_id”，然后来做第二次对比判断
-                                    if alarm[5]["max_id"] != data.id:
-                                        alarm[5]["max_id"] = data.id
+                                    """历史告警列表"""
+                                    if Warning.objects.first():
+                                        # 一分钟存储一次
+                                        warn_data_time = Warning.objects.filter(warn_time=data.data_time)
+                                        if warn_data_time.count() == 0:
+                                            time_data = datetime.timedelta(days=1 / 24 / 60)
+                                            # 获取最新的一条数据的时间
+                                            time_list = Warning.objects.all().last().warn_time
+                                            time_new = datetime.datetime.strptime(data_dict["lssue_time"],
+                                                                                  "%Y-%m-%d %H:%M:%S")
+                                            time_old = datetime.datetime.strptime(time_list, "%Y-%m-%d %H:%M:%S")
+                                            if time_new - time_old > time_data:
+                                                Warning.objects.create(
+                                                    warn_site=data_dict["site"],
+                                                    warn_equipment=data_dict["equipment"],
+                                                    warn_parameter=data_dict["alarm"],  # 告警参数也是告警名称
+                                                    warn_alarm=data_dict["alarm_text"],  # 告警内容
+                                                    warn_value=data_dict["value"],
+                                                    warn_unit=data_dict["unit"],
+                                                    warn_level=data_dict["level"],
+                                                    warn_time=data_dict["lssue_time"],
+                                                    warn_ip=data_dict["alarm_ip"],
+                                                )
+                                    else:
                                         Warning.objects.create(
-                                            warn_level=alarm[2],
-                                            warn_text=alarm[0],
-                                            warn_time=data.data_time,
-                                            warn_name=equipment,
-                                            warn_data=data.float_data,
-                                            unit=alarm[3],
-                                            is_delete=False,
-                                            warn_ip=data.divice_ip,
-                                            # 查询到对应站点（通过ip）
-                                            equip_id=divices.objects.get(divice_ip=data.divice_ip)
+                                            warn_site=data_dict["site"],
+                                            warn_equipment=data_dict["equipment"],
+                                            warn_parameter=data_dict["alarm"],  # 告警参数也是告警名称
+                                            warn_alarm=data_dict["alarm_text"],  # 告警内容
+                                            warn_value=data_dict["value"],
+                                            warn_unit=data_dict["unit"],
+                                            warn_level=data_dict["level"],
+                                            warn_time=data_dict["lssue_time"],
+                                            warn_ip=data_dict["alarm_ip"],
                                         )
-                                    if alarm[5]["max_id"] == data.id:
-                                        pass
-                                    if data.float_data != alarm[4]:
-                                    # if data.float_data == alarm[4]:
-                                        # 告警站点
-                                        divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
-                                            values("divice_name")[0]["divice_name"]
-                                        # 告警设备
-                                        alarm_model = equipment
-                                        # 告警名称
-                                        alarm_divice = alarm[0]
-                                        # 告警内容
-                                        alarm_data = alarm[1]
-                                        # 告警时间
-                                        alarm_time = data.data_time
-                                        # 告警等级
-                                        alarm_level = alarm[2]
-                                        # 传给前端的数据
-                                        data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
-                                                     "alarm_divice": alarm_divice, "alarm_data": alarm_data,
-                                                     "alarm_time": alarm_time, "alarm_level": alarm_level}
-                                        # 将每一条数据添加到列表
-                                        list_data.append(data_dict)
-
-                                # ---------------------《一般告警存入数据库 》----------------------
-                                if alarm[2] != "严重告警":
-                                    if eq_name == "温湿度, 温度" and alarm[0] == "低温告警":
-                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
-                                        # 获取最新的ID 将其保存到全局变量“max1_id”，然后来做第二次对比判断
-                                        if alarm[5]["max_id"] != data.id:
-                                            alarm[5]["max_id"] = data.id
-                                            Warning.objects.create(
-                                                warn_level=alarm[2],
-                                                warn_text=alarm[0],
-                                                warn_time=data.data_time,
-                                                warn_name=equipment,
-                                                warn_data=data.float_data,
-                                                unit=alarm[3],
-                                                is_delete=False,
-                                                warn_ip=data.divice_ip,
-                                                # 查询到对应站点（通过ip）
-                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
-                                            )
-                                        if alarm[5]["max_id"] == data.id:
-                                            pass
-                                        if data.float_data <= alarm[4]:
-                                        # if data.float_data <= 30:
-                                            # 告警站点
-                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
-                                                values("divice_name")[0]["divice_name"]
-                                            # 告警设备
-                                            alarm_model = equipment
-                                            # 告警名称
-                                            alarm_divice = alarm[0]
-                                            # 告警内容
-                                            alarm_data = str(data.float_data) + alarm[3]
-                                            # 告警时间
-                                            alarm_time = data.data_time
-                                            # 告警等级
-                                            alarm_level = alarm[2]
-                                            # 传给前端的数据
-                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
-                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
-                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
-                                            # 将每一条数据添加到列表
-                                            list_data1.append(data_dict)
-                                    if eq_name == "温湿度, 湿度" and alarm[0] == "高湿告警":
-                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
-                                        if alarm[5]["max_id"] != data.id:
-                                            alarm[5]["max_id"] = data.id
-                                            Warning.objects.create(
-                                                warn_level=alarm[2],
-                                                warn_text=alarm[0],
-                                                warn_time=data.data_time,
-                                                warn_name=equipment,
-                                                warn_data=data.float_data,
-                                                unit=alarm[3],
-                                                is_delete=False,
-                                                warn_ip=data.divice_ip,
-                                                # 查询到对应站点（通过ip）
-                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
-                                            )
-                                        if alarm[5].get("max_id") == data.id:
-                                            pass
-                                        if data.float_data >= alarm[4]:
-                                        # if data.float_data >= 30:
-                                            # 告警站点
-                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
-                                                values("divice_name")[0]["divice_name"]
-                                            # 告警设备
-                                            alarm_model = equipment
-                                            # 告警名称
-                                            alarm_divice = alarm[0]
-                                            # 告警内容
-                                            alarm_data = str(data.float_data) + alarm[3]
-                                            # 告警时间
-                                            alarm_time = data.data_time
-                                            # 告警等级
-                                            alarm_level = alarm[2]
-                                            # 传给前端的数据
-                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
-                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
-                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
-                                            # 将每一条数据添加到列表
-                                            list_data1.append(data_dict)
-                                    if eq_name == "温湿度, 湿度" and alarm[0] == "低湿告警":
-                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
-                                        if alarm[5]["max_id"] != data.id:
-                                            alarm[5]["max_id"] = data.id
-                                            Warning.objects.create(
-                                                warn_level=alarm[2],
-                                                warn_text=alarm[0],
-                                                warn_time=data.data_time,
-                                                warn_name=equipment,
-                                                warn_data=data.float_data,
-                                                unit=alarm[3],
-                                                is_delete=False,
-                                                warn_ip=data.divice_ip,
-                                                # 查询到对应站点（通过ip）
-                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
-                                            )
-                                        if alarm[5].get("max_id") == data.id:
-                                            pass
-                                        if data.float_data <= alarm[4]:
-                                        # if data.float_data <= 30:
-                                            # 告警站点
-                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
-                                                values("divice_name")[0]["divice_name"]
-                                            # 告警设备
-                                            alarm_model = equipment
-                                            # 告警名称
-                                            alarm_divice = alarm[0]
-                                            # 告警内容
-                                            alarm_data = str(data.float_data) + alarm[3]
-                                            # 告警时间
-                                            alarm_time = data.data_time
-                                            # 告警等级
-                                            alarm_level = alarm[2]
-                                            # 传给前端的数据
-                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
-                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
-                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
-                                            # 将每一条数据添加到列表
-                                            list_data1.append(data_dict)
-                                    if eq_name != "温湿度, 温度":
-                                        data = XmlData.objects.filter(name=eq_name).order_by("-id").first()
-                                        if alarm[5]["max_id"] != data.id:
-                                            alarm[5]["max_id"] = data.id
-                                            Warning.objects.create(
-                                                warn_level=alarm[2],
-                                                warn_text=alarm[0],
-                                                warn_time=data.data_time,
-                                                warn_name=equipment,
-                                                warn_data=data.float_data,
-                                                unit=alarm[3],
-                                                is_delete=False,
-                                                warn_ip=data.divice_ip,
-                                                # 查询到对应站点（通过ip）
-                                                equip_id=divices.objects.get(divice_ip=data.divice_ip)
-                                            )
-                                        if alarm[5].get("max_id") == data.id:
-                                            pass
-                                        if data.float_data != alarm[4]:
-                                        # if data.float_data == alarm[4]:
-                                            # 告警站点
-                                            divice_id = divices.objects.filter(divice_ip=data.divice_ip). \
-                                                values("divice_name")[0]["divice_name"]
-                                            # 告警设备
-                                            alarm_model = equipment
-                                            # 告警名称
-                                            alarm_divice = alarm[0]
-                                            # 告警内容
-                                            alarm_data = alarm[1]
-                                            # 告警时间
-                                            alarm_time = data.data_time
-                                            # 告警等级
-                                            alarm_level = alarm[2]
-                                            # 传给前端的数据
-                                            data_dict = {"divice_id": divice_id, "alarm_model": alarm_model,
-                                                         "alarm_divice": alarm_divice, "alarm_data": alarm_data,
-                                                         "alarm_time": alarm_time, "alarm_level": alarm_level}
-                                            # 将每一条数据添加到列表
-                                            list_data1.append(data_dict)
-                # ----------------------------------<存入历史数据>--------------------------------------
-                store_historyData()
-                # ----------------------------------<详情页面 实时更新数据 环境实时数据数据>--------------------------------------
-                data_dict = {
-                    # 环境
-                    "AC_SAT": XmlData.objects.filter(name="空调, 送风温度").order_by("-id").first().float_data,
-                    "AC_RAT": XmlData.objects.filter(name="空调, 吸气温度").order_by("-id").first().float_data,
-                    "AC_RAH": XmlData.objects.filter(name="空调, 室内湿度").order_by("-id").first().float_data,
-                    "AC_ST": "开" if int(
-                        XmlData.objects.filter(name="空调, 设备通讯状态").order_by("-id").first().float_data) == 1 else "关",
-                    # 电力
-                    "PW_MV": XmlData.objects.filter(name="UPS, 输入电压").order_by("-id").first().float_data,
-                    "PW_OV": XmlData.objects.filter(name="UPS, 输出电压").order_by("-id").first().float_data,
-                    "PW_LR": XmlData.objects.filter(name="UPS, 输出负载率").order_by("-id").first().float_data,
-                    "PW_BT": XmlData.objects.filter(name="UPS, 电池剩余时间").order_by("-id").first().float_data,
-                    "PW_ROW": XmlData.objects.filter(name="主路电表, 功率").order_by("-id").first().float_data,
-                    "PW_EC": XmlData.objects.filter(name="UPS, 输出功率因素").order_by("-id").first().float_data,
-                    # 安防
-                    "DR_ST": "开" if int(
-                        XmlData.objects.filter(name="监控屏IO, 机柜门").order_by("-id").first().float_data) == 1 else "关",
-                    # "DR_VD": XmlData.objects.filter(name="UPS, 输出功率因素").order_by("-id").first().float_data,
-                    # 其他
-                    "DR_MW": "无" if int(
-                        XmlData.objects.filter(name="监控屏IO, 漏水").order_by("-id").first().float_data) == 1 else "有",
-                    "DR_SD": "无" if int(
-                        XmlData.objects.filter(name="监控屏IO, 烟感").order_by("-id").first().float_data) == 1 else "有",
-
-                }
-                # 将“严重告警”和“一般告警”发送前端
-                data_dict = {"严重告警": list_data, "一般告警": list_data1, "data_dict": data_dict}
-                # 转换成json格式传送
-                str_list = json.dumps(data_dict)
-                # print("返回给前端的数据", str_list)
-                # 发送消息到客户端
-                request.websocket.send(str_list.encode())
-                list_data.clear()
-                list_data1.clear()
 
 
-# 用于展示历史数据(结合list_eq查询xmldata)
-def store_historyData():
-    for item in list_eq:
-        # 获取模块名称"equipment=监控屏IO"，及模块里面的设备列表value = [{...},{...},{...},...]
-        for equipment, value in item.items():
-            # 获得字典对象
-            # print(equipment)
-            for value_list in value:
-                # 获得告警设备和告警信息
-                for eq_name, alarm in value_list.items():
-                    # print(eq_name)
-                    # print(alarm)
-                    xmldata_obj = XmlData.objects.filter(name=eq_name).order_by("-id").first()
-                    # print(xmldata_obj[0])
-                    # print(xmldata_obj.id)
-                    if alarm[0]["max_id"] != xmldata_obj.id:
-                        alarm[0]["max_id"] = xmldata_obj.id
-                        # print(alarm[0]["max_id"])
-                        # 先得到所有的key 然后判断float_data==key
-                        key_list = list(alarm[0].keys())
-                        # print(key_list)
-                        # 遍历key_list 与取得的浮点数（转化后）相等，通过key取得对应的value
-                        value_data = [alarm[0][key] for key in key_list if str(int(xmldata_obj.float_data)) == key]
-                        # 判断value_data 为空则赋值null
-                        value_data_lsit = value_data[0] if value_data != [] else str(xmldata_obj.float_data)
-                        # print(value_data_lsit)
-                        EquipmentData.objects.create(
-                            # 设备
-                            equipment=equipment,
-                            # 设备名称
-                            equipment_name=alarm[0]["name"],
-                            # 信息值
-                            equipment_folat=xmldata_obj.float_data,
-                            # 内容根据信息值判断
-                            equipment_text=value_data_lsit,
-                            # 单位
-                            equipment_unit=alarm[0]["unit"],
-                            # 时间
-                            equipment_time=xmldata_obj.data_time,
-                            # 关联IP
-                            equipment_ip=xmldata_obj.divice_ip,
-                            # 外建
-                            divices=divices.objects.get(divice_ip=xmldata_obj.divice_ip)
+# 将数据实时展示给前端
+@accept_websocket
+def QueryWebsocket(request):
+    if request.is_websocket() == True:
+        WebSocket = request.websocket
+        while True:
+            # 用户关联的站点来展示告警
+            if list_ip:
+                alarm_list = []  # 每个ip对应的 告警列表
+                for i in list_ip:
+                    alarm_id = AlarmContent.objects.filter(Q(alarm_ip=i) & Q(alarm_id='10001'))
+                    """
+                    1、先查询10001  连接状态，如果未连接直接报未连接错误，无需报里面详细告警
+                    2、查询到的查询集有值
+                    2、连接 则根据equipment名称 查询下面的子告警
+                    """
+                    if alarm_id:
+                        # print(alarm_id)
+                        for j in alarm_id:
+                            # print(j.alarm_id)
+                            # 1、连接状态==1有告警，通信未连接
+                            if j.alarm_flag == '1':
+                                data_dict = {
+                                    "site": divices.objects.filter(divice_ip=i).first().divice_site,
+                                    "alarm": j.alarm,
+                                    "alarm_text": j.alarm_text,
+                                    "equipment": j.equipment,
+                                    "level": j.level,
+                                    "manage": j.manage,  # 该站点关联的用户  #ip地址关联的管理员
+                                    "lssue_time": j.lssue_time,
+                                    "location": divices.objects.filter(divice_ip=i).first().divice_location,
+                                    # 查询alarm_flag=‘1’为True则该ip地址对应的站点有告警 为False则该站点无告警
+                                    "status": 'Warning' if AlarmContent.objects.filter(alarm_flag='1') else 'Nomal',
+                                    "alarm_ip": j.alarm_ip,
+                                }
+                                alarm_list.append(data_dict)
+                            # 2、通信已经连接，查询子告警
+                            elif j.alarm_flag == "0":
+                                # 2.1 、查询10001 无告警下的其他子告警
+                                data = AlarmContent.objects.filter(
+                                    Q(alarm_ip=i) & Q(alarm_flag='1') & Q(equipment=j.equipment))
+                                if data:
+                                    # print(data)
+                                    for k in data:
+                                        data_dict = {
+                                            "site": divices.objects.filter(divice_ip=i).first().divice_site,
+                                            "alarm": k.alarm,
+                                            "alarm_text": k.alarm_text,
+                                            "equipment": k.equipment,
+                                            "level": k.level,
+                                            "manage": k.manage,  # 该站点关联的用户  #ip地址关联的管理员
+                                            "lssue_time": k.lssue_time,
+                                            "location": divices.objects.filter(divice_ip=i).first().divice_location,
+                                            # 查询alarm_flag=‘1’为True则该ip地址对应的站点有告警 为False则该站点无告警
+                                            "status": 'Warning' if AlarmContent.objects.filter(
+                                                alarm_flag='1') else 'Nomal',
+                                            "alarm_ip": k.alarm_ip,
+                                        }
+                                        alarm_list.append(data_dict)
+                # print(len(alarm_list))
+                json_data = json.dumps(alarm_list)  # 将得到的列表数据转换成json数据
+                WebSocket.send(json_data.encode('utf-8'))  # 编码成utf-8传给前端
+                time.sleep(2)
 
-                        )
-                    if alarm[0]["max_id"] == xmldata_obj.id:
-                        pass
+
+"""
+从xmldata表中获取数据，将告警和未告警添加一个唯一标示，存到表中
+温湿度数值注意
+实时更新表，传给前端。
+"""

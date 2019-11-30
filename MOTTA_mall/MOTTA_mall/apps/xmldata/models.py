@@ -6,7 +6,7 @@ class XmlData(models.Model):
     equipid = models.CharField(max_length=20, verbose_name="设备ID")
     sigid = models.CharField(max_length=20, verbose_name="信号ID")
     reg_addr = models.CharField(max_length=20, verbose_name="寄存器地址")
-    name = models.CharField(max_length=50, verbose_name="信号名称")
+    name = models.CharField(max_length=150, verbose_name="信号名称")
     float_data = models.FloatField(verbose_name="获取数据")
     # data_time = models.DateTimeField(verbose_name="时间戳")  # Django 项目中的自动获取时间 是需要用户来操作保存的。项目外的py文件保存数据库需要手动添加，不然回报错
     data_time = models.CharField(max_length=50, verbose_name="时间戳")
@@ -50,7 +50,7 @@ class equipments(models.Model):
     EquipId = models.CharField(max_length=50)
     EquipTemplateId = models.CharField(max_length=50)
     EquipmentName = models.CharField(max_length=50)
-    PortId = models.CharField(null=True,max_length=25)
+    PortId = models.CharField(null=True, max_length=25)
     EquipAddress = models.CharField(max_length=25)
     LibName = models.CharField(max_length=50)
     Equipment_ip = models.CharField(max_length=50)
@@ -85,45 +85,43 @@ class logactions(models.Model):
         return self.ActionName
 
 
-#  1、<Signals>状态信息表
-class Signals(models.Model):
+#  1.1 Signals_meaing状态信息表
+class Signals_meaing(models.Model):
     EquipTemplateId = models.CharField(max_length=50)
-    EquipTemplateName = models.CharField(max_length=50)
-    EquipTemplateType = models.CharField(max_length=50)
-    LibName = models.CharField(max_length=50)
+    EquipTemplateName= models.CharField(max_length=150)
 
-    SignalId = models.CharField(max_length=50)
+    SignalId = models.CharField(max_length=10)
     SignalName = models.CharField(max_length=150)
-    SignalBaseId = models.CharField(max_length=150)
-    SignalType = models.CharField(max_length=150)
+    Unit = models.CharField(max_length=25, default="-")  # 虽然设置了默认值，但是存储的时候被‘’空字符串替换掉了
 
-    StateValue = models.CharField(max_length=50, null=True, blank=True)
-    Meaning = models.CharField(max_length=50, null=True, blank=True)
+    StateValue = models.CharField(max_length=10, default="null")
+    Meaning = models.CharField(max_length=150, default="null")
 
     Signals_ip = models.CharField(max_length=50)
     Signals_time = models.CharField(max_length=50)
 
     class Meta:
-        db_table = 'tb_Signals'
-        verbose_name = "状态信息表"
+        db_table = 'tb_Signals_meaing'
+        verbose_name = "状态信息meaing表"
         verbose_name_plural = verbose_name
 
     def __str__(self):
         return self.EquipTemplateName
 
 
-#  2、<Events>状态信息表
+#  2、<Events>告警信息表
 class Events(models.Model):
     EquipTemplateId = models.CharField(max_length=50)
     EquipTemplateName = models.CharField(max_length=50)
-    EquipTemplateType = models.CharField(max_length=50)
-    LibName = models.CharField(max_length=50)
 
     EventId = models.CharField(max_length=50)
     EventName = models.CharField(max_length=150)
-    ConditionId = models.CharField(max_length=50)
-    Meaning = models.CharField(max_length=50)
-    EventSeverity = models.CharField(max_length=50)
+
+    ConditionId = models.CharField(max_length=50, default="null")
+    Meaning = models.CharField(max_length=150, default="null")
+    EventSeverity = models.CharField(max_length=50, default="null")
+    StartCompareValue = models.CharField(max_length=50, default="null")
+    StartOperation = models.CharField(max_length=50, default="null")
 
     Events_ip = models.CharField(max_length=50)
     Events_time = models.CharField(max_length=50)

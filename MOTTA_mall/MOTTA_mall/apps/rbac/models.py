@@ -1,17 +1,15 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
 # 用户
-class User(models.Model):
-    u_account = models.CharField(max_length=32, verbose_name='用户名')
-    u_password = models.CharField(max_length=32, verbose_name='密码')
-    u_email = models.CharField(max_length=32, verbose_name='邮箱')
+class User(AbstractUser):
     u_phone = models.CharField(max_length=32, verbose_name='电话')
     u_roles = models.ManyToManyField('Role', verbose_name='用户角色')
     u_backup = models.CharField(max_length=32, verbose_name='备用字段')
 
     def __str__(self):
-        return self.u_account
+        return self.username
 
     class Meta:
         db_table = "tb_user"

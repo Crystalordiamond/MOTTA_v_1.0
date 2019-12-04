@@ -252,6 +252,7 @@ AUTH_USER_MODEL = 'rbac.User'
 # 3.CORS 跨域请求  添加白名单
 CORS_ORIGIN_WHITELIST = (
     'http://192.168.1.17:8080',  # windows 前端访问
+    'http://192.168.1.22:8080',  # windows 前端访问
     'http://localhost',
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie

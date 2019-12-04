@@ -2,266 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f5e824-f915-406a-baff-bfc79cca7e19" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/createdata/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/constants.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/smscode/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/constants.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/utils_jwt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/users/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/test1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/wsdata/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/migrations/0002_auto_20191017_1229.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/migrations/0003_auto_20191017_1751.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/02_xml_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/02_xml_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/03_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/03_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSL1600F_FC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSL1600F_FC_NEW.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSmoothAir_Carel_DX.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateUPS_6-10K.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateUPS_GXT4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateVTUIOxx.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateVoltronicPowerParallelUPS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateYD2010C-K-V.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplatedds3366d-1p.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/MonitorUnitVTU.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/sms_notification.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/EquipmentTemplateFS102HT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/EquipmentTemplateSL1600F_FC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/EquipmentTemplateSL1600F_FC_NEW.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/EquipmentTemplateSmartAPCUPS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/EquipmentTemplateUPS_6-10K.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/EquipmentTemplateVTUIOxx.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/EquipmentTemplatedds3366d-1p.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/MonitorUnitVTU.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/modbus_map.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.20/sms_notification.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSL1600F_FC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSL1600F_FC_NEW.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSmartAPCUPS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSmoothAir_Carel_DX.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateTHSE10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateUPS_6-10K.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateUPS_GXT4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateVTUIOxx.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplatedds3366d-1p.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/MonitorUnitVTU.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/sms_notification.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/MGrid.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/Aircon_ATTOM.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/Aircon_PCB.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/DDS3366D-1P.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/FS102HT-new.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/FS102HT-org.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/FS102HT.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/SL1600F_FC.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/SmartAPCUPS.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/SmoothAir_Carel_DX.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/THSE10.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/VTUIO-DO1_2S.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/VTUIO.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/VTUIO2.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/VTUIO_DO12_5S.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/VTUIO_DO1_1S.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/VTUIO_DO1_5S.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/VTUIO_DO1_L1S.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/W70XX.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/XD300D_HT.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/YD-DEMS-BD2.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/comm_std_serial.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/do_ctrl.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/do_ctrl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/libhal.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/libtinyxml.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/libvtu_ipc.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/libwebprovider.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/sms_agent.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/SO/sms_agent_en.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/EquipmentTemplateFS102HT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/EquipmentTemplateSL1600F_FC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/EquipmentTemplateSmartAPCUPS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/EquipmentTemplateUPS_6-10K.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/EquipmentTemplateVTUIOxx.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/EquipmentTemplatedds3366d-1p.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/MonitorUnitVTU.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/sampler/XmlCfg/sms_notification.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-List.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-List.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-List.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-List.files/人头.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-List.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-List.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-bk.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-bk.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-bk.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-bk.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon-bk.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Aircon.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Environment.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Environment.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Environment.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Environment.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Environment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-Aircon.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-Aircon.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-Aircon.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-Aircon.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-Aircon.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-SMS.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-SMS.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-SMS.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-SMS.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set-SMS.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment-Set.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment.files/Circle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment.files/shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Equipment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryData.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryData.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryData.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryData.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryData.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryWarning.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryWarning.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryWarning.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryWarning.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/HistoryWarning.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/MGrid.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/Circle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/ColdHotTurnel.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/IDU告警灯.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/shadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter-List.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter-List.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter-List.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter-List.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter-List.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2-List.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2-List.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2-List.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2-List.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2-List.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/Meter2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/SysSet.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/SysSet.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/SysSet.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/SysSet.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/SysSet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/UPS-List.files/111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/UPS-List.files/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/UPS-List.files/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/UPS-List.files/透明图片.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/UPS-List.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/css/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/css/styleDate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/AlarmLevel1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/AlarmLevel2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/AlarmLevel3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/AlarmLevel4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/error.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/hi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/hj.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/hk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/into.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/image/warning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/js/BuildHtml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/js/Ecalendar.jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/js/echarts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/js/excanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/js/jquery.form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/js/myData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/vtu_config/vtu_pagelist/pagelist" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -307,67 +53,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+            <state relative-caret-position="224">
+              <caret line="626" column="62" lean-forward="true" selection-start-line="626" selection-start-column="62" selection-end-line="626" selection-end-column="62" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#1285#16696#0" />
+                <element signature="e#531#16696#0" />
+                <element signature="e#767#1206#0" />
                 <element signature="e#3763#4364#0" />
+                <element signature="e#17538#21378#0" />
+                <element signature="e#21304#33627#0" />
+                <element signature="e#33093#35560#0" />
+                <element signature="e#29614#29633#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py">
+        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2354">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="225" column="34" selection-start-line="225" selection-start-column="34" selection-end-line="225" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#1164#2303#0" />
-                <element signature="e#2350#3352#0" />
-                <element signature="e#6895#7208#0" />
-                <element signature="e#7300#7613#0" />
-                <element signature="e#7705#8018#0" />
-                <element signature="e#8110#8423#0" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py">
+        <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="16" column="85" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py">
+        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1210">
-              <caret line="55" column="77" selection-start-line="55" selection-start-column="77" selection-end-line="55" selection-end-column="77" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="286">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateVTUIOxx.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="22" column="67" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplatedds3366d-1p.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="836">
+              <caret line="38" column="25" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -383,36 +128,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>WebSocket</find>
-      <find>Meaning</find>
-      <find>主路供电</find>
-      <find>SignalId</find>
-      <find>EventId</find>
-      <find>Cooling</find>
-      <find>Leak</find>
-      <find>equipments_data</find>
-      <find>undervoltage</find>
-      <find>modbus_map_list</find>
-      <find>XmlCfg_ftp_path</find>
-      <find>get_documents</find>
-      <find>get_document_map</find>
-      <find>OutputSource</find>
-      <find>evn_data[0]</find>
-      <find>Unit</find>
-      <find>Events</find>
-      <find>warn</find>
-      <find>unit_data</find>
-      <find>EquipEvent</find>
-      <find>Signals</find>
-      <find>EquipSignal</find>
-      <find>ConditionId</find>
-      <find>EventCondition</find>
-      <find>StartCompareValue</find>
-      <find>StateValue</find>
-      <find>1</find>
-      <find>2</find>
-      <find>3</find>
-      <find>4</find>
+      <find>&quot;UPS, RatingInputVoltage&quot;</find>
+      <find>InputFrequency</find>
+      <find>UPS, InputFrequency</find>
+      <find>Temp-Humidity, Temperature</find>
+      <find>&quot;UPS, InputPhase&quot;</find>
+      <find>Phase</find>
+      <find>Current</find>
+      <find>UPS, InputPhases</find>
+      <find>load</find>
+      <find>InputVoltage</find>
+      <find>OutputLoad</find>
+      <find>RatingInputVoltage</find>
+      <find>Power</find>
+      <find>power</find>
+      <find>Load</find>
+      <find>Temp</find>
+      <find>UPS, OutputLoad</find>
+      <find>float_data</find>
+      <find>alarm_data</find>
+      <find>&quot;ip&quot;: data.divice_ip</find>
+      <find>Air Conditioner, Unit Mode</find>
+      <find>Primary Meter, Power</find>
+      <find>temps</find>
+      <find>input_fre</find>
+      <find>sigid</find>
+      <find>site</find>
+      <find>71</find>
+      <find>data_dict = {</find>
+      <find>Signals_meaing</find>
+      <find>signal.Signals_time</find>
     </findStrings>
     <replaceStrings>
       <replace>can</replace>
@@ -429,6 +174,10 @@
       <replace>2</replace>
       <replace>3</replace>
       <replace>4</replace>
+      <replace>float_data</replace>
+      <replace>&quot;site&quot;: site.divice_site if site else ''</replace>
+      <replace>&quot;site&quot;: site.divice_site if site else ''`</replace>
+      <replace>xml_data_value.data_time</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -437,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/logins/views.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/logins/urls.py" />
         <option value="$PROJECT_DIR$/uwsgi.ini" />
         <option value="$PROJECT_DIR$/MOTTA_mall/wsgi.py" />
@@ -466,9 +214,7 @@
         <option value="$PROJECT_DIR$/test/vtu_config/03_test.py" />
         <option value="$PROJECT_DIR$/test/suanfa.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/urls.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
         <option value="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSL1600F_FC_NEW.xml" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" />
@@ -477,17 +223,20 @@
         <option value="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateYD2010C-K-V.xml" />
         <option value="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" />
-        <option value="$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml" />
         <option value="$PROJECT_DIR$/test/03_test.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py" />
         <option value="$PROJECT_DIR$/test/02_xml_data.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
+        <option value="$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml" />
+        <option value="$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py" />
       </list>
     </option>
   </component>
@@ -648,7 +397,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tests">
+  <component name="RunManager" selected="Python.views">
     <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MOTTA_mall" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -784,11 +533,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tsest1" />
+        <item itemvalue="Python.views" />
         <item itemvalue="Python.tests" />
+        <item itemvalue="Python.tsest1" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.tests (1)" />
-        <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
@@ -866,12 +615,12 @@
       <workItem from="1573867214622" duration="62000" />
       <workItem from="1573867301910" duration="5000" />
       <workItem from="1573867333391" duration="9227000" />
-      <workItem from="1574056866855" duration="230252000" />
+      <workItem from="1574056866855" duration="291120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1070314000" />
+    <option name="totallyTimeSpent" value="1131182000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -884,8 +633,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1851" height="841" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.15751526" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.21686079" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5016234" side_tool="true" weight="0.19079313" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32957748" />
@@ -901,8 +651,8 @@
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="调试" order="12" weight="0.32957748" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49972144" visible="true" weight="0.2521127" />
-      <window_info anchor="bottom" x="86" y="346" width="1813" height="208" id="Run" order="14" weight="0.64507043" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49972144" visible="true" weight="0.3253521" />
+      <window_info anchor="bottom" x="86" y="346" width="1813" height="208" id="Run" order="14" weight="0.25492957" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32957748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1012,27 +762,18 @@
     <SUITE FILE_PATH="coverage/MOTTA_mall$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1574337289726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/divices" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$tests__3_.coverage" NAME="tests (3) Coverage Results" MODIFIED="1566011291881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/divices" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$test.coverage" NAME="test Coverage Results" MODIFIED="1564034233590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data" />
-    <SUITE FILE_PATH="coverage/MOTTA_mall$tests.coverage" NAME="tests Coverage Results" MODIFIED="1574863708750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
-    <SUITE FILE_PATH="coverage/MOTTA_mall$tsest1.coverage" NAME="tsest1 Coverage Results" MODIFIED="1574943590565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$tests.coverage" NAME="tests Coverage Results" MODIFIED="1575358470040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$tsest1.coverage" NAME="tsest1 Coverage Results" MODIFIED="1575354592794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1567147517098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$suanfa.coverage" NAME="suanfa Coverage Results" MODIFIED="1569035832715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$models.coverage" NAME="models Coverage Results" MODIFIED="1569660132753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$ftplib.coverage" NAME="ftplib Coverage Results" MODIFIED="1569036060796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr/lib/python3.6" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$client.coverage" NAME="client Coverage Results" MODIFIED="1569391085544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP" />
-    <SUITE FILE_PATH="coverage/MOTTA_mall$views.coverage" NAME="views Coverage Results" MODIFIED="1571367125575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$views.coverage" NAME="views Coverage Results" MODIFIED="1575358644817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1574844985325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$Storage_data.coverage" NAME="Storage_data Coverage Results" MODIFIED="1569394972695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://0fc9d412-5a91-4714-9b3a-cc195a80be35/schema/MOTTA_data/table/tb_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="dd5d9936-ab26-4750-8b1c-416da59fab86">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0fc9d412-5a91-4714-9b3a-cc195a80be35/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1049,16 +790,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#644#685#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,16 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3815">
-          <caret line="68" column="28" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="28" />
-          <folding>
-            <element signature="e#314#329#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,38 +911,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/MonitorUnitVTU.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/MonitorUnitVTU.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/03_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1265,16 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="866">
@@ -1285,38 +968,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateVTUIOxx.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplatedds3366d-1p.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSmoothAir_Carel_DX.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="1060" column="11" selection-start-line="1060" selection-start-column="11" selection-end-line="1060" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="48" column="37" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1348,22 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/02_xml_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="315" column="110" lean-forward="true" selection-start-line="315" selection-start-column="110" selection-end-line="315" selection-end-column="110" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <element signature="e#1279#1795#0" />
-            <element signature="e#1834#4553#0" />
-            <element signature="e#4619#5452#0" />
-            <element signature="e#5510#6238#0" />
-            <element signature="e#6304#7639#0" />
-            <element signature="e#7713#13774#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateDeltaV155C.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1374,13 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="19" column="57" lean-forward="true" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2354">
@@ -1388,14 +1020,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+        <state relative-caret-position="154">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#1285#16696#0" />
-            <element signature="e#3763#4364#0" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1410,20 +1040,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state relative-caret-position="286">
+          <caret line="254" column="24" selection-start-line="254" selection-start-column="24" selection-end-line="254" selection-end-column="24" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#314#329#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="225" column="34" selection-start-line="225" selection-start-column="34" selection-end-line="225" selection-end-column="34" />
+        <state relative-caret-position="741">
+          <caret line="222" column="33" selection-start-line="222" selection-start-column="33" selection-end-line="222" selection-end-column="33" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
             <element signature="e#1164#2303#0" />
@@ -1432,6 +1062,129 @@
             <element signature="e#7300#7613#0" />
             <element signature="e#7705#8018#0" />
             <element signature="e#8110#8423#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/MonitorUnitVTU.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#644#685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateVTUIOxx.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" column="67" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplatedds3366d-1p.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/MonitorUnitVTU.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="17" column="82" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/02_xml_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="507" column="35" selection-start-line="507" selection-start-column="35" selection-end-line="507" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#1279#1795#0" />
+            <element signature="e#1834#4553#0" />
+            <element signature="e#4619#5452#0" />
+            <element signature="e#5510#6238#0" />
+            <element signature="e#6304#7639#0" />
+            <element signature="e#7713#13774#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="16" column="85" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="626" column="62" lean-forward="true" selection-start-line="626" selection-start-column="62" selection-end-line="626" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#531#16696#0" />
+            <element signature="e#767#1206#0" />
+            <element signature="e#3763#4364#0" />
+            <element signature="e#17538#21378#0" />
+            <element signature="e#21304#33627#0" />
+            <element signature="e#33093#35560#0" />
+            <element signature="e#29614#29633#0" />
           </folding>
         </state>
       </provider>

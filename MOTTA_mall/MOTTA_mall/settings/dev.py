@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import datetime
 import os
+from pymysql import connect
+
+# from divices.models import WarningConfig
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -52,6 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 'django_crontab', # 定时器
+
     'divices.apps.DivicesConfig',
     'warning.apps.WarningConfig',
     'xmldata.apps.XmldataConfig',
@@ -60,6 +65,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',  # 跨域 白名单
     'dwebsocket',
+    'celery',
 ]
 # Django版本的问题，1.10之前，中间件的key为MIDDLEWARE_CLASSES, 1.10之后，为MIDDLEWARE。
 MIDDLEWARE = [
@@ -252,24 +258,30 @@ AUTH_USER_MODEL = 'rbac.User'
 # 3.CORS 跨域请求  添加白名单
 CORS_ORIGIN_WHITELIST = (
     'http://192.168.1.17:8080',  # windows 前端访问
-    'http://192.168.1.22:8080',  # windows 前端访问
-    'http://localhost',
+    'http://192.168.1.3 :8080',  # windows 前端访问
+    'http://localhost:8080',
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
-
-
 
 # 设置WEBSOCKET_ACCEPT_ALL=True可以允许每一个单独的视图使用websockets
 WEBSOCKET_ACCEPT_ALL = True
 # WEBSOCKET_FACTORY_CLASS = 'dwebsocket.backends.uwsgi.factory.uWsgiWebSocketFactory'
 
 # 邮件配置
+conn = connect(host="localhost", port=3306, database="MOTTA_data", user="root", password="mysql", charset="utf8")
+cur = conn.cursor()
+sql_str = '''select * from tb_warningconfig'''
+cur.execute(sql_str)
+sql = cur.fetchall()[0]
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.163.com'
-EMAIL_PORT = 25
-# 发送邮件的邮箱
-EMAIL_HOST_USER = 'luochenxi163@163.com'
-# 在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = 'luochenxi163'
-# 收件人看到的发件人
-EMAIL_FROM = 'MOTTA<luochenxi163@163.com>'
+EMAIL_HOST = sql[1]
+# EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = sql[2]
+# EMAIL_PORT = 25
+# # 发送邮件的邮箱
+EMAIL_HOST_USER = sql[4]
+# EMAIL_HOST_USER = 'luochenxi163@163.com'
+# # 在邮箱中设置的客户端授权密码
+# EMAIL_HOST_PASSWORD = 'chenjun123456'
+EMAIL_HOST_PASSWORD = sql[5]
+# print(EMAIL_HOST_PASSWORD)

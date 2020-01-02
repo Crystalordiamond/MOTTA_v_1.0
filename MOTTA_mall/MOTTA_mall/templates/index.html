@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MOTTA邮件告警</title>
+    <STYLE TYPE="text/css" MEDIA=screen>
+
+        table.gridtable {
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+
+
+    </STYLE>
+</head>
+<body>
+<div >
+    <h3>MOTTA集中监控告警详情</h3>
+</div>
+<div>
+    <table class="gridtable">
+        <tr>
+            <th>Location</th>
+            <th>Site</th>
+            <th>Equipment</th>
+            <th>Alarm</th>
+            <th>Content</th>
+            <th>Manager</th>
+            <th>Time</th>
+        </tr>
+        {% for item in alarm_list %}
+            <tr>
+                <td>{{ item.location }}</td>
+                <td>{{ item.site }}</td>
+                <td>{{ item.equipment }}</td>
+                <td>{{ item.alarm }}</td>
+                <td>{{ item.alarm_text }}</td>
+                <td>{{ item.manage }}</td>
+                <td>{{ item.lssue_time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

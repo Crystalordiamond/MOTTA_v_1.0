@@ -47,3 +47,19 @@ class Permission(models.Model):
         db_table = "tb_permission"
         verbose_name = "存储url信息"
         verbose_name_plural = verbose_name
+
+# 用户的登入退出状态记录
+class UserStatus(models.Model):
+    u_username = models.CharField(max_length=50, verbose_name='用户名称')
+    u_grader = models.CharField(max_length=20, verbose_name='用户等级')
+    u_outtime = models.CharField(max_length=50, verbose_name='退出时间')
+    u_logintime = models.CharField(max_length=50, verbose_name='登入时间')
+    u_flg = models.CharField(max_length=10, verbose_name='随机字符串')
+
+    def __str__(self):
+        return self.u_username
+
+    class Meta:
+        db_table = "tb_UserStatus"
+        verbose_name = "存储用户状态信息"
+        verbose_name_plural = verbose_name

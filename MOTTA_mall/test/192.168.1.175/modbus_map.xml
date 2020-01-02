@@ -62,417 +62,107 @@
 		<signal equipid="3" sigid="200" reg_addr="0x0035" name="UPS, FaultStatus" />
 		<signal equipid="3" sigid="201" reg_addr="0x0036" name="UPS, UPSSimplifyMode" />
 		<signal equipid="3" sigid="10001" reg_addr="0x0037" name="UPS, CommunicationStatus" />
-		<signal equipid="4" sigid="1" reg_addr="0x0038" name="Primary Meter, Communication address:1~247" />
-		<signal equipid="4" sigid="2" reg_addr="0x0039" name="Primary Meter, Measurement system wiring mode:0~5 04NBL1" />
-		<signal equipid="4" sigid="3" reg_addr="0x003a" name="Primary Meter, Check digit
-
-: 0:None 1:odd 2:even" />
-		<signal equipid="4" sigid="4" reg_addr="0x003b" name="Primary Meter, Baud rate
-
-: 01200 12400 2480" />
-		<signal equipid="4" sigid="5" reg_addr="0x003c" name="Primary Meter, Voltage range 0150 1600" />
-		<signal equipid="4" sigid="6" reg_addr="0x003d" name="Primary Meter, PT1~10000" />
-		<signal equipid="4" sigid="7" reg_addr="0x003e" name="Primary Meter, CT1~10000" />
-		<signal equipid="4" sigid="8" reg_addr="0x003f" name="Primary Meter, Phase voltage1 " />
-		<signal equipid="4" sigid="9" reg_addr="0x0040" name="Primary Meter, Line voltage U12" />
-		<signal equipid="4" sigid="10" reg_addr="0x0041" name="Primary Meter, Phase 1 current" />
-		<signal equipid="4" sigid="11" reg_addr="0x0042" name="Primary Meter, Phase 1 active power" />
-		<signal equipid="4" sigid="12" reg_addr="0x0043" name="Primary Meter, Phase 1 power factor" />
-		<signal equipid="4" sigid="13" reg_addr="0x0044" name="Primary Meter, Phase 1 reactive power" />
-		<signal equipid="4" sigid="14" reg_addr="0x0045" name="Primary Meter, Phase 1 apparent power" />
-		<signal equipid="4" sigid="15" reg_addr="0x0046" name="Primary Meter, Phase voltage2      " />
-		<signal equipid="4" sigid="16" reg_addr="0x0047" name="Primary Meter, Line voltage U23" />
-		<signal equipid="4" sigid="17" reg_addr="0x0048" name="Primary Meter, Phase 2 current" />
-		<signal equipid="4" sigid="18" reg_addr="0x0049" name="Primary Meter, Phase 2 active power" />
-		<signal equipid="4" sigid="19" reg_addr="0x004a" name="Primary Meter, Phase 2 power factor" />
-		<signal equipid="4" sigid="20" reg_addr="0x004b" name="Primary Meter, Phase 2 reactive power" />
-		<signal equipid="4" sigid="21" reg_addr="0x004c" name="Primary Meter, Phase 2 apparent power" />
-		<signal equipid="4" sigid="22" reg_addr="0x004d" name="Primary Meter, Phase voltage3    " />
-		<signal equipid="4" sigid="23" reg_addr="0x004e" name="Primary Meter, Line voltage U31  " />
-		<signal equipid="4" sigid="24" reg_addr="0x004f" name="Primary Meter, Phase 3 current" />
-		<signal equipid="4" sigid="25" reg_addr="0x0050" name="Primary Meter, N-PE voltage   " />
-		<signal equipid="4" sigid="26" reg_addr="0x0051" name="Primary Meter, Phase 3 active power" />
-		<signal equipid="4" sigid="27" reg_addr="0x0052" name="Primary Meter, Phase 3 power factor" />
-		<signal equipid="4" sigid="28" reg_addr="0x0053" name="Primary Meter, Phase 3 reactive power" />
-		<signal equipid="4" sigid="29" reg_addr="0x0054" name="Primary Meter, Phase 3 apparent power" />
-		<signal equipid="4" sigid="30" reg_addr="0x0055" name="Primary Meter, Three-phase mean line voltage" />
-		<signal equipid="4" sigid="31" reg_addr="0x0056" name="Primary Meter, Three-phase mean phase voltage" />
-		<signal equipid="4" sigid="32" reg_addr="0x0057" name="Primary Meter, Three-phase mean phase current" />
-		<signal equipid="4" sigid="33" reg_addr="0x0058" name="Primary Meter, Frequency" />
-		<signal equipid="4" sigid="34" reg_addr="0x0059" name="Primary Meter, Three phase active power" />
-		<signal equipid="4" sigid="35" reg_addr="0x005a" name="Primary Meter, Three-phase total power factor" />
-		<signal equipid="4" sigid="36" reg_addr="0x005b" name="Primary Meter, Three phase reactive power
-
-" />
-		<signal equipid="4" sigid="37" reg_addr="0x005c" name="Primary Meter, Three phase apparent power
-
-" />
-		<signal equipid="4" sigid="38" reg_addr="0x005d" name="Primary Meter, Zero sequence current
-
-       " />
-		<signal equipid="4" sigid="39" reg_addr="0x005e" name="Primary Meter, Positive active energy
-
-" />
-		<signal equipid="4" sigid="40" reg_addr="0x005f" name="Primary Meter, Negative active energy
-
- " />
-		<signal equipid="4" sigid="41" reg_addr="0x0060" name="Primary Meter, Positive reactive energy
-
-    " />
-		<signal equipid="4" sigid="42" reg_addr="0x0061" name="Primary Meter, Negative reactive energy
-
-  " />
-		<signal equipid="4" sigid="43" reg_addr="0x0062" name="Primary Meter, DI1-Main power" />
-		<signal equipid="4" sigid="44" reg_addr="0x0063" name="Primary Meter, DI2-Backup power" />
-		<signal equipid="4" sigid="45" reg_addr="0x0064" name="Primary Meter, A phase lose" />
-		<signal equipid="4" sigid="46" reg_addr="0x0065" name="Primary Meter, B phase lose" />
-		<signal equipid="4" sigid="47" reg_addr="0x0066" name="Primary Meter, C phase lose" />
-		<signal equipid="4" sigid="48" reg_addr="0x0067" name="Primary Meter, Main power fault" />
-		<signal equipid="4" sigid="49" reg_addr="0x0068" name="Primary Meter, Fundamental wave
-
- I1" />
-		<signal equipid="4" sigid="50" reg_addr="0x0069" name="Primary Meter, Fundamental wave I2" />
-		<signal equipid="4" sigid="51" reg_addr="0x006a" name="Primary Meter, Fundamental wave I3" />
-		<signal equipid="4" sigid="52" reg_addr="0x006b" name="Primary Meter, Fundamental wave V1" />
-		<signal equipid="4" sigid="53" reg_addr="0x006c" name="Primary Meter, Fundamental wave V2" />
-		<signal equipid="4" sigid="54" reg_addr="0x006d" name="Primary Meter, Fundamental wave V3" />
-		<signal equipid="4" sigid="55" reg_addr="0x006e" name="Primary Meter, Aphase current total distortion rate
-
-THD I1" />
-		<signal equipid="4" sigid="56" reg_addr="0x006f" name="Primary Meter, Bphase current total distortion rateTHD I2" />
-		<signal equipid="4" sigid="57" reg_addr="0x0070" name="Primary Meter, Cphase current total distortion rateTHD I3" />
-		<signal equipid="4" sigid="58" reg_addr="0x0071" name="Primary Meter, Aphase voltage total distortion rateTHD V1" />
-		<signal equipid="4" sigid="59" reg_addr="0x0072" name="Primary Meter, Bphase voltage total distortion rateTHD V2" />
-		<signal equipid="4" sigid="60" reg_addr="0x0073" name="Primary Meter, Cphase voltage total distortion rateTHD V3" />
-		<signal equipid="4" sigid="61" reg_addr="0x0074" name="Primary Meter, 3 times harmonic contentI1 " />
-		<signal equipid="4" sigid="62" reg_addr="0x0075" name="Primary Meter, 5 times harmonic contentI1 " />
-		<signal equipid="4" sigid="63" reg_addr="0x0076" name="Primary Meter, 7 times harmonic contentI1 " />
-		<signal equipid="4" sigid="64" reg_addr="0x0077" name="Primary Meter, 9 times harmonic contentI1 " />
-		<signal equipid="4" sigid="65" reg_addr="0x0078" name="Primary Meter, 11 times harmonic contentI1" />
-		<signal equipid="4" sigid="66" reg_addr="0x0079" name="Primary Meter, 13 times harmonic contentI1" />
-		<signal equipid="4" sigid="67" reg_addr="0x007a" name="Primary Meter, 15 times harmonic contentI1" />
-		<signal equipid="4" sigid="68" reg_addr="0x007b" name="Primary Meter, 17 times harmonic contentI1" />
-		<signal equipid="4" sigid="69" reg_addr="0x007c" name="Primary Meter, 19 times harmonic contentI1" />
-		<signal equipid="4" sigid="70" reg_addr="0x007d" name="Primary Meter, 21 times harmonic contentI1" />
-		<signal equipid="4" sigid="71" reg_addr="0x007e" name="Primary Meter, 23 times harmonic contentI1" />
-		<signal equipid="4" sigid="72" reg_addr="0x007f" name="Primary Meter, 25 times harmonic contentI1" />
-		<signal equipid="4" sigid="73" reg_addr="0x0080" name="Primary Meter, 27 times harmonic contentI1" />
-		<signal equipid="4" sigid="74" reg_addr="0x0081" name="Primary Meter, 29 times harmonic contentI1" />
-		<signal equipid="4" sigid="75" reg_addr="0x0082" name="Primary Meter, 31 times harmonic contentI1" />
-		<signal equipid="4" sigid="76" reg_addr="0x0083" name="Primary Meter, 3 times harmonic contentI2 " />
-		<signal equipid="4" sigid="77" reg_addr="0x0084" name="Primary Meter, 5 times harmonic contentI2 " />
-		<signal equipid="4" sigid="78" reg_addr="0x0085" name="Primary Meter, 7 times harmonic contentI2 " />
-		<signal equipid="4" sigid="79" reg_addr="0x0086" name="Primary Meter, 9 times harmonic contentI2 " />
-		<signal equipid="4" sigid="80" reg_addr="0x0087" name="Primary Meter, 11 times harmonic contentI2" />
-		<signal equipid="4" sigid="81" reg_addr="0x0088" name="Primary Meter, 13 times harmonic contentI2" />
-		<signal equipid="4" sigid="82" reg_addr="0x0089" name="Primary Meter, 15 times harmonic contentI2" />
-		<signal equipid="4" sigid="83" reg_addr="0x008a" name="Primary Meter, 17 times harmonic contentI2" />
-		<signal equipid="4" sigid="84" reg_addr="0x008b" name="Primary Meter, 19 times harmonic contentI2" />
-		<signal equipid="4" sigid="85" reg_addr="0x008c" name="Primary Meter, 21 times harmonic contentI2" />
-		<signal equipid="4" sigid="86" reg_addr="0x008d" name="Primary Meter, 23 times harmonic contentI2" />
-		<signal equipid="4" sigid="87" reg_addr="0x008e" name="Primary Meter, 25 times harmonic contentI2" />
-		<signal equipid="4" sigid="88" reg_addr="0x008f" name="Primary Meter, 27 times harmonic contentI2" />
-		<signal equipid="4" sigid="89" reg_addr="0x0090" name="Primary Meter, 29 times harmonic contentI2" />
-		<signal equipid="4" sigid="90" reg_addr="0x0091" name="Primary Meter, 31 times harmonic contentI2" />
-		<signal equipid="4" sigid="91" reg_addr="0x0092" name="Primary Meter, 3 times harmonic contentI3  " />
-		<signal equipid="4" sigid="92" reg_addr="0x0093" name="Primary Meter, 5 times harmonic contentI3  " />
-		<signal equipid="4" sigid="93" reg_addr="0x0094" name="Primary Meter, 7 times harmonic contentI3  " />
-		<signal equipid="4" sigid="94" reg_addr="0x0095" name="Primary Meter, 9 times harmonic contentI3  " />
-		<signal equipid="4" sigid="95" reg_addr="0x0096" name="Primary Meter, 11 times harmonic contentI3 " />
-		<signal equipid="4" sigid="96" reg_addr="0x0097" name="Primary Meter, 13 times harmonic contentI3 " />
-		<signal equipid="4" sigid="97" reg_addr="0x0098" name="Primary Meter, 15 times harmonic contentI3 " />
-		<signal equipid="4" sigid="98" reg_addr="0x0099" name="Primary Meter, 17 times harmonic contentI3 " />
-		<signal equipid="4" sigid="99" reg_addr="0x009a" name="Primary Meter, 19 times harmonic contentI3 " />
-		<signal equipid="4" sigid="100" reg_addr="0x009b" name="Primary Meter, 21 times harmonic contentI3 " />
-		<signal equipid="4" sigid="101" reg_addr="0x009c" name="Primary Meter, 23 times harmonic contentI3 " />
-		<signal equipid="4" sigid="102" reg_addr="0x009d" name="Primary Meter, 25 times harmonic contentI3 " />
-		<signal equipid="4" sigid="103" reg_addr="0x009e" name="Primary Meter, 27 times harmonic contentI3 " />
-		<signal equipid="4" sigid="104" reg_addr="0x009f" name="Primary Meter, 29 times harmonic contentI3 " />
-		<signal equipid="4" sigid="105" reg_addr="0x00a0" name="Primary Meter, 31 times harmonic contentI3 " />
-		<signal equipid="4" sigid="106" reg_addr="0x00a1" name="Primary Meter, 3 times harmonic contentV1 " />
-		<signal equipid="4" sigid="107" reg_addr="0x00a2" name="Primary Meter, 5 times harmonic contentV1 " />
-		<signal equipid="4" sigid="108" reg_addr="0x00a3" name="Primary Meter, 7 times harmonic contentV1 " />
-		<signal equipid="4" sigid="109" reg_addr="0x00a4" name="Primary Meter, 9 times harmonic contentV1 " />
-		<signal equipid="4" sigid="110" reg_addr="0x00a5" name="Primary Meter, 11 times harmonic contentV1" />
-		<signal equipid="4" sigid="111" reg_addr="0x00a6" name="Primary Meter, 13 times harmonic contentV1" />
-		<signal equipid="4" sigid="112" reg_addr="0x00a7" name="Primary Meter, 15 times harmonic contentV1" />
-		<signal equipid="4" sigid="113" reg_addr="0x00a8" name="Primary Meter, 17 times harmonic contentV1" />
-		<signal equipid="4" sigid="114" reg_addr="0x00a9" name="Primary Meter, 19 times harmonic contentV1" />
-		<signal equipid="4" sigid="115" reg_addr="0x00aa" name="Primary Meter, 21 times harmonic contentV1" />
-		<signal equipid="4" sigid="116" reg_addr="0x00ab" name="Primary Meter, 23 times harmonic contentV1" />
-		<signal equipid="4" sigid="117" reg_addr="0x00ac" name="Primary Meter, 25 times harmonic contentV1" />
-		<signal equipid="4" sigid="118" reg_addr="0x00ad" name="Primary Meter, 27 times harmonic contentV1" />
-		<signal equipid="4" sigid="119" reg_addr="0x00ae" name="Primary Meter, 29 times harmonic contentV1" />
-		<signal equipid="4" sigid="120" reg_addr="0x00af" name="Primary Meter, 31 times harmonic contentV1" />
-		<signal equipid="4" sigid="121" reg_addr="0x00b0" name="Primary Meter, 3 times harmonic contentV2  " />
-		<signal equipid="4" sigid="122" reg_addr="0x00b1" name="Primary Meter, 5 times harmonic contentV2  " />
-		<signal equipid="4" sigid="123" reg_addr="0x00b2" name="Primary Meter, 7 times harmonic contentV2  " />
-		<signal equipid="4" sigid="124" reg_addr="0x00b3" name="Primary Meter, 9 times harmonic contentV2  " />
-		<signal equipid="4" sigid="125" reg_addr="0x00b4" name="Primary Meter, 11 times harmonic contentV2 " />
-		<signal equipid="4" sigid="126" reg_addr="0x00b5" name="Primary Meter, 13 times harmonic contentV2 " />
-		<signal equipid="4" sigid="127" reg_addr="0x00b6" name="Primary Meter, 15 times harmonic contentV2 " />
-		<signal equipid="4" sigid="128" reg_addr="0x00b7" name="Primary Meter, 17 times harmonic contentV2 " />
-		<signal equipid="4" sigid="129" reg_addr="0x00b8" name="Primary Meter, 19 times harmonic contentV2 " />
-		<signal equipid="4" sigid="130" reg_addr="0x00b9" name="Primary Meter, 21 times harmonic contentV2 " />
-		<signal equipid="4" sigid="131" reg_addr="0x00ba" name="Primary Meter, 23 times harmonic contentV2 " />
-		<signal equipid="4" sigid="132" reg_addr="0x00bb" name="Primary Meter, 25 times harmonic contentV2 " />
-		<signal equipid="4" sigid="133" reg_addr="0x00bc" name="Primary Meter, 27 times harmonic contentV2 " />
-		<signal equipid="4" sigid="134" reg_addr="0x00bd" name="Primary Meter, 29 times harmonic contentV2 " />
-		<signal equipid="4" sigid="135" reg_addr="0x00be" name="Primary Meter, 31 times harmonic contentV2 " />
-		<signal equipid="4" sigid="136" reg_addr="0x00bf" name="Primary Meter, 3 times harmonic contentV3  " />
-		<signal equipid="4" sigid="137" reg_addr="0x00c0" name="Primary Meter, 5 times harmonic contentV3  " />
-		<signal equipid="4" sigid="138" reg_addr="0x00c1" name="Primary Meter, 7 times harmonic contentV3  " />
-		<signal equipid="4" sigid="139" reg_addr="0x00c2" name="Primary Meter, 9 times harmonic contentV3  " />
-		<signal equipid="4" sigid="140" reg_addr="0x00c3" name="Primary Meter, 11 times harmonic contentV3 " />
-		<signal equipid="4" sigid="141" reg_addr="0x00c4" name="Primary Meter, 13 times harmonic contentV3 " />
-		<signal equipid="4" sigid="142" reg_addr="0x00c5" name="Primary Meter, 15 times harmonic contentV3 " />
-		<signal equipid="4" sigid="143" reg_addr="0x00c6" name="Primary Meter, 17 times harmonic contentV3 " />
-		<signal equipid="4" sigid="144" reg_addr="0x00c7" name="Primary Meter, 19 times harmonic contentV3 " />
-		<signal equipid="4" sigid="145" reg_addr="0x00c8" name="Primary Meter, 21 times harmonic contentV3 " />
-		<signal equipid="4" sigid="146" reg_addr="0x00c9" name="Primary Meter, 23 times harmonic contentV3 " />
-		<signal equipid="4" sigid="147" reg_addr="0x00ca" name="Primary Meter, 25 times harmonic contentV3 " />
-		<signal equipid="4" sigid="148" reg_addr="0x00cb" name="Primary Meter, 27 times harmonic contentV3 " />
-		<signal equipid="4" sigid="149" reg_addr="0x00cc" name="Primary Meter, 29 times harmonic contentV3 " />
-		<signal equipid="4" sigid="150" reg_addr="0x00cd" name="Primary Meter, 31 times harmonic contentV3 " />
-		<signal equipid="4" sigid="157" reg_addr="0x00ce" name="Primary Meter, The main overvoltage
-
-" />
-		<signal equipid="4" sigid="158" reg_addr="0x00cf" name="Primary Meter, The main undervoltage
-
-" />
-		<signal equipid="4" sigid="159" reg_addr="0x00d0" name="Primary Meter, The main losephase
-
-" />
-		<signal equipid="4" sigid="160" reg_addr="0x00d1" name="Primary Meter, The main overcurrent" />
-		<signal equipid="4" sigid="161" reg_addr="0x00d2" name="Primary Meter, Overfrequency" />
-		<signal equipid="4" sigid="162" reg_addr="0x00d3" name="Primary Meter, Phase 1 rated current
-
-" />
-		<signal equipid="4" sigid="163" reg_addr="0x00d4" name="Primary Meter, Phase 2 rated current
-
-" />
-		<signal equipid="4" sigid="164" reg_addr="0x00d5" name="Primary Meter, Phase 3 rated current
-
-" />
-		<signal equipid="4" sigid="165" reg_addr="0x00d6" name="Primary Meter, Phase 1 load rate" />
-		<signal equipid="4" sigid="166" reg_addr="0x00d7" name="Primary Meter, Phase 2 load rate" />
-		<signal equipid="4" sigid="167" reg_addr="0x00d8" name="Primary Meter, Phase 3 load rate" />
-		<signal equipid="4" sigid="168" reg_addr="0x00d9" name="Primary Meter, Three phase average load rate
-
-" />
-		<signal equipid="4" sigid="10001" reg_addr="0x00da" name="Primary Meter, CommunicationStatus" />
-		<signal equipid="5" sigid="1" reg_addr="0x00db" name="IT Meter1, Communication address:1~247" />
-		<signal equipid="5" sigid="2" reg_addr="0x00dc" name="IT Meter1, Measurement system wiring mode:0~5 04NBL1" />
-		<signal equipid="5" sigid="3" reg_addr="0x00dd" name="IT Meter1, Check digit
-
-: 0:None 1:odd 2:even" />
-		<signal equipid="5" sigid="4" reg_addr="0x00de" name="IT Meter1, Baud rate
-
-: 01200 12400 2480" />
-		<signal equipid="5" sigid="5" reg_addr="0x00df" name="IT Meter1, Voltage range 0150 1600" />
-		<signal equipid="5" sigid="6" reg_addr="0x00e0" name="IT Meter1, PT1~10000" />
-		<signal equipid="5" sigid="7" reg_addr="0x00e1" name="IT Meter1, CT1~10000" />
-		<signal equipid="5" sigid="8" reg_addr="0x00e2" name="IT Meter1, Phase voltage1 " />
-		<signal equipid="5" sigid="9" reg_addr="0x00e3" name="IT Meter1, Line voltage U12" />
-		<signal equipid="5" sigid="10" reg_addr="0x00e4" name="IT Meter1, Phase 1 current" />
-		<signal equipid="5" sigid="11" reg_addr="0x00e5" name="IT Meter1, Phase 1 active power" />
-		<signal equipid="5" sigid="12" reg_addr="0x00e6" name="IT Meter1, Phase 1 power factor" />
-		<signal equipid="5" sigid="13" reg_addr="0x00e7" name="IT Meter1, Phase 1 reactive power" />
-		<signal equipid="5" sigid="14" reg_addr="0x00e8" name="IT Meter1, Phase 1 apparent power" />
-		<signal equipid="5" sigid="15" reg_addr="0x00e9" name="IT Meter1, Phase voltage2      " />
-		<signal equipid="5" sigid="16" reg_addr="0x00ea" name="IT Meter1, Line voltage U23" />
-		<signal equipid="5" sigid="17" reg_addr="0x00eb" name="IT Meter1, Phase 2 current" />
-		<signal equipid="5" sigid="18" reg_addr="0x00ec" name="IT Meter1, Phase 2 active power" />
-		<signal equipid="5" sigid="19" reg_addr="0x00ed" name="IT Meter1, Phase 2 power factor" />
-		<signal equipid="5" sigid="20" reg_addr="0x00ee" name="IT Meter1, Phase 2 reactive power" />
-		<signal equipid="5" sigid="21" reg_addr="0x00ef" name="IT Meter1, Phase 2 apparent power" />
-		<signal equipid="5" sigid="22" reg_addr="0x00f0" name="IT Meter1, Phase voltage3    " />
-		<signal equipid="5" sigid="23" reg_addr="0x00f1" name="IT Meter1, Line voltage U31  " />
-		<signal equipid="5" sigid="24" reg_addr="0x00f2" name="IT Meter1, Phase 3 current" />
-		<signal equipid="5" sigid="25" reg_addr="0x00f3" name="IT Meter1, N-PE voltage   " />
-		<signal equipid="5" sigid="26" reg_addr="0x00f4" name="IT Meter1, Phase 3 active power" />
-		<signal equipid="5" sigid="27" reg_addr="0x00f5" name="IT Meter1, Phase 3 power factor" />
-		<signal equipid="5" sigid="28" reg_addr="0x00f6" name="IT Meter1, Phase 3 reactive power" />
-		<signal equipid="5" sigid="29" reg_addr="0x00f7" name="IT Meter1, Phase 3 apparent power" />
-		<signal equipid="5" sigid="30" reg_addr="0x00f8" name="IT Meter1, Three-phase mean line voltage" />
-		<signal equipid="5" sigid="31" reg_addr="0x00f9" name="IT Meter1, Three-phase mean phase voltage" />
-		<signal equipid="5" sigid="32" reg_addr="0x00fa" name="IT Meter1, Three-phase mean phase current" />
-		<signal equipid="5" sigid="33" reg_addr="0x00fb" name="IT Meter1, Frequency" />
-		<signal equipid="5" sigid="34" reg_addr="0x00fc" name="IT Meter1, Three phase active power" />
-		<signal equipid="5" sigid="35" reg_addr="0x00fd" name="IT Meter1, Three-phase total power factor" />
-		<signal equipid="5" sigid="36" reg_addr="0x00fe" name="IT Meter1, Three phase reactive power
-
-" />
-		<signal equipid="5" sigid="37" reg_addr="0x00ff" name="IT Meter1, Three phase apparent power
-
-" />
-		<signal equipid="5" sigid="38" reg_addr="0x0100" name="IT Meter1, Zero sequence current
-
-       " />
-		<signal equipid="5" sigid="39" reg_addr="0x0101" name="IT Meter1, Positive active energy
-
-" />
-		<signal equipid="5" sigid="40" reg_addr="0x0102" name="IT Meter1, Negative active energy
-
- " />
-		<signal equipid="5" sigid="41" reg_addr="0x0103" name="IT Meter1, Positive reactive energy
-
-    " />
-		<signal equipid="5" sigid="42" reg_addr="0x0104" name="IT Meter1, Negative reactive energy
-
-  " />
-		<signal equipid="5" sigid="43" reg_addr="0x0105" name="IT Meter1, DI1-Main power" />
-		<signal equipid="5" sigid="44" reg_addr="0x0106" name="IT Meter1, DI2-Backup power" />
-		<signal equipid="5" sigid="45" reg_addr="0x0107" name="IT Meter1, A phase lose" />
-		<signal equipid="5" sigid="46" reg_addr="0x0108" name="IT Meter1, B phase lose" />
-		<signal equipid="5" sigid="47" reg_addr="0x0109" name="IT Meter1, C phase lose" />
-		<signal equipid="5" sigid="48" reg_addr="0x010a" name="IT Meter1, Main power fault" />
-		<signal equipid="5" sigid="49" reg_addr="0x010b" name="IT Meter1, Fundamental wave
-
- I1" />
-		<signal equipid="5" sigid="50" reg_addr="0x010c" name="IT Meter1, Fundamental wave I2" />
-		<signal equipid="5" sigid="51" reg_addr="0x010d" name="IT Meter1, Fundamental wave I3" />
-		<signal equipid="5" sigid="52" reg_addr="0x010e" name="IT Meter1, Fundamental wave V1" />
-		<signal equipid="5" sigid="53" reg_addr="0x010f" name="IT Meter1, Fundamental wave V2" />
-		<signal equipid="5" sigid="54" reg_addr="0x0110" name="IT Meter1, Fundamental wave V3" />
-		<signal equipid="5" sigid="55" reg_addr="0x0111" name="IT Meter1, Aphase current total distortion rate
-
-THD I1" />
-		<signal equipid="5" sigid="56" reg_addr="0x0112" name="IT Meter1, Bphase current total distortion rateTHD I2" />
-		<signal equipid="5" sigid="57" reg_addr="0x0113" name="IT Meter1, Cphase current total distortion rateTHD I3" />
-		<signal equipid="5" sigid="58" reg_addr="0x0114" name="IT Meter1, Aphase voltage total distortion rateTHD V1" />
-		<signal equipid="5" sigid="59" reg_addr="0x0115" name="IT Meter1, Bphase voltage total distortion rateTHD V2" />
-		<signal equipid="5" sigid="60" reg_addr="0x0116" name="IT Meter1, Cphase voltage total distortion rateTHD V3" />
-		<signal equipid="5" sigid="61" reg_addr="0x0117" name="IT Meter1, 3 times harmonic contentI1 " />
-		<signal equipid="5" sigid="62" reg_addr="0x0118" name="IT Meter1, 5 times harmonic contentI1 " />
-		<signal equipid="5" sigid="63" reg_addr="0x0119" name="IT Meter1, 7 times harmonic contentI1 " />
-		<signal equipid="5" sigid="64" reg_addr="0x011a" name="IT Meter1, 9 times harmonic contentI1 " />
-		<signal equipid="5" sigid="65" reg_addr="0x011b" name="IT Meter1, 11 times harmonic contentI1" />
-		<signal equipid="5" sigid="66" reg_addr="0x011c" name="IT Meter1, 13 times harmonic contentI1" />
-		<signal equipid="5" sigid="67" reg_addr="0x011d" name="IT Meter1, 15 times harmonic contentI1" />
-		<signal equipid="5" sigid="68" reg_addr="0x011e" name="IT Meter1, 17 times harmonic contentI1" />
-		<signal equipid="5" sigid="69" reg_addr="0x011f" name="IT Meter1, 19 times harmonic contentI1" />
-		<signal equipid="5" sigid="70" reg_addr="0x0120" name="IT Meter1, 21 times harmonic contentI1" />
-		<signal equipid="5" sigid="71" reg_addr="0x0121" name="IT Meter1, 23 times harmonic contentI1" />
-		<signal equipid="5" sigid="72" reg_addr="0x0122" name="IT Meter1, 25 times harmonic contentI1" />
-		<signal equipid="5" sigid="73" reg_addr="0x0123" name="IT Meter1, 27 times harmonic contentI1" />
-		<signal equipid="5" sigid="74" reg_addr="0x0124" name="IT Meter1, 29 times harmonic contentI1" />
-		<signal equipid="5" sigid="75" reg_addr="0x0125" name="IT Meter1, 31 times harmonic contentI1" />
-		<signal equipid="5" sigid="76" reg_addr="0x0126" name="IT Meter1, 3 times harmonic contentI2 " />
-		<signal equipid="5" sigid="77" reg_addr="0x0127" name="IT Meter1, 5 times harmonic contentI2 " />
-		<signal equipid="5" sigid="78" reg_addr="0x0128" name="IT Meter1, 7 times harmonic contentI2 " />
-		<signal equipid="5" sigid="79" reg_addr="0x0129" name="IT Meter1, 9 times harmonic contentI2 " />
-		<signal equipid="5" sigid="80" reg_addr="0x012a" name="IT Meter1, 11 times harmonic contentI2" />
-		<signal equipid="5" sigid="81" reg_addr="0x012b" name="IT Meter1, 13 times harmonic contentI2" />
-		<signal equipid="5" sigid="82" reg_addr="0x012c" name="IT Meter1, 15 times harmonic contentI2" />
-		<signal equipid="5" sigid="83" reg_addr="0x012d" name="IT Meter1, 17 times harmonic contentI2" />
-		<signal equipid="5" sigid="84" reg_addr="0x012e" name="IT Meter1, 19 times harmonic contentI2" />
-		<signal equipid="5" sigid="85" reg_addr="0x012f" name="IT Meter1, 21 times harmonic contentI2" />
-		<signal equipid="5" sigid="86" reg_addr="0x0130" name="IT Meter1, 23 times harmonic contentI2" />
-		<signal equipid="5" sigid="87" reg_addr="0x0131" name="IT Meter1, 25 times harmonic contentI2" />
-		<signal equipid="5" sigid="88" reg_addr="0x0132" name="IT Meter1, 27 times harmonic contentI2" />
-		<signal equipid="5" sigid="89" reg_addr="0x0133" name="IT Meter1, 29 times harmonic contentI2" />
-		<signal equipid="5" sigid="90" reg_addr="0x0134" name="IT Meter1, 31 times harmonic contentI2" />
-		<signal equipid="5" sigid="91" reg_addr="0x0135" name="IT Meter1, 3 times harmonic contentI3  " />
-		<signal equipid="5" sigid="92" reg_addr="0x0136" name="IT Meter1, 5 times harmonic contentI3  " />
-		<signal equipid="5" sigid="93" reg_addr="0x0137" name="IT Meter1, 7 times harmonic contentI3  " />
-		<signal equipid="5" sigid="94" reg_addr="0x0138" name="IT Meter1, 9 times harmonic contentI3  " />
-		<signal equipid="5" sigid="95" reg_addr="0x0139" name="IT Meter1, 11 times harmonic contentI3 " />
-		<signal equipid="5" sigid="96" reg_addr="0x013a" name="IT Meter1, 13 times harmonic contentI3 " />
-		<signal equipid="5" sigid="97" reg_addr="0x013b" name="IT Meter1, 15 times harmonic contentI3 " />
-		<signal equipid="5" sigid="98" reg_addr="0x013c" name="IT Meter1, 17 times harmonic contentI3 " />
-		<signal equipid="5" sigid="99" reg_addr="0x013d" name="IT Meter1, 19 times harmonic contentI3 " />
-		<signal equipid="5" sigid="100" reg_addr="0x013e" name="IT Meter1, 21 times harmonic contentI3 " />
-		<signal equipid="5" sigid="101" reg_addr="0x013f" name="IT Meter1, 23 times harmonic contentI3 " />
-		<signal equipid="5" sigid="102" reg_addr="0x0140" name="IT Meter1, 25 times harmonic contentI3 " />
-		<signal equipid="5" sigid="103" reg_addr="0x0141" name="IT Meter1, 27 times harmonic contentI3 " />
-		<signal equipid="5" sigid="104" reg_addr="0x0142" name="IT Meter1, 29 times harmonic contentI3 " />
-		<signal equipid="5" sigid="105" reg_addr="0x0143" name="IT Meter1, 31 times harmonic contentI3 " />
-		<signal equipid="5" sigid="106" reg_addr="0x0144" name="IT Meter1, 3 times harmonic contentV1 " />
-		<signal equipid="5" sigid="107" reg_addr="0x0145" name="IT Meter1, 5 times harmonic contentV1 " />
-		<signal equipid="5" sigid="108" reg_addr="0x0146" name="IT Meter1, 7 times harmonic contentV1 " />
-		<signal equipid="5" sigid="109" reg_addr="0x0147" name="IT Meter1, 9 times harmonic contentV1 " />
-		<signal equipid="5" sigid="110" reg_addr="0x0148" name="IT Meter1, 11 times harmonic contentV1" />
-		<signal equipid="5" sigid="111" reg_addr="0x0149" name="IT Meter1, 13 times harmonic contentV1" />
-		<signal equipid="5" sigid="112" reg_addr="0x014a" name="IT Meter1, 15 times harmonic contentV1" />
-		<signal equipid="5" sigid="113" reg_addr="0x014b" name="IT Meter1, 17 times harmonic contentV1" />
-		<signal equipid="5" sigid="114" reg_addr="0x014c" name="IT Meter1, 19 times harmonic contentV1" />
-		<signal equipid="5" sigid="115" reg_addr="0x014d" name="IT Meter1, 21 times harmonic contentV1" />
-		<signal equipid="5" sigid="116" reg_addr="0x014e" name="IT Meter1, 23 times harmonic contentV1" />
-		<signal equipid="5" sigid="117" reg_addr="0x014f" name="IT Meter1, 25 times harmonic contentV1" />
-		<signal equipid="5" sigid="118" reg_addr="0x0150" name="IT Meter1, 27 times harmonic contentV1" />
-		<signal equipid="5" sigid="119" reg_addr="0x0151" name="IT Meter1, 29 times harmonic contentV1" />
-		<signal equipid="5" sigid="120" reg_addr="0x0152" name="IT Meter1, 31 times harmonic contentV1" />
-		<signal equipid="5" sigid="121" reg_addr="0x0153" name="IT Meter1, 3 times harmonic contentV2  " />
-		<signal equipid="5" sigid="122" reg_addr="0x0154" name="IT Meter1, 5 times harmonic contentV2  " />
-		<signal equipid="5" sigid="123" reg_addr="0x0155" name="IT Meter1, 7 times harmonic contentV2  " />
-		<signal equipid="5" sigid="124" reg_addr="0x0156" name="IT Meter1, 9 times harmonic contentV2  " />
-		<signal equipid="5" sigid="125" reg_addr="0x0157" name="IT Meter1, 11 times harmonic contentV2 " />
-		<signal equipid="5" sigid="126" reg_addr="0x0158" name="IT Meter1, 13 times harmonic contentV2 " />
-		<signal equipid="5" sigid="127" reg_addr="0x0159" name="IT Meter1, 15 times harmonic contentV2 " />
-		<signal equipid="5" sigid="128" reg_addr="0x015a" name="IT Meter1, 17 times harmonic contentV2 " />
-		<signal equipid="5" sigid="129" reg_addr="0x015b" name="IT Meter1, 19 times harmonic contentV2 " />
-		<signal equipid="5" sigid="130" reg_addr="0x015c" name="IT Meter1, 21 times harmonic contentV2 " />
-		<signal equipid="5" sigid="131" reg_addr="0x015d" name="IT Meter1, 23 times harmonic contentV2 " />
-		<signal equipid="5" sigid="132" reg_addr="0x015e" name="IT Meter1, 25 times harmonic contentV2 " />
-		<signal equipid="5" sigid="133" reg_addr="0x015f" name="IT Meter1, 27 times harmonic contentV2 " />
-		<signal equipid="5" sigid="134" reg_addr="0x0160" name="IT Meter1, 29 times harmonic contentV2 " />
-		<signal equipid="5" sigid="135" reg_addr="0x0161" name="IT Meter1, 31 times harmonic contentV2 " />
-		<signal equipid="5" sigid="136" reg_addr="0x0162" name="IT Meter1, 3 times harmonic contentV3  " />
-		<signal equipid="5" sigid="137" reg_addr="0x0163" name="IT Meter1, 5 times harmonic contentV3  " />
-		<signal equipid="5" sigid="138" reg_addr="0x0164" name="IT Meter1, 7 times harmonic contentV3  " />
-		<signal equipid="5" sigid="139" reg_addr="0x0165" name="IT Meter1, 9 times harmonic contentV3  " />
-		<signal equipid="5" sigid="140" reg_addr="0x0166" name="IT Meter1, 11 times harmonic contentV3 " />
-		<signal equipid="5" sigid="141" reg_addr="0x0167" name="IT Meter1, 13 times harmonic contentV3 " />
-		<signal equipid="5" sigid="142" reg_addr="0x0168" name="IT Meter1, 15 times harmonic contentV3 " />
-		<signal equipid="5" sigid="143" reg_addr="0x0169" name="IT Meter1, 17 times harmonic contentV3 " />
-		<signal equipid="5" sigid="144" reg_addr="0x016a" name="IT Meter1, 19 times harmonic contentV3 " />
-		<signal equipid="5" sigid="145" reg_addr="0x016b" name="IT Meter1, 21 times harmonic contentV3 " />
-		<signal equipid="5" sigid="146" reg_addr="0x016c" name="IT Meter1, 23 times harmonic contentV3 " />
-		<signal equipid="5" sigid="147" reg_addr="0x016d" name="IT Meter1, 25 times harmonic contentV3 " />
-		<signal equipid="5" sigid="148" reg_addr="0x016e" name="IT Meter1, 27 times harmonic contentV3 " />
-		<signal equipid="5" sigid="149" reg_addr="0x016f" name="IT Meter1, 29 times harmonic contentV3 " />
-		<signal equipid="5" sigid="150" reg_addr="0x0170" name="IT Meter1, 31 times harmonic contentV3 " />
-		<signal equipid="5" sigid="157" reg_addr="0x0171" name="IT Meter1, The main overvoltage
-
-" />
-		<signal equipid="5" sigid="158" reg_addr="0x0172" name="IT Meter1, The main undervoltage
-
-" />
-		<signal equipid="5" sigid="159" reg_addr="0x0173" name="IT Meter1, The main losephase
-
-" />
-		<signal equipid="5" sigid="160" reg_addr="0x0174" name="IT Meter1, The main overcurrent" />
-		<signal equipid="5" sigid="161" reg_addr="0x0175" name="IT Meter1, Overfrequency" />
-		<signal equipid="5" sigid="162" reg_addr="0x0176" name="IT Meter1, Phase 1 rated current
-
-" />
-		<signal equipid="5" sigid="163" reg_addr="0x0177" name="IT Meter1, Phase 2 rated current
-
-" />
-		<signal equipid="5" sigid="164" reg_addr="0x0178" name="IT Meter1, Phase 3 rated current
-
-" />
-		<signal equipid="5" sigid="165" reg_addr="0x0179" name="IT Meter1, Phase 1 load rate" />
-		<signal equipid="5" sigid="166" reg_addr="0x017a" name="IT Meter1, Phase 2 load rate" />
-		<signal equipid="5" sigid="167" reg_addr="0x017b" name="IT Meter1, Phase 3 load rate" />
-		<signal equipid="5" sigid="168" reg_addr="0x017c" name="IT Meter1, Three phase average load rate
-
-" />
-		<signal equipid="5" sigid="10001" reg_addr="0x017d" name="IT Meter1, CommunicationStatus" />
+		<signal equipid="4" sigid="1" reg_addr="0x0038" name="Primary Meter, TotalActiveEnergy" />
+		<signal equipid="4" sigid="2" reg_addr="0x0039" name="Primary Meter, ImportActiveEnergy" />
+		<signal equipid="4" sigid="3" reg_addr="0x003a" name="Primary Meter, ExportActiveEnergy" />
+		<signal equipid="4" sigid="4" reg_addr="0x003b" name="Primary Meter, Voltage" />
+		<signal equipid="4" sigid="5" reg_addr="0x003c" name="Primary Meter, Current" />
+		<signal equipid="4" sigid="6" reg_addr="0x003d" name="Primary Meter, Power" />
+		<signal equipid="4" sigid="7" reg_addr="0x003e" name="Primary Meter, PowerFactor" />
+		<signal equipid="4" sigid="8" reg_addr="0x003f" name="Primary Meter, Frequency" />
+		<signal equipid="4" sigid="10001" reg_addr="0x0040" name="Primary Meter, CommunicationStatus" />
+		<signal equipid="5" sigid="1" reg_addr="0x0041" name="IT Meter1, TotalActiveEnergy" />
+		<signal equipid="5" sigid="2" reg_addr="0x0042" name="IT Meter1, ImportActiveEnergy" />
+		<signal equipid="5" sigid="3" reg_addr="0x0043" name="IT Meter1, ExportActiveEnergy" />
+		<signal equipid="5" sigid="4" reg_addr="0x0044" name="IT Meter1, Voltage" />
+		<signal equipid="5" sigid="5" reg_addr="0x0045" name="IT Meter1, Current" />
+		<signal equipid="5" sigid="6" reg_addr="0x0046" name="IT Meter1, Power" />
+		<signal equipid="5" sigid="7" reg_addr="0x0047" name="IT Meter1, PowerFactor" />
+		<signal equipid="5" sigid="8" reg_addr="0x0048" name="IT Meter1, Frequency" />
+		<signal equipid="5" sigid="10001" reg_addr="0x0049" name="IT Meter1, CommunicationStatus" />
+		<signal equipid="6" sigid="1" reg_addr="0x004a" name="Air Conditioner, InletTempSensorFault" />
+		<signal equipid="6" sigid="2" reg_addr="0x004b" name="Air Conditioner, OutletTempSensorFault" />
+		<signal equipid="6" sigid="3" reg_addr="0x004c" name="Air Conditioner, InletPressureSensorFault" />
+		<signal equipid="6" sigid="4" reg_addr="0x004d" name="Air Conditioner, OutletPressureSensorFault" />
+		<signal equipid="6" sigid="5" reg_addr="0x004e" name="Air Conditioner, ReturnTempSensorFault" />
+		<signal equipid="6" sigid="6" reg_addr="0x004f" name="Air Conditioner, ReturnHumdSensorFault" />
+		<signal equipid="6" sigid="7" reg_addr="0x0050" name="Air Conditioner, OverTemp" />
+		<signal equipid="6" sigid="8" reg_addr="0x0051" name="Air Conditioner, OutTempLow" />
+		<signal equipid="6" sigid="9" reg_addr="0x0052" name="Air Conditioner, OverHumidity" />
+		<signal equipid="6" sigid="10" reg_addr="0x0053" name="Air Conditioner, UnderHumidity" />
+		<signal equipid="6" sigid="11" reg_addr="0x0054" name="Air Conditioner, Overflow" />
+		<signal equipid="6" sigid="12" reg_addr="0x0055" name="Air Conditioner, Leakage" />
+		<signal equipid="6" sigid="13" reg_addr="0x0056" name="Air Conditioner, HighPressureProtectSwitch" />
+		<signal equipid="6" sigid="14" reg_addr="0x0057" name="Air Conditioner, LowPressureProtectSwitch" />
+		<signal equipid="6" sigid="15" reg_addr="0x0058" name="Air Conditioner, Smoke" />
+		<signal equipid="6" sigid="16" reg_addr="0x0059" name="Air Conditioner, FanFault" />
+		<signal equipid="6" sigid="17" reg_addr="0x005a" name="Air Conditioner, HumidifierFault" />
+		<signal equipid="6" sigid="18" reg_addr="0x005b" name="Air Conditioner, HeaterFault" />
+		<signal equipid="6" sigid="19" reg_addr="0x005c" name="Air Conditioner, WaterPumpFault" />
+		<signal equipid="6" sigid="20" reg_addr="0x005d" name="Air Conditioner, LowPressure" />
+		<signal equipid="6" sigid="21" reg_addr="0x005e" name="Air Conditioner, OverCurrent" />
+		<signal equipid="6" sigid="22" reg_addr="0x005f" name="Air Conditioner, OutOverPressure" />
+		<signal equipid="6" sigid="23" reg_addr="0x0060" name="Air Conditioner, CompressorInsideFault" />
+		<signal equipid="6" sigid="24" reg_addr="0x0061" name="Air Conditioner, CompressorCommunicationFault" />
+		<signal equipid="6" sigid="25" reg_addr="0x0062" name="Air Conditioner, Fan" />
+		<signal equipid="6" sigid="26" reg_addr="0x0063" name="Air Conditioner, Compressor" />
+		<signal equipid="6" sigid="27" reg_addr="0x0064" name="Air Conditioner, CondensatedWaterPump" />
+		<signal equipid="6" sigid="28" reg_addr="0x0065" name="Air Conditioner, LowTempSolenoidValve" />
+		<signal equipid="6" sigid="29" reg_addr="0x0066" name="Air Conditioner, Fault" />
+		<signal equipid="6" sigid="30" reg_addr="0x0067" name="Air Conditioner, CondensatedWaterPump" />
+		<signal equipid="6" sigid="31" reg_addr="0x0068" name="Air Conditioner, Leakage" />
+		<signal equipid="6" sigid="32" reg_addr="0x0069" name="Air Conditioner, CompressorHighPressureProtect" />
+		<signal equipid="6" sigid="33" reg_addr="0x006a" name="Air Conditioner, CompressorLowPressureProtect" />
+		<signal equipid="6" sigid="34" reg_addr="0x006b" name="Air Conditioner, Smoke" />
+		<signal equipid="6" sigid="35" reg_addr="0x006c" name="Air Conditioner, Fan" />
+		<signal equipid="6" sigid="36" reg_addr="0x006d" name="Air Conditioner, RemoteControl" />
+		<signal equipid="6" sigid="37" reg_addr="0x006e" name="Air Conditioner, RunningStatus" />
+		<signal equipid="6" sigid="38" reg_addr="0x006f" name="Air Conditioner, TempSet" />
+		<signal equipid="6" sigid="39" reg_addr="0x0070" name="Air Conditioner, HumiditySet" />
+		<signal equipid="6" sigid="40" reg_addr="0x0071" name="Air Conditioner, PowerOnRun" />
+		<signal equipid="6" sigid="41" reg_addr="0x0072" name="Air Conditioner, TempThreshold" />
+		<signal equipid="6" sigid="42" reg_addr="0x0073" name="Air Conditioner, HumidityThreshold" />
+		<signal equipid="6" sigid="43" reg_addr="0x0074" name="Air Conditioner, DehumdEnable" />
+		<signal equipid="6" sigid="44" reg_addr="0x0075" name="Air Conditioner, Address" />
+		<signal equipid="6" sigid="45" reg_addr="0x0076" name="Air Conditioner, CompressorOverCurrent" />
+		<signal equipid="6" sigid="46" reg_addr="0x0077" name="Air Conditioner, ControlMode" />
+		<signal equipid="6" sigid="47" reg_addr="0x0078" name="Air Conditioner, InPressureRange" />
+		<signal equipid="6" sigid="48" reg_addr="0x0079" name="Air Conditioner, MinOutTempSet" />
+		<signal equipid="6" sigid="49" reg_addr="0x007a" name="Air Conditioner, MaxOutTempSet" />
+		<signal equipid="6" sigid="50" reg_addr="0x007b" name="Air Conditioner, HighTempSet" />
+		<signal equipid="6" sigid="51" reg_addr="0x007c" name="Air Conditioner, OutLowTempSet" />
+		<signal equipid="6" sigid="52" reg_addr="0x007d" name="Air Conditioner, HighHumiditySet" />
+		<signal equipid="6" sigid="53" reg_addr="0x007e" name="Air Conditioner, LowHumiditySet" />
+		<signal equipid="6" sigid="54" reg_addr="0x007f" name="Air Conditioner, InAlarmPressureSet" />
+		<signal equipid="6" sigid="55" reg_addr="0x0080" name="Air Conditioner, OutPressureRangeSet" />
+		<signal equipid="6" sigid="56" reg_addr="0x0081" name="Air Conditioner, OutAlarmPressureSet" />
+		<signal equipid="6" sigid="57" reg_addr="0x0082" name="Air Conditioner, FanRate" />
+		<signal equipid="6" sigid="58" reg_addr="0x0083" name="Air Conditioner, UnitRunningTime" />
+		<signal equipid="6" sigid="59" reg_addr="0x0084" name="Air Conditioner, CompressorRunningTime" />
+		<signal equipid="6" sigid="60" reg_addr="0x0085" name="Air Conditioner, OverTemp" />
+		<signal equipid="6" sigid="61" reg_addr="0x0086" name="Air Conditioner, EEV Opening" />
+		<signal equipid="6" sigid="62" reg_addr="0x0087" name="Air Conditioner, InletTemp" />
+		<signal equipid="6" sigid="63" reg_addr="0x0088" name="Air Conditioner, OutletTemp" />
+		<signal equipid="6" sigid="64" reg_addr="0x0089" name="Air Conditioner, InletPressure" />
+		<signal equipid="6" sigid="65" reg_addr="0x008a" name="Air Conditioner, OutletPressure" />
+		<signal equipid="6" sigid="66" reg_addr="0x008b" name="Air Conditioner, IndoorTemp" />
+		<signal equipid="6" sigid="67" reg_addr="0x008c" name="Air Conditioner, IndoorHumidity" />
+		<signal equipid="6" sigid="68" reg_addr="0x008d" name="Air Conditioner, CompressorFrequency" />
+		<signal equipid="6" sigid="73" reg_addr="0x008e" name="Air Conditioner, EvaporationTemp" />
+		<signal equipid="6" sigid="10001" reg_addr="0x008f" name="Air Conditioner, CommunicationStatus" />
 	</signals>
 	<controls>
 		<control equipid="1" ctrlid="1" reg_addr="0x0000" name="VTU-IO, DO1" />
 		<control equipid="1" ctrlid="2" reg_addr="0x0001" name="VTU-IO, DO2" />
-		<control equipid="4" ctrlid="1" reg_addr="0x0002" name="Primary Meter, Communication address1~247" />
-		<control equipid="4" ctrlid="6" reg_addr="0x0003" name="Primary Meter, PT1~10000" />
-		<control equipid="4" ctrlid="7" reg_addr="0x0004" name="Primary Meter, CT1~10000" />
-		<control equipid="4" ctrlid="9" reg_addr="0x0005" name="Primary Meter, DO1" />
-		<control equipid="4" ctrlid="10" reg_addr="0x0006" name="Primary Meter, DO2" />
-		<control equipid="5" ctrlid="1" reg_addr="0x0007" name="IT Meter1, Communication address1~247" />
-		<control equipid="5" ctrlid="6" reg_addr="0x0008" name="IT Meter1, PT1~10000" />
-		<control equipid="5" ctrlid="7" reg_addr="0x0009" name="IT Meter1, CT1~10000" />
-		<control equipid="5" ctrlid="9" reg_addr="0x000a" name="IT Meter1, DO1" />
-		<control equipid="5" ctrlid="10" reg_addr="0x000b" name="IT Meter1, DO2" />
+		<control equipid="4" ctrlid="3" reg_addr="0x0002" name="Primary Meter, 电能清零" />
+		<control equipid="5" ctrlid="3" reg_addr="0x0003" name="IT Meter1, 电能清零" />
+		<control equipid="6" ctrlid="1" reg_addr="0x0004" name="Air Conditioner, 开关机" />
+		<control equipid="6" ctrlid="2" reg_addr="0x0005" name="Air Conditioner, 温度设定" />
+		<control equipid="6" ctrlid="3" reg_addr="0x0006" name="Air Conditioner, 湿度设置" />
+		<control equipid="6" ctrlid="4" reg_addr="0x0007" name="Air Conditioner, 控制方式" />
+		<control equipid="6" ctrlid="5" reg_addr="0x0008" name="Air Conditioner, 来电自启动" />
+		<control equipid="6" ctrlid="6" reg_addr="0x0009" name="Air Conditioner, 故障复位" />
+		<control equipid="6" ctrlid="7" reg_addr="0x000a" name="Air Conditioner, 温度回差" />
+		<control equipid="6" ctrlid="8" reg_addr="0x000b" name="Air Conditioner, 湿度回差" />
 	</controls>
 </conf>

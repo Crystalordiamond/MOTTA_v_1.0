@@ -20,6 +20,7 @@ import sys
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 sys.path.insert(0, BASE_DIR)
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 

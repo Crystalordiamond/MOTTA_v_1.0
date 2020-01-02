@@ -1,3 +1,5 @@
+import os
+
 from django.http.response import JsonResponse
 from rbac.models import User
 from warning.models import AlarmContent, HistoryData, Warning
@@ -6,9 +8,9 @@ from .models import divices, Cameras, coordinate, WarningConfig
 from django.db.models import Q, F
 from django.http import HttpResponse
 import json
-from django.views.decorators.csrf import csrf_exempt
-
-from rest_framework.authtoken.models import Token
+from django.core.mail import send_mail
+from django.conf import settings
+from pymysql import connect
 
 
 # 0.将坐标点存入数据库
@@ -38,9 +40,9 @@ def coordinate_get(request):
     json_str = request.body
     json_str = json_str.decode()  # python3.6 无需执行此步
     coor_data = json.loads(json_str)
-    # print(coor_data)
+    print(coor_data)
     coor_list = coordinate.objects.filter(coordinate_ip__in=coor_data['ip'])
-    # print(coor_list)
+    print(coor_list)
     coordinate_list = []
     for i in coor_list:
         # print(i.coordinate_A)
@@ -57,6 +59,7 @@ def coordinate_get(request):
     return JsonResponse(coordinate_list, safe=False)
 
 
+# 0.删除坐标点
 def coordinateDelete(request):
     json_str = request.body.decode()
     coordinate_data = json.loads(json_str)
@@ -150,6 +153,9 @@ def All_site(request):
         address_obj = divices.objects.all()
         # print('111111111111111111111', address_obj)
         for address in address_obj:
+            manage_list = []
+            for i in address.user_id.all().values("username"):
+                manage_list.append(i["username"])
             data_dict = {
                 "id": address.id,
                 "site": address.divice_site,
@@ -158,7 +164,7 @@ def All_site(request):
                 "communication": address.divice_communication,
                 "type": address.divice_type,
                 "serial": address.divice_serial,
-                "manager": [i['username'] for i in address.user_id.all().values("username")]
+                "manager": ','.join(manage_list)
             }
             list_data.append(data_dict)
         return JsonResponse(list_data, safe=False)
@@ -173,6 +179,9 @@ def All_site(request):
         """
         address_obj = user_object[0].divices_set.all()
         for address in address_obj:
+            manage_list = []
+            for i in address.user_id.all().values("username"):
+                manage_list.append(i["username"])
             data_dict = {
                 "id": address.id,
                 "site": address.divice_site,
@@ -181,7 +190,7 @@ def All_site(request):
                 "communication": address.divice_communication,
                 "type": address.divice_type,
                 "serial": address.divice_serial,
-                "manager": [i['username'] for i in address.user_id.all().values("username")]
+                "manager": ','.join(manage_list)
             }
             list_data.append(data_dict)
         return JsonResponse(list_data, safe=False)
@@ -201,7 +210,7 @@ def get_address_user(request):
                      "password": users.password,
                      "phone": users.u_phone,
                      "email": users.email,
-                     "site": [i.divice_site for i in users.divices_set.all()]
+                     "site": ','.join([i.divice_site for i in users.divices_set.all()])
                      }
         list_data.append(data_dict)
     return JsonResponse(list_data, safe=False)
@@ -246,6 +255,7 @@ def post_delete_address(request):
     Signals_meaing.objects.filter(Signals_ip=req_data["ip"]).delete()
     Events.objects.filter(Events_ip=req_data["ip"]).delete()
     Commands.objects.filter(Commands_ip=req_data["ip"]).delete()
+    Cameras.objects.filter(cam_ip=req_data["ip"]).delete()
     return JsonResponse("Site deleted successfully", safe=False)
 
 
@@ -271,11 +281,11 @@ def put_user(request):
         3.1 多对多表的查询逻辑 （针对manytomany字段） 只在一边做处理，
         3.2 没有manytomany字段的表 就获取另外一张表的对象来点add(里面是要存储的对象)
     """
-    # 创建用户 传过来的是设备的ID("site")
+    # 创建用户 传过来的是设备的ID("site") todo 有时候不是设备id
     if user_data.get("site"):
         print(user_data["site"])
         # divices_obj = divices.objects.filter(id__in=user_data["site"]).all()
-        divices_obj = divices.objects.filter(id__in=user_data["site"]).all()
+        divices_obj = divices.objects.filter(divice_site__in=user_data["site"]).all()
         # print(divices_obj)
         for divice in divices_obj:
             divice.user_id.add(user_obj)
@@ -426,7 +436,13 @@ def email_update(request):
 
 
 def email_test(request):
-    return JsonResponse("邮件发送成功", safe=False)
+    email_data = request.body.decode()
+    email_str = json.loads(email_data)
+    print(email_str["test"])
+    print(settings.EMAIL_HOST_USER)
+    print(type(email_str["test"]))
+    send_mail("The alarm mail", "This is the test email", settings.EMAIL_HOST_USER, [email_str["test"]], "")
+    return JsonResponse("Email sent successfully", safe=False)
 
 
 # 获取详情页面的MDC列表
@@ -448,6 +464,32 @@ def details_get(request):
         }
         site_list.append(data_dict)
     return JsonResponse(site_list, safe=False)
+
+
+# 保存sql表结构
+def sql_post(request):
+    sql_data = request.body.decode()
+    sql_str = json.loads(sql_data)
+    print(sql_str)
+    # 1.将数据表结构保存到当前文件夹
+    # os.system('mysqldump -h localhost -uroot -pmysql -d MOTTA_data > dump.sql')
+    os.system('mysqldump -h localhost -uroot -pmysql  MOTTA_data tb_user tb_divices tb_warningconfig > dump.sql')
+    # 2.读取sql文件，并返回给前端
+    try:
+        f_name = open('./dump.sql', 'r', encoding='UTF-8').read()
+        return JsonResponse(f_name, safe=False)
+    except OSError as reason:
+        print('读取文件出错了：%s' % str(reason))
+
+
+def sql_put(request):
+    data = request.FILES.get('file')
+    print(data)
+    with open('./dump.sql','wb') as f:
+        for i in data:
+            f.write(i)
+    os.system('mysql -uroot -pmysql  MOTTA_data< dump.sql')
+    return JsonResponse("ok", safe=False)
 
 
 """  

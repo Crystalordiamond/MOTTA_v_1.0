@@ -2,12 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f5e824-f915-406a-baff-bfc79cca7e19" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOTTA_mall/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/04snmp协议.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/migrations/0002_divices_user_id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/migrations/0002_auto_20191128_1714.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/migrations/0002_auto_20191128_1714.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/migrations/0003_auto_20191128_1717.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/migrations/0004_auto_20191128_1811.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/email/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/email/tasks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/sms/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/celery_tasks/sms/tasks.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/settings/dev_cp.py" beforeDir="false" afterPath="$PROJECT_DIR$/MOTTA_mall/settings/dev_cp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/EquipmentTemplateUPS_YMK3320.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/03_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/03_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateYD2010C-K-V.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/MonitorUnitVTU.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/192.168.1.175/MonitorUnitVTU.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/192.168.1.175/sms_notification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/192.168.1.175/sms_notification.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,67 +86,81 @@
     <favorites_list name="MOTTA_mall" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="626" column="62" lean-forward="true" selection-start-line="626" selection-start-column="62" selection-end-line="626" selection-end-column="62" />
+            <state relative-caret-position="294">
+              <caret line="55" column="70" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#531#16696#0" />
-                <element signature="e#767#1206#0" />
-                <element signature="e#3763#4364#0" />
-                <element signature="e#17538#21378#0" />
-                <element signature="e#21304#33627#0" />
-                <element signature="e#33093#35560#0" />
-                <element signature="e#29614#29633#0" />
+                <element signature="e#0#51#0" expanded="true" />
+                <element signature="e#118#486#0" />
+                <element signature="e#536#912#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="2648">
+              <caret line="479" column="47" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="16" column="85" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="85" />
+            <state relative-caret-position="2816">
+              <caret line="481" selection-start-line="480" selection-end-line="481" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#832#21099#0" />
+                <element signature="e#38392#47442#0" />
+                <element signature="e#47505#49285#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml">
+        <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateUPS_6-10K.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="57" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="57" />
+            <state relative-caret-position="183">
+              <caret line="260" column="53" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateVTUIOxx.xml">
+        <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="22" column="67" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="67" />
+            <state relative-caret-position="228">
+              <caret line="286" column="28" selection-start-line="286" selection-start-column="28" selection-end-line="286" selection-end-column="28" />
+              <folding>
+                <element signature="e#314#329#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplatedds3366d-1p.xml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/02_xml_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="38" column="25" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="198">
+              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#1834#4553#0" />
+                <element signature="e#5510#6238#0" />
+                <element signature="e#6304#7639#0" />
+                <element signature="e#7713#13774#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,42 +170,43 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;UPS, RatingInputVoltage&quot;</find>
-      <find>InputFrequency</find>
-      <find>UPS, InputFrequency</find>
-      <find>Temp-Humidity, Temperature</find>
-      <find>&quot;UPS, InputPhase&quot;</find>
-      <find>Phase</find>
-      <find>Current</find>
-      <find>UPS, InputPhases</find>
-      <find>load</find>
-      <find>InputVoltage</find>
-      <find>OutputLoad</find>
-      <find>RatingInputVoltage</find>
-      <find>Power</find>
-      <find>power</find>
-      <find>Load</find>
-      <find>Temp</find>
-      <find>UPS, OutputLoad</find>
-      <find>float_data</find>
-      <find>alarm_data</find>
-      <find>&quot;ip&quot;: data.divice_ip</find>
-      <find>Air Conditioner, Unit Mode</find>
-      <find>Primary Meter, Power</find>
-      <find>temps</find>
-      <find>input_fre</find>
-      <find>sigid</find>
-      <find>site</find>
-      <find>71</find>
-      <find>data_dict = {</find>
       <find>Signals_meaing</find>
-      <find>signal.Signals_time</find>
+      <find>unit_data</find>
+      <find>len</find>
+      <find>warn_parameter</find>
+      <find>list</find>
+      <find>Clear Alarm</find>
+      <find>manage_data</find>
+      <find>details</find>
+      <find>manage</find>
+      <find>All_site</find>
+      <find># 删除站点</find>
+      <find>input_vol</find>
+      <find>input</find>
+      <find>UPS_Signal</find>
+      <find>63</find>
+      <find>Testing</find>
+      <find>Mode</find>
+      <find>VTU-IO, Leakage</find>
+      <find>CommunicationStatus</find>
+      <find>Return_Temp</find>
+      <find>temps</find>
+      <find>for i in</find>
+      <find>37</find>
+      <find>97</find>
+      <find>float</find>
+      <find>equipments_data</find>
+      <find>evn</find>
+      <find>request_data[&quot;end_time&quot;]</find>
+      <find>HP/HD Switch</find>
+      <find>sql_post</find>
     </findStrings>
     <replaceStrings>
       <replace>can</replace>
@@ -178,6 +227,9 @@
       <replace>&quot;site&quot;: site.divice_site if site else ''</replace>
       <replace>&quot;site&quot;: site.divice_site if site else ''`</replace>
       <replace>xml_data_value.data_time</replace>
+      <replace>th</replace>
+      <replace>for i in constants.</replace>
+      <replace>end_time</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -186,21 +238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/logins/urls.py" />
-        <option value="$PROJECT_DIR$/uwsgi.ini" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/wsgi.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/createdata/tests.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Ftp_File_Data.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/utils/EquipmentTemplateSmartAPCUPS.xml" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/test.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/EquipmentTemplateUPS_YMK3320.xml" />
-        <option value="$PROJECT_DIR$/test/map_test.py" />
-        <option value="$PROJECT_DIR$/test/modbus_map.xml" />
-        <option value="$PROJECT_DIR$/test/tsest1.py" />
-        <option value="$PROJECT_DIR$/test/Vtu_program.py" />
-        <option value="$PROJECT_DIR$/test/01_vtu_program.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Get_File_Data.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data/Storage_data.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/test/test2.py" />
@@ -215,28 +252,43 @@
         <option value="$PROJECT_DIR$/test/suanfa.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/urls.py" />
         <option value="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSL1600F_FC_NEW.xml" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/models.py" />
         <option value="$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateYD2010C-K-V.xml" />
         <option value="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" />
-        <option value="$PROJECT_DIR$/test/03_test.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py" />
-        <option value="$PROJECT_DIR$/test/02_xml_data.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" />
-        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
         <option value="$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml" />
         <option value="$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/celery_tasks/email/tasks.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/templates/index.html" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/sendSMS.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev_cp.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/celery_tasks/main.py" />
+        <option value="$PROJECT_DIR$/celery_tasks/config.py" />
+        <option value="$PROJECT_DIR$/celery_tasks/email/tasks.py" />
+        <option value="$PROJECT_DIR$/celery_tasks/main.py" />
+        <option value="$PROJECT_DIR$/test/02_xml_data.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py" />
+        <option value="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateUPS_6-10K.xml" />
+        <option value="$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSL1600F_FC.xml" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/constants.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py" />
         <option value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/tests.py" />
+        <option value="$PROJECT_DIR$/test/ATTOM.xml" />
+        <option value="$PROJECT_DIR$/test/03_test.py" />
+        <option value="$PROJECT_DIR$/test/ATTOM11.xml" />
+        <option value="$PROJECT_DIR$/test/04snmp协议.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/settings/dev.py" />
+        <option value="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" />
       </list>
     </option>
   </component>
@@ -335,24 +387,12 @@
               <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
               <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
               <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="settings" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
               <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="192.168.1.30" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MOTTA_mall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MOTTA_mall" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="192.168.1.175" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -364,6 +404,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
@@ -379,6 +420,10 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/MOTTA_mall" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk" />
@@ -397,13 +442,60 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.views">
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.tsest1">
+    <configuration name="04snmp协议" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MOTTA_mall" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTING_MODULE" value="MOTTA_mall.settings.dev" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.virtualenvs/MOTTA_mall/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/04snmp协议.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="MOTTA_mall" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTING_MODULE" value="MOTTA_mall.settings.dev" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.virtualenvs/MOTTA_mall/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test2" type="PythonConfigurationType" factoryName="Python">
+      <module name="MOTTA_mall" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTING_MODULE" value="MOTTA_mall.settings.dev" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
@@ -420,42 +512,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tests (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tests (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MOTTA_mall" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTING_MODULE" value="MOTTA_mall.settings.dev" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MOTTA_mall/apps/divices" />
+      <option name="SDK_HOME" value="$USER_HOME$/.virtualenvs/MOTTA_mall/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MOTTA_mall/apps/rbac" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MOTTA_mall" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MOTTA_mall/apps/rbac/tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -478,6 +549,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/02_xml_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MOTTA_mall" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTING_MODULE" value="MOTTA_mall.settings.dev" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.virtualenvs/MOTTA_mall/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MOTTA_mall/apps/divices" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -514,8 +608,9 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTING_MODULE" value="MOTTA_mall.settings.dev" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$USER_HOME$/.virtualenvs/MOTTA_mall/bin/python" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -531,13 +626,22 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.MOTTA_mall" />
+      <item itemvalue="Python.test2" />
+      <item itemvalue="Python.tsest1" />
+      <item itemvalue="Python.views" />
+      <item itemvalue="Python.tests (2)" />
+      <item itemvalue="Python.04snmp协议" />
+      <item itemvalue="Python.views (1)" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.views" />
-        <item itemvalue="Python.tests" />
         <item itemvalue="Python.tsest1" />
-        <item itemvalue="Python.test2" />
-        <item itemvalue="Python.tests (1)" />
+        <item itemvalue="Python.views (1)" />
+        <item itemvalue="Python.04snmp协议" />
+        <item itemvalue="Python.tests (2)" />
+        <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
@@ -615,12 +719,16 @@
       <workItem from="1573867214622" duration="62000" />
       <workItem from="1573867301910" duration="5000" />
       <workItem from="1573867333391" duration="9227000" />
-      <workItem from="1574056866855" duration="291120000" />
+      <workItem from="1574056866855" duration="351854000" />
+      <workItem from="1575619089576" duration="36181000" />
+      <workItem from="1575855162046" duration="32010000" />
+      <workItem from="1576120456518" duration="59766000" />
+      <workItem from="1576651528058" duration="66448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1131182000" />
+    <option name="totallyTimeSpent" value="1386321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -633,9 +741,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1851" height="841" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.21686079" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.12922907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5016234" side_tool="true" weight="0.19079313" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32957748" />
@@ -651,8 +758,8 @@
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="调试" order="12" weight="0.32957748" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49972144" visible="true" weight="0.3253521" />
-      <window_info anchor="bottom" x="86" y="346" width="1813" height="208" id="Run" order="14" weight="0.25492957" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49972144" visible="true" weight="0.38169014" />
+      <window_info anchor="bottom" x="86" y="346" width="1813" height="208" id="Run" order="14" weight="0.33521128" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32957748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -757,120 +864,182 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MOTTA_mall$tests__2_.coverage" NAME="tests (2) Coverage Results" MODIFIED="1564393279810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/smscode" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$Vtu_program.coverage" NAME="Vtu_program Coverage Results" MODIFIED="1569240872278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1574337289726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/divices" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$tests__2_.coverage" NAME="tests (2) Coverage Results" MODIFIED="1576467888319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/rbac" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$tests__3_.coverage" NAME="tests (3) Coverage Results" MODIFIED="1566011291881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/divices" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$test.coverage" NAME="test Coverage Results" MODIFIED="1564034233590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$tests.coverage" NAME="tests Coverage Results" MODIFIED="1575358470040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
-    <SUITE FILE_PATH="coverage/MOTTA_mall$tsest1.coverage" NAME="tsest1 Coverage Results" MODIFIED="1575354592794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$tsest1.coverage" NAME="tsest1 Coverage Results" MODIFIED="1577690481086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1567147517098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$suanfa.coverage" NAME="suanfa Coverage Results" MODIFIED="1569035832715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$models.coverage" NAME="models Coverage Results" MODIFIED="1569660132753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$ftplib.coverage" NAME="ftplib Coverage Results" MODIFIED="1569036060796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr/lib/python3.6" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1577255255561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/divices" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$client.coverage" NAME="client Coverage Results" MODIFIED="1569391085544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pyModbusTCP" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$views.coverage" NAME="views Coverage Results" MODIFIED="1575358644817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/apps/xmldata" />
-    <SUITE FILE_PATH="coverage/MOTTA_mall$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1574844985325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1576825112017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MOTTA_mall$Storage_data.coverage" NAME="Storage_data Coverage Results" MODIFIED="1569394972695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MOTTA_mall/utils/sjk_data" />
+    <SUITE FILE_PATH="coverage/MOTTA_mall$04snmp.coverage" NAME="04snmp协议 Coverage Results" MODIFIED="1577082865231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0fc9d412-5a91-4714-9b3a-cc195a80be35/console.sql">
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/bin/celery">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/celery/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/CCPRestSDK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1122" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/xmltojson.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/ytx_sdk/sendSMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev_cp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/MySQLdb/connections.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="223" selection-start-line="223" selection-end-line="223" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://0fc9d412-5a91-4714-9b3a-cc195a80be35/schema/MOTTA_data/table/tb_Cameras">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="dd5d9936-ab26-4750-8b1c-416da59fab86">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#644#685#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py">
+    <entry file="file://$PROJECT_DIR$/celery_tasks/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="21" />
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_tasks/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_tasks/sms/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_tasks/email/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://0fc9d412-5a91-4714-9b3a-cc195a80be35/schema/MOTTA_data/table/tb_coordinate">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="dd5d9936-ab26-4750-8b1c-416da59fab86">
-          <filtering>
-            <filter text="" />
-          </filtering>
+    <entry file="file://$PROJECT_DIR$/celery_tasks/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="125" column="47" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/tests.py">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state relative-caret-position="132">
+          <caret line="105" column="86" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="86" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/dwebsocket/factory.py">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state relative-caret-position="114">
+          <caret line="118" column="93" selection-start-line="118" selection-start-column="80" selection-end-line="118" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateUPS_6-10K.xml">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSL1600F_FC.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7788">
-          <caret line="354" column="55" selection-start-line="354" selection-start-column="51" selection-end-line="354" selection-end-column="55" />
+        <state relative-caret-position="147">
+          <caret line="223" column="56" selection-start-line="223" selection-start-column="56" selection-end-line="223" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/django/db/models/query.py">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSmoothAir_Carel_DX.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="271" selection-start-line="271" selection-end-line="271" />
+        <state relative-caret-position="114">
+          <caret line="538" column="27" selection-start-line="538" selection-start-column="19" selection-end-line="538" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateGiant.xml">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateVTUIOxx.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="236" column="25" selection-start-line="236" selection-start-column="11" selection-end-line="236" selection-end-column="25" />
+        <state relative-caret-position="132">
+          <caret line="6" column="58" lean-forward="true" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/MonitorUnitVTU.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="82" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateVTUIOxx.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding>
             <element signature="n#Signals#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
+            <element signature="n#Commands#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSL1600F_FC_NEW.xml">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateYD2010C-K-V.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="553" column="37" selection-start-line="553" selection-start-column="26" selection-end-line="553" selection-end-column="37" />
+        <state relative-caret-position="66">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding>
             <element signature="n#Signals#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
           </folding>
@@ -879,312 +1048,248 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplatedds3366d-1p.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        <state>
+          <folding>
+            <element signature="n#Signals#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
+            <element signature="n#Commands#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSL1600F_FC.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateSmoothAir_Carel_DX.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="545" column="56" lean-forward="true" selection-start-line="540" selection-start-column="48" selection-end-line="545" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/sms_notification.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateUPS_YMK3320.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-770">
-          <caret line="97" column="69" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="915" selection-start-line="915" selection-end-line="915" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/03_test.py">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplatedds3366d-1p.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pymysql/cursors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-487">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="11" />
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="25" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="n#Signals#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
+            <element signature="n#EquipCommand#0;n#Commands#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
-          <caret line="245" column="69" selection-start-line="245" selection-start-column="69" selection-end-line="245" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateSmoothAir_Carel_DX.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="1060" column="11" selection-start-line="1060" selection-start-column="11" selection-end-line="1060" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateVTUIOxx.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateYD2010C-K-V.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="583" column="25" selection-start-line="583" selection-start-column="11" selection-end-line="583" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateUPS_6-10K.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="274" column="25" selection-start-line="274" selection-start-column="11" selection-end-line="274" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pymysql/err.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateDeltaV155C.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="415" column="19" lean-forward="true" selection-start-line="415" selection-start-column="19" selection-end-line="415" selection-end-column="19" />
-          <folding>
-            <element signature="n#Signals#0;n#EquipTemplate#0;n#EquipTemplateInfo#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2354">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <caret line="424" column="25" selection-start-line="424" selection-start-column="11" selection-end-line="424" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1210">
-          <caret line="55" column="77" selection-start-line="55" selection-start-column="77" selection-end-line="55" selection-end-column="77" />
+        <state relative-caret-position="312">
+          <caret line="68" column="42" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="254" column="24" selection-start-line="254" selection-start-column="24" selection-end-line="254" selection-end-column="24" />
-          <folding>
-            <element signature="e#314#329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="222" column="33" selection-start-line="222" selection-start-column="33" selection-end-line="222" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#1164#2303#0" />
-            <element signature="e#2350#3352#0" />
-            <element signature="e#6895#7208#0" />
-            <element signature="e#7300#7613#0" />
-            <element signature="e#7705#8018#0" />
-            <element signature="e#8110#8423#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/modbus_map.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/MonitorUnitVTU.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#644#685#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateVTUIOxx.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" column="67" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplatedds3366d-1p.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/MonitorUnitVTU.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="17" column="82" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="24" />
+        <state relative-caret-position="88">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/02_xml_data.py">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/warning/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="507" column="35" selection-start-line="507" selection-start-column="35" selection-end-line="507" selection-end-column="35" />
+        <state relative-caret-position="266">
+          <caret line="213" column="49" selection-start-line="213" selection-start-column="49" selection-end-line="213" selection-end-column="49" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <element signature="e#1279#1795#0" />
-            <element signature="e#1834#4553#0" />
-            <element signature="e#4619#5452#0" />
-            <element signature="e#5510#6238#0" />
-            <element signature="e#6304#7639#0" />
-            <element signature="e#7713#13774#0" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateFS102HT.xml">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="16" column="85" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="85" />
+        <state relative-caret-position="132">
+          <caret line="6" column="107" selection-start-line="6" selection-start-column="107" selection-end-line="6" selection-end-column="107" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/modbus_map.xml">
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="81" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ATTOM.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-836">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ATTOM11.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2662">
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/netsnmp/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="74" column="99" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/03_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="162" column="35" selection-start-line="162" selection-start-column="35" selection-end-line="162" selection-end-column="35" />
+          <folding>
+            <element signature="e#5460#9784#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="91" column="38" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#911#1478#0" />
+            <element signature="e#1577#1996#0" />
+            <element signature="e#2042#2881#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dumps.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dump.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/MOTTA_mall/lib/python3.6/site-packages/pymysql/err.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/settings/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="286" column="28" selection-start-line="286" selection-start-column="28" selection-end-line="286" selection-end-column="28" />
+          <folding>
+            <element signature="e#314#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/04snmp协议.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/192.168.1.30/EquipmentTemplateFS102HT.xml">
+    <entry file="file://$PROJECT_DIR$/test/192.168.1.175/EquipmentTemplateUPS_6-10K.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="57" />
+        <state relative-caret-position="183">
+          <caret line="260" column="53" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/logs/MOTTA_data.log">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="232">
+          <caret line="15711" lean-forward="true" selection-start-line="15711" selection-end-line="15714" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/xmldata/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="626" column="62" lean-forward="true" selection-start-line="626" selection-start-column="62" selection-end-line="626" selection-end-column="62" />
+        <state relative-caret-position="2816">
+          <caret line="481" selection-start-line="480" selection-end-line="481" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#531#16696#0" />
-            <element signature="e#767#1206#0" />
-            <element signature="e#3763#4364#0" />
-            <element signature="e#17538#21378#0" />
-            <element signature="e#21304#33627#0" />
-            <element signature="e#33093#35560#0" />
-            <element signature="e#29614#29633#0" />
+            <element signature="e#832#21099#0" />
+            <element signature="e#38392#47442#0" />
+            <element signature="e#47505#49285#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/divices/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2648">
+          <caret line="479" column="47" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOTTA_mall/apps/rbac/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="55" column="70" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#118#486#0" />
+            <element signature="e#536#912#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/02_xml_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#1834#4553#0" />
+            <element signature="e#5510#6238#0" />
+            <element signature="e#6304#7639#0" />
+            <element signature="e#7713#13774#0" />
           </folding>
         </state>
       </provider>

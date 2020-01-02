@@ -88,14 +88,14 @@ class logactions(models.Model):
 #  1.1 Signals_meaing状态信息表
 class Signals_meaing(models.Model):
     EquipTemplateId = models.CharField(max_length=50)
-    EquipTemplateName= models.CharField(max_length=150)
+    EquipTemplateName = models.CharField(max_length=150)
 
     SignalId = models.CharField(max_length=10)
     SignalName = models.CharField(max_length=150)
     Unit = models.CharField(max_length=25, default="-")  # 虽然设置了默认值，但是存储的时候被‘’空字符串替换掉了
 
-    StateValue = models.CharField(max_length=10, default="null")
-    Meaning = models.CharField(max_length=150, default="null")
+    StateValue = models.CharField(max_length=10, default="null", null=True)
+    Meaning = models.CharField(max_length=150, default="null", null=True)
 
     Signals_ip = models.CharField(max_length=50)
     Signals_time = models.CharField(max_length=50)
@@ -117,11 +117,11 @@ class Events(models.Model):
     EventId = models.CharField(max_length=50)
     EventName = models.CharField(max_length=150)
 
-    ConditionId = models.CharField(max_length=50, default="null")
-    Meaning = models.CharField(max_length=150, default="null")
-    EventSeverity = models.CharField(max_length=50, default="null")
-    StartCompareValue = models.CharField(max_length=50, default="null")
-    StartOperation = models.CharField(max_length=50, default="null")
+    ConditionId = models.CharField(max_length=50, default="null", null=True)
+    Meaning = models.CharField(max_length=150, default="null", null=True)
+    EventSeverity = models.CharField(max_length=50, default="null", null=True)
+    StartCompareValue = models.CharField(max_length=50, default="null", null=True)
+    StartOperation = models.CharField(max_length=50, default="null", null=True)
 
     Events_ip = models.CharField(max_length=50)
     Events_time = models.CharField(max_length=50)

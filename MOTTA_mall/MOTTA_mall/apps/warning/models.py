@@ -16,6 +16,8 @@ class AlarmContent(models.Model):
     alarm_ip = models.CharField(max_length=25, verbose_name='告警的IP')
     alarm_flag = models.CharField(max_length=25, default='-', verbose_name='告警标识')
 
+    StartCompareValue = models.CharField(max_length=25, default='mull', null=True,verbose_name='与Envtens对应')
+
     class Meta:
         db_table = 'tb_AlarmContent'
         verbose_name = '实时告警列表'
@@ -29,7 +31,7 @@ class AlarmContent(models.Model):
 class Warning(models.Model):
     warn_site = models.CharField(max_length=20, verbose_name='告警站点')
     warn_equipment = models.CharField(max_length=20, verbose_name='告警设备')
-    warn_parameter = models.CharField(max_length=20, verbose_name='告警参数')
+    warn_parameter = models.CharField(max_length=120, verbose_name='告警参数')
     warn_alarm = models.CharField(max_length=120, verbose_name='告警内容')
     warn_value = models.CharField(max_length=20, verbose_name='告警值')
     warn_unit = models.CharField(max_length=10, default="-", null=False, verbose_name='告警单位')
@@ -54,12 +56,12 @@ class Warning(models.Model):
 class HistoryData(models.Model):
     equipment_site = models.CharField(max_length=20, verbose_name='MDC')
     equipment_equipment = models.CharField(max_length=20, verbose_name='温湿度')
-    equipment_parameter = models.CharField(max_length=20, verbose_name='参数')
+    equipment_parameter = models.CharField(max_length=120, verbose_name='参数')  # signal中的名称参数 比较长
     equipment_value = models.CharField(max_length=20, verbose_name='值')
     equipment_unit = models.CharField(max_length=20, default="-", null=False, verbose_name='单位')
     equipment_time = models.CharField(max_length=20, verbose_name='时间')
     equipment_ip = models.CharField(max_length=50, verbose_name="站点ip")
-    equipment_other = models.CharField(max_length=50, verbose_name="其他")
+    equipment_other = models.CharField(max_length=50, verbose_name="当做设备的equipId")
 
     class Meta:
         db_table = "tb_historydata"

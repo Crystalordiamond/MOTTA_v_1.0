@@ -1,7 +1,7 @@
 from ftplib import FTP
 from xml.dom import minidom
-from pyModbusTCP.client import ModbusClient
-from pyModbusTCP import utils
+from .pyModbusTCP.pyModbusTCP.client import ModbusClient
+# from pyModbusTCP.client import ModbusClient
 import threading
 import struct
 import os, time, datetime

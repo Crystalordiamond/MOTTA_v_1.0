@@ -26,3 +26,4 @@ urlpatterns = [
     url('^', include('xmldata.urls')),
 
 ]
+urlpatterns += [url(r'^silk/', include('silk.urls', namespace='silk'))]

@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'warning.apps.WarningConfig',
     'xmldata.apps.XmldataConfig',
     'rbac.apps.RbacConfig',
+    'silk',
 
     'rest_framework',
     'corsheaders',  # 跨域 白名单
@@ -70,6 +71,7 @@ INSTALLED_APPS = [
 # Django版本的问题，1.10之前，中间件的key为MIDDLEWARE_CLASSES, 1.10之后，为MIDDLEWARE。
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'silk.middleware.SilkyMiddleware',
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -259,6 +261,7 @@ AUTH_USER_MODEL = 'rbac.User'
 CORS_ORIGIN_WHITELIST = (
     'http://192.168.1.17:8080',  # windows 前端访问
     'http://192.168.1.3 :8080',  # windows 前端访问
+    'http://192.168.1.22 :8080',
     'http://localhost:8080',
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie

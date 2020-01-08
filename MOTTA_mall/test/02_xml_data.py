@@ -1,6 +1,6 @@
 from ftplib import FTP
 from xml.dom import minidom
-from .pyModbusTCP.pyModbusTCP.client import ModbusClient
+from pyModbusTCP.pyModbusTCP.client import ModbusClient
 # from pyModbusTCP.client import ModbusClient
 import threading
 import struct

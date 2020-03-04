@@ -1,7 +1,8 @@
+import copy
 from ftplib import FTP
 from xml.dom import minidom
-from pyModbusTCP.pyModbusTCP.client import ModbusClient
-# from pyModbusTCP.client import ModbusClient
+# from pyModbusTCP.pyModbusTCP.client import ModbusClient
+from pyModbusTCP.client import ModbusClient
 import threading
 import struct
 import os, time, datetime
@@ -543,19 +544,35 @@ if __name__ == "__main__":
         ftp.get_documents()  # 批量存入EquipmentTemplate....表数据
         while True:
             ftp.get_realtime_data()  # 2.获取事实数据
-
-
     # 配置线程
     ip_list = []  # ip池要是元组("192.168.1.20",), ("192.168.1.30",), ("192.168.1.40",)
     threads = []  # 线程池
-    # 1.查询数据库设备表所有信息 得到ip池
-    conn = connect(host='localhost', port=3306, database="MOTTA_data", user="root", password="mysql", charset="utf8")
-    cur = conn.cursor()
-    sql_str = ''' select * from tb_divices;'''
-    cur.execute(sql_str)
-    # 遍历输出所有的结果 t是元组
-    for t in cur.fetchall():
-        ip_list.append((t[1],))  # 添加元组到列表
+    def con_mysql():
+        ip_list.clear()
+        # 1.查询数据库设备表所有信息 得到ip池
+        conn = connect(host='localhost', port=3306, database="MOTTA_data", user="root", password="mysql", charset="utf8")
+        cur = conn.cursor()
+        sql_str = ''' select * from tb_divices;'''
+        cur.execute(sql_str)
+        # 遍历输出所有的结果 t是元组
+        for t in cur.fetchall():
+            ip_list.append((t[1],))  # 添加元组到列表
+    # 调用查询数据库函数，得到ip_list
+    con_mysql()
+
+    # 如果ip_list列表为[]，则5分钟循环一次.跳出循环条件为ip列表有数据。
+    if len(ip_list) == 0:
+        # 如果ip池没有数据
+        while True:
+            time.sleep(300)
+            # 等待5分钟后再次连接数据
+            con_mysql()
+            # 如果ip池有数据了就跳出循环
+            print("数据库没有ip站点")
+            if len(ip_list) != 0:
+                print("数据库有ip站点，跳出循环，执行下一步")
+                break
+
     # 2.添加线程到线程池
     for i in range(len(ip_list)):
         t = threading.Thread(target=run, args=ip_list[i])
@@ -566,14 +583,30 @@ if __name__ == "__main__":
         i[0].start()
         print("开启线程：%s" % i[0])
     while True:
-        for i in threads:
-            if i[0].is_alive() is False:
-                print("%s线程的状态为：%s" % (i[0], i[0].is_alive()))
+        # 将ip_list的值赋值给flag_list
+        flag_list = copy.copy(ip_list)
+        # 获取新的ip_list
+        con_mysql()
+        # 如果flag_list == ip_list
+        if flag_list == ip_list:
+            for i in threads:
+                if i[0].is_alive() is False:
+                    print("%s线程的状态为：%s" % (i[0], i[0].is_alive()))
+                    threads.remove(i)
+                    t = threading.Thread(target=run, args=ip_list[i[1]])
+                    threads.append(t)  # 将挂掉的线程添加 到线程池
+                    t.start() # 开启
+        else:
+            # 获取的新的ip列表不相等。1、先移除旧的线程。2、添加开启新的线程
+            print("检测到站点发生了变化......")
+            for i in threads:
                 threads.remove(i)
-                t = threading.Thread(target=run, args=ip_list[i[1]])
-                threads.append(t)  # 将挂掉的进程添加 到进程池
-                t.start()
-        time.sleep(20)  # 20秒检测一次
-        print("间隔20秒，检测线程池的状态....")
-        # print(ip_list)
-        # print(threads)
+                print(threads)
+            for i in range(len(ip_list)):
+                t = threading.Thread(target=run, args=ip_list[i])
+                threads.append((t, i))
+            for i in threads:
+                i[0].start()
+                print("开启线程：%s" % i[0])
+        time.sleep(60)  # 20秒检测一次
+        print("间隔60秒，检测线程池的状态....")

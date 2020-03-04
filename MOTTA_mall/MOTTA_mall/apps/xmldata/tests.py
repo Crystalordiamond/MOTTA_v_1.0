@@ -12,3 +12,15 @@ b = "2019-11-14 00:05:50"
 print(a < b)
 if dict_data1 in list:
     print(1111111111)
+
+
+for i in range(5):
+    print(i)
+
+aa = [(1,0),(1,0)]
+aa = [(1,0),(1,0)]
+bb = aa
+aa.append(1)
+
+if aa == bb:
+    print("aaaaaaaaaaaaa")

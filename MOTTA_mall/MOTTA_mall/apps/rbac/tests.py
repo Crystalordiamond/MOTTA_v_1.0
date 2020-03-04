@@ -18,3 +18,4 @@ time_data = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
 data_time = time.strptime('2019-1-1 23:8:0','%Y-%m-%d %H:%M:%S')
 print("将时间转化为格式化字符串:",time_data)
 print("将字符串转化为时间类型:",data_time)
+

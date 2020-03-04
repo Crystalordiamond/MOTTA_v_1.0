@@ -260,7 +260,7 @@ AUTH_USER_MODEL = 'rbac.User'
 # 3.CORS 跨域请求  添加白名单
 CORS_ORIGIN_WHITELIST = (
     'http://192.168.1.17:8080',  # windows 前端访问
-    'http://192.168.1.3 :8080',  # windows 前端访问
+    'http://192.168.1.103 :8080',  # windows 前端访问
     'http://192.168.1.22 :8080',
     'http://localhost:8080',
 )

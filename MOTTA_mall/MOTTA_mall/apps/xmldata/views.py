@@ -18,6 +18,11 @@ from django.template import loader
 from twilio.rest import Client
 from . import constants
 
+from django import db
+import gc
+gc.isenabled()
+
+db.reset_queries()
 list_ip = []  # 定义一个全局变量,用来接收http请求查询的ip
 time_flg = datetime.datetime.now()  # 定义一个全局变量,接收时间字符串
 
@@ -33,9 +38,9 @@ def websocket(request):
         list_ip = []
         # 如果是普通的http方法
         data = request.body.decode()
-        data_dict = json.loads(data)
+        data_dicts = json.loads(data)
         # 1.获取前端传过来的用户名
-        user = data_dict['user']
+        user = data_dicts['user']
         # 2.查询数据库获得用户关联的站点ip
         # print('ws的用户名称',user)
         ip_list = User.objects.filter(username=user)[0].divices_set.all()
@@ -73,6 +78,7 @@ def websocket(request):
                             # 有重复值是因为id混淆
                             unit_data = Signals_meaing.objects.filter(Q(Signals_ip=data.divice_ip) & Q(
                                 EquipTemplateId=equipments_data[0].EquipTemplateId) & Q(SignalId=data.sigid))
+                            db.close_old_connections()
                             """
                             查询Signals_meaing列表 同一个信号值会有多个值。
                             1.判断如果长度>1存在多个值需要比较
@@ -82,6 +88,7 @@ def websocket(request):
                             if unit_data.count() > 1:
                                 # 这里得到的是有单位的数值，过滤掉了状态
                                 unit_data = unit_data.filter(Q(StateValue=None) & Q(Meaning=None))
+                                db.close_old_connections()
                                 # for i in unit_data:
                                 #     print(i.Meaning)
                                 #     print(i.StateValue)
@@ -93,6 +100,7 @@ def websocket(request):
                                 his_data = HistoryData.objects.filter(equipment_ip=ip).filter(
                                     equipment_other=equipments_data[0].EquipTemplateId).filter(
                                     equipment_parameter=unit_data[0].SignalName)
+                                db.close_old_connections()
                                 if his_data.count() > 0:
                                     # print(len(his_data))
                                     #  todo 一分钟存储一次
@@ -113,6 +121,7 @@ def websocket(request):
                                             equipment_ip=data.divice_ip,
                                             equipment_other=equipments_data[0].EquipTemplateId,
                                         )
+                                    db.close_old_connections()
                                 else:
                                     # print(len(his_data))
                                     HistoryData.objects.create(
@@ -126,6 +135,7 @@ def websocket(request):
                                         equipment_ip=data.divice_ip,
                                         equipment_other=equipments_data[0].EquipTemplateId,
                                     )
+                                db.close_old_connections()
                             else:
                                 HistoryData.objects.create(
                                     equipment_site=divices.objects.filter(divice_ip=data.divice_ip)[0].divice_site,
@@ -137,6 +147,7 @@ def websocket(request):
                                     equipment_ip=data.divice_ip,
                                     equipment_other=equipments_data[0].EquipTemplateId
                                 )
+                            db.close_old_connections()
                             # 2、根据xmldata里面的sigid值来查找，注意 不是所有的sigid值都有对应的数据 这是告警数据 event会有除了ConditionId不同的重复值
                             """
                             查询Events列表 同一个信号值会有多个值。
@@ -147,6 +158,7 @@ def websocket(request):
                             evn_data = Events.objects.filter(
                                 Q(Events_ip=data.divice_ip) & Q(EquipTemplateId=equipments_data[0].EquipTemplateId) & Q(
                                     EventId=data.sigid))
+                            db.close_old_connections()
                             if evn_data.count() != 0:
                                 # 1个event信号有多个值
                                 for evn in evn_data:
@@ -187,7 +199,6 @@ def websocket(request):
                                             'unit': '-' if unit_data[0].Unit == '' else unit_data[0].Unit,  # 告警的单位
                                             "StartCompareValue": evn.StartCompareValue
                                         }
-                                        # print("==============>", data_dict['manage'])
                                         b = evn.StartCompareValue
                                         c = evn.StartOperation
                                         if c == "=":
@@ -308,15 +319,24 @@ def websocket(request):
                                                     StartCompareValue=data_dict['StartCompareValue'],
                                                     alarm_flag='0',
                                                 )
+                                        db.close_old_connections()
+                                        del data_dict
 
                                     else:
                                         pass
+                                    db.close_old_connections()
                         else:
                             pass
+                        db.close_old_connections()
                 else:
                     print("该用户没有关联的ip设备")
+                db.close_old_connections()
             else:
                 pass
+            db.close_old_connections()
+
+
+
 
 
 # 1.将数据实时展示给前端
@@ -795,39 +815,39 @@ def send_mails(list_ip, alarm_list, now_time):
         time_flg = now_time
         # 1.收件人
         to_email = []
-        to_phone = []
+        # to_phone = []
         for ip in list_ip:
             user = divices.objects.filter(divice_ip=ip)[0].user_id.all()
             for i in user:
                 to_email.append(i.email)
-                to_phone.append('+86' + i.u_phone)
+                # to_phone.append('+86' + i.u_phone)
         # 2.给收件人列表去重
         to_email = list(set(to_email))
         # 3.整理列表格式
         # 3.1 获取模板
-        # print(to_email)
+        print("to_email", to_email)
         template = loader.get_template('index.html')
         context = {"alarm_list": alarm_list}
         html_msg = template.render(context)
         # subject = "邮件告警"
         send_verify_mail.delay(to_email, html_msg)
         # send_mail(subject, "", settings.EMAIL_HOST_USER, to_email, html_message=html_msg)
-        print("邮件发送成功")
+        print("邮件发送成功,发送时间%s", (now_time - time_flg))
         # 4.发送短信告警
         # 4.1.给电话列表去重
-        to_phone = list(set(to_phone))
+        # to_phone = list(set(to_phone))
         # 4.2.配置发送的信息
-        account_sid = "AC29bee85a3bb88c1f1c2511ec09911ad3"
-        auth_token = "cbc23860e7c6664cfa247473123de75a"
-        client = Client(account_sid, auth_token)
+        # account_sid = "AC29bee85a3bb88c1f1c2511ec09911ad3"
+        # auth_token = "cbc23860e7c6664cfa247473123de75a"
+        # client = Client(account_sid, auth_token)
         # 4.3 给短信拼接信息
-        sms_list = []
-        for index, i in enumerate(alarm_list):
-            sms_list.append(
-                str(index) + ": " + i["site"] + " in " + i["location"] + " had a " + i["equipment"] + " " + i[
-                    "alarm"] + " " + i["alarm_text"] + ", " + " alarm time was " + i["lssue_time"] + ".")
-        # 4.4 将列表拼接成字符串
-        sms_list = ";".join(sms_list)
+        # sms_list = []
+        # for index, i in enumerate(alarm_list):
+        #     sms_list.append(
+        #         str(index) + ": " + i["site"] + " in " + i["location"] + " had a " + i["equipment"] + " " + i[
+        #             "alarm"] + " " + i["alarm_text"] + ", " + " alarm time was " + i["lssue_time"] + ".")
+        # # 4.4 将列表拼接成字符串
+        # sms_list = ";".join(sms_list)
         # print(sms_list)
         # 4.4 发送短信 测试只能给注册的手机号使用
         # client.messages.create(

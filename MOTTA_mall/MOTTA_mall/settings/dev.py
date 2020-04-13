@@ -274,17 +274,17 @@ WEBSOCKET_ACCEPT_ALL = True
 conn = connect(host="localhost", port=3306, database="MOTTA_data", user="root", password="mysql", charset="utf8")
 cur = conn.cursor()
 sql_str = '''select * from tb_warningconfig'''
-cur.execute(sql_str)
-sql = cur.fetchall()[0]
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = sql[1]
-# EMAIL_HOST = 'smtp.163.com'
-EMAIL_PORT = sql[2]
-# EMAIL_PORT = 25
-# # 发送邮件的邮箱
-EMAIL_HOST_USER = sql[4]
-# EMAIL_HOST_USER = 'luochenxi163@163.com'
-# # 在邮箱中设置的客户端授权密码
-# EMAIL_HOST_PASSWORD = 'chenjun123456'
-EMAIL_HOST_PASSWORD = sql[5]
-# print(EMAIL_HOST_PASSWORD)
+if cur.execute(sql_str):
+    sql = cur.fetchall()[0]
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = sql[1]
+    # EMAIL_HOST = 'smtp.163.com'
+    EMAIL_PORT = sql[2]
+    # EMAIL_PORT = 25
+    # # 发送邮件的邮箱
+    EMAIL_HOST_USER = sql[4]
+    # EMAIL_HOST_USER = 'luochenxi163@163.com'
+    # # 在邮箱中设置的客户端授权密码
+    # EMAIL_HOST_PASSWORD = 'chenjun123456'
+    EMAIL_HOST_PASSWORD = sql[5]
+    # print(EMAIL_HOST_PASSWORD)

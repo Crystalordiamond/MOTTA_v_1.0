@@ -10,7 +10,7 @@ import json, copy
 from functools import reduce
 
 
-# 0、查询现有站点的 site equipment parameter alarmlevel 列表
+# 0、查询现有站点的 site equipment parameter alarm level 列表
 def get_equipment(request):
     json_str = request.body
     json_str = json_str.decode()
@@ -22,7 +22,7 @@ def get_equipment(request):
             "equipment": i.EquipmentName
         }
         equipment_list.append(data_dict)
-    # 对equipment_list去重 ，利用reduce
+    # 对equipment_list去重
     run_function = lambda x, y: x if y in x else x + [y]
     a = reduce(run_function, [[], ] + equipment_list)
 
@@ -41,6 +41,7 @@ def get_equipment(request):
     }
     #  转换成json格式传送
     json_list = json.dumps(data_dict)
+    # print("json_list: ", len(json_list))
     return JsonResponse(json_list, safe=False)
 
 
@@ -176,6 +177,7 @@ def signaldata(request):
     json_str = request.body
     json_str = json_str.decode()
     request_data = json.loads(json_str)
+    # 1.0 这里判断传过来参数长度，作用在于逐递搜索，当用户传递第一个site设备参数，返回设备名称（用户选择使用）
     if len(request_data) == 1:
         # print("len(request_data) == 1", request_data)
         data = HistoryData.objects.filter(equipment_site=request_data["site"])
@@ -189,6 +191,7 @@ def signaldata(request):
         run_function = lambda x, y: x if y in x else x + [y]
         a = reduce(run_function, [[], ] + data_list)
         return JsonResponse(a, safe=False)
+    # 2.0 当参数长度为2时，说明有了站点和设备，需要得到parameter参数（用户选择使用）
     elif len(request_data) == 2:
         # print("len(request_data) == 2", request_data)
         data = HistoryData.objects.filter(equipment_site=request_data["site"]).filter(
@@ -203,11 +206,21 @@ def signaldata(request):
         run_function = lambda x, y: x if y in x else x + [y]
         a = reduce(run_function, [[], ] + data_list)
         return JsonResponse(a, safe=False)
+    # 3.0 其他情况，当用户一个参数都没有填写，或者至少有3+2(时间参数)个参数（用户查询使用）
     else:
+        """
+        time_data = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+        data_time = time.strptime('2019-1-1 23:8:0','%Y-%m-%d %H:%M:%S')
+        print("将时间转化为格式化字符串:",time_data)
+        print("将字符串转化为时间类型:",data_time)
+        """
+        # 将前端的字符串时间格式，转化为时间类型
         start_time = time.strptime(request_data['start_time'], "%Y-%m-%d %H:%M:%S")
         end_time = time.strptime(request_data['end_time'], "%Y-%m-%d %H:%M:%S")
+        # 将时间类型 转为格式化字符串
         start_time = time.strftime("%Y-%m-%d %H:%M:%S", start_time)
         end_time = time.strftime("%Y-%m-%d %H:%M:%S", end_time)
+
         data1 = HistoryData.objects.filter(
             Q(equipment_site=request_data["site1"]) & Q(equipment_equipment=request_data["equipment1"]) & Q(
                 equipment_parameter=request_data["parameter1"]) & Q(
@@ -293,4 +306,6 @@ def signaldata(request):
             "signal4": data_list4,
         }
         data_dicts = json.dumps(data_dicts)
+        print("data_dicts:", data_dicts)
+
         return JsonResponse(data_dicts, safe=False)

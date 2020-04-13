@@ -1,26 +1,12 @@
-list = [
-    {"name": 'zhangsna', "age": 18},
-    {"name": 'lisi1', "age": 19}
-]
-
-# 有个字典 想添加到list里面，如果name不重复就添加，重复了就替换。
-dict_data = {"name": "wang", "age": 55}
-dict_data1 = {"name": "lisi", "age": 19}
-
-a = "2019-11-13 0:0:0"
-b = "2019-11-14 00:05:50"
-print(a < b)
-if dict_data1 in list:
-    print(1111111111)
-
-
-for i in range(5):
-    print(i)
-
-aa = [(1,0),(1,0)]
-aa = [(1,0),(1,0)]
-bb = aa
-aa.append(1)
-
-if aa == bb:
-    print("aaaaaaaaaaaaa")
+import objgraph
+dict_list = objgraph.by_type('dict')
+def save_to_file(self, name, items):
+  with open(name, 'w') as outputs:
+    for idx, item in enumerate(items):
+      try:
+        outputs.write(str(idx) + " ### ")
+        outputs.write(str(item))
+        outputs.write('\n')
+      except Exception as e:
+        print(e)
+    outputs.flush()

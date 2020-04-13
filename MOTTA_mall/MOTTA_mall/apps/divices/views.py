@@ -20,19 +20,20 @@ def coordinate_post(request):
     coor_data = json.loads(json_str)
     coor_list = coordinate.objects.filter(coordinate_ip=coor_data['ip'])
     if coor_list:
-        # print(coor_list)
-        return HttpResponse('%s Site already exists!' % coor_data['site'])
+        return JsonResponse({'status': 'no'})
     else:
-        coordinate.objects.create(
-            coordinate_ip=coor_data['ip'],
-            coordinate_location=coor_data['location'],
-            coordinate_site=coor_data['site'],
-            coordinate_status=coor_data['status'],
-            coordinate_A=coor_data['A'],
-            coordinate_B=coor_data['B'],
-            coordinate_address=coor_data['address']
-        )
-        return HttpResponse('Site setup is successful!')
+        try:
+            coordinate.objects.create(
+                coordinate_ip=coor_data['ip'],
+                coordinate_location=coor_data['location'],
+                coordinate_site=coor_data['site'],
+                coordinate_A=coor_data['A'],
+                coordinate_B=coor_data['B'],
+                coordinate_address=coor_data['address']
+            )
+            return JsonResponse({'status': 'yes'})
+        except:
+            return JsonResponse({'status': 'no'})
 
 
 # 0.查询坐标点
@@ -40,22 +41,23 @@ def coordinate_get(request):
     json_str = request.body
     json_str = json_str.decode()  # python3.6 无需执行此步
     coor_data = json.loads(json_str)
-    print(coor_data)
     coor_list = coordinate.objects.filter(coordinate_ip__in=coor_data['ip'])
-    print(coor_list)
     coordinate_list = []
     for i in coor_list:
-        # print(i.coordinate_A)
         dict_data = {
             "location": i.coordinate_location,
             "site": i.coordinate_site,
-            "status": i.coordinate_status,
+            # 存入坐标点时候，没有保存status
+            "status": "Normal",
+            # 加一个颜色字段 蓝色
+            "colour": "#000080",
             "A": i.coordinate_A,
             "B": i.coordinate_B,
-            "address": i.coordinate_address
+            "address": i.coordinate_address,
+            'users': [i["username"] for i in
+                      divices.objects.filter(divice_ip=i.coordinate_ip)[0].user_id.all().values('username')]
         }
         coordinate_list.append(dict_data)
-    # print(json.dumps(coordinate_list))
     return JsonResponse(coordinate_list, safe=False)
 
 
@@ -68,6 +70,7 @@ def coordinateDelete(request):
     return JsonResponse("Coordinate point deleted successfully", safe=False)
 
 
+# 0.更新坐标点
 def coordinateUpdate(request):
     json_str = request.body.decode()
     coordinate_data = json.loads(json_str)
@@ -146,16 +149,20 @@ def All_site(request):
     json_str = request.body
     json_str = json_str.decode()
     site_data = json.loads(json_str)
-    print(site_data)
-    # 超级管理员 获取所有信息
+    # print("All_site:",site_data)
+    # 1.超级管理员 获取所有信息
     if site_data['grade'] == 'Administrator':
         list_data = []
+        # 1.1 超级管理员直接查询所有站点
         address_obj = divices.objects.all()
-        # print('111111111111111111111', address_obj)
+        # 1.2 遍历站点对象
         for address in address_obj:
             manage_list = []
+            # 1.3 通过站点对象，通过user_id这个ManyToManyField字段正向查询该站点有哪一些用户
             for i in address.user_id.all().values("username"):
+                # 1.4 将站点关联的用户存入列表
                 manage_list.append(i["username"])
+            # 1.5 构造dict对象
             data_dict = {
                 "id": address.id,
                 "site": address.divice_site,
@@ -166,21 +173,22 @@ def All_site(request):
                 "serial": address.divice_serial,
                 "manager": ','.join(manage_list)
             }
+            # 1.6 构造json数据格式对象
             list_data.append(data_dict)
+        # 1.7 发送json数据到前端
         return JsonResponse(list_data, safe=False)
-    # 普通用户获取 用户信息
+    # 2.普通用户获取 用户信息
     else:
         list_data = []
-        # 1.查询到用户对象
+        # 2.1 查询到用户对象
         user_object = User.objects.filter(username=site_data['user'])
-        """
-        2.通过用户对象查询到关联的站点
-        3.然后通过站点查询 该站点被哪一些用户关联  
-        """
+        # 2.2 通过divices_set反向查询，得到该用户管理哪一些站点
         address_obj = user_object[0].divices_set.all()
         for address in address_obj:
             manage_list = []
+            # 2.3 通过站点正向查询，每个站点有哪一些用户管理员
             for i in address.user_id.all().values("username"):
+                # 2.4 得到管理员列表
                 manage_list.append(i["username"])
             data_dict = {
                 "id": address.id,
@@ -192,7 +200,9 @@ def All_site(request):
                 "serial": address.divice_serial,
                 "manager": ','.join(manage_list)
             }
+            # 2.5 构造json数据格式对象
             list_data.append(data_dict)
+        # 2.6 发送json数据到前端
         return JsonResponse(list_data, safe=False)
 
 
@@ -485,7 +495,7 @@ def sql_post(request):
 def sql_put(request):
     data = request.FILES.get('file')
     print(data)
-    with open('./dump.sql','wb') as f:
+    with open('./dump.sql', 'wb') as f:
         for i in data:
             f.write(i)
     os.system('mysql -uroot -pmysql  MOTTA_data< dump.sql')
@@ -494,14 +504,11 @@ def sql_put(request):
 
 """  
 在Pyhton里有一个叫simplejson的库可以方便的将完成对json的生成与解析。
-这个包里主要有四个方法：dump和dumps由python数据类型生成json，
-                    load和loads将json解析成为python的数据类型。
-                    
+这个包里主要有四个方法：dump和dumps由python数据类型生成json，load和loads将json解析成为python的数据类型。                  
 dump和dumps的唯一区别是dump会生成一个类文件对象，dumps会生成字符串，
-
-load和loads分别解析类文件对象和字符串格式的JSON
-
-  在django的HttpResponse中的返回中需要将字典类型转为json字符串，通常为HttpRespons（json.dumps(response))
-
-或者直接使用django里的JsonRespnse（respnse）来返回数据。
+load和loads的唯一区别是load解析类文件对象，loads解析字符串格式的JSON，
+    在django的HttpResponse中的返回中需要将字典类型转为json字符串，通常为HttpRespons（json.dumps(response))
+    或者直接使用django里的JsonRespnse（respnse）来返回数据。
+却别在于HttpResponse需要我们自己前后台进行序列化parse()与反序列化stringify(),而JasonResponse则把序列化和反序列化封装了起来，我们直接传入可序列化
+        
 """

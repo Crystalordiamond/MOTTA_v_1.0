@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CfgMonitorUnit MonitorUnitId="1" MonitorUnitName="VTU" MonitorUnitType="401" IPAddress="attom_ATM06F_ATM10S_en" EventLocked="false" ControlLocked="false" Description="" LastUpdateTime="20190427170747" EXTENDFIELD1="">
+  <Ports>
+    <CfgPort PortId="1" PortNo="1" PortType="2" PortSetting="9600,n,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="2" PortNo="2" PortType="0" PortSetting="2400,n,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="3" PortNo="3" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="4" PortNo="4" PortType="0" PortSetting="2400,e,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="5" PortNo="5" PortType="0" PortSetting="9600,n,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="6" PortNo="6" PortType="0" PortSetting="2400,n,8,1" PortLibName="" Description="" />
+    <CfgPort PortId="7" PortNo="7" PortType="0" PortSetting="19200,n,8,1" PortLibName="" Description="SMS" />
+  </Ports>
+  <Equipments>
+    <CfgEquipment EquipId="1" EquipTemplateId="177" EquipmentName="VTU-IO" PortId="1" EquipAddress="1" ExtPortSetting="" LibName="VTUIO.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="2" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity1" PortId="3" EquipAddress="1" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="3" EquipTemplateId="176" EquipmentName="UPS1" PortId="2" EquipAddress="1" ExtPortSetting="" LibName="UPS_6-10K.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="4" EquipTemplateId="180" EquipmentName="Primary Meter" PortId="4" EquipAddress="1" ExtPortSetting="" LibName="YD2010C-K-V.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="5" EquipTemplateId="180" EquipmentName="IT Meter" PortId="4" EquipAddress="2" ExtPortSetting="" LibName="YD2010C-K-V.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="6" EquipTemplateId="179" EquipmentName="Air Conditioner1" PortId="5" EquipAddress="1" ExtPortSetting="" LibName="SmoothAir_Carel_DX.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="7" EquipTemplateId="176" EquipmentName="UPS2" PortId="6" EquipAddress="1" ExtPortSetting="" LibName="UPS_6-10K.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="8" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity2" PortId="3" EquipAddress="2" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="9" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity3" PortId="3" EquipAddress="3" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="10" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity4" PortId="3" EquipAddress="4" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="11" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity5" PortId="3" EquipAddress="5" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="12" EquipTemplateId="169" EquipmentName="Temp&amp;Humidity6" PortId="3" EquipAddress="6" ExtPortSetting="" LibName="THSE10.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+    <CfgEquipment EquipId="13" EquipTemplateId="179" EquipmentName="Air Conditioner2" PortId="5" EquipAddress="2" ExtPortSetting="" LibName="SmoothAir_Carel_DX.so" SampleInterval="2" EventLocked="false" ControlLocked="false" Description="" />
+  </Equipments>
+  <LogActions>
+    <EventLogAction LogActionId="1" ActionName="Manage emergency ventilation Open" TriggerType="1" StartExpression="[2,1]&gt;[2,3]OR[8,1]&gt;[8,3]OR[9,1]&gt;[9,3]OR[10,1]&gt;[10,3]OR[11,1]&gt;[11,3]OR[12,1]&gt;[12,3]" SuppressExpression="">
+      <Action ActionId="1" ActionName="DO1" EquipmentId="1" ControlId="1" Token="11" ActionValue="1" />
+    </EventLogAction>
+    <EventLogAction LogActionId="2" ActionName="Manage emergency ventilation Close" TriggerType="1" StartExpression="[2,1]&lt;[2,4]AND[8,1]&lt;[8,4]AND[9,1]&lt;[9,4]AND[10,1]&lt;[10,4]AND[11,1]&lt;[11,4]AND[12,1]&lt;[12,4]" SuppressExpression="">
+      <Action ActionId="2" ActionName="DO1" EquipmentId="1" ControlId="1" Token="11" ActionValue="0" />
+    </EventLogAction>
+  </LogActions>
+</CfgMonitorUnit>

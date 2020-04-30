@@ -1,3 +1,4 @@
+import copy
 import datetime
 from functools import reduce
 
@@ -20,6 +21,7 @@ from . import constants
 
 from django import db
 import gc
+
 gc.isenabled()
 
 db.reset_queries()
@@ -336,10 +338,7 @@ def websocket(request):
             db.close_old_connections()
 
 
-
-
-
-# 1.将数据实时展示给前端
+# 1.将实时告警 展示给前端
 @accept_websocket
 def QueryWebsocket(request):
     if request.is_websocket() == True:
@@ -420,242 +419,262 @@ def QueryWebsocket(request):
                     time.sleep(2)
 
 
-# 2.ups 电表 温湿度 空调
+"""
+1.不同协议的MDC，通过ip做区分。
+2.MDC内有不同的设备，相同设备端口不一样（232,485），相同设备地址不一样（485，地址改为1 改为2）。
+3.设备有多个点位的情况（大电表，小电表）。 特殊情况（三相可能是三个单相相加 或者就一个大电表）
+"""
+
+
+# 2. vtu-io, ups 电表 温湿度 空调 实时数据
 @accept_websocket
 def GetWebsocket(request):
     if request.is_websocket() == True:
         WebSocket = request.websocket
         print("# 2.ups 电表 温湿度 空调")
-        # id_flg = None  # 先取值 后比较，如果后面不匹配会把最新数据过滤掉  这里立id——flg会导致死循环，循环ip导致每次的flg都会不一样
         while True:
-            # 用户关联的站点来展示告警
             if list_ip:
                 data_list = []  # 每个ip对应的 告警列表
                 """
                 ups的协议同，对应的信号点也会不同，需要建一个不同协议对应不同的数值池
                 """
-                # 1.获取最新的一条数据  不区分ip
-                # # data = XmlData.objects.filter().last()
-                # if data and id_flg != data.id:
-                #     id_flg = data.id
                 # 2、确保取到的值没有重复的，在区分ip
                 for ip in list_ip:
+                    # 1. 通ip过滤，equipment。filter得到的是列表[] （后面会用到）
                     site = divices.objects.filter(divice_ip=ip)[0]
-                    for i in constants.UPS_Signal:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "UPS_Signal",
-                                "UPS_Signal": data.float_data,
-                                "site": site.divice_site if site else '',
-                                "time": data.data_time
-                            }
-                            data_list.append(data_dict)
-                            # print(data_dict)
-                    for i in constants.temps:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "temps",
-                                "temps": data.float_data,
-                                "site": site.divice_site if site else '',
-                                "time": data.data_time
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.Humidity:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "Humidity",
-                                "Humidity": data.float_data,
-                                "site": site.divice_site if site else '',
-                                "time": data.data_time
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.input_vol:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "input_vol",
-                                "input_vol": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.output_vol:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "output_vol",
-                                "output_vol": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.input_fre:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "input_fre",
-                                "input_fre": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.output_fre:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "output_fre",
-                                "output_fre": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.input_phase:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "input_phase",
-                                "input_phase": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.output_phase:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "output_phase",
-                                "output_phase": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.meter_power:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "meter_power",
-                                "meter_power": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.ups_load:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "ups_load",
-                                "ups_load": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.Return_Temp:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "Return_Temp",
-                                "Return_Temp": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                            # print(data_dict)
-                    for i in constants.Discharge_Temp:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "Discharge_Temp",
-                                "Discharge_Temp": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.AC_Humidity:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "AC_Humidity",
-                                "AC_Humidity": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
-                    for i in constants.AC_Mode:
-                        # 1.得到最新的一条数据
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        if data:
-                            # 2.通过equipid来查询equipment表中的equipID
-                            EquipId = equipments.objects.filter(Equipment_ip=ip).filter(EquipId=data.equipid).last()
-                            # 3.得到value对应meaning (meaning有很多)
-                            meanings = Signals_meaing.objects.filter(EquipTemplateId=EquipId.EquipTemplateId).filter(
-                                Signals_ip=ip).filter(SignalId=i.get("sigid"))
-                            a = '%.f' % data.float_data
-                            for i in meanings:
-                                if i.StateValue == a:
-                                    # print(i.Meaning)
+                    # 2. 获取ups的数据 根据ip查寻equipment表得到ups数量。
+                    # 2.1 得到所有的equipmen设备对象
+                    LibName = equipments.objects.filter(Equipment_ip=ip)
+                    # 2.2 根据ups的so名称过滤，得到ups对象(ups的so文件名称，为常量，需要手动添加)
+                    # 一些ip的MDC没有ups则为空列表
+                    ups_list = [i for i in LibName if i.LibName in constants.ups_type]
+                    # 2.3 根据不同的协议类型做比较 "UPS_6-10K.so", "UPS_INVT_X7-20.so", "UPS-GXT4.so"
+                    for j in ups_list:
+                        # 2.3.1 如果ups是UPS_6-10K.so
+                        if j.LibName == "UPS_6-10K.so":
+                            # 2.3.2 有多个ups情况下 (模板是通用的 区别在于equipment表的EquipmentName名称不同,需要拼接字符串)
+                            # 这里需要深拷贝字典对象，不然修改的是原始字典，下一次循环的时候，会一直累加。
+                            RYY_co = copy.deepcopy(constants.RYY)
+                            for k in RYY_co:
+                                # 2.3.3 拼接字符串
+                                k['name'] = j.EquipmentName + ', ' + k['name']
+                            # 2.3.4 通过ip得到唯一站点，通过信号id和名称得到指定的点位，通过last获取最新的一条数据。
+                            for index, i in enumerate(RYY_co):
+                                data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                    name=i.get("name")).last()
+                                # 2.3.5 如果data有值，将值返回给前端
+                                if data:
                                     data_dict = {
-                                        "name": "AC_Mode",
-                                        "AC_Mode": data.float_data,
-                                        "meaning": i.Meaning,
-                                        "site": site.divice_site if site else ''
+                                        "name": "UPS",
+                                        "site_name": j.EquipmentName,
+                                        "singnal_name": constants.RYY[index]["name"],
+                                        "singnal_data": data.float_data,
+                                        "singnal_site": site.divice_site if site else '',
+                                        "singnal_time": data.data_time,
+                                        "site_type": j.LibName
                                     }
                                     data_list.append(data_dict)
-                                else:
-                                    pass
-                    for i in constants.Leaking:
-                        data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
-                            name=i.get("name")).last()
-                        # if data and data.id != id_flg:
-                        #     id_flg = data.id
-                        if data:
-                            data_dict = {
-                                "name": "Leaking",
-                                "Leaking": data.float_data,
-                                "site": site.divice_site if site else ''
-                            }
-                            data_list.append(data_dict)
+                        # 2.3.2 如果ups是UPS_INVT_X7-20.so(目前是瑞尔时代监控)
+                        if j.LibName == "UPS_INVT_X7-20.so":
+                            pass
+                        # 2.3.3 如果ups是UPS-GXT4.so
+                        if j.LibName == "UPS_GXT4.so":
+                            VERTIV_co = copy.deepcopy(constants.VERTIV)
+                            for k in VERTIV_co:
+                                # 2.3.3 拼接字符串
+                                k['name'] = j.EquipmentName + ', ' + k['name']
+                            # 2.3.4 通过ip得到唯一站点，通过信号id和名称得到指定的点位，通过last获取最新的一条数据。
+                            for index, i in enumerate(VERTIV_co):
+                                data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                    name=i.get("name")).last()
+                                # 2.3.5 如果data有值，将值返回给前端
+                                if data:
+                                    data_dict = {
+                                        "name": "UPS",
+                                        "site_name": j.EquipmentName,
+                                        "singnal_name": constants.VERTIV[index]["name"],
+                                        "singnal_data": data.float_data,
+                                        "singnal_site": site.divice_site if site else '',
+                                        "singnal_time": data.data_time,
+                                        "site_type": j.LibName
+                                    }
+                                    data_list.append(data_dict)
+                    """ 3.1 根据温湿度so文件名称，获得温湿度的对象。"""
+                    temp_list = [i for i in LibName if i.LibName in constants.TH_type]
+                    for k in temp_list:
+                        # 3.2 有多个温湿度情况下 (模板是通用的 区别在于equipment表的EquipmentName名称不同,需要拼接字符串)
+                        # 这里需要深拷贝字典对象，不然修改的是原始字典，下一次循环的时候，会一直累加。
+                        TH_co = copy.deepcopy(constants.TempsHumidity)
+                        # 3.3 这里在拼接名称时候，xmldata在存储数据时，因为xml模板特殊字符串，是做了修改的
+                        for l in TH_co:
+                            # 2.3.3 拼接字符串,replace()替换指定字符串
+                            l['name'] = k.EquipmentName.replace('&', '-') + ', ' + l['name']
+                        for index, i in enumerate(TH_co):
+                            data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                name=i.get("name")).last()
+                            # 2.3.5 如果data有值，将值返回给前端
+                            if data:
+                                data_dict = {
+                                    "name": "TH",
+                                    "site_name": k.EquipmentName,
+                                    "singnal_name": constants.TempsHumidity[index]["name"],
+                                    "singnal_data": data.float_data,
+                                    "singnal_site": site.divice_site if site else '',
+                                    "singnal_time": data.data_time,
+                                    "site_type": "THSE10.so"
+                                }
+                                data_list.append(data_dict)
 
+                    """4.1 电表so文件名称，获得电表对象"""
+                    meter_list = [i for i in LibName if i.LibName in constants.Meter_type]
+                    # 4.2 根据不同的协议类型做比较 "YD2010C-K-V.so", "DDS3366D-1P.so"
+                    for m in meter_list:
+                        # 4.2.1 如果电表是YD2010C-K-V.so大电表
+                        if m.LibName == "YD2010C-K-V.so":
+                            # 4.2.2 有多个电表情况下 (模板是通用的 区别在于equipment表的EquipmentName名称不同,需要拼接字符串)
+                            # 这里需要深拷贝字典对象，不然修改的是原始字典，下一次循环的时候，会一直累加。(大电表)
+                            B_meter_co = copy.deepcopy(constants.B_meter)
+                            for n in B_meter_co:
+                                # 4.2.3 拼接字符串
+                                if n['name'].find("&#xA;&#xA;") != -1:
+                                    n['name'] = m.EquipmentName + ', ' + n['name'].replace('&#xA;&#xA;', '')
+                                    # print(n['name'])
+                                else:
+                                    n['name'] = m.EquipmentName + ', ' + n['name']
+                            # 4.2.4 通过ip得到唯一站点，通过信号id和名称得到指定的点位，通过last获取最新的一条数据。
+                            for index, i in enumerate(B_meter_co):
+                                data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                    name=i.get("name")).last()
+                                # 4.2.5 如果data有值，将值返回给前端
+                                if data:
+                                    data_dict = {
+                                        "name": "Meter",
+                                        "site_name": m.EquipmentName,
+                                        "singnal_name": constants.B_meter[index]["name"],
+                                        "singnal_data": data.float_data,
+                                        "singnal_site": site.divice_site if site else '',
+                                        "singnal_time": data.data_time,
+                                        "site_type": m.LibName
+                                    }
+                                    data_list.append(data_dict)
+                        # 4.3 如果电表是DDS3366D-1P.so小电表
+                        if m.LibName == "DDS3366D-1P.so":
+                            # 4.3.1 有多个电表情况下 (模板是通用的 区别在于equipment表的EquipmentName名称不同,需要拼接字符串)
+                            # 这里需要深拷贝字典对象，不然修改的是原始字典，下一次循环的时候，会一直累加。(大电表)
+                            L_meter_co = copy.deepcopy(constants.L_meter)
+                            for n in L_meter_co:
+                                # 4.2.3 拼接字符串
+                                n['name'] = m.EquipmentName + ', ' + n['name']
+                            # 4.2.4 通过ip得到唯一站点，通过信号id和名称得到指定的点位，通过last获取最新的一条数据。
+                            for index, i in enumerate(L_meter_co):
+                                data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                    name=i.get("name")).last()
+                                # 4.2.5 如果data有值，将值返回给前端
+                                if data:
+                                    data_dict = {
+                                        "name": "Meter",
+                                        "site_name": m.EquipmentName,
+                                        "singnal_name": constants.L_meter[index]["name"],
+                                        "singnal_data": data.float_data,
+                                        "singnal_site": site.divice_site if site else '',
+                                        "singnal_time": data.data_time,
+                                        "site_type": m.LibName
+                                    }
+                                    data_list.append(data_dict)
+
+                    """5.1 空调so文件名称，获得空调对象"""
+
+                    AC_list = [i for i in LibName if i.LibName in constants.AC_type]
+                    for k in AC_list:
+                        # 如果空调是卡乐控制器
+                        if k.LibName == "SmoothAir_Carel_DX.so":
+                            # 5.2 有多个空调情况下 (模板是通用的 区别在于equipment表的EquipmentName名称不同,需要拼接字符串)
+                            # 这里需要深拷贝字典对象，不然修改的是原始字典，下一次循环的时候，会一直累加。
+                            AC_co = copy.deepcopy(constants.AC_KL)
+                            # 5.3 这里在拼接名称时候，xmldata在存储数据时，因为xml模板特殊字符串，是做了修改的
+                            for l in AC_co:
+                                # 2.3.3 拼接字符串,replace()替换指定字符串
+                                l['name'] = k.EquipmentName + ', ' + l['name']
+                            for index, i in enumerate(AC_co):
+                                data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                    name=i.get("name")).last()
+                                # 2.3.5 如果data有值，将值返回给前端
+                                if data:
+                                    data_dict = {
+                                        "name": "AC",
+                                        "site_name": k.EquipmentName,
+                                        "singnal_name": constants.AC_KL[index]["name"],
+                                        "singnal_data": data.float_data,
+                                        "singnal_site": site.divice_site if site else '',
+                                        "singnal_time": data.data_time,
+                                        "site_type": k.LibName
+                                    }
+                                    data_list.append(data_dict)
+                        # 如果空调是深蓝控制器
+                        if k.LibName == "SL1600F_FC.so":
+                            # 5.2 有多个空调情况下 (模板是通用的 区别在于equipment表的EquipmentName名称不同,需要拼接字符串)
+                            # 这里需要深拷贝字典对象，不然修改的是原始字典，下一次循环的时候，会一直累加。
+                            AC_co = copy.deepcopy(constants.AC_SL)
+                            # 5.3 这里在拼接名称时候，xmldata在存储数据时，因为xml模板特殊字符串，是做了修改的
+                            for l in AC_co:
+                                # 2.3.3 拼接字符串,replace()替换指定字符串
+                                l['name'] = k.EquipmentName + ', ' + l['name']
+                            for index, i in enumerate(AC_co):
+                                data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                    name=i.get("name")).last()
+                                # 2.3.5 如果data有值，将值返回给前端
+                                if data:
+                                    data_dict = {
+                                        "name": "AC",
+                                        "site_name": k.EquipmentName,
+                                        "singnal_name": constants.AC_SL[index]["name"],
+                                        "singnal_data": data.float_data,
+                                        "singnal_site": site.divice_site if site else '',
+                                        "singnal_time": data.data_time,
+                                        "site_type": k.LibName
+                                    }
+                                    data_list.append(data_dict)
+                    """6.1 vtu so文件名称，获得vtu对象"""
+                    vtu_list = [i for i in LibName if i.LibName in constants.VTU_type]
+                    for x in vtu_list:
+                        # 5.2 有多个空调情况下 (模板是通用的 区别在于equipment表的EquipmentName名称不同,需要拼接字符串)
+                        # 这里需要深拷贝字典对象，不然修改的是原始字典，下一次循环的时候，会一直累加。
+                        VTU_co = copy.deepcopy(constants.VTU)
+                        # 5.3 这里在拼接名称时候，xmldata在存储数据时，因为xml模板特殊字符串，是做了修改的
+                        for y in VTU_co:
+                            # 2.3.3 拼接字符串,replace()替换指定字符串
+                            y['name'] = x.EquipmentName + ', ' + y['name']
+                        for index, i in enumerate(VTU_co):
+                            data = XmlData.objects.filter(divice_ip=ip).filter(sigid=i.get("sigid")).filter(
+                                name=i.get("name")).last()
+                            # 2.3.5 如果data有值，将值返回给前端
+                            if data:
+                                data_dict = {
+                                    "name": "VTU",
+                                    "site_name": x.EquipmentName,
+                                    "singnal_name": constants.VTU[index]["name"],
+                                    "singnal_data": data.float_data,
+                                    "singnal_site": site.divice_site if site else '',
+                                    "singnal_time": data.data_time,
+                                    "site_type": "VTUIO.so"
+                                }
+                                data_list.append(data_dict)
                 if len(data_list) != 0:
-                    # print(data_list)
+                    # print(len(data_list))
                     data_list_str = {"details": data_list}
                     json_data = json.dumps(data_list_str)  # 将得到的列表数据转换成json数据
                     WebSocket.send(json_data.encode('utf-8'))  # 编码成utf-8传给前端
                     # time.sleep(2)
+
+
+"""
+得到所有设备的详情信息，并是每一条都是最新的，实时更新
+1.通过ip，可到对应站点所有的设备对象equipmets表，其中EquipID和EquipmentName（注意特殊字符）都是唯一的，可以作为标识。
+2.得到设备所有的signal，然后对SignalName去重即可得到每个设备的状态信息表(在筛选时候需要加一个标识，设备协议相同，是共用一个模板的)
+3.Signal表是全部的设备信息，如何区别不同的设备，通过EquipTemplateId这个唯一标识，然后给signal的名称做字符串拼接。通过拼接的字符串找打xmldata最新的一条数据
+4.遍历这个信息表，在Xmldata表中获取最新的数据
+5.将数据返回给前端
+"""
 
 
 # 3、获取实时详细数据(ups 温湿度 空调)
@@ -668,138 +687,50 @@ def PostWebsocket(request):
             if list_ip:
                 data_list = []  # 每个ip对应的 告警列表
                 for ip in list_ip:
-                    ups_id = equipments.objects.filter(Equipment_ip=ip).filter(EquipmentName="UPS")
-                    temp_id = equipments.objects.filter(Equipment_ip=ip).filter(EquipmentName="Temp&Humidity")
-                    ac_id = equipments.objects.filter(Equipment_ip=ip).filter(EquipmentName="Air Conditioner")
-                    site = divices.objects.filter(divice_ip=ip)[0].divice_site
-                    if ups_id.count() != 0:
-                        # 1.获取信号表里面 ip和设备id的数据表
-                        data = Signals_meaing.objects.filter(Signals_ip=ip).filter(
-                            EquipTemplateId=ups_id[0].EquipTemplateId)
-                        # 2.继续过滤 Unit | StateValue | Meaning 不为空的值
-                        # data = data.filter(~Q(Unit="") & ~Q(StateValue="") & ~Q(Meaning=""))  # 为啥不行
-                        data = data.exclude(Q(Unit="") & Q(StateValue=None) & Q(Meaning=None))
-                        for signal in data:
-                            # print(signal.Unit, signal.StateValue, signal.Meaning)
-                            # print(ups_id[0].EquipId)
-                            # 1.得到所有关联ip的关联ups设备id的数据，也就是所有的ups数据
-                            xml_data = XmlData.objects.filter(divice_ip=ip).filter(equipid=ups_id[0].EquipId)
-                            # 2.根据信号的id得到信号的批量数据,再得到最新的一条数据
-                            xml_data_value = xml_data.filter(sigid=signal.SignalId).last()
-                            # 3.如果signal的StateValue为空则是没有事件的，直接获取值。有值需要比对获取meaning
-                            # print(xml_data_value)
-                            a = '%.f' % xml_data_value.float_data
-                            # print(type(a))
-                            if signal.StateValue == None:
-                                data_dict = {
-                                    "equipment": "UPS",
-                                    "parameter": signal.SignalName,
-                                    "value": xml_data_value.float_data,
-                                    "Unit": signal.Unit,
-                                    "meaning": signal.Meaning,
-                                    "time": xml_data_value.data_time,
-                                    "site": site
-                                }
-                                data_list.append(data_dict)
-                            elif signal.StateValue == a:
-                                data_dict = {
-                                    "equipment": "UPS",
-                                    "parameter": signal.SignalName,
-                                    "value": xml_data_value.float_data,
-                                    "Unit": signal.Unit,
-                                    "meaning": signal.Meaning,
-                                    "time": xml_data_value.data_time,
-                                    "site": site
-                                }
-                                data_list.append(data_dict)
-                    if temp_id.count() != 0:
-                        data = Signals_meaing.objects.filter(Signals_ip=ip).filter(
-                            EquipTemplateId=temp_id[0].EquipTemplateId)
-                        # 继续过滤 Unit | StateValue | Meaning 不为空
-                        # data = data.filter(~Q(Unit="") & ~Q(StateValue="") & ~Q(Meaning=""))  # 为啥不行
-                        data = data.exclude(Q(Unit="") & Q(StateValue=None) & Q(Meaning=None))
-                        # print(len(data))
-                        for signal in data:
-                            # print(signal.Unit, signal.StateValue, signal.Meaning)
-                            # print(ups_id[0].EquipId)
-                            # 1.得到所有关联ip的关联ups设备id的数据，也就是所有的ups数据
-                            xml_data = XmlData.objects.filter(divice_ip=ip).filter(equipid=temp_id[0].EquipId)
-                            # 2.根据信号的id得到信号的批量数据,再得到最新的一条数据
-                            xml_data_value = xml_data.filter(sigid=signal.SignalId).last()
-                            # print(xml_data_value)
-                            # 3.如果signal的StateValue为空则是没有事件的，直接获取值。有值需要比对获取meaning
-                            # print(type(signal.StateValue))
-                            # if xml_data_value:  # todo 这个温湿度状态 为啥会存在None的情况  temp_id写错了
-                            a = '%.f' % xml_data_value.float_data
-                            # print(type(a))
-                            # print(a)
-                            if signal.StateValue == None:
-                                data_dict = {
-                                    "equipment": "Temp&Humidity",
-                                    "parameter": signal.SignalName,
-                                    "value": xml_data_value.float_data,
-                                    "Unit": signal.Unit,
-                                    "meaning": signal.Meaning,
-                                    "time": xml_data_value.data_time,
-                                    "site": site
-                                }
-                                data_list.append(data_dict)
-                            elif signal.StateValue == a:
-                                data_dict = {
-                                    "equipment": "Temp&Humidity",
-                                    "parameter": signal.SignalName,
-                                    "value": xml_data_value.float_data,
-                                    "Unit": signal.Unit,
-                                    "meaning": signal.Meaning,
-                                    "time": xml_data_value.data_time,
-                                    "site": site
-                                }
-                                data_list.append(data_dict)
-                    if ac_id.count() != 0:
-                        data = Signals_meaing.objects.filter(Signals_ip=ip).filter(
-                            EquipTemplateId=ac_id[0].EquipTemplateId)
-                        # 继续过滤 Unit | StateValue | Meaning 不为空
-                        # data = data.filter(~Q(Unit="") & ~Q(StateValue="") & ~Q(Meaning=""))  # 为啥不行
-                        data = data.exclude(Q(Unit="") & Q(StateValue=None) & Q(Meaning=None))
-                        # print(len(data))
-                        for signal in data:
-                            # print(ups_id[0].EquipId)
-                            # 1.得到所有关联ip的关联ups设备id的数据，也就是所有的ups数据
-                            xml_data = XmlData.objects.filter(divice_ip=ip).filter(equipid=ac_id[0].EquipId)
-                            # 2.根据信号的id得到信号的批量数据,再得到最新的一条数据
-                            xml_data_value = xml_data.filter(sigid=signal.SignalId).last()
-                            # 3.如果signal的StateValue为空则是没有事件的，直接获取值。有值需要比对获取meaning
-                            # print(type(signal.StateValue))
-                            # print(signal.StateValue)
-                            if xml_data_value:
-                                a = '%.f' % xml_data_value.float_data
-                                # print(type(a))
-                                # print(a)
-                                if signal.StateValue == None:
-                                    data_dict = {
-                                        "equipment": "Air Conditioner",
-                                        "parameter": signal.SignalName,
-                                        "value": xml_data_value.float_data,
-                                        "Unit": signal.Unit,
-                                        "meaning": signal.Meaning,
-                                        "time": xml_data_value.data_time,
-                                        "site": site
-                                    }
-                                    data_list.append(data_dict)
-                                elif signal.StateValue == a:
-                                    data_dict = {
-                                        "equipment": "Air Conditioner",
-                                        "parameter": signal.SignalName,
-                                        "value": xml_data_value.float_data,
-                                        "Unit": signal.Unit,
-                                        "meaning": signal.Meaning,
-                                        "time": xml_data_value.data_time,
-                                        "site": site
-                                    }
-                                    data_list.append(data_dict)
-                                    # print(data_dict)
+                    # 1.0 得到单个站点的设备列表
+                    equipment_ob = equipments.objects.filter(Equipment_ip=ip)
+                    # 2.0 在signal表中同一个signalname有statevalue和meaning组合字段是唯一的，可以用这个2个字段去重
+                    # 2.1 通过ip删选得到当前站点的signal表 通过StateValue和Meaning字段筛选
+                    signal_meaning = Signals_meaing.objects.filter(Signals_ip=ip).filter(Q(StateValue=None) & Q(Meaning=None))
+                    # 2.2 通过EquipTemplateId来区分每一台设备
+                    for i in equipment_ob:
+                        for j in signal_meaning:
+                            # 2.3 在遍历signal表时候 如果和i的EquipTemplateId相同，则拼接字符串查询最新的数据
+                            if i.EquipTemplateId == j.EquipTemplateId:
+                                # 2.4 拼接字符串的特殊情况Temp&Humidity需要替换&，这是在存数据时候，对特殊字符串进行了处理的
+                                # 如果字符串找不到返回的是int -1
+                                if i.EquipmentName.find('&') != -1:
+                                    str_name = i.EquipmentName.replace('&', '-') + ', ' + j.SignalName
+                                    xml_data = XmlData.objects.filter(divice_ip=ip).filter(name=str_name).last()
+                                    if xml_data:
+                                        data_dict = {
+                                            "equipment": i.EquipmentName,
+                                            "parameter": j.SignalName,
+                                            "value": xml_data.float_data,
+                                            "Unit": j.Unit,
+                                            "ip": ip,
+                                            "time": xml_data.data_time,
+                                            "site": divices.objects.filter(divice_ip=ip)[0].divice_site
+                                        }
+                                        data_list.append(data_dict)
+                                else:
+                                    # print(i.EquipmentName)
+                                    str_name = i.EquipmentName + ', ' + j.SignalName
+                                    xml_data = XmlData.objects.filter(divice_ip=ip).filter(name=str_name).last()
+                                    if xml_data:
+                                        data_dict = {
+                                            "equipment": i.EquipmentName,
+                                            "parameter": j.SignalName,
+                                            "value": xml_data.float_data,
+                                            "Unit": j.Unit,
+                                            "ip": ip,
+                                            "time": xml_data.data_time,
+                                            "site": divices.objects.filter(divice_ip=ip)[0].divice_site
+                                        }
+                                        data_list.append(data_dict)
                 if len(data_list) != 0:
                     # print(len(data_list))
+                    # print(data_list)
                     data_list_str = {"details_data": data_list}
                     json_data = json.dumps(data_list_str)  # 将得到的列表数据转换成json数据
                     WebSocket.send(json_data.encode('utf-8'))  # 编码成utf-8传给前端

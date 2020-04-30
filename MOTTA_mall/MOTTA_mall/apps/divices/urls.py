@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^details_get/$', views.details_get), # 获取详情页面的MDC列表
     url(r'^sql_data/$', views.sql_post), # 下载sql表结构
     url(r'^sql_put/$', views.sql_put), # 保上传ql表结构
+    url(r'^site_name/$', views.SiteName), # 查询对应站点的设备数量名称
 
 ]

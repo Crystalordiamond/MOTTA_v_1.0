@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EquipTemplateInfo>
+  <EquipTemplate EquipTemplateId="180" EquipTemplateName="YD2010C-K-V" EquipTemplateType="23" EquipBaseTemplateId="-1" ParentTemplateId="-1" Property="0" LibName="YD2010C-K-V" TemplateCode="" TemplateLog="" Description="" LastUpdateTime="20140528115216">
+    <Signals>
+      <EquipSignal SignalId="1" SignalName="Communication address:1~247" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="0" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="2" SignalName="Measurement system wiring mode:0~5 0：4NBL1" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="1" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="5" Meaning="Three phase four wire balance" />
+          <SignalMeaning StateValue="4" Meaning="Three line a phase" />
+          <SignalMeaning StateValue="3" Meaning="Three phase three line equilibrium" />
+          <SignalMeaning StateValue="2" Meaning="Three-phase three-line" />
+          <SignalMeaning StateValue="1" Meaning="One phase two line" />
+          <SignalMeaning StateValue="0" Meaning="Three phase four line" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="3" SignalName="Check digit: 0:None 1:odd 2:even" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="3" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="2" Meaning="Even" />
+          <SignalMeaning StateValue="1" Meaning="Odd" />
+          <SignalMeaning StateValue="0" Meaning="None" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="4" SignalName="Baud rate: 0：1200 1：2400 2：480" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="4" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="4" Meaning="19200" />
+          <SignalMeaning StateValue="3" Meaning="9600" />
+          <SignalMeaning StateValue="2" Meaning="4800" />
+          <SignalMeaning StateValue="1" Meaning="2400" />
+          <SignalMeaning StateValue="0" Meaning="1200" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="5" SignalName="Voltage range 0：150 1：600" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="5" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="6" SignalName="PT：1~10000" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="7" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="7" SignalName="CT：1~10000" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="9" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="8" SignalName="Phase voltage1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="10" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="9" SignalName="Line voltage U12" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="11" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="10" SignalName="Phase 1 current" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="12" Expression="" DataType="0" ShowPrecision="0.000" Unit="A" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="11" SignalName="Phase 1 active power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="14" Expression="" DataType="0" ShowPrecision="0.000" Unit="kW" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="12" SignalName="Phase 1 power factor" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="15" Expression="" DataType="0" ShowPrecision="0.000" Unit="" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="13" SignalName="Phase 1 reactive power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="16" Expression="" DataType="0" ShowPrecision="0.000" Unit="kvar" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="14" SignalName="Phase 1 apparent power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="17" Expression="" DataType="0" ShowPrecision="0.000" Unit="kVA" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="15" SignalName="Phase voltage2      " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="18" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="16" SignalName="Line voltage U23" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="19" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="17" SignalName="Phase 2 current" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="20" Expression="" DataType="0" ShowPrecision="0.000" Unit="A" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="18" SignalName="Phase 2 active power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="22" Expression="" DataType="0" ShowPrecision="0.000" Unit="kW" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="19" SignalName="Phase 2 power factor" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="23" Expression="" DataType="0" ShowPrecision="0.000" Unit="" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="20" SignalName="Phase 2 reactive power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="24" Expression="" DataType="0" ShowPrecision="0.000" Unit="kvar" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="21" SignalName="Phase 2 apparent power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="25" Expression="" DataType="0" ShowPrecision="0.000" Unit="kVA" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="22" SignalName="Phase voltage3    " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="26" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="23" SignalName="Line voltage U31  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="27" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="24" SignalName="Phase 3 current" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="28" Expression="" DataType="0" ShowPrecision="0.000" Unit="A" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="25" SignalName="N-PE voltage   " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="29" Expression="" DataType="0" ShowPrecision="0.00" Unit="V" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="26" SignalName="Phase 3 active power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="30" Expression="" DataType="0" ShowPrecision="0.000" Unit="kW" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="27" SignalName="Phase 3 power factor" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="31" Expression="" DataType="0" ShowPrecision="0.000" Unit="" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="28" SignalName="Phase 3 reactive power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="32" Expression="" DataType="0" ShowPrecision="0.000" Unit="kvar" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="29" SignalName="Phase 3 apparent power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="33" Expression="" DataType="0" ShowPrecision="0.000" Unit="kVA" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="30" SignalName="Three-phase mean line voltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="34" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="31" SignalName="Three-phase mean phase voltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="35" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="32" SignalName="Three-phase mean phase current" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="36" Expression="" DataType="0" ShowPrecision="0.000" Unit="A" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="33" SignalName="Frequency" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="37" Expression="" DataType="0" ShowPrecision="0.000" Unit="Hz" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="34" SignalName="Three phase active power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="38" Expression="" DataType="0" ShowPrecision="0.000" Unit="kW" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="35" SignalName="Three-phase total power factor" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="39" Expression="" DataType="0" ShowPrecision="0.000" Unit="" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="36" SignalName="Three phase reactive power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="40" Expression="" DataType="0" ShowPrecision="0.000" Unit="kvar" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="37" SignalName="Three phase apparent power" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="41" Expression="" DataType="0" ShowPrecision="0.000" Unit="kVA" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="38" SignalName="Zero sequence current       " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="42" Expression="" DataType="0" ShowPrecision="0.000" Unit="A" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="39" SignalName="Positive active energy" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="43" Expression="" DataType="0" ShowPrecision="0.000" Unit="kWh" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="40" SignalName="Negative active energy " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="45" Expression="" DataType="0" ShowPrecision="0.000" Unit="kWh" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="41" SignalName="Positive reactive energy    " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="47" Expression="" DataType="0" ShowPrecision="0.000" Unit="kvarh" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="42" SignalName="Negative reactive energy  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="49" Expression="" DataType="0" ShowPrecision="0.000" Unit="kvarh" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="43" SignalName="DI1-Main power" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="50" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Close" />
+          <SignalMeaning StateValue="0" Meaning="Open" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="44" SignalName="DI2-Backup power" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="51" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Close" />
+          <SignalMeaning StateValue="0" Meaning="Open" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="45" SignalName="A phase lose" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="54" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="46" SignalName="B phase lose" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="55" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="47" SignalName="C phase lose" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="56" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="48" SignalName="Main power fault" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="57" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="49" SignalName="Fundamental wave I1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="58" Expression="" DataType="0" ShowPrecision="0.0" Unit="mA" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="50" SignalName="Fundamental wave I2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="59" Expression="" DataType="0" ShowPrecision="0.0" Unit="mA" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="51" SignalName="Fundamental wave I3" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="60" Expression="" DataType="0" ShowPrecision="0.0" Unit="mA" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="52" SignalName="Fundamental wave V1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="61" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="53" SignalName="Fundamental wave V2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="62" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="54" SignalName="Fundamental wave V3" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="63" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="55" SignalName="Aphase current total distortion rateTHD I1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="64" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="56" SignalName="Bphase current total distortion rateTHD I2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="65" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="57" SignalName="Cphase current total distortion rateTHD I3" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="66" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="58" SignalName="Aphase voltage total distortion rateTHD V1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="67" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="59" SignalName="Bphase voltage total distortion rateTHD V2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="68" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="60" SignalName="Cphase voltage total distortion rateTHD V3" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="69" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="61" SignalName="3 times harmonic contentI1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="70" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="62" SignalName="5 times harmonic contentI1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="71" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="63" SignalName="7 times harmonic contentI1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="72" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="64" SignalName="9 times harmonic contentI1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="73" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="65" SignalName="11 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="74" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="66" SignalName="13 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="75" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="67" SignalName="15 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="76" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="68" SignalName="17 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="77" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="69" SignalName="19 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="78" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="70" SignalName="21 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="79" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="71" SignalName="23 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="80" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="72" SignalName="25 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="81" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="73" SignalName="27 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="82" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="74" SignalName="29 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="83" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="75" SignalName="31 times harmonic contentI1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="84" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="76" SignalName="3 times harmonic contentI2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="85" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="77" SignalName="5 times harmonic contentI2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="86" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="78" SignalName="7 times harmonic contentI2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="87" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="79" SignalName="9 times harmonic contentI2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="88" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="80" SignalName="11 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="89" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="81" SignalName="13 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="90" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="82" SignalName="15 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="91" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="83" SignalName="17 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="92" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="84" SignalName="19 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="93" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="85" SignalName="21 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="94" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="86" SignalName="23 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="95" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="87" SignalName="25 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="96" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="88" SignalName="27 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="97" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="89" SignalName="29 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="98" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="90" SignalName="31 times harmonic contentI2" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="99" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="91" SignalName="3 times harmonic contentI3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="100" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="92" SignalName="5 times harmonic contentI3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="101" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="93" SignalName="7 times harmonic contentI3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="102" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="94" SignalName="9 times harmonic contentI3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="103" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="95" SignalName="11 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="104" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="96" SignalName="13 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="105" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="97" SignalName="15 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="106" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="98" SignalName="17 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="107" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="99" SignalName="19 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="108" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="100" SignalName="21 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="109" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="101" SignalName="23 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="110" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="102" SignalName="25 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="111" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="103" SignalName="27 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="112" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="104" SignalName="29 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="113" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="105" SignalName="31 times harmonic contentI3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="114" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="106" SignalName="3 times harmonic contentV1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="115" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="107" SignalName="5 times harmonic contentV1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="116" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="108" SignalName="7 times harmonic contentV1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="117" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="109" SignalName="9 times harmonic contentV1 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="118" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="110" SignalName="11 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="119" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="111" SignalName="13 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="120" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="112" SignalName="15 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="121" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="113" SignalName="17 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="122" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="114" SignalName="19 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="123" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="115" SignalName="21 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="124" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="116" SignalName="23 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="125" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="117" SignalName="25 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="126" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="118" SignalName="27 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="127" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="119" SignalName="29 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="128" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="120" SignalName="31 times harmonic contentV1" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="129" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="121" SignalName="3 times harmonic contentV2  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="130" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="122" SignalName="5 times harmonic contentV2  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="131" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="123" SignalName="7 times harmonic contentV2  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="132" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="124" SignalName="9 times harmonic contentV2  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="133" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="125" SignalName="11 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="134" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="126" SignalName="13 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="135" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="127" SignalName="15 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="136" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="128" SignalName="17 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="137" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="129" SignalName="19 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="138" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="130" SignalName="21 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="139" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="131" SignalName="23 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="140" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="132" SignalName="25 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="141" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="133" SignalName="27 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="142" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="134" SignalName="29 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="143" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="135" SignalName="31 times harmonic contentV2 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="144" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="136" SignalName="3 times harmonic contentV3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="145" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="137" SignalName="5 times harmonic contentV3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="146" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="138" SignalName="7 times harmonic contentV3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="147" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="139" SignalName="9 times harmonic contentV3  " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="148" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="140" SignalName="11 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="149" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="141" SignalName="13 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="150" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="142" SignalName="15 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="151" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="143" SignalName="17 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="152" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="144" SignalName="19 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="153" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="145" SignalName="21 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="154" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="146" SignalName="23 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="155" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="147" SignalName="25 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="156" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="148" SignalName="27 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="157" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="149" SignalName="29 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="158" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="150" SignalName="31 times harmonic contentV3 " SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="159" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="157" SignalName="The main overvoltage" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="200" Expression="[-1,8] &gt; 264 OR [-1,15] &gt; 264 OR [-1,22] &gt; 264" DataType="0" ShowPrecision="" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="158" SignalName="The main undervoltage" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="201" Expression="[-1,8] &lt;176 OR [-1,15] &lt;176 OR [-1,22] &lt;176" DataType="0" ShowPrecision="" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="159" SignalName="The main losephase" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="202" Expression="[-1,8] &lt;88 OR [-1,15] &lt;88 OR [-1,22] &lt;88" DataType="0" ShowPrecision="" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="160" SignalName="The main overcurrent" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="203" Expression="[-1,10] &gt; 100 OR [-1,17] &gt; 100 OR [-1,24] &gt; 100" DataType="0" ShowPrecision="" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="161" SignalName="Overfrequency" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="204" Expression="[-1,33] &gt; 60 " DataType="0" ShowPrecision="" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="162" SignalName="Phase 1 rated current" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="250" Expression="100" DataType="0" ShowPrecision="0" Unit="A" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="163" SignalName="Phase 2 rated current" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="251" Expression="100" DataType="0" ShowPrecision="0" Unit="A" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="164" SignalName="Phase 3 rated current" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="252" Expression="100" DataType="0" ShowPrecision="0" Unit="A" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="165" SignalName="Phase 1 load rate" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="253" Expression="100*[-1,10]/[-1,162]  " DataType="0" ShowPrecision="0.00" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="166" SignalName="Phase 2 load rate" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="254" Expression="100*[-1,17]/[-1,162]  " DataType="0" ShowPrecision="0.00" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="167" SignalName="Phase 3 load rate" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="255" Expression="100*[-1,24]/[-1,162]  " DataType="0" ShowPrecision="0.00" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="168" SignalName="Three phase average load rate" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="256" Expression="([-1,165]+[-1,166]+[-1,167])/3" DataType="0" ShowPrecision="0.00" Unit="%" StoreInterval="28800" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="10001" SignalName="CommunicationStatus" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="-1" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Lost" />
+          <SignalMeaning StateValue="1" Meaning="Normal" />
+        </Meanings>
+      </EquipSignal>
+    </Signals>
+    <Events>
+      <EquipEvent EventId="43" EventName="The main power supply" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,43]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions />
+      </EquipEvent>
+      <EquipEvent EventId="48" EventName="Main power fault" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,48]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions />
+      </EquipEvent>
+      <EquipEvent EventId="154" EventName="A phase overvoltage" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,8]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions />
+      </EquipEvent>
+      <EquipEvent EventId="159" EventName="A phase undervoltage" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,8]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions />
+      </EquipEvent>
+      <EquipEvent EventId="162" EventName="A phase overcurrent" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,10]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions />
+      </EquipEvent>
+      <EquipEvent EventId="165" EventName="Overfrequency" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,33]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions />
+      </EquipEvent>
+      <EquipEvent EventId="166" EventName="A phase losephase" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,8]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions />
+      </EquipEvent>
+      <EquipEvent EventId="10001" EventName="Communication Status" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,10001]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Lost" EventSeverity="3" StartOperation="=" StartCompareValue="0" StartDelay="10" EndOperation="" EndCompareValue="" EndDelay="5" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+    </Events>
+    <Commands>
+      <EquipCommand CommandId="1" CommandName="Communication address：1~247" CommandBaseId="-1" CommandType="1" ControlType="0" RelatedSignalId="-1" CommandToken="11" Priority="0" Timeout="0" Retry="0" Enable="true" Description="">
+        <CommandParameter ParameterId="1" ParameterName="Communication address：1~247" UIControlType="0" DataType="0" DefaultValue="0" MaxValue="0" MinValue="0" />
+      </EquipCommand>
+      <EquipCommand CommandId="6" CommandName="PT：1~10000" CommandBaseId="-1" CommandType="0" ControlType="0" RelatedSignalId="-1" CommandToken="16" Priority="0" Timeout="0" Retry="0" Enable="true" Description="">
+        <CommandParameter ParameterId="1" ParameterName="PT：1~10000" UIControlType="0" DataType="0" DefaultValue="0" MaxValue="0" MinValue="0" />
+      </EquipCommand>
+      <EquipCommand CommandId="7" CommandName="CT：1~10000" CommandBaseId="-1" CommandType="0" ControlType="0" RelatedSignalId="-1" CommandToken="17" Priority="0" Timeout="0" Retry="0" Enable="true" Description="">
+        <CommandParameter ParameterId="1" ParameterName="CT：1~10000" UIControlType="0" DataType="0" DefaultValue="0" MaxValue="0" MinValue="0" />
+      </EquipCommand>
+      <EquipCommand CommandId="9" CommandName="DO1" CommandBaseId="-1" CommandType="1" ControlType="0" RelatedSignalId="-1" CommandToken="19" Priority="0" Timeout="0" Retry="0" Enable="true" Description="">
+        <CommandParameter ParameterId="1" ParameterName="setting" UIControlType="1" DataType="0" DefaultValue="0" MaxValue="0" MinValue="0">
+          <CommandMeaning ParameterValue="1" Meaning="Close" />
+          <CommandMeaning ParameterValue="0" Meaning="Open" />
+        </CommandParameter>
+      </EquipCommand>
+      <EquipCommand CommandId="10" CommandName="DO2" CommandBaseId="-1" CommandType="1" ControlType="0" RelatedSignalId="-1" CommandToken="20" Priority="0" Timeout="0" Retry="0" Enable="true" Description="">
+        <CommandParameter ParameterId="1" ParameterName="setting" UIControlType="1" DataType="0" DefaultValue="0" MaxValue="0" MinValue="0">
+          <CommandMeaning ParameterValue="0" Meaning="Open" />
+          <CommandMeaning ParameterValue="1" Meaning="Close" />
+        </CommandParameter>
+      </EquipCommand>
+    </Commands>
+  </EquipTemplate>
+</EquipTemplateInfo>

@@ -11,6 +11,7 @@ import json
 from django.core.mail import send_mail
 from django.conf import settings
 from pymysql import connect
+import xmldata.constants as cons
 
 
 # 0.将坐标点存入数据库
@@ -448,9 +449,9 @@ def email_update(request):
 def email_test(request):
     email_data = request.body.decode()
     email_str = json.loads(email_data)
-    print(email_str["test"])
-    print(settings.EMAIL_HOST_USER)
-    print(type(email_str["test"]))
+    # print(email_str["test"])
+    # print(settings.EMAIL_HOST_USER)
+    # print(type(email_str["test"]))
     send_mail("The alarm mail", "This is the test email", settings.EMAIL_HOST_USER, [email_str["test"]], "")
     return JsonResponse("Email sent successfully", safe=False)
 
@@ -480,7 +481,7 @@ def details_get(request):
 def sql_post(request):
     sql_data = request.body.decode()
     sql_str = json.loads(sql_data)
-    print(sql_str)
+    # print(sql_str)
     # 1.将数据表结构保存到当前文件夹
     # os.system('mysqldump -h localhost -uroot -pmysql -d MOTTA_data > dump.sql')
     os.system('mysqldump -h localhost -uroot -pmysql  MOTTA_data tb_user tb_divices tb_warningconfig > dump.sql')
@@ -500,6 +501,48 @@ def sql_put(request):
             f.write(i)
     os.system('mysql -uroot -pmysql  MOTTA_data< dump.sql')
     return JsonResponse("ok", safe=False)
+
+
+# 查询对应站点的设备数量名称
+def SiteName(request):
+    json_str = request.body.decode()
+    site_data = json.loads(json_str)
+    site_obj = []
+    # 遍历得到ip
+    for i in site_data['site']:
+        UPS = []
+        TH = []
+        AC = []
+        Meter = []
+        VTU = []
+        # 通过ip查找设备
+        equiment_list = equipments.objects.filter(Equipment_ip=i)
+        # 有一些新添加的站点没有设备，需要过滤一下，判断列表不为空
+        if len(equiment_list) != 0:
+            for j in equiment_list:
+                if j.LibName in cons.ups_type:
+                    UPS.append(j.EquipmentName)
+                elif j.LibName in cons.TH_type:
+                    TH.append(j.EquipmentName)
+                elif j.LibName in cons.Meter_type:
+                    Meter.append(j.EquipmentName)
+                elif j.LibName in cons.AC_type:
+                    AC.append(j.EquipmentName)
+                elif j.LibName in cons.VTU_type:
+                    VTU.append(j.EquipmentName)
+            if Meter:
+                UPS.append("Power")
+            site_dict = {
+                    "site": divices.objects.filter(divice_ip=i)[0].divice_site,
+                    "UPS": UPS,
+                    "TH": TH,
+                    "Meter": Meter,
+                    "AC": AC,
+                    "VTU": VTU,
+                    "ip":i
+                }
+            site_obj.append(site_dict)
+    return JsonResponse(site_obj, safe=False)
 
 
 """  

@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EquipTemplateInfo>
+  <EquipTemplate EquipTemplateId="176" EquipTemplateName="UPS_6-10K" EquipTemplateType="31" EquipBaseTemplateId="-1" ParentTemplateId="-1" Property="0" LibName="UPS_6-10K" TemplateCode="" TemplateLog="" Description="" LastUpdateTime="20170204102729">
+    <Signals>
+      <EquipSignal SignalId="1" SignalName="InputVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="0" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="2" SignalName="InputFrequency" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="Hz" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="3" SignalName="OutputVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="2" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="4" SignalName="OutputFrequency" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="3" Expression="" DataType="0" ShowPrecision="0.0" Unit="Hz" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="5" SignalName="OutputCurrent" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="4" Expression="" DataType="0" ShowPrecision="0.0" Unit="A" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="6" SignalName="OutputLoad" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="5" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="7" SignalName="PbusVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="6" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="8" SignalName="NbusVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="7" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="9" SignalName="BatteryVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="8" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="11" SignalName="MaxTemperature" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="10" Expression="" DataType="0" ShowPrecision="0.0" Unit="℃" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="12" SignalName="UPS Type" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="11" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="standy" />
+          <SignalMeaning StateValue="1" Meaning="line-interactive" />
+          <SignalMeaning StateValue="10" Meaning="on-line" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="13" SignalName="UtilityFail" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="12" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="14" SignalName="BatteryLow" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="13" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="15" SignalName="Bypass/BoostActive" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="14" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NO" />
+          <SignalMeaning StateValue="1" Meaning="YES" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="16" SignalName="UPS Fault" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="15" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="17" SignalName="EPO" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="16" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NO" />
+          <SignalMeaning StateValue="1" Meaning="YES" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="18" SignalName="Testing" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="17" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NO" />
+          <SignalMeaning StateValue="1" Meaning="YES" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="19" SignalName="ShutdownActive" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="18" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NO" />
+          <SignalMeaning StateValue="1" Meaning="YES" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="20" SignalName="BatterySilent" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="19" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NO" />
+          <SignalMeaning StateValue="1" Meaning="YES" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="21" SignalName="BatteryTestFail" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="20" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NULL" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="22" SignalName="BatteryTestOK" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="21" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NULL" />
+          <SignalMeaning StateValue="1" Meaning="YES" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="30" SignalName="BatteryConnection" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="30" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="36" SignalName="BatteryOverCharged" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="36" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="37" SignalName="BatteryLow" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="37" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="38" SignalName="OverLoad" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="38" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="39" SignalName="FanLock" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="39" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="40" SignalName="EPOActive" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="40" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NO" />
+          <SignalMeaning StateValue="1" Meaning="YES" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="42" SignalName="OverTemp" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="42" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="43" SignalName="ChargerFail" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="43" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="45" SignalName="L1IPFuseFail" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="45" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="87" SignalName="MaintenanceCoverOpen" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="87" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Normal" />
+          <SignalMeaning StateValue="1" Meaning="Alarm" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="100" SignalName="UPS Mode" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="100" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="80" Meaning="PowerOn" />
+          <SignalMeaning StateValue="83" Meaning="Standby" />
+          <SignalMeaning StateValue="89" Meaning="Bypass" />
+          <SignalMeaning StateValue="76" Meaning="Line" />
+          <SignalMeaning StateValue="66" Meaning="Battery" />
+          <SignalMeaning StateValue="84" Meaning="BatteryTest" />
+          <SignalMeaning StateValue="70" Meaning="Fault" />
+          <SignalMeaning StateValue="69" Meaning="HE/ECO" />
+          <SignalMeaning StateValue="67" Meaning="Converter" />
+          <SignalMeaning StateValue="68" Meaning="Shutdown" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="180" SignalName="BatteryVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="180" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="181" SignalName="BatteryCells" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="181" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="182" SignalName="BatteryGroups" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="182" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="183" SignalName="BatteryCapacity" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="183" Expression="" DataType="0" ShowPrecision="0.0" Unit="%" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="184" SignalName="RemainBatteryRunTime" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="184" Expression="" DataType="0" ShowPrecision="0.0" Unit="min" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="190" SignalName="OutputPowerFactor" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="190" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="191" SignalName="InputPhase" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="191" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="192" SignalName="OutputPhase" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="192" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="193" SignalName="I/PVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="193" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="194" SignalName="O/PVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="194" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="195" SignalName="RatingBatPiece" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="195" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="196" SignalName="RatingBatteryVoltage" SignalBaseId="-1" SignalType="0" SignalProperty="0" ChannelNo="196" Expression="" DataType="0" ShowPrecision="0.0" Unit="V" StoreInterval="3600" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings />
+      </EquipSignal>
+      <EquipSignal SignalId="200" SignalName="FaultStatus" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="200" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="NoFault" />
+          <SignalMeaning StateValue="1" Meaning="BusStartFail" />
+          <SignalMeaning StateValue="2" Meaning="BusVoltOver  " />
+          <SignalMeaning StateValue="3" Meaning="BusVoltUnder  " />
+          <SignalMeaning StateValue="4" Meaning="BusVoltUnbalance" />
+          <SignalMeaning StateValue="5" Meaning="BusShort" />
+          <SignalMeaning StateValue="6" Meaning="PFCOverCurrent" />
+          <SignalMeaning StateValue="17" Meaning="InverterSoftFail  " />
+          <SignalMeaning StateValue="18" Meaning="InverterVoltHigh " />
+          <SignalMeaning StateValue="19" Meaning="InverterVoltLow" />
+          <SignalMeaning StateValue="20" Meaning="L1InverterShort  " />
+          <SignalMeaning StateValue="21" Meaning="L2InverterShort  " />
+          <SignalMeaning StateValue="22" Meaning="L3InverterShort  " />
+          <SignalMeaning StateValue="23" Meaning="L1L2InverterShort" />
+          <SignalMeaning StateValue="24" Meaning="L2L3InverterShort" />
+          <SignalMeaning StateValue="25" Meaning="L3L1InverterShort" />
+          <SignalMeaning StateValue="26" Meaning="L1InverterNegativePower" />
+          <SignalMeaning StateValue="27" Meaning="L2InverterNegativePower" />
+          <SignalMeaning StateValue="28" Meaning="L3InverterNegativePower" />
+          <SignalMeaning StateValue="33" Meaning="BatSCRFault " />
+          <SignalMeaning StateValue="34" Meaning="LineSCRFault" />
+          <SignalMeaning StateValue="35" Meaning="InverterRelayOpenFault  " />
+          <SignalMeaning StateValue="36" Meaning="InverterRelayShortFault " />
+          <SignalMeaning StateValue="37" Meaning="WiringFault" />
+          <SignalMeaning StateValue="38" Meaning="BatteryReverseFault" />
+          <SignalMeaning StateValue="39" Meaning="BatteryHigh" />
+          <SignalMeaning StateValue="40" Meaning="BatteryLow" />
+          <SignalMeaning StateValue="41" Meaning="BatteryFuseBreak" />
+          <SignalMeaning StateValue="49" Meaning="CANCommunicationFault" />
+          <SignalMeaning StateValue="50" Meaning="HostLineFault" />
+          <SignalMeaning StateValue="51" Meaning="SynchronizationLineFault" />
+          <SignalMeaning StateValue="52" Meaning="SynchronizationPulseLineFault" />
+          <SignalMeaning StateValue="53" Meaning="ParallelCommunicationLineLoss" />
+          <SignalMeaning StateValue="54" Meaning="OutputCircuitFault" />
+          <SignalMeaning StateValue="65" Meaning="OverTemperature" />
+          <SignalMeaning StateValue="66" Meaning="CPUCommunicationFault" />
+          <SignalMeaning StateValue="67" Meaning="OverloadFault" />
+          <SignalMeaning StateValue="68" Meaning="FanFault" />
+          <SignalMeaning StateValue="69" Meaning="ChargerFault" />
+          <SignalMeaning StateValue="70" Meaning="ModelFault" />
+          <SignalMeaning StateValue="71" Meaning="MCUCommunicationFault" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="201" SignalName="UPSSimplifyMode" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="201" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="0" Meaning="Standby/Shutdown" />
+          <SignalMeaning StateValue="1" Meaning="Bypass" />
+          <SignalMeaning StateValue="2" Meaning="AC" />
+          <SignalMeaning StateValue="3" Meaning="Battery" />
+        </Meanings>
+      </EquipSignal>
+      <EquipSignal SignalId="10001" SignalName="CommunicationStatus" SignalBaseId="-1" SignalType="1" SignalProperty="0" ChannelNo="-1" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="0" StatisticPeriod="0" Enable="true" Description="">
+        <Meanings>
+          <SignalMeaning StateValue="1" Meaning="Normal" />
+          <SignalMeaning StateValue="0" Meaning="Lost" />
+        </Meanings>
+      </EquipSignal>
+    </Signals>
+    <Events>
+      <EquipEvent EventId="1" EventName="UtilityFail" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,13]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="3" EventName="Bypass/BoostActive" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,15]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="YES" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="4" EventName="UPSFault" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,16]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="5" EventName="EPO" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,17]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="6" EventName="Testing" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,18]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="YES" EventSeverity="1" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="7" EventName="ShutdownActive" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,19]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="8" EventName="BatteryTestFail" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,21]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="9" EventName="BatteryConnection" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,30]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="15" EventName="BatteryOverCharged" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,36]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="16" EventName="BatteryLow" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,37]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="17" EventName="OverLoad" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,38]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="18" EventName="FanLock" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,39]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="20" EventName="OverTemp" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,42]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="21" EventName="ChargerFail" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,43]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="23" EventName="L1IPFuseFail" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,45]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="65" EventName="MaintenanceCoverOpen" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,87]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Alarm" EventSeverity="2" StartOperation="=" StartCompareValue="1" StartDelay="2" EndOperation="" EndCompareValue="" EndDelay="0" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+      <EquipEvent EventId="10001" EventName="Communication Status" EventBaseId="-1" EventType="0" RelatedSignalId="-1" StartExpression="[-1,10001]" SuppressExpression="" Reversal="0" Enable="true" Description="">
+        <Conditions>
+          <EventCondition ConditionId="1" Meaning="Lost" EventSeverity="3" StartOperation="=" StartCompareValue="0" StartDelay="5" EndOperation="" EndCompareValue="" EndDelay="5" Frequency="0" FreqThreshold="0" />
+        </Conditions>
+      </EquipEvent>
+    </Events>
+    <Commands />
+  </EquipTemplate>
+</EquipTemplateInfo>

@@ -1,0 +1,1136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- this file is created by gen_modbus_table -->
+<!-- type=0: every signal is a float number, make up of two  holding registers, high-bits first -->
+<!-- type=4/40/400/4000: every signal is a float number casted to a long number, multiplied by 1/10/100/1000, make up of two holding registers, high-bits first -->
+<!-- type=2/20/200/2000: every signal is a float number casted to a short number, multiplied by 1/10/100/1000, make up of one holding register -->
+<conf>
+	<basic debug_level="1" listen_port="502" float_type="0" />
+	<signals>
+		<signal equipid="1" sigid="1" reg_addr="0x0000" name="VTU-IO, Smoke" />
+		<signal equipid="1" sigid="2" reg_addr="0x0001" name="VTU-IO, Leakage" />
+		<signal equipid="1" sigid="3" reg_addr="0x0002" name="VTU-IO, Door" />
+		<signal equipid="1" sigid="10001" reg_addr="0x0003" name="VTU-IO, CommunicationStatus" />
+		<signal equipid="2" sigid="1" reg_addr="0x0004" name="Temp-Humidity1, Temperature" />
+		<signal equipid="2" sigid="2" reg_addr="0x0005" name="Temp-Humidity1, Humidity" />
+		<signal equipid="2" sigid="3" reg_addr="0x0006" name="Temp-Humidity1, DoorOpenTemp" />
+		<signal equipid="2" sigid="4" reg_addr="0x0007" name="Temp-Humidity1, DoorCloseTemp" />
+		<signal equipid="2" sigid="10001" reg_addr="0x0008" name="Temp-Humidity1, CommunicationStatus" />
+		<signal equipid="3" sigid="1" reg_addr="0x0009" name="UPS1, InputVoltage" />
+		<signal equipid="3" sigid="2" reg_addr="0x000a" name="UPS1, InputFrequency" />
+		<signal equipid="3" sigid="3" reg_addr="0x000b" name="UPS1, OutputVoltage" />
+		<signal equipid="3" sigid="4" reg_addr="0x000c" name="UPS1, OutputFrequency" />
+		<signal equipid="3" sigid="5" reg_addr="0x000d" name="UPS1, OutputCurrent" />
+		<signal equipid="3" sigid="6" reg_addr="0x000e" name="UPS1, OutputLoad" />
+		<signal equipid="3" sigid="7" reg_addr="0x000f" name="UPS1, PbusVoltage" />
+		<signal equipid="3" sigid="8" reg_addr="0x0010" name="UPS1, NbusVoltage" />
+		<signal equipid="3" sigid="9" reg_addr="0x0011" name="UPS1, BatteryVoltage" />
+		<signal equipid="3" sigid="11" reg_addr="0x0012" name="UPS1, MaxTemperature" />
+		<signal equipid="3" sigid="12" reg_addr="0x0013" name="UPS1, UPS Type" />
+		<signal equipid="3" sigid="13" reg_addr="0x0014" name="UPS1, UtilityFail" />
+		<signal equipid="3" sigid="14" reg_addr="0x0015" name="UPS1, BatteryLow" />
+		<signal equipid="3" sigid="15" reg_addr="0x0016" name="UPS1, Bypass/BoostActive" />
+		<signal equipid="3" sigid="16" reg_addr="0x0017" name="UPS1, UPS Fault" />
+		<signal equipid="3" sigid="17" reg_addr="0x0018" name="UPS1, EPO" />
+		<signal equipid="3" sigid="18" reg_addr="0x0019" name="UPS1, Testing" />
+		<signal equipid="3" sigid="19" reg_addr="0x001a" name="UPS1, ShutdownActive" />
+		<signal equipid="3" sigid="20" reg_addr="0x001b" name="UPS1, BatterySilent" />
+		<signal equipid="3" sigid="21" reg_addr="0x001c" name="UPS1, BatteryTestFail" />
+		<signal equipid="3" sigid="22" reg_addr="0x001d" name="UPS1, BatteryTestOK" />
+		<signal equipid="3" sigid="30" reg_addr="0x001e" name="UPS1, BatteryConnection" />
+		<signal equipid="3" sigid="36" reg_addr="0x001f" name="UPS1, BatteryOverCharged" />
+		<signal equipid="3" sigid="37" reg_addr="0x0020" name="UPS1, BatteryLow" />
+		<signal equipid="3" sigid="38" reg_addr="0x0021" name="UPS1, OverLoad" />
+		<signal equipid="3" sigid="39" reg_addr="0x0022" name="UPS1, FanLock" />
+		<signal equipid="3" sigid="40" reg_addr="0x0023" name="UPS1, EPOActive" />
+		<signal equipid="3" sigid="42" reg_addr="0x0024" name="UPS1, OverTemp" />
+		<signal equipid="3" sigid="43" reg_addr="0x0025" name="UPS1, ChargerFail" />
+		<signal equipid="3" sigid="45" reg_addr="0x0026" name="UPS1, L1IPFuseFail" />
+		<signal equipid="3" sigid="87" reg_addr="0x0027" name="UPS1, MaintenanceCoverOpen" />
+		<signal equipid="3" sigid="100" reg_addr="0x0028" name="UPS1, UPS Mode" />
+		<signal equipid="3" sigid="180" reg_addr="0x0029" name="UPS1, BatteryVoltage" />
+		<signal equipid="3" sigid="181" reg_addr="0x002a" name="UPS1, BatteryCells" />
+		<signal equipid="3" sigid="182" reg_addr="0x002b" name="UPS1, BatteryGroups" />
+		<signal equipid="3" sigid="183" reg_addr="0x002c" name="UPS1, BatteryCapacity" />
+		<signal equipid="3" sigid="184" reg_addr="0x002d" name="UPS1, RemainBatteryRunTime" />
+		<signal equipid="3" sigid="190" reg_addr="0x002e" name="UPS1, OutputPowerFactor" />
+		<signal equipid="3" sigid="191" reg_addr="0x002f" name="UPS1, InputPhase" />
+		<signal equipid="3" sigid="192" reg_addr="0x0030" name="UPS1, OutputPhase" />
+		<signal equipid="3" sigid="193" reg_addr="0x0031" name="UPS1, I/PVoltage" />
+		<signal equipid="3" sigid="194" reg_addr="0x0032" name="UPS1, O/PVoltage" />
+		<signal equipid="3" sigid="195" reg_addr="0x0033" name="UPS1, RatingBatPiece" />
+		<signal equipid="3" sigid="196" reg_addr="0x0034" name="UPS1, RatingBatteryVoltage" />
+		<signal equipid="3" sigid="200" reg_addr="0x0035" name="UPS1, FaultStatus" />
+		<signal equipid="3" sigid="201" reg_addr="0x0036" name="UPS1, UPSSimplifyMode" />
+		<signal equipid="3" sigid="10001" reg_addr="0x0037" name="UPS1, CommunicationStatus" />
+		<signal equipid="4" sigid="1" reg_addr="0x0038" name="Primary Meter, Communication address:1~247" />
+		<signal equipid="4" sigid="2" reg_addr="0x0039" name="Primary Meter, Measurement system wiring mode:0~5 04NBL1" />
+		<signal equipid="4" sigid="3" reg_addr="0x003a" name="Primary Meter, Check digit
+
+: 0:None 1:odd 2:even" />
+		<signal equipid="4" sigid="4" reg_addr="0x003b" name="Primary Meter, Baud rate
+
+: 01200 12400 2480" />
+		<signal equipid="4" sigid="5" reg_addr="0x003c" name="Primary Meter, Voltage range 0150 1600" />
+		<signal equipid="4" sigid="6" reg_addr="0x003d" name="Primary Meter, PT1~10000" />
+		<signal equipid="4" sigid="7" reg_addr="0x003e" name="Primary Meter, CT1~10000" />
+		<signal equipid="4" sigid="8" reg_addr="0x003f" name="Primary Meter, Phase voltage1 " />
+		<signal equipid="4" sigid="9" reg_addr="0x0040" name="Primary Meter, Line voltage U12" />
+		<signal equipid="4" sigid="10" reg_addr="0x0041" name="Primary Meter, Phase 1 current" />
+		<signal equipid="4" sigid="11" reg_addr="0x0042" name="Primary Meter, Phase 1 active power" />
+		<signal equipid="4" sigid="12" reg_addr="0x0043" name="Primary Meter, Phase 1 power factor" />
+		<signal equipid="4" sigid="13" reg_addr="0x0044" name="Primary Meter, Phase 1 reactive power" />
+		<signal equipid="4" sigid="14" reg_addr="0x0045" name="Primary Meter, Phase 1 apparent power" />
+		<signal equipid="4" sigid="15" reg_addr="0x0046" name="Primary Meter, Phase voltage2      " />
+		<signal equipid="4" sigid="16" reg_addr="0x0047" name="Primary Meter, Line voltage U23" />
+		<signal equipid="4" sigid="17" reg_addr="0x0048" name="Primary Meter, Phase 2 current" />
+		<signal equipid="4" sigid="18" reg_addr="0x0049" name="Primary Meter, Phase 2 active power" />
+		<signal equipid="4" sigid="19" reg_addr="0x004a" name="Primary Meter, Phase 2 power factor" />
+		<signal equipid="4" sigid="20" reg_addr="0x004b" name="Primary Meter, Phase 2 reactive power" />
+		<signal equipid="4" sigid="21" reg_addr="0x004c" name="Primary Meter, Phase 2 apparent power" />
+		<signal equipid="4" sigid="22" reg_addr="0x004d" name="Primary Meter, Phase voltage3    " />
+		<signal equipid="4" sigid="23" reg_addr="0x004e" name="Primary Meter, Line voltage U31  " />
+		<signal equipid="4" sigid="24" reg_addr="0x004f" name="Primary Meter, Phase 3 current" />
+		<signal equipid="4" sigid="25" reg_addr="0x0050" name="Primary Meter, N-PE voltage   " />
+		<signal equipid="4" sigid="26" reg_addr="0x0051" name="Primary Meter, Phase 3 active power" />
+		<signal equipid="4" sigid="27" reg_addr="0x0052" name="Primary Meter, Phase 3 power factor" />
+		<signal equipid="4" sigid="28" reg_addr="0x0053" name="Primary Meter, Phase 3 reactive power" />
+		<signal equipid="4" sigid="29" reg_addr="0x0054" name="Primary Meter, Phase 3 apparent power" />
+		<signal equipid="4" sigid="30" reg_addr="0x0055" name="Primary Meter, Three-phase mean line voltage" />
+		<signal equipid="4" sigid="31" reg_addr="0x0056" name="Primary Meter, Three-phase mean phase voltage" />
+		<signal equipid="4" sigid="32" reg_addr="0x0057" name="Primary Meter, Three-phase mean phase current" />
+		<signal equipid="4" sigid="33" reg_addr="0x0058" name="Primary Meter, Frequency" />
+		<signal equipid="4" sigid="34" reg_addr="0x0059" name="Primary Meter, Three phase active power" />
+		<signal equipid="4" sigid="35" reg_addr="0x005a" name="Primary Meter, Three-phase total power factor" />
+		<signal equipid="4" sigid="36" reg_addr="0x005b" name="Primary Meter, Three phase reactive power
+
+" />
+		<signal equipid="4" sigid="37" reg_addr="0x005c" name="Primary Meter, Three phase apparent power
+
+" />
+		<signal equipid="4" sigid="38" reg_addr="0x005d" name="Primary Meter, Zero sequence current
+
+       " />
+		<signal equipid="4" sigid="39" reg_addr="0x005e" name="Primary Meter, Positive active energy
+
+" />
+		<signal equipid="4" sigid="40" reg_addr="0x005f" name="Primary Meter, Negative active energy
+
+ " />
+		<signal equipid="4" sigid="41" reg_addr="0x0060" name="Primary Meter, Positive reactive energy
+
+    " />
+		<signal equipid="4" sigid="42" reg_addr="0x0061" name="Primary Meter, Negative reactive energy
+
+  " />
+		<signal equipid="4" sigid="43" reg_addr="0x0062" name="Primary Meter, DI1-Main power" />
+		<signal equipid="4" sigid="44" reg_addr="0x0063" name="Primary Meter, DI2-Backup power" />
+		<signal equipid="4" sigid="45" reg_addr="0x0064" name="Primary Meter, A phase lose" />
+		<signal equipid="4" sigid="46" reg_addr="0x0065" name="Primary Meter, B phase lose" />
+		<signal equipid="4" sigid="47" reg_addr="0x0066" name="Primary Meter, C phase lose" />
+		<signal equipid="4" sigid="48" reg_addr="0x0067" name="Primary Meter, Main power fault" />
+		<signal equipid="4" sigid="49" reg_addr="0x0068" name="Primary Meter, Fundamental wave
+
+ I1" />
+		<signal equipid="4" sigid="50" reg_addr="0x0069" name="Primary Meter, Fundamental wave I2" />
+		<signal equipid="4" sigid="51" reg_addr="0x006a" name="Primary Meter, Fundamental wave I3" />
+		<signal equipid="4" sigid="52" reg_addr="0x006b" name="Primary Meter, Fundamental wave V1" />
+		<signal equipid="4" sigid="53" reg_addr="0x006c" name="Primary Meter, Fundamental wave V2" />
+		<signal equipid="4" sigid="54" reg_addr="0x006d" name="Primary Meter, Fundamental wave V3" />
+		<signal equipid="4" sigid="55" reg_addr="0x006e" name="Primary Meter, Aphase current total distortion rate
+
+THD I1" />
+		<signal equipid="4" sigid="56" reg_addr="0x006f" name="Primary Meter, Bphase current total distortion rateTHD I2" />
+		<signal equipid="4" sigid="57" reg_addr="0x0070" name="Primary Meter, Cphase current total distortion rateTHD I3" />
+		<signal equipid="4" sigid="58" reg_addr="0x0071" name="Primary Meter, Aphase voltage total distortion rateTHD V1" />
+		<signal equipid="4" sigid="59" reg_addr="0x0072" name="Primary Meter, Bphase voltage total distortion rateTHD V2" />
+		<signal equipid="4" sigid="60" reg_addr="0x0073" name="Primary Meter, Cphase voltage total distortion rateTHD V3" />
+		<signal equipid="4" sigid="61" reg_addr="0x0074" name="Primary Meter, 3 times harmonic contentI1 " />
+		<signal equipid="4" sigid="62" reg_addr="0x0075" name="Primary Meter, 5 times harmonic contentI1 " />
+		<signal equipid="4" sigid="63" reg_addr="0x0076" name="Primary Meter, 7 times harmonic contentI1 " />
+		<signal equipid="4" sigid="64" reg_addr="0x0077" name="Primary Meter, 9 times harmonic contentI1 " />
+		<signal equipid="4" sigid="65" reg_addr="0x0078" name="Primary Meter, 11 times harmonic contentI1" />
+		<signal equipid="4" sigid="66" reg_addr="0x0079" name="Primary Meter, 13 times harmonic contentI1" />
+		<signal equipid="4" sigid="67" reg_addr="0x007a" name="Primary Meter, 15 times harmonic contentI1" />
+		<signal equipid="4" sigid="68" reg_addr="0x007b" name="Primary Meter, 17 times harmonic contentI1" />
+		<signal equipid="4" sigid="69" reg_addr="0x007c" name="Primary Meter, 19 times harmonic contentI1" />
+		<signal equipid="4" sigid="70" reg_addr="0x007d" name="Primary Meter, 21 times harmonic contentI1" />
+		<signal equipid="4" sigid="71" reg_addr="0x007e" name="Primary Meter, 23 times harmonic contentI1" />
+		<signal equipid="4" sigid="72" reg_addr="0x007f" name="Primary Meter, 25 times harmonic contentI1" />
+		<signal equipid="4" sigid="73" reg_addr="0x0080" name="Primary Meter, 27 times harmonic contentI1" />
+		<signal equipid="4" sigid="74" reg_addr="0x0081" name="Primary Meter, 29 times harmonic contentI1" />
+		<signal equipid="4" sigid="75" reg_addr="0x0082" name="Primary Meter, 31 times harmonic contentI1" />
+		<signal equipid="4" sigid="76" reg_addr="0x0083" name="Primary Meter, 3 times harmonic contentI2 " />
+		<signal equipid="4" sigid="77" reg_addr="0x0084" name="Primary Meter, 5 times harmonic contentI2 " />
+		<signal equipid="4" sigid="78" reg_addr="0x0085" name="Primary Meter, 7 times harmonic contentI2 " />
+		<signal equipid="4" sigid="79" reg_addr="0x0086" name="Primary Meter, 9 times harmonic contentI2 " />
+		<signal equipid="4" sigid="80" reg_addr="0x0087" name="Primary Meter, 11 times harmonic contentI2" />
+		<signal equipid="4" sigid="81" reg_addr="0x0088" name="Primary Meter, 13 times harmonic contentI2" />
+		<signal equipid="4" sigid="82" reg_addr="0x0089" name="Primary Meter, 15 times harmonic contentI2" />
+		<signal equipid="4" sigid="83" reg_addr="0x008a" name="Primary Meter, 17 times harmonic contentI2" />
+		<signal equipid="4" sigid="84" reg_addr="0x008b" name="Primary Meter, 19 times harmonic contentI2" />
+		<signal equipid="4" sigid="85" reg_addr="0x008c" name="Primary Meter, 21 times harmonic contentI2" />
+		<signal equipid="4" sigid="86" reg_addr="0x008d" name="Primary Meter, 23 times harmonic contentI2" />
+		<signal equipid="4" sigid="87" reg_addr="0x008e" name="Primary Meter, 25 times harmonic contentI2" />
+		<signal equipid="4" sigid="88" reg_addr="0x008f" name="Primary Meter, 27 times harmonic contentI2" />
+		<signal equipid="4" sigid="89" reg_addr="0x0090" name="Primary Meter, 29 times harmonic contentI2" />
+		<signal equipid="4" sigid="90" reg_addr="0x0091" name="Primary Meter, 31 times harmonic contentI2" />
+		<signal equipid="4" sigid="91" reg_addr="0x0092" name="Primary Meter, 3 times harmonic contentI3  " />
+		<signal equipid="4" sigid="92" reg_addr="0x0093" name="Primary Meter, 5 times harmonic contentI3  " />
+		<signal equipid="4" sigid="93" reg_addr="0x0094" name="Primary Meter, 7 times harmonic contentI3  " />
+		<signal equipid="4" sigid="94" reg_addr="0x0095" name="Primary Meter, 9 times harmonic contentI3  " />
+		<signal equipid="4" sigid="95" reg_addr="0x0096" name="Primary Meter, 11 times harmonic contentI3 " />
+		<signal equipid="4" sigid="96" reg_addr="0x0097" name="Primary Meter, 13 times harmonic contentI3 " />
+		<signal equipid="4" sigid="97" reg_addr="0x0098" name="Primary Meter, 15 times harmonic contentI3 " />
+		<signal equipid="4" sigid="98" reg_addr="0x0099" name="Primary Meter, 17 times harmonic contentI3 " />
+		<signal equipid="4" sigid="99" reg_addr="0x009a" name="Primary Meter, 19 times harmonic contentI3 " />
+		<signal equipid="4" sigid="100" reg_addr="0x009b" name="Primary Meter, 21 times harmonic contentI3 " />
+		<signal equipid="4" sigid="101" reg_addr="0x009c" name="Primary Meter, 23 times harmonic contentI3 " />
+		<signal equipid="4" sigid="102" reg_addr="0x009d" name="Primary Meter, 25 times harmonic contentI3 " />
+		<signal equipid="4" sigid="103" reg_addr="0x009e" name="Primary Meter, 27 times harmonic contentI3 " />
+		<signal equipid="4" sigid="104" reg_addr="0x009f" name="Primary Meter, 29 times harmonic contentI3 " />
+		<signal equipid="4" sigid="105" reg_addr="0x00a0" name="Primary Meter, 31 times harmonic contentI3 " />
+		<signal equipid="4" sigid="106" reg_addr="0x00a1" name="Primary Meter, 3 times harmonic contentV1 " />
+		<signal equipid="4" sigid="107" reg_addr="0x00a2" name="Primary Meter, 5 times harmonic contentV1 " />
+		<signal equipid="4" sigid="108" reg_addr="0x00a3" name="Primary Meter, 7 times harmonic contentV1 " />
+		<signal equipid="4" sigid="109" reg_addr="0x00a4" name="Primary Meter, 9 times harmonic contentV1 " />
+		<signal equipid="4" sigid="110" reg_addr="0x00a5" name="Primary Meter, 11 times harmonic contentV1" />
+		<signal equipid="4" sigid="111" reg_addr="0x00a6" name="Primary Meter, 13 times harmonic contentV1" />
+		<signal equipid="4" sigid="112" reg_addr="0x00a7" name="Primary Meter, 15 times harmonic contentV1" />
+		<signal equipid="4" sigid="113" reg_addr="0x00a8" name="Primary Meter, 17 times harmonic contentV1" />
+		<signal equipid="4" sigid="114" reg_addr="0x00a9" name="Primary Meter, 19 times harmonic contentV1" />
+		<signal equipid="4" sigid="115" reg_addr="0x00aa" name="Primary Meter, 21 times harmonic contentV1" />
+		<signal equipid="4" sigid="116" reg_addr="0x00ab" name="Primary Meter, 23 times harmonic contentV1" />
+		<signal equipid="4" sigid="117" reg_addr="0x00ac" name="Primary Meter, 25 times harmonic contentV1" />
+		<signal equipid="4" sigid="118" reg_addr="0x00ad" name="Primary Meter, 27 times harmonic contentV1" />
+		<signal equipid="4" sigid="119" reg_addr="0x00ae" name="Primary Meter, 29 times harmonic contentV1" />
+		<signal equipid="4" sigid="120" reg_addr="0x00af" name="Primary Meter, 31 times harmonic contentV1" />
+		<signal equipid="4" sigid="121" reg_addr="0x00b0" name="Primary Meter, 3 times harmonic contentV2  " />
+		<signal equipid="4" sigid="122" reg_addr="0x00b1" name="Primary Meter, 5 times harmonic contentV2  " />
+		<signal equipid="4" sigid="123" reg_addr="0x00b2" name="Primary Meter, 7 times harmonic contentV2  " />
+		<signal equipid="4" sigid="124" reg_addr="0x00b3" name="Primary Meter, 9 times harmonic contentV2  " />
+		<signal equipid="4" sigid="125" reg_addr="0x00b4" name="Primary Meter, 11 times harmonic contentV2 " />
+		<signal equipid="4" sigid="126" reg_addr="0x00b5" name="Primary Meter, 13 times harmonic contentV2 " />
+		<signal equipid="4" sigid="127" reg_addr="0x00b6" name="Primary Meter, 15 times harmonic contentV2 " />
+		<signal equipid="4" sigid="128" reg_addr="0x00b7" name="Primary Meter, 17 times harmonic contentV2 " />
+		<signal equipid="4" sigid="129" reg_addr="0x00b8" name="Primary Meter, 19 times harmonic contentV2 " />
+		<signal equipid="4" sigid="130" reg_addr="0x00b9" name="Primary Meter, 21 times harmonic contentV2 " />
+		<signal equipid="4" sigid="131" reg_addr="0x00ba" name="Primary Meter, 23 times harmonic contentV2 " />
+		<signal equipid="4" sigid="132" reg_addr="0x00bb" name="Primary Meter, 25 times harmonic contentV2 " />
+		<signal equipid="4" sigid="133" reg_addr="0x00bc" name="Primary Meter, 27 times harmonic contentV2 " />
+		<signal equipid="4" sigid="134" reg_addr="0x00bd" name="Primary Meter, 29 times harmonic contentV2 " />
+		<signal equipid="4" sigid="135" reg_addr="0x00be" name="Primary Meter, 31 times harmonic contentV2 " />
+		<signal equipid="4" sigid="136" reg_addr="0x00bf" name="Primary Meter, 3 times harmonic contentV3  " />
+		<signal equipid="4" sigid="137" reg_addr="0x00c0" name="Primary Meter, 5 times harmonic contentV3  " />
+		<signal equipid="4" sigid="138" reg_addr="0x00c1" name="Primary Meter, 7 times harmonic contentV3  " />
+		<signal equipid="4" sigid="139" reg_addr="0x00c2" name="Primary Meter, 9 times harmonic contentV3  " />
+		<signal equipid="4" sigid="140" reg_addr="0x00c3" name="Primary Meter, 11 times harmonic contentV3 " />
+		<signal equipid="4" sigid="141" reg_addr="0x00c4" name="Primary Meter, 13 times harmonic contentV3 " />
+		<signal equipid="4" sigid="142" reg_addr="0x00c5" name="Primary Meter, 15 times harmonic contentV3 " />
+		<signal equipid="4" sigid="143" reg_addr="0x00c6" name="Primary Meter, 17 times harmonic contentV3 " />
+		<signal equipid="4" sigid="144" reg_addr="0x00c7" name="Primary Meter, 19 times harmonic contentV3 " />
+		<signal equipid="4" sigid="145" reg_addr="0x00c8" name="Primary Meter, 21 times harmonic contentV3 " />
+		<signal equipid="4" sigid="146" reg_addr="0x00c9" name="Primary Meter, 23 times harmonic contentV3 " />
+		<signal equipid="4" sigid="147" reg_addr="0x00ca" name="Primary Meter, 25 times harmonic contentV3 " />
+		<signal equipid="4" sigid="148" reg_addr="0x00cb" name="Primary Meter, 27 times harmonic contentV3 " />
+		<signal equipid="4" sigid="149" reg_addr="0x00cc" name="Primary Meter, 29 times harmonic contentV3 " />
+		<signal equipid="4" sigid="150" reg_addr="0x00cd" name="Primary Meter, 31 times harmonic contentV3 " />
+		<signal equipid="4" sigid="157" reg_addr="0x00ce" name="Primary Meter, The main overvoltage
+
+" />
+		<signal equipid="4" sigid="158" reg_addr="0x00cf" name="Primary Meter, The main undervoltage
+
+" />
+		<signal equipid="4" sigid="159" reg_addr="0x00d0" name="Primary Meter, The main losephase
+
+" />
+		<signal equipid="4" sigid="160" reg_addr="0x00d1" name="Primary Meter, The main overcurrent" />
+		<signal equipid="4" sigid="161" reg_addr="0x00d2" name="Primary Meter, Overfrequency" />
+		<signal equipid="4" sigid="162" reg_addr="0x00d3" name="Primary Meter, Phase 1 rated current
+
+" />
+		<signal equipid="4" sigid="163" reg_addr="0x00d4" name="Primary Meter, Phase 2 rated current
+
+" />
+		<signal equipid="4" sigid="164" reg_addr="0x00d5" name="Primary Meter, Phase 3 rated current
+
+" />
+		<signal equipid="4" sigid="165" reg_addr="0x00d6" name="Primary Meter, Phase 1 load rate" />
+		<signal equipid="4" sigid="166" reg_addr="0x00d7" name="Primary Meter, Phase 2 load rate" />
+		<signal equipid="4" sigid="167" reg_addr="0x00d8" name="Primary Meter, Phase 3 load rate" />
+		<signal equipid="4" sigid="168" reg_addr="0x00d9" name="Primary Meter, Three phase average load rate
+
+" />
+		<signal equipid="4" sigid="10001" reg_addr="0x00da" name="Primary Meter, CommunicationStatus" />
+		<signal equipid="5" sigid="1" reg_addr="0x00db" name="IT Meter, Communication address:1~247" />
+		<signal equipid="5" sigid="2" reg_addr="0x00dc" name="IT Meter, Measurement system wiring mode:0~5 04NBL1" />
+		<signal equipid="5" sigid="3" reg_addr="0x00dd" name="IT Meter, Check digit
+
+: 0:None 1:odd 2:even" />
+		<signal equipid="5" sigid="4" reg_addr="0x00de" name="IT Meter, Baud rate
+
+: 01200 12400 2480" />
+		<signal equipid="5" sigid="5" reg_addr="0x00df" name="IT Meter, Voltage range 0150 1600" />
+		<signal equipid="5" sigid="6" reg_addr="0x00e0" name="IT Meter, PT1~10000" />
+		<signal equipid="5" sigid="7" reg_addr="0x00e1" name="IT Meter, CT1~10000" />
+		<signal equipid="5" sigid="8" reg_addr="0x00e2" name="IT Meter, Phase voltage1 " />
+		<signal equipid="5" sigid="9" reg_addr="0x00e3" name="IT Meter, Line voltage U12" />
+		<signal equipid="5" sigid="10" reg_addr="0x00e4" name="IT Meter, Phase 1 current" />
+		<signal equipid="5" sigid="11" reg_addr="0x00e5" name="IT Meter, Phase 1 active power" />
+		<signal equipid="5" sigid="12" reg_addr="0x00e6" name="IT Meter, Phase 1 power factor" />
+		<signal equipid="5" sigid="13" reg_addr="0x00e7" name="IT Meter, Phase 1 reactive power" />
+		<signal equipid="5" sigid="14" reg_addr="0x00e8" name="IT Meter, Phase 1 apparent power" />
+		<signal equipid="5" sigid="15" reg_addr="0x00e9" name="IT Meter, Phase voltage2      " />
+		<signal equipid="5" sigid="16" reg_addr="0x00ea" name="IT Meter, Line voltage U23" />
+		<signal equipid="5" sigid="17" reg_addr="0x00eb" name="IT Meter, Phase 2 current" />
+		<signal equipid="5" sigid="18" reg_addr="0x00ec" name="IT Meter, Phase 2 active power" />
+		<signal equipid="5" sigid="19" reg_addr="0x00ed" name="IT Meter, Phase 2 power factor" />
+		<signal equipid="5" sigid="20" reg_addr="0x00ee" name="IT Meter, Phase 2 reactive power" />
+		<signal equipid="5" sigid="21" reg_addr="0x00ef" name="IT Meter, Phase 2 apparent power" />
+		<signal equipid="5" sigid="22" reg_addr="0x00f0" name="IT Meter, Phase voltage3    " />
+		<signal equipid="5" sigid="23" reg_addr="0x00f1" name="IT Meter, Line voltage U31  " />
+		<signal equipid="5" sigid="24" reg_addr="0x00f2" name="IT Meter, Phase 3 current" />
+		<signal equipid="5" sigid="25" reg_addr="0x00f3" name="IT Meter, N-PE voltage   " />
+		<signal equipid="5" sigid="26" reg_addr="0x00f4" name="IT Meter, Phase 3 active power" />
+		<signal equipid="5" sigid="27" reg_addr="0x00f5" name="IT Meter, Phase 3 power factor" />
+		<signal equipid="5" sigid="28" reg_addr="0x00f6" name="IT Meter, Phase 3 reactive power" />
+		<signal equipid="5" sigid="29" reg_addr="0x00f7" name="IT Meter, Phase 3 apparent power" />
+		<signal equipid="5" sigid="30" reg_addr="0x00f8" name="IT Meter, Three-phase mean line voltage" />
+		<signal equipid="5" sigid="31" reg_addr="0x00f9" name="IT Meter, Three-phase mean phase voltage" />
+		<signal equipid="5" sigid="32" reg_addr="0x00fa" name="IT Meter, Three-phase mean phase current" />
+		<signal equipid="5" sigid="33" reg_addr="0x00fb" name="IT Meter, Frequency" />
+		<signal equipid="5" sigid="34" reg_addr="0x00fc" name="IT Meter, Three phase active power" />
+		<signal equipid="5" sigid="35" reg_addr="0x00fd" name="IT Meter, Three-phase total power factor" />
+		<signal equipid="5" sigid="36" reg_addr="0x00fe" name="IT Meter, Three phase reactive power
+
+" />
+		<signal equipid="5" sigid="37" reg_addr="0x00ff" name="IT Meter, Three phase apparent power
+
+" />
+		<signal equipid="5" sigid="38" reg_addr="0x0100" name="IT Meter, Zero sequence current
+
+       " />
+		<signal equipid="5" sigid="39" reg_addr="0x0101" name="IT Meter, Positive active energy
+
+" />
+		<signal equipid="5" sigid="40" reg_addr="0x0102" name="IT Meter, Negative active energy
+
+ " />
+		<signal equipid="5" sigid="41" reg_addr="0x0103" name="IT Meter, Positive reactive energy
+
+    " />
+		<signal equipid="5" sigid="42" reg_addr="0x0104" name="IT Meter, Negative reactive energy
+
+  " />
+		<signal equipid="5" sigid="43" reg_addr="0x0105" name="IT Meter, DI1-Main power" />
+		<signal equipid="5" sigid="44" reg_addr="0x0106" name="IT Meter, DI2-Backup power" />
+		<signal equipid="5" sigid="45" reg_addr="0x0107" name="IT Meter, A phase lose" />
+		<signal equipid="5" sigid="46" reg_addr="0x0108" name="IT Meter, B phase lose" />
+		<signal equipid="5" sigid="47" reg_addr="0x0109" name="IT Meter, C phase lose" />
+		<signal equipid="5" sigid="48" reg_addr="0x010a" name="IT Meter, Main power fault" />
+		<signal equipid="5" sigid="49" reg_addr="0x010b" name="IT Meter, Fundamental wave
+
+ I1" />
+		<signal equipid="5" sigid="50" reg_addr="0x010c" name="IT Meter, Fundamental wave I2" />
+		<signal equipid="5" sigid="51" reg_addr="0x010d" name="IT Meter, Fundamental wave I3" />
+		<signal equipid="5" sigid="52" reg_addr="0x010e" name="IT Meter, Fundamental wave V1" />
+		<signal equipid="5" sigid="53" reg_addr="0x010f" name="IT Meter, Fundamental wave V2" />
+		<signal equipid="5" sigid="54" reg_addr="0x0110" name="IT Meter, Fundamental wave V3" />
+		<signal equipid="5" sigid="55" reg_addr="0x0111" name="IT Meter, Aphase current total distortion rate
+
+THD I1" />
+		<signal equipid="5" sigid="56" reg_addr="0x0112" name="IT Meter, Bphase current total distortion rateTHD I2" />
+		<signal equipid="5" sigid="57" reg_addr="0x0113" name="IT Meter, Cphase current total distortion rateTHD I3" />
+		<signal equipid="5" sigid="58" reg_addr="0x0114" name="IT Meter, Aphase voltage total distortion rateTHD V1" />
+		<signal equipid="5" sigid="59" reg_addr="0x0115" name="IT Meter, Bphase voltage total distortion rateTHD V2" />
+		<signal equipid="5" sigid="60" reg_addr="0x0116" name="IT Meter, Cphase voltage total distortion rateTHD V3" />
+		<signal equipid="5" sigid="61" reg_addr="0x0117" name="IT Meter, 3 times harmonic contentI1 " />
+		<signal equipid="5" sigid="62" reg_addr="0x0118" name="IT Meter, 5 times harmonic contentI1 " />
+		<signal equipid="5" sigid="63" reg_addr="0x0119" name="IT Meter, 7 times harmonic contentI1 " />
+		<signal equipid="5" sigid="64" reg_addr="0x011a" name="IT Meter, 9 times harmonic contentI1 " />
+		<signal equipid="5" sigid="65" reg_addr="0x011b" name="IT Meter, 11 times harmonic contentI1" />
+		<signal equipid="5" sigid="66" reg_addr="0x011c" name="IT Meter, 13 times harmonic contentI1" />
+		<signal equipid="5" sigid="67" reg_addr="0x011d" name="IT Meter, 15 times harmonic contentI1" />
+		<signal equipid="5" sigid="68" reg_addr="0x011e" name="IT Meter, 17 times harmonic contentI1" />
+		<signal equipid="5" sigid="69" reg_addr="0x011f" name="IT Meter, 19 times harmonic contentI1" />
+		<signal equipid="5" sigid="70" reg_addr="0x0120" name="IT Meter, 21 times harmonic contentI1" />
+		<signal equipid="5" sigid="71" reg_addr="0x0121" name="IT Meter, 23 times harmonic contentI1" />
+		<signal equipid="5" sigid="72" reg_addr="0x0122" name="IT Meter, 25 times harmonic contentI1" />
+		<signal equipid="5" sigid="73" reg_addr="0x0123" name="IT Meter, 27 times harmonic contentI1" />
+		<signal equipid="5" sigid="74" reg_addr="0x0124" name="IT Meter, 29 times harmonic contentI1" />
+		<signal equipid="5" sigid="75" reg_addr="0x0125" name="IT Meter, 31 times harmonic contentI1" />
+		<signal equipid="5" sigid="76" reg_addr="0x0126" name="IT Meter, 3 times harmonic contentI2 " />
+		<signal equipid="5" sigid="77" reg_addr="0x0127" name="IT Meter, 5 times harmonic contentI2 " />
+		<signal equipid="5" sigid="78" reg_addr="0x0128" name="IT Meter, 7 times harmonic contentI2 " />
+		<signal equipid="5" sigid="79" reg_addr="0x0129" name="IT Meter, 9 times harmonic contentI2 " />
+		<signal equipid="5" sigid="80" reg_addr="0x012a" name="IT Meter, 11 times harmonic contentI2" />
+		<signal equipid="5" sigid="81" reg_addr="0x012b" name="IT Meter, 13 times harmonic contentI2" />
+		<signal equipid="5" sigid="82" reg_addr="0x012c" name="IT Meter, 15 times harmonic contentI2" />
+		<signal equipid="5" sigid="83" reg_addr="0x012d" name="IT Meter, 17 times harmonic contentI2" />
+		<signal equipid="5" sigid="84" reg_addr="0x012e" name="IT Meter, 19 times harmonic contentI2" />
+		<signal equipid="5" sigid="85" reg_addr="0x012f" name="IT Meter, 21 times harmonic contentI2" />
+		<signal equipid="5" sigid="86" reg_addr="0x0130" name="IT Meter, 23 times harmonic contentI2" />
+		<signal equipid="5" sigid="87" reg_addr="0x0131" name="IT Meter, 25 times harmonic contentI2" />
+		<signal equipid="5" sigid="88" reg_addr="0x0132" name="IT Meter, 27 times harmonic contentI2" />
+		<signal equipid="5" sigid="89" reg_addr="0x0133" name="IT Meter, 29 times harmonic contentI2" />
+		<signal equipid="5" sigid="90" reg_addr="0x0134" name="IT Meter, 31 times harmonic contentI2" />
+		<signal equipid="5" sigid="91" reg_addr="0x0135" name="IT Meter, 3 times harmonic contentI3  " />
+		<signal equipid="5" sigid="92" reg_addr="0x0136" name="IT Meter, 5 times harmonic contentI3  " />
+		<signal equipid="5" sigid="93" reg_addr="0x0137" name="IT Meter, 7 times harmonic contentI3  " />
+		<signal equipid="5" sigid="94" reg_addr="0x0138" name="IT Meter, 9 times harmonic contentI3  " />
+		<signal equipid="5" sigid="95" reg_addr="0x0139" name="IT Meter, 11 times harmonic contentI3 " />
+		<signal equipid="5" sigid="96" reg_addr="0x013a" name="IT Meter, 13 times harmonic contentI3 " />
+		<signal equipid="5" sigid="97" reg_addr="0x013b" name="IT Meter, 15 times harmonic contentI3 " />
+		<signal equipid="5" sigid="98" reg_addr="0x013c" name="IT Meter, 17 times harmonic contentI3 " />
+		<signal equipid="5" sigid="99" reg_addr="0x013d" name="IT Meter, 19 times harmonic contentI3 " />
+		<signal equipid="5" sigid="100" reg_addr="0x013e" name="IT Meter, 21 times harmonic contentI3 " />
+		<signal equipid="5" sigid="101" reg_addr="0x013f" name="IT Meter, 23 times harmonic contentI3 " />
+		<signal equipid="5" sigid="102" reg_addr="0x0140" name="IT Meter, 25 times harmonic contentI3 " />
+		<signal equipid="5" sigid="103" reg_addr="0x0141" name="IT Meter, 27 times harmonic contentI3 " />
+		<signal equipid="5" sigid="104" reg_addr="0x0142" name="IT Meter, 29 times harmonic contentI3 " />
+		<signal equipid="5" sigid="105" reg_addr="0x0143" name="IT Meter, 31 times harmonic contentI3 " />
+		<signal equipid="5" sigid="106" reg_addr="0x0144" name="IT Meter, 3 times harmonic contentV1 " />
+		<signal equipid="5" sigid="107" reg_addr="0x0145" name="IT Meter, 5 times harmonic contentV1 " />
+		<signal equipid="5" sigid="108" reg_addr="0x0146" name="IT Meter, 7 times harmonic contentV1 " />
+		<signal equipid="5" sigid="109" reg_addr="0x0147" name="IT Meter, 9 times harmonic contentV1 " />
+		<signal equipid="5" sigid="110" reg_addr="0x0148" name="IT Meter, 11 times harmonic contentV1" />
+		<signal equipid="5" sigid="111" reg_addr="0x0149" name="IT Meter, 13 times harmonic contentV1" />
+		<signal equipid="5" sigid="112" reg_addr="0x014a" name="IT Meter, 15 times harmonic contentV1" />
+		<signal equipid="5" sigid="113" reg_addr="0x014b" name="IT Meter, 17 times harmonic contentV1" />
+		<signal equipid="5" sigid="114" reg_addr="0x014c" name="IT Meter, 19 times harmonic contentV1" />
+		<signal equipid="5" sigid="115" reg_addr="0x014d" name="IT Meter, 21 times harmonic contentV1" />
+		<signal equipid="5" sigid="116" reg_addr="0x014e" name="IT Meter, 23 times harmonic contentV1" />
+		<signal equipid="5" sigid="117" reg_addr="0x014f" name="IT Meter, 25 times harmonic contentV1" />
+		<signal equipid="5" sigid="118" reg_addr="0x0150" name="IT Meter, 27 times harmonic contentV1" />
+		<signal equipid="5" sigid="119" reg_addr="0x0151" name="IT Meter, 29 times harmonic contentV1" />
+		<signal equipid="5" sigid="120" reg_addr="0x0152" name="IT Meter, 31 times harmonic contentV1" />
+		<signal equipid="5" sigid="121" reg_addr="0x0153" name="IT Meter, 3 times harmonic contentV2  " />
+		<signal equipid="5" sigid="122" reg_addr="0x0154" name="IT Meter, 5 times harmonic contentV2  " />
+		<signal equipid="5" sigid="123" reg_addr="0x0155" name="IT Meter, 7 times harmonic contentV2  " />
+		<signal equipid="5" sigid="124" reg_addr="0x0156" name="IT Meter, 9 times harmonic contentV2  " />
+		<signal equipid="5" sigid="125" reg_addr="0x0157" name="IT Meter, 11 times harmonic contentV2 " />
+		<signal equipid="5" sigid="126" reg_addr="0x0158" name="IT Meter, 13 times harmonic contentV2 " />
+		<signal equipid="5" sigid="127" reg_addr="0x0159" name="IT Meter, 15 times harmonic contentV2 " />
+		<signal equipid="5" sigid="128" reg_addr="0x015a" name="IT Meter, 17 times harmonic contentV2 " />
+		<signal equipid="5" sigid="129" reg_addr="0x015b" name="IT Meter, 19 times harmonic contentV2 " />
+		<signal equipid="5" sigid="130" reg_addr="0x015c" name="IT Meter, 21 times harmonic contentV2 " />
+		<signal equipid="5" sigid="131" reg_addr="0x015d" name="IT Meter, 23 times harmonic contentV2 " />
+		<signal equipid="5" sigid="132" reg_addr="0x015e" name="IT Meter, 25 times harmonic contentV2 " />
+		<signal equipid="5" sigid="133" reg_addr="0x015f" name="IT Meter, 27 times harmonic contentV2 " />
+		<signal equipid="5" sigid="134" reg_addr="0x0160" name="IT Meter, 29 times harmonic contentV2 " />
+		<signal equipid="5" sigid="135" reg_addr="0x0161" name="IT Meter, 31 times harmonic contentV2 " />
+		<signal equipid="5" sigid="136" reg_addr="0x0162" name="IT Meter, 3 times harmonic contentV3  " />
+		<signal equipid="5" sigid="137" reg_addr="0x0163" name="IT Meter, 5 times harmonic contentV3  " />
+		<signal equipid="5" sigid="138" reg_addr="0x0164" name="IT Meter, 7 times harmonic contentV3  " />
+		<signal equipid="5" sigid="139" reg_addr="0x0165" name="IT Meter, 9 times harmonic contentV3  " />
+		<signal equipid="5" sigid="140" reg_addr="0x0166" name="IT Meter, 11 times harmonic contentV3 " />
+		<signal equipid="5" sigid="141" reg_addr="0x0167" name="IT Meter, 13 times harmonic contentV3 " />
+		<signal equipid="5" sigid="142" reg_addr="0x0168" name="IT Meter, 15 times harmonic contentV3 " />
+		<signal equipid="5" sigid="143" reg_addr="0x0169" name="IT Meter, 17 times harmonic contentV3 " />
+		<signal equipid="5" sigid="144" reg_addr="0x016a" name="IT Meter, 19 times harmonic contentV3 " />
+		<signal equipid="5" sigid="145" reg_addr="0x016b" name="IT Meter, 21 times harmonic contentV3 " />
+		<signal equipid="5" sigid="146" reg_addr="0x016c" name="IT Meter, 23 times harmonic contentV3 " />
+		<signal equipid="5" sigid="147" reg_addr="0x016d" name="IT Meter, 25 times harmonic contentV3 " />
+		<signal equipid="5" sigid="148" reg_addr="0x016e" name="IT Meter, 27 times harmonic contentV3 " />
+		<signal equipid="5" sigid="149" reg_addr="0x016f" name="IT Meter, 29 times harmonic contentV3 " />
+		<signal equipid="5" sigid="150" reg_addr="0x0170" name="IT Meter, 31 times harmonic contentV3 " />
+		<signal equipid="5" sigid="157" reg_addr="0x0171" name="IT Meter, The main overvoltage
+
+" />
+		<signal equipid="5" sigid="158" reg_addr="0x0172" name="IT Meter, The main undervoltage
+
+" />
+		<signal equipid="5" sigid="159" reg_addr="0x0173" name="IT Meter, The main losephase
+
+" />
+		<signal equipid="5" sigid="160" reg_addr="0x0174" name="IT Meter, The main overcurrent" />
+		<signal equipid="5" sigid="161" reg_addr="0x0175" name="IT Meter, Overfrequency" />
+		<signal equipid="5" sigid="162" reg_addr="0x0176" name="IT Meter, Phase 1 rated current
+
+" />
+		<signal equipid="5" sigid="163" reg_addr="0x0177" name="IT Meter, Phase 2 rated current
+
+" />
+		<signal equipid="5" sigid="164" reg_addr="0x0178" name="IT Meter, Phase 3 rated current
+
+" />
+		<signal equipid="5" sigid="165" reg_addr="0x0179" name="IT Meter, Phase 1 load rate" />
+		<signal equipid="5" sigid="166" reg_addr="0x017a" name="IT Meter, Phase 2 load rate" />
+		<signal equipid="5" sigid="167" reg_addr="0x017b" name="IT Meter, Phase 3 load rate" />
+		<signal equipid="5" sigid="168" reg_addr="0x017c" name="IT Meter, Three phase average load rate
+
+" />
+		<signal equipid="5" sigid="10001" reg_addr="0x017d" name="IT Meter, CommunicationStatus" />
+		<signal equipid="6" sigid="1" reg_addr="0x017e" name="Air Conditioner1, Water Leakage/Over Alarm" />
+		<signal equipid="6" sigid="2" reg_addr="0x017f" name="Air Conditioner1, Heater Alarm" />
+		<signal equipid="6" sigid="3" reg_addr="0x0180" name="Air Conditioner1, HP/HD Switch" />
+		<signal equipid="6" sigid="4" reg_addr="0x0181" name="Air Conditioner1, Filter Maintenance" />
+		<signal equipid="6" sigid="5" reg_addr="0x0182" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="6" reg_addr="0x0183" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="7" reg_addr="0x0184" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="8" reg_addr="0x0185" name="Air Conditioner1, Water Leakage/Over Alarm" />
+		<signal equipid="6" sigid="9" reg_addr="0x0186" name="Air Conditioner1, Heater Alarm" />
+		<signal equipid="6" sigid="10" reg_addr="0x0187" name="Air Conditioner1, HP/HD Switch" />
+		<signal equipid="6" sigid="11" reg_addr="0x0188" name="Air Conditioner1, Filter Maintenance" />
+		<signal equipid="6" sigid="12" reg_addr="0x0189" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="13" reg_addr="0x018a" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="14" reg_addr="0x018b" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="15" reg_addr="0x018c" name="Air Conditioner1, ID Fan Status" />
+		<signal equipid="6" sigid="16" reg_addr="0x018d" name="Air Conditioner1, Fix Compressor Status" />
+		<signal equipid="6" sigid="17" reg_addr="0x018e" name="Air Conditioner1, Heater Status" />
+		<signal equipid="6" sigid="18" reg_addr="0x018f" name="Air Conditioner1, Humidifier Status" />
+		<signal equipid="6" sigid="19" reg_addr="0x0190" name="Air Conditioner1, Bypass Valve Status" />
+		<signal equipid="6" sigid="20" reg_addr="0x0191" name="Air Conditioner1, Lee Valve Status" />
+		<signal equipid="6" sigid="21" reg_addr="0x0192" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="22" reg_addr="0x0193" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="23" reg_addr="0x0194" name="Air Conditioner1, Leakage/Over Water" />
+		<signal equipid="6" sigid="24" reg_addr="0x0195" name="Air Conditioner1, Heater Fault" />
+		<signal equipid="6" sigid="25" reg_addr="0x0196" name="Air Conditioner1, HP/HD Switch Alarm" />
+		<signal equipid="6" sigid="26" reg_addr="0x0197" name="Air Conditioner1, Filter Maintenance" />
+		<signal equipid="6" sigid="27" reg_addr="0x0198" name="Air Conditioner1, Reserved_Alarm1" />
+		<signal equipid="6" sigid="28" reg_addr="0x0199" name="Air Conditioner1, Reserved_Alarm2" />
+		<signal equipid="6" sigid="29" reg_addr="0x019a" name="Air Conditioner1, Reserved_Alarm3" />
+		<signal equipid="6" sigid="30" reg_addr="0x019b" name="Air Conditioner1, Suction Pressure Sensor Failure" />
+		<signal equipid="6" sigid="31" reg_addr="0x019c" name="Air Conditioner1, Discharge Pressure Sensor Failure" />
+		<signal equipid="6" sigid="32" reg_addr="0x019d" name="Air Conditioner1, Suction Temperature Sensor Failure" />
+		<signal equipid="6" sigid="33" reg_addr="0x019e" name="Air Conditioner1, Supply Temperature Sensor Failure" />
+		<signal equipid="6" sigid="34" reg_addr="0x019f" name="Air Conditioner1, Return Temperature Sensor Failure" />
+		<signal equipid="6" sigid="35" reg_addr="0x01a0" name="Air Conditioner1, Return Humidity Sensor Failure" />
+		<signal equipid="6" sigid="36" reg_addr="0x01a1" name="Air Conditioner1, Liquid Pipe Temperature Sensor Failure" />
+		<signal equipid="6" sigid="37" reg_addr="0x01a2" name="Air Conditioner1, High Pressure Alarm" />
+		<signal equipid="6" sigid="38" reg_addr="0x01a3" name="Air Conditioner1, Low Pressure Alarm" />
+		<signal equipid="6" sigid="39" reg_addr="0x01a4" name="Air Conditioner1, High Temperature Alarm" />
+		<signal equipid="6" sigid="40" reg_addr="0x01a5" name="Air Conditioner1, Low Temperature Alarm" />
+		<signal equipid="6" sigid="41" reg_addr="0x01a6" name="Air Conditioner1, High Humidity Alarm" />
+		<signal equipid="6" sigid="42" reg_addr="0x01a7" name="Air Conditioner1, Low Humidity Alarm" />
+		<signal equipid="6" sigid="43" reg_addr="0x01a8" name="Air Conditioner1, Controller Variable Alarm" />
+		<signal equipid="6" sigid="44" reg_addr="0x01a9" name="Air Conditioner1, Communication Alarm with Slave unit1" />
+		<signal equipid="6" sigid="45" reg_addr="0x01aa" name="Air Conditioner1, Communication Alarm with Slave unit2" />
+		<signal equipid="6" sigid="46" reg_addr="0x01ab" name="Air Conditioner1, Communication Alarm with Slave unit3" />
+		<signal equipid="6" sigid="47" reg_addr="0x01ac" name="Air Conditioner1, Communication Alarm with Slave unit4" />
+		<signal equipid="6" sigid="48" reg_addr="0x01ad" name="Air Conditioner1, Communication Alarm with Slave unit5" />
+		<signal equipid="6" sigid="49" reg_addr="0x01ae" name="Air Conditioner1, Communication Alarm with Slave unit6" />
+		<signal equipid="6" sigid="50" reg_addr="0x01af" name="Air Conditioner1, Communication Alarm with Slave unit7" />
+		<signal equipid="6" sigid="51" reg_addr="0x01b0" name="Air Conditioner1, Communication Alarm with Slave unit8" />
+		<signal equipid="6" sigid="52" reg_addr="0x01b1" name="Air Conditioner1, EEV Range error" />
+		<signal equipid="6" sigid="53" reg_addr="0x01b2" name="Air Conditioner1, EEV Low Superheat" />
+		<signal equipid="6" sigid="54" reg_addr="0x01b3" name="Air Conditioner1, EEV Low Evaporation Temperature" />
+		<signal equipid="6" sigid="55" reg_addr="0x01b4" name="Air Conditioner1, EEV High Evaporation Temperature" />
+		<signal equipid="6" sigid="56" reg_addr="0x01b5" name="Air Conditioner1, EEV High Condense Temperature" />
+		<signal equipid="6" sigid="57" reg_addr="0x01b6" name="Air Conditioner1, EEV Low Suction Temperature" />
+		<signal equipid="6" sigid="58" reg_addr="0x01b7" name="Air Conditioner1, EEV Motor error" />
+		<signal equipid="6" sigid="59" reg_addr="0x01b8" name="Air Conditioner1, EEV Invalid Adaptive Control" />
+		<signal equipid="6" sigid="60" reg_addr="0x01b9" name="Air Conditioner1, EEV Emergency OFF" />
+		<signal equipid="6" sigid="61" reg_addr="0x01ba" name="Air Conditioner1, EEV Valve ID Wrong" />
+		<signal equipid="6" sigid="62" reg_addr="0x01bb" name="Air Conditioner1, EEV Sensor Position Wrong" />
+		<signal equipid="6" sigid="63" reg_addr="0x01bc" name="Air Conditioner1, EEV Sensor Range Wrong" />
+		<signal equipid="6" sigid="64" reg_addr="0x01bd" name="Air Conditioner1, CPY Communication Alarm" />
+		<signal equipid="6" sigid="65" reg_addr="0x01be" name="Air Conditioner1, Module Maintenance Alarm" />
+		<signal equipid="6" sigid="66" reg_addr="0x01bf" name="Air Conditioner1, ID Fan Maintenance Time" />
+		<signal equipid="6" sigid="67" reg_addr="0x01c0" name="Air Conditioner1, Compressor Maintenance Time" />
+		<signal equipid="6" sigid="68" reg_addr="0x01c1" name="Air Conditioner1, OD Fan Maintenance Time" />
+		<signal equipid="6" sigid="69" reg_addr="0x01c2" name="Air Conditioner1, Humidifier Maintenance Time" />
+		<signal equipid="6" sigid="70" reg_addr="0x01c3" name="Air Conditioner1, CPY Commun" />
+		<signal equipid="6" sigid="71" reg_addr="0x01c4" name="Air Conditioner1, Manual Drain Valve" />
+		<signal equipid="6" sigid="72" reg_addr="0x01c5" name="Air Conditioner1, Manual Drain Valve" />
+		<signal equipid="6" sigid="73" reg_addr="0x01c6" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="74" reg_addr="0x01c7" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="75" reg_addr="0x01c8" name="Air Conditioner1, Control Mode" />
+		<signal equipid="6" sigid="76" reg_addr="0x01c9" name="Air Conditioner1, Humid Control Mode" />
+		<signal equipid="6" sigid="77" reg_addr="0x01ca" name="Air Conditioner1, Enable Hum" />
+		<signal equipid="6" sigid="78" reg_addr="0x01cb" name="Air Conditioner1, Enable Dehum" />
+		<signal equipid="6" sigid="79" reg_addr="0x01cc" name="Air Conditioner1, Enable Heating" />
+		<signal equipid="6" sigid="80" reg_addr="0x01cd" name="Air Conditioner1, EEV Control Mode" />
+		<signal equipid="6" sigid="81" reg_addr="0x01ce" name="Air Conditioner1, EEV Enable Manual Mode" />
+		<signal equipid="6" sigid="82" reg_addr="0x01cf" name="Air Conditioner1, EEV Set completion status  " />
+		<signal equipid="6" sigid="83" reg_addr="0x01d0" name="Air Conditioner1, LP Pres" />
+		<signal equipid="6" sigid="84" reg_addr="0x01d1" name="Air Conditioner1, HP Pres" />
+		<signal equipid="6" sigid="85" reg_addr="0x01d2" name="Air Conditioner1, Suction Temp" />
+		<signal equipid="6" sigid="86" reg_addr="0x01d3" name="Air Conditioner1, Supply Temp" />
+		<signal equipid="6" sigid="87" reg_addr="0x01d4" name="Air Conditioner1, Return Temp" />
+		<signal equipid="6" sigid="88" reg_addr="0x01d5" name="Air Conditioner1, Humidity" />
+		<signal equipid="6" sigid="89" reg_addr="0x01d6" name="Air Conditioner1, Liquid Pipe Temp" />
+		<signal equipid="6" sigid="90" reg_addr="0x01d7" name="Air Conditioner1, Subcooling" />
+		<signal equipid="6" sigid="91" reg_addr="0x01d8" name="Air Conditioner1, ID Fan Speed" />
+		<signal equipid="6" sigid="92" reg_addr="0x01d9" name="Air Conditioner1, Compressor Output" />
+		<signal equipid="6" sigid="93" reg_addr="0x01da" name="Air Conditioner1, OD Fan Speed" />
+		<signal equipid="6" sigid="94" reg_addr="0x01db" name="Air Conditioner1, Superheat" />
+		<signal equipid="6" sigid="95" reg_addr="0x01dc" name="Air Conditioner1, EEV Step" />
+		<signal equipid="6" sigid="96" reg_addr="0x01dd" name="Air Conditioner1, EEV Open Percent" />
+		<signal equipid="6" sigid="97" reg_addr="0x01de" name="Air Conditioner1, Unit Mode" />
+		<signal equipid="6" sigid="98" reg_addr="0x01df" name="Air Conditioner1, Correct LP" />
+		<signal equipid="6" sigid="99" reg_addr="0x01e0" name="Air Conditioner1, Correct HP" />
+		<signal equipid="6" sigid="100" reg_addr="0x01e1" name="Air Conditioner1, Correct Suction Temp" />
+		<signal equipid="6" sigid="101" reg_addr="0x01e2" name="Air Conditioner1, Correct Supply Temp" />
+		<signal equipid="6" sigid="102" reg_addr="0x01e3" name="Air Conditioner1, Correct Return Temp" />
+		<signal equipid="6" sigid="103" reg_addr="0x01e4" name="Air Conditioner1, Correct Return Hum" />
+		<signal equipid="6" sigid="104" reg_addr="0x01e5" name="Air Conditioner1, Correct Liquid Pipe Temp" />
+		<signal equipid="6" sigid="105" reg_addr="0x01e6" name="Air Conditioner1, Manual Indoor AC Fan" />
+		<signal equipid="6" sigid="106" reg_addr="0x01e7" name="Air Conditioner1, Manual Indoor EC Fan" />
+		<signal equipid="6" sigid="107" reg_addr="0x01e8" name="Air Conditioner1, Manual Fix Compressor" />
+		<signal equipid="6" sigid="108" reg_addr="0x01e9" name="Air Conditioner1, Manual Inverter Compressor Speed" />
+		<signal equipid="6" sigid="109" reg_addr="0x01ea" name="Air Conditioner1, Manual Heater" />
+		<signal equipid="6" sigid="110" reg_addr="0x01eb" name="Air Conditioner1, Manual Humidifier" />
+		<signal equipid="6" sigid="111" reg_addr="0x01ec" name="Air Conditioner1, Manual Humidifier Capacity" />
+		<signal equipid="6" sigid="112" reg_addr="0x01ed" name="Air Conditioner1, Manual Lee Valve" />
+		<signal equipid="6" sigid="113" reg_addr="0x01ee" name="Air Conditioner1, Manual Outdoor EC Fan" />
+		<signal equipid="6" sigid="114" reg_addr="0x01ef" name="Air Conditioner1, Manual EEV Manual Step" />
+		<signal equipid="6" sigid="115" reg_addr="0x01f0" name="Air Conditioner1, ID Fan Running Time" />
+		<signal equipid="6" sigid="116" reg_addr="0x01f1" name="Air Conditioner1, Comp Running Time" />
+		<signal equipid="6" sigid="117" reg_addr="0x01f2" name="Air Conditioner1, Manual Control" />
+		<signal equipid="6" sigid="118" reg_addr="0x01f3" name="Air Conditioner1, ON-OFF" />
+		<signal equipid="6" sigid="119" reg_addr="0x01f4" name="Air Conditioner1, Repower Auto-ON DT" />
+		<signal equipid="6" sigid="120" reg_addr="0x01f5" name="Air Conditioner1, Runing Time Reset" />
+		<signal equipid="6" sigid="121" reg_addr="0x01f6" name="Air Conditioner1, Clear Alarm" />
+		<signal equipid="6" sigid="122" reg_addr="0x01f7" name="Air Conditioner1, Factory Reset" />
+		<signal equipid="6" sigid="123" reg_addr="0x01f8" name="Air Conditioner1, LP Min Pres Range" />
+		<signal equipid="6" sigid="124" reg_addr="0x01f9" name="Air Conditioner1, LP Pres Range" />
+		<signal equipid="6" sigid="125" reg_addr="0x01fa" name="Air Conditioner1, HP Min Pres Range" />
+		<signal equipid="6" sigid="126" reg_addr="0x01fb" name="Air Conditioner1, HP Pres Range" />
+		<signal equipid="6" sigid="127" reg_addr="0x01fc" name="Air Conditioner1, Temp Setting" />
+		<signal equipid="6" sigid="128" reg_addr="0x01fd" name="Air Conditioner1, Temp Band" />
+		<signal equipid="6" sigid="129" reg_addr="0x01fe" name="Air Conditioner1, Min Freq" />
+		<signal equipid="6" sigid="130" reg_addr="0x01ff" name="Air Conditioner1, Max Freq" />
+		<signal equipid="6" sigid="131" reg_addr="0x0200" name="Air Conditioner1, Oil Start Freq" />
+		<signal equipid="6" sigid="132" reg_addr="0x0201" name="Air Conditioner1, Oil Interval Time" />
+		<signal equipid="6" sigid="133" reg_addr="0x0202" name="Air Conditioner1, Oil Running Time" />
+		<signal equipid="6" sigid="134" reg_addr="0x0203" name="Air Conditioner1, Min Supply Temp" />
+		<signal equipid="6" sigid="135" reg_addr="0x0204" name="Air Conditioner1, Max Supply Temp" />
+		<signal equipid="6" sigid="136" reg_addr="0x0205" name="Air Conditioner1, Trun On Comp DT" />
+		<signal equipid="6" sigid="137" reg_addr="0x0206" name="Air Conditioner1, Refrigerant" />
+		<signal equipid="6" sigid="138" reg_addr="0x0207" name="Air Conditioner1, Reserved" />
+		<signal equipid="6" sigid="139" reg_addr="0x0208" name="Air Conditioner1, Dehum Limit Temp" />
+		<signal equipid="6" sigid="140" reg_addr="0x0209" name="Air Conditioner1, Humid Setting" />
+		<signal equipid="6" sigid="141" reg_addr="0x020a" name="Air Conditioner1, Humid Band" />
+		<signal equipid="6" sigid="142" reg_addr="0x020b" name="Air Conditioner1, Heating Judge Time" />
+		<signal equipid="6" sigid="143" reg_addr="0x020c" name="Air Conditioner1, High Temp Alarm Band" />
+		<signal equipid="6" sigid="144" reg_addr="0x020d" name="Air Conditioner1, Low Temp Alarm Band" />
+		<signal equipid="6" sigid="145" reg_addr="0x020e" name="Air Conditioner1, High Humid Alarm Band" />
+		<signal equipid="6" sigid="146" reg_addr="0x020f" name="Air Conditioner1, Low Humid Alarm Band" />
+		<signal equipid="6" sigid="147" reg_addr="0x0210" name="Air Conditioner1, LP Pres Alarm" />
+		<signal equipid="6" sigid="148" reg_addr="0x0211" name="Air Conditioner1, LP Pres Recov" />
+		<signal equipid="6" sigid="149" reg_addr="0x0212" name="Air Conditioner1, LP DT Setting" />
+		<signal equipid="6" sigid="150" reg_addr="0x0213" name="Air Conditioner1, LP Alarm Time" />
+		<signal equipid="6" sigid="151" reg_addr="0x0214" name="Air Conditioner1, HP Pres Alarm" />
+		<signal equipid="6" sigid="152" reg_addr="0x0215" name="Air Conditioner1, HP Pres Recov" />
+		<signal equipid="6" sigid="153" reg_addr="0x0216" name="Air Conditioner1, ID Fan Speed CR" />
+		<signal equipid="6" sigid="154" reg_addr="0x0217" name="Air Conditioner1, Trun Off DT" />
+		<signal equipid="6" sigid="155" reg_addr="0x0218" name="Air Conditioner1, ID Fan Min Speed" />
+		<signal equipid="6" sigid="156" reg_addr="0x0219" name="Air Conditioner1, ID Fan Max Speed" />
+		<signal equipid="6" sigid="157" reg_addr="0x021a" name="Air Conditioner1, Dehum Fan Speed" />
+		<signal equipid="6" sigid="158" reg_addr="0x021b" name="Air Conditioner1, OD Fan Speed CR" />
+		<signal equipid="6" sigid="159" reg_addr="0x021c" name="Air Conditioner1, OD Fan Min Speed" />
+		<signal equipid="6" sigid="160" reg_addr="0x021d" name="Air Conditioner1, OD Fan Max Speed" />
+		<signal equipid="6" sigid="161" reg_addr="0x021e" name="Air Conditioner1, Fan Pres Setting" />
+		<signal equipid="6" sigid="162" reg_addr="0x021f" name="Air Conditioner1, Fan Pres Band" />
+		<signal equipid="6" sigid="163" reg_addr="0x0220" name="Air Conditioner1, Humidifier Max Control Signal Setting" />
+		<signal equipid="6" sigid="164" reg_addr="0x0221" name="Air Conditioner1, Humidifier Min Control Signal Setting" />
+		<signal equipid="6" sigid="165" reg_addr="0x0222" name="Air Conditioner1, Humidifier Capacity" />
+		<signal equipid="6" sigid="166" reg_addr="0x0223" name="Air Conditioner1, Humidifier Current" />
+		<signal equipid="6" sigid="167" reg_addr="0x0224" name="Air Conditioner1, Humidifier Conductivity" />
+		<signal equipid="6" sigid="168" reg_addr="0x0225" name="Air Conditioner1, Humidifier Timer" />
+		<signal equipid="6" sigid="169" reg_addr="0x0226" name="Air Conditioner1, Humidifier Capacity" />
+		<signal equipid="6" sigid="170" reg_addr="0x0227" name="Air Conditioner1, Humidifier Status" />
+		<signal equipid="6" sigid="171" reg_addr="0x0228" name="Air Conditioner1, Humidifier Stop Alarm" />
+		<signal equipid="6" sigid="172" reg_addr="0x0229" name="Air Conditioner1, Humidifier Notify Alarm" />
+		<signal equipid="6" sigid="173" reg_addr="0x022a" name="Air Conditioner1, EEV Low Superheat" />
+		<signal equipid="6" sigid="174" reg_addr="0x022b" name="Air Conditioner1, EEV Low Evap Temp" />
+		<signal equipid="6" sigid="175" reg_addr="0x022c" name="Air Conditioner1, EEV High Evap Temp" />
+		<signal equipid="6" sigid="176" reg_addr="0x022d" name="Air Conditioner1, EEV High Cond Temp" />
+		<signal equipid="6" sigid="177" reg_addr="0x022e" name="Air Conditioner1, EEV Superheat" />
+		<signal equipid="6" sigid="178" reg_addr="0x022f" name="Air Conditioner1, EEV Initial Opening" />
+		<signal equipid="6" sigid="179" reg_addr="0x0230" name="Air Conditioner1, EEV Initial Opening Working Time" />
+		<signal equipid="6" sigid="180" reg_addr="0x0231" name="Air Conditioner1, EEV Valve Min Step" />
+		<signal equipid="6" sigid="181" reg_addr="0x0232" name="Air Conditioner1, EEV Valve Max Step" />
+		<signal equipid="6" sigid="182" reg_addr="0x0233" name="Air Conditioner1, EEV Valve Stop Step" />
+		<signal equipid="6" sigid="183" reg_addr="0x0234" name="Air Conditioner1, EEV Evap Temp" />
+		<signal equipid="6" sigid="184" reg_addr="0x0235" name="Air Conditioner1, Cond Temp" />
+		<signal equipid="6" sigid="185" reg_addr="0x0236" name="Air Conditioner1, Oil Running Freq" />
+		<signal equipid="6" sigid="186" reg_addr="0x0237" name="Air Conditioner1, Min Comp Run Time" />
+		<signal equipid="6" sigid="187" reg_addr="0x0238" name="Air Conditioner1, Min Comp Off Time" />
+		<signal equipid="6" sigid="188" reg_addr="0x0239" name="Air Conditioner1, Heat ON Band" />
+		<signal equipid="6" sigid="189" reg_addr="0x023a" name="Air Conditioner1, Heat OFF Band" />
+		<signal equipid="6" sigid="190" reg_addr="0x023b" name="Air Conditioner1, Unit Running Time" />
+		<signal equipid="6" sigid="191" reg_addr="0x023c" name="Air Conditioner1, OD Fan Running Time" />
+		<signal equipid="6" sigid="192" reg_addr="0x023d" name="Air Conditioner1, Humid Running Time" />
+		<signal equipid="6" sigid="193" reg_addr="0x023e" name="Air Conditioner1, Unit Maint Time" />
+		<signal equipid="6" sigid="194" reg_addr="0x023f" name="Air Conditioner1, ID Fan Maint Time" />
+		<signal equipid="6" sigid="195" reg_addr="0x0240" name="Air Conditioner1, Comp Maint Time" />
+		<signal equipid="6" sigid="196" reg_addr="0x0241" name="Air Conditioner1, OD Fan Maint Time" />
+		<signal equipid="6" sigid="197" reg_addr="0x0242" name="Air Conditioner1, Humid Maint Time" />
+		<signal equipid="6" sigid="198" reg_addr="0x0243" name="Air Conditioner1, Manual Bypass Valve" />
+		<signal equipid="6" sigid="199" reg_addr="0x0244" name="Air Conditioner1, Unit type" />
+		<signal equipid="6" sigid="200" reg_addr="0x0245" name="Air Conditioner1, Recom Humid St" />
+		<signal equipid="6" sigid="201" reg_addr="0x0246" name="Air Conditioner1, Control Humid St" />
+		<signal equipid="6" sigid="202" reg_addr="0x0247" name="Air Conditioner1, Sofeware Version V1" />
+		<signal equipid="6" sigid="203" reg_addr="0x0248" name="Air Conditioner1, Sofeware Version V2" />
+		<signal equipid="6" sigid="204" reg_addr="0x0249" name="Air Conditioner1, Master/Standby Unit" />
+		<signal equipid="6" sigid="205" reg_addr="0x024a" name="Air Conditioner1, Group Unit Quan." />
+		<signal equipid="6" sigid="206" reg_addr="0x024b" name="Air Conditioner1, Standby Unit Quan." />
+		<signal equipid="6" sigid="207" reg_addr="0x024c" name="Air Conditioner1, Rotation Time" />
+		<signal equipid="6" sigid="208" reg_addr="0x024d" name="Air Conditioner1, IP-Section1" />
+		<signal equipid="6" sigid="209" reg_addr="0x024e" name="Air Conditioner1, IP-Section2" />
+		<signal equipid="6" sigid="210" reg_addr="0x024f" name="Air Conditioner1, IP-Section3" />
+		<signal equipid="6" sigid="211" reg_addr="0x0250" name="Air Conditioner1, IP-Section4" />
+		<signal equipid="6" sigid="212" reg_addr="0x0251" name="Air Conditioner1, Group" />
+		<signal equipid="6" sigid="213" reg_addr="0x0252" name="Air Conditioner1, Master Control" />
+		<signal equipid="6" sigid="214" reg_addr="0x0253" name="Air Conditioner1, Force Standby" />
+		<signal equipid="6" sigid="10001" reg_addr="0x0254" name="Air Conditioner1, Communication Status" />
+		<signal equipid="7" sigid="1" reg_addr="0x0255" name="UPS2, InputVoltage" />
+		<signal equipid="7" sigid="2" reg_addr="0x0256" name="UPS2, InputFrequency" />
+		<signal equipid="7" sigid="3" reg_addr="0x0257" name="UPS2, OutputVoltage" />
+		<signal equipid="7" sigid="4" reg_addr="0x0258" name="UPS2, OutputFrequency" />
+		<signal equipid="7" sigid="5" reg_addr="0x0259" name="UPS2, OutputCurrent" />
+		<signal equipid="7" sigid="6" reg_addr="0x025a" name="UPS2, OutputLoad" />
+		<signal equipid="7" sigid="7" reg_addr="0x025b" name="UPS2, PbusVoltage" />
+		<signal equipid="7" sigid="8" reg_addr="0x025c" name="UPS2, NbusVoltage" />
+		<signal equipid="7" sigid="9" reg_addr="0x025d" name="UPS2, BatteryVoltage" />
+		<signal equipid="7" sigid="11" reg_addr="0x025e" name="UPS2, MaxTemperature" />
+		<signal equipid="7" sigid="12" reg_addr="0x025f" name="UPS2, UPS Type" />
+		<signal equipid="7" sigid="13" reg_addr="0x0260" name="UPS2, UtilityFail" />
+		<signal equipid="7" sigid="14" reg_addr="0x0261" name="UPS2, BatteryLow" />
+		<signal equipid="7" sigid="15" reg_addr="0x0262" name="UPS2, Bypass/BoostActive" />
+		<signal equipid="7" sigid="16" reg_addr="0x0263" name="UPS2, UPS Fault" />
+		<signal equipid="7" sigid="17" reg_addr="0x0264" name="UPS2, EPO" />
+		<signal equipid="7" sigid="18" reg_addr="0x0265" name="UPS2, Testing" />
+		<signal equipid="7" sigid="19" reg_addr="0x0266" name="UPS2, ShutdownActive" />
+		<signal equipid="7" sigid="20" reg_addr="0x0267" name="UPS2, BatterySilent" />
+		<signal equipid="7" sigid="21" reg_addr="0x0268" name="UPS2, BatteryTestFail" />
+		<signal equipid="7" sigid="22" reg_addr="0x0269" name="UPS2, BatteryTestOK" />
+		<signal equipid="7" sigid="30" reg_addr="0x026a" name="UPS2, BatteryConnection" />
+		<signal equipid="7" sigid="36" reg_addr="0x026b" name="UPS2, BatteryOverCharged" />
+		<signal equipid="7" sigid="37" reg_addr="0x026c" name="UPS2, BatteryLow" />
+		<signal equipid="7" sigid="38" reg_addr="0x026d" name="UPS2, OverLoad" />
+		<signal equipid="7" sigid="39" reg_addr="0x026e" name="UPS2, FanLock" />
+		<signal equipid="7" sigid="40" reg_addr="0x026f" name="UPS2, EPOActive" />
+		<signal equipid="7" sigid="42" reg_addr="0x0270" name="UPS2, OverTemp" />
+		<signal equipid="7" sigid="43" reg_addr="0x0271" name="UPS2, ChargerFail" />
+		<signal equipid="7" sigid="45" reg_addr="0x0272" name="UPS2, L1IPFuseFail" />
+		<signal equipid="7" sigid="87" reg_addr="0x0273" name="UPS2, MaintenanceCoverOpen" />
+		<signal equipid="7" sigid="100" reg_addr="0x0274" name="UPS2, UPS Mode" />
+		<signal equipid="7" sigid="180" reg_addr="0x0275" name="UPS2, BatteryVoltage" />
+		<signal equipid="7" sigid="181" reg_addr="0x0276" name="UPS2, BatteryCells" />
+		<signal equipid="7" sigid="182" reg_addr="0x0277" name="UPS2, BatteryGroups" />
+		<signal equipid="7" sigid="183" reg_addr="0x0278" name="UPS2, BatteryCapacity" />
+		<signal equipid="7" sigid="184" reg_addr="0x0279" name="UPS2, RemainBatteryRunTime" />
+		<signal equipid="7" sigid="190" reg_addr="0x027a" name="UPS2, OutputPowerFactor" />
+		<signal equipid="7" sigid="191" reg_addr="0x027b" name="UPS2, InputPhase" />
+		<signal equipid="7" sigid="192" reg_addr="0x027c" name="UPS2, OutputPhase" />
+		<signal equipid="7" sigid="193" reg_addr="0x027d" name="UPS2, I/PVoltage" />
+		<signal equipid="7" sigid="194" reg_addr="0x027e" name="UPS2, O/PVoltage" />
+		<signal equipid="7" sigid="195" reg_addr="0x027f" name="UPS2, RatingBatPiece" />
+		<signal equipid="7" sigid="196" reg_addr="0x0280" name="UPS2, RatingBatteryVoltage" />
+		<signal equipid="7" sigid="200" reg_addr="0x0281" name="UPS2, FaultStatus" />
+		<signal equipid="7" sigid="201" reg_addr="0x0282" name="UPS2, UPSSimplifyMode" />
+		<signal equipid="7" sigid="10001" reg_addr="0x0283" name="UPS2, CommunicationStatus" />
+		<signal equipid="8" sigid="1" reg_addr="0x0284" name="Temp-Humidity2, Temperature" />
+		<signal equipid="8" sigid="2" reg_addr="0x0285" name="Temp-Humidity2, Humidity" />
+		<signal equipid="8" sigid="3" reg_addr="0x0286" name="Temp-Humidity2, DoorOpenTemp" />
+		<signal equipid="8" sigid="4" reg_addr="0x0287" name="Temp-Humidity2, DoorCloseTemp" />
+		<signal equipid="8" sigid="10001" reg_addr="0x0288" name="Temp-Humidity2, CommunicationStatus" />
+		<signal equipid="9" sigid="1" reg_addr="0x0289" name="Temp-Humidity3, Temperature" />
+		<signal equipid="9" sigid="2" reg_addr="0x028a" name="Temp-Humidity3, Humidity" />
+		<signal equipid="9" sigid="3" reg_addr="0x028b" name="Temp-Humidity3, DoorOpenTemp" />
+		<signal equipid="9" sigid="4" reg_addr="0x028c" name="Temp-Humidity3, DoorCloseTemp" />
+		<signal equipid="9" sigid="10001" reg_addr="0x028d" name="Temp-Humidity3, CommunicationStatus" />
+		<signal equipid="10" sigid="1" reg_addr="0x028e" name="Temp-Humidity4, Temperature" />
+		<signal equipid="10" sigid="2" reg_addr="0x028f" name="Temp-Humidity4, Humidity" />
+		<signal equipid="10" sigid="3" reg_addr="0x0290" name="Temp-Humidity4, DoorOpenTemp" />
+		<signal equipid="10" sigid="4" reg_addr="0x0291" name="Temp-Humidity4, DoorCloseTemp" />
+		<signal equipid="10" sigid="10001" reg_addr="0x0292" name="Temp-Humidity4, CommunicationStatus" />
+		<signal equipid="11" sigid="1" reg_addr="0x0293" name="Temp-Humidity5, Temperature" />
+		<signal equipid="11" sigid="2" reg_addr="0x0294" name="Temp-Humidity5, Humidity" />
+		<signal equipid="11" sigid="3" reg_addr="0x0295" name="Temp-Humidity5, DoorOpenTemp" />
+		<signal equipid="11" sigid="4" reg_addr="0x0296" name="Temp-Humidity5, DoorCloseTemp" />
+		<signal equipid="11" sigid="10001" reg_addr="0x0297" name="Temp-Humidity5, CommunicationStatus" />
+		<signal equipid="12" sigid="1" reg_addr="0x0298" name="Temp-Humidity6, Temperature" />
+		<signal equipid="12" sigid="2" reg_addr="0x0299" name="Temp-Humidity6, Humidity" />
+		<signal equipid="12" sigid="3" reg_addr="0x029a" name="Temp-Humidity6, DoorOpenTemp" />
+		<signal equipid="12" sigid="4" reg_addr="0x029b" name="Temp-Humidity6, DoorCloseTemp" />
+		<signal equipid="12" sigid="10001" reg_addr="0x029c" name="Temp-Humidity6, CommunicationStatus" />
+		<signal equipid="13" sigid="1" reg_addr="0x029d" name="Air Conditioner2, Water Leakage/Over Alarm" />
+		<signal equipid="13" sigid="2" reg_addr="0x029e" name="Air Conditioner2, Heater Alarm" />
+		<signal equipid="13" sigid="3" reg_addr="0x029f" name="Air Conditioner2, HP/HD Switch" />
+		<signal equipid="13" sigid="4" reg_addr="0x02a0" name="Air Conditioner2, Filter Maintenance" />
+		<signal equipid="13" sigid="5" reg_addr="0x02a1" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="6" reg_addr="0x02a2" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="7" reg_addr="0x02a3" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="8" reg_addr="0x02a4" name="Air Conditioner2, Water Leakage/Over Alarm" />
+		<signal equipid="13" sigid="9" reg_addr="0x02a5" name="Air Conditioner2, Heater Alarm" />
+		<signal equipid="13" sigid="10" reg_addr="0x02a6" name="Air Conditioner2, HP/HD Switch" />
+		<signal equipid="13" sigid="11" reg_addr="0x02a7" name="Air Conditioner2, Filter Maintenance" />
+		<signal equipid="13" sigid="12" reg_addr="0x02a8" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="13" reg_addr="0x02a9" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="14" reg_addr="0x02aa" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="15" reg_addr="0x02ab" name="Air Conditioner2, ID Fan Status" />
+		<signal equipid="13" sigid="16" reg_addr="0x02ac" name="Air Conditioner2, Fix Compressor Status" />
+		<signal equipid="13" sigid="17" reg_addr="0x02ad" name="Air Conditioner2, Heater Status" />
+		<signal equipid="13" sigid="18" reg_addr="0x02ae" name="Air Conditioner2, Humidifier Status" />
+		<signal equipid="13" sigid="19" reg_addr="0x02af" name="Air Conditioner2, Bypass Valve Status" />
+		<signal equipid="13" sigid="20" reg_addr="0x02b0" name="Air Conditioner2, Lee Valve Status" />
+		<signal equipid="13" sigid="21" reg_addr="0x02b1" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="22" reg_addr="0x02b2" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="23" reg_addr="0x02b3" name="Air Conditioner2, Leakage/Over Water" />
+		<signal equipid="13" sigid="24" reg_addr="0x02b4" name="Air Conditioner2, Heater Fault" />
+		<signal equipid="13" sigid="25" reg_addr="0x02b5" name="Air Conditioner2, HP/HD Switch Alarm" />
+		<signal equipid="13" sigid="26" reg_addr="0x02b6" name="Air Conditioner2, Filter Maintenance" />
+		<signal equipid="13" sigid="27" reg_addr="0x02b7" name="Air Conditioner2, Reserved_Alarm1" />
+		<signal equipid="13" sigid="28" reg_addr="0x02b8" name="Air Conditioner2, Reserved_Alarm2" />
+		<signal equipid="13" sigid="29" reg_addr="0x02b9" name="Air Conditioner2, Reserved_Alarm3" />
+		<signal equipid="13" sigid="30" reg_addr="0x02ba" name="Air Conditioner2, Suction Pressure Sensor Failure" />
+		<signal equipid="13" sigid="31" reg_addr="0x02bb" name="Air Conditioner2, Discharge Pressure Sensor Failure" />
+		<signal equipid="13" sigid="32" reg_addr="0x02bc" name="Air Conditioner2, Suction Temperature Sensor Failure" />
+		<signal equipid="13" sigid="33" reg_addr="0x02bd" name="Air Conditioner2, Supply Temperature Sensor Failure" />
+		<signal equipid="13" sigid="34" reg_addr="0x02be" name="Air Conditioner2, Return Temperature Sensor Failure" />
+		<signal equipid="13" sigid="35" reg_addr="0x02bf" name="Air Conditioner2, Return Humidity Sensor Failure" />
+		<signal equipid="13" sigid="36" reg_addr="0x02c0" name="Air Conditioner2, Liquid Pipe Temperature Sensor Failure" />
+		<signal equipid="13" sigid="37" reg_addr="0x02c1" name="Air Conditioner2, High Pressure Alarm" />
+		<signal equipid="13" sigid="38" reg_addr="0x02c2" name="Air Conditioner2, Low Pressure Alarm" />
+		<signal equipid="13" sigid="39" reg_addr="0x02c3" name="Air Conditioner2, High Temperature Alarm" />
+		<signal equipid="13" sigid="40" reg_addr="0x02c4" name="Air Conditioner2, Low Temperature Alarm" />
+		<signal equipid="13" sigid="41" reg_addr="0x02c5" name="Air Conditioner2, High Humidity Alarm" />
+		<signal equipid="13" sigid="42" reg_addr="0x02c6" name="Air Conditioner2, Low Humidity Alarm" />
+		<signal equipid="13" sigid="43" reg_addr="0x02c7" name="Air Conditioner2, Controller Variable Alarm" />
+		<signal equipid="13" sigid="44" reg_addr="0x02c8" name="Air Conditioner2, Communication Alarm with Slave unit1" />
+		<signal equipid="13" sigid="45" reg_addr="0x02c9" name="Air Conditioner2, Communication Alarm with Slave unit2" />
+		<signal equipid="13" sigid="46" reg_addr="0x02ca" name="Air Conditioner2, Communication Alarm with Slave unit3" />
+		<signal equipid="13" sigid="47" reg_addr="0x02cb" name="Air Conditioner2, Communication Alarm with Slave unit4" />
+		<signal equipid="13" sigid="48" reg_addr="0x02cc" name="Air Conditioner2, Communication Alarm with Slave unit5" />
+		<signal equipid="13" sigid="49" reg_addr="0x02cd" name="Air Conditioner2, Communication Alarm with Slave unit6" />
+		<signal equipid="13" sigid="50" reg_addr="0x02ce" name="Air Conditioner2, Communication Alarm with Slave unit7" />
+		<signal equipid="13" sigid="51" reg_addr="0x02cf" name="Air Conditioner2, Communication Alarm with Slave unit8" />
+		<signal equipid="13" sigid="52" reg_addr="0x02d0" name="Air Conditioner2, EEV Range error" />
+		<signal equipid="13" sigid="53" reg_addr="0x02d1" name="Air Conditioner2, EEV Low Superheat" />
+		<signal equipid="13" sigid="54" reg_addr="0x02d2" name="Air Conditioner2, EEV Low Evaporation Temperature" />
+		<signal equipid="13" sigid="55" reg_addr="0x02d3" name="Air Conditioner2, EEV High Evaporation Temperature" />
+		<signal equipid="13" sigid="56" reg_addr="0x02d4" name="Air Conditioner2, EEV High Condense Temperature" />
+		<signal equipid="13" sigid="57" reg_addr="0x02d5" name="Air Conditioner2, EEV Low Suction Temperature" />
+		<signal equipid="13" sigid="58" reg_addr="0x02d6" name="Air Conditioner2, EEV Motor error" />
+		<signal equipid="13" sigid="59" reg_addr="0x02d7" name="Air Conditioner2, EEV Invalid Adaptive Control" />
+		<signal equipid="13" sigid="60" reg_addr="0x02d8" name="Air Conditioner2, EEV Emergency OFF" />
+		<signal equipid="13" sigid="61" reg_addr="0x02d9" name="Air Conditioner2, EEV Valve ID Wrong" />
+		<signal equipid="13" sigid="62" reg_addr="0x02da" name="Air Conditioner2, EEV Sensor Position Wrong" />
+		<signal equipid="13" sigid="63" reg_addr="0x02db" name="Air Conditioner2, EEV Sensor Range Wrong" />
+		<signal equipid="13" sigid="64" reg_addr="0x02dc" name="Air Conditioner2, CPY Communication Alarm" />
+		<signal equipid="13" sigid="65" reg_addr="0x02dd" name="Air Conditioner2, Module Maintenance Alarm" />
+		<signal equipid="13" sigid="66" reg_addr="0x02de" name="Air Conditioner2, ID Fan Maintenance Time" />
+		<signal equipid="13" sigid="67" reg_addr="0x02df" name="Air Conditioner2, Compressor Maintenance Time" />
+		<signal equipid="13" sigid="68" reg_addr="0x02e0" name="Air Conditioner2, OD Fan Maintenance Time" />
+		<signal equipid="13" sigid="69" reg_addr="0x02e1" name="Air Conditioner2, Humidifier Maintenance Time" />
+		<signal equipid="13" sigid="70" reg_addr="0x02e2" name="Air Conditioner2, CPY Commun" />
+		<signal equipid="13" sigid="71" reg_addr="0x02e3" name="Air Conditioner2, Manual Drain Valve" />
+		<signal equipid="13" sigid="72" reg_addr="0x02e4" name="Air Conditioner2, Manual Drain Valve" />
+		<signal equipid="13" sigid="73" reg_addr="0x02e5" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="74" reg_addr="0x02e6" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="75" reg_addr="0x02e7" name="Air Conditioner2, Control Mode" />
+		<signal equipid="13" sigid="76" reg_addr="0x02e8" name="Air Conditioner2, Humid Control Mode" />
+		<signal equipid="13" sigid="77" reg_addr="0x02e9" name="Air Conditioner2, Enable Hum" />
+		<signal equipid="13" sigid="78" reg_addr="0x02ea" name="Air Conditioner2, Enable Dehum" />
+		<signal equipid="13" sigid="79" reg_addr="0x02eb" name="Air Conditioner2, Enable Heating" />
+		<signal equipid="13" sigid="80" reg_addr="0x02ec" name="Air Conditioner2, EEV Control Mode" />
+		<signal equipid="13" sigid="81" reg_addr="0x02ed" name="Air Conditioner2, EEV Enable Manual Mode" />
+		<signal equipid="13" sigid="82" reg_addr="0x02ee" name="Air Conditioner2, EEV Set completion status  " />
+		<signal equipid="13" sigid="83" reg_addr="0x02ef" name="Air Conditioner2, LP Pres" />
+		<signal equipid="13" sigid="84" reg_addr="0x02f0" name="Air Conditioner2, HP Pres" />
+		<signal equipid="13" sigid="85" reg_addr="0x02f1" name="Air Conditioner2, Suction Temp" />
+		<signal equipid="13" sigid="86" reg_addr="0x02f2" name="Air Conditioner2, Supply Temp" />
+		<signal equipid="13" sigid="87" reg_addr="0x02f3" name="Air Conditioner2, Return Temp" />
+		<signal equipid="13" sigid="88" reg_addr="0x02f4" name="Air Conditioner2, Humidity" />
+		<signal equipid="13" sigid="89" reg_addr="0x02f5" name="Air Conditioner2, Liquid Pipe Temp" />
+		<signal equipid="13" sigid="90" reg_addr="0x02f6" name="Air Conditioner2, Subcooling" />
+		<signal equipid="13" sigid="91" reg_addr="0x02f7" name="Air Conditioner2, ID Fan Speed" />
+		<signal equipid="13" sigid="92" reg_addr="0x02f8" name="Air Conditioner2, Compressor Output" />
+		<signal equipid="13" sigid="93" reg_addr="0x02f9" name="Air Conditioner2, OD Fan Speed" />
+		<signal equipid="13" sigid="94" reg_addr="0x02fa" name="Air Conditioner2, Superheat" />
+		<signal equipid="13" sigid="95" reg_addr="0x02fb" name="Air Conditioner2, EEV Step" />
+		<signal equipid="13" sigid="96" reg_addr="0x02fc" name="Air Conditioner2, EEV Open Percent" />
+		<signal equipid="13" sigid="97" reg_addr="0x02fd" name="Air Conditioner2, Unit Mode" />
+		<signal equipid="13" sigid="98" reg_addr="0x02fe" name="Air Conditioner2, Correct LP" />
+		<signal equipid="13" sigid="99" reg_addr="0x02ff" name="Air Conditioner2, Correct HP" />
+		<signal equipid="13" sigid="100" reg_addr="0x0300" name="Air Conditioner2, Correct Suction Temp" />
+		<signal equipid="13" sigid="101" reg_addr="0x0301" name="Air Conditioner2, Correct Supply Temp" />
+		<signal equipid="13" sigid="102" reg_addr="0x0302" name="Air Conditioner2, Correct Return Temp" />
+		<signal equipid="13" sigid="103" reg_addr="0x0303" name="Air Conditioner2, Correct Return Hum" />
+		<signal equipid="13" sigid="104" reg_addr="0x0304" name="Air Conditioner2, Correct Liquid Pipe Temp" />
+		<signal equipid="13" sigid="105" reg_addr="0x0305" name="Air Conditioner2, Manual Indoor AC Fan" />
+		<signal equipid="13" sigid="106" reg_addr="0x0306" name="Air Conditioner2, Manual Indoor EC Fan" />
+		<signal equipid="13" sigid="107" reg_addr="0x0307" name="Air Conditioner2, Manual Fix Compressor" />
+		<signal equipid="13" sigid="108" reg_addr="0x0308" name="Air Conditioner2, Manual Inverter Compressor Speed" />
+		<signal equipid="13" sigid="109" reg_addr="0x0309" name="Air Conditioner2, Manual Heater" />
+		<signal equipid="13" sigid="110" reg_addr="0x030a" name="Air Conditioner2, Manual Humidifier" />
+		<signal equipid="13" sigid="111" reg_addr="0x030b" name="Air Conditioner2, Manual Humidifier Capacity" />
+		<signal equipid="13" sigid="112" reg_addr="0x030c" name="Air Conditioner2, Manual Lee Valve" />
+		<signal equipid="13" sigid="113" reg_addr="0x030d" name="Air Conditioner2, Manual Outdoor EC Fan" />
+		<signal equipid="13" sigid="114" reg_addr="0x030e" name="Air Conditioner2, Manual EEV Manual Step" />
+		<signal equipid="13" sigid="115" reg_addr="0x030f" name="Air Conditioner2, ID Fan Running Time" />
+		<signal equipid="13" sigid="116" reg_addr="0x0310" name="Air Conditioner2, Comp Running Time" />
+		<signal equipid="13" sigid="117" reg_addr="0x0311" name="Air Conditioner2, Manual Control" />
+		<signal equipid="13" sigid="118" reg_addr="0x0312" name="Air Conditioner2, ON-OFF" />
+		<signal equipid="13" sigid="119" reg_addr="0x0313" name="Air Conditioner2, Repower Auto-ON DT" />
+		<signal equipid="13" sigid="120" reg_addr="0x0314" name="Air Conditioner2, Runing Time Reset" />
+		<signal equipid="13" sigid="121" reg_addr="0x0315" name="Air Conditioner2, Clear Alarm" />
+		<signal equipid="13" sigid="122" reg_addr="0x0316" name="Air Conditioner2, Factory Reset" />
+		<signal equipid="13" sigid="123" reg_addr="0x0317" name="Air Conditioner2, LP Min Pres Range" />
+		<signal equipid="13" sigid="124" reg_addr="0x0318" name="Air Conditioner2, LP Pres Range" />
+		<signal equipid="13" sigid="125" reg_addr="0x0319" name="Air Conditioner2, HP Min Pres Range" />
+		<signal equipid="13" sigid="126" reg_addr="0x031a" name="Air Conditioner2, HP Pres Range" />
+		<signal equipid="13" sigid="127" reg_addr="0x031b" name="Air Conditioner2, Temp Setting" />
+		<signal equipid="13" sigid="128" reg_addr="0x031c" name="Air Conditioner2, Temp Band" />
+		<signal equipid="13" sigid="129" reg_addr="0x031d" name="Air Conditioner2, Min Freq" />
+		<signal equipid="13" sigid="130" reg_addr="0x031e" name="Air Conditioner2, Max Freq" />
+		<signal equipid="13" sigid="131" reg_addr="0x031f" name="Air Conditioner2, Oil Start Freq" />
+		<signal equipid="13" sigid="132" reg_addr="0x0320" name="Air Conditioner2, Oil Interval Time" />
+		<signal equipid="13" sigid="133" reg_addr="0x0321" name="Air Conditioner2, Oil Running Time" />
+		<signal equipid="13" sigid="134" reg_addr="0x0322" name="Air Conditioner2, Min Supply Temp" />
+		<signal equipid="13" sigid="135" reg_addr="0x0323" name="Air Conditioner2, Max Supply Temp" />
+		<signal equipid="13" sigid="136" reg_addr="0x0324" name="Air Conditioner2, Trun On Comp DT" />
+		<signal equipid="13" sigid="137" reg_addr="0x0325" name="Air Conditioner2, Refrigerant" />
+		<signal equipid="13" sigid="138" reg_addr="0x0326" name="Air Conditioner2, Reserved" />
+		<signal equipid="13" sigid="139" reg_addr="0x0327" name="Air Conditioner2, Dehum Limit Temp" />
+		<signal equipid="13" sigid="140" reg_addr="0x0328" name="Air Conditioner2, Humid Setting" />
+		<signal equipid="13" sigid="141" reg_addr="0x0329" name="Air Conditioner2, Humid Band" />
+		<signal equipid="13" sigid="142" reg_addr="0x032a" name="Air Conditioner2, Heating Judge Time" />
+		<signal equipid="13" sigid="143" reg_addr="0x032b" name="Air Conditioner2, High Temp Alarm Band" />
+		<signal equipid="13" sigid="144" reg_addr="0x032c" name="Air Conditioner2, Low Temp Alarm Band" />
+		<signal equipid="13" sigid="145" reg_addr="0x032d" name="Air Conditioner2, High Humid Alarm Band" />
+		<signal equipid="13" sigid="146" reg_addr="0x032e" name="Air Conditioner2, Low Humid Alarm Band" />
+		<signal equipid="13" sigid="147" reg_addr="0x032f" name="Air Conditioner2, LP Pres Alarm" />
+		<signal equipid="13" sigid="148" reg_addr="0x0330" name="Air Conditioner2, LP Pres Recov" />
+		<signal equipid="13" sigid="149" reg_addr="0x0331" name="Air Conditioner2, LP DT Setting" />
+		<signal equipid="13" sigid="150" reg_addr="0x0332" name="Air Conditioner2, LP Alarm Time" />
+		<signal equipid="13" sigid="151" reg_addr="0x0333" name="Air Conditioner2, HP Pres Alarm" />
+		<signal equipid="13" sigid="152" reg_addr="0x0334" name="Air Conditioner2, HP Pres Recov" />
+		<signal equipid="13" sigid="153" reg_addr="0x0335" name="Air Conditioner2, ID Fan Speed CR" />
+		<signal equipid="13" sigid="154" reg_addr="0x0336" name="Air Conditioner2, Trun Off DT" />
+		<signal equipid="13" sigid="155" reg_addr="0x0337" name="Air Conditioner2, ID Fan Min Speed" />
+		<signal equipid="13" sigid="156" reg_addr="0x0338" name="Air Conditioner2, ID Fan Max Speed" />
+		<signal equipid="13" sigid="157" reg_addr="0x0339" name="Air Conditioner2, Dehum Fan Speed" />
+		<signal equipid="13" sigid="158" reg_addr="0x033a" name="Air Conditioner2, OD Fan Speed CR" />
+		<signal equipid="13" sigid="159" reg_addr="0x033b" name="Air Conditioner2, OD Fan Min Speed" />
+		<signal equipid="13" sigid="160" reg_addr="0x033c" name="Air Conditioner2, OD Fan Max Speed" />
+		<signal equipid="13" sigid="161" reg_addr="0x033d" name="Air Conditioner2, Fan Pres Setting" />
+		<signal equipid="13" sigid="162" reg_addr="0x033e" name="Air Conditioner2, Fan Pres Band" />
+		<signal equipid="13" sigid="163" reg_addr="0x033f" name="Air Conditioner2, Humidifier Max Control Signal Setting" />
+		<signal equipid="13" sigid="164" reg_addr="0x0340" name="Air Conditioner2, Humidifier Min Control Signal Setting" />
+		<signal equipid="13" sigid="165" reg_addr="0x0341" name="Air Conditioner2, Humidifier Capacity" />
+		<signal equipid="13" sigid="166" reg_addr="0x0342" name="Air Conditioner2, Humidifier Current" />
+		<signal equipid="13" sigid="167" reg_addr="0x0343" name="Air Conditioner2, Humidifier Conductivity" />
+		<signal equipid="13" sigid="168" reg_addr="0x0344" name="Air Conditioner2, Humidifier Timer" />
+		<signal equipid="13" sigid="169" reg_addr="0x0345" name="Air Conditioner2, Humidifier Capacity" />
+		<signal equipid="13" sigid="170" reg_addr="0x0346" name="Air Conditioner2, Humidifier Status" />
+		<signal equipid="13" sigid="171" reg_addr="0x0347" name="Air Conditioner2, Humidifier Stop Alarm" />
+		<signal equipid="13" sigid="172" reg_addr="0x0348" name="Air Conditioner2, Humidifier Notify Alarm" />
+		<signal equipid="13" sigid="173" reg_addr="0x0349" name="Air Conditioner2, EEV Low Superheat" />
+		<signal equipid="13" sigid="174" reg_addr="0x034a" name="Air Conditioner2, EEV Low Evap Temp" />
+		<signal equipid="13" sigid="175" reg_addr="0x034b" name="Air Conditioner2, EEV High Evap Temp" />
+		<signal equipid="13" sigid="176" reg_addr="0x034c" name="Air Conditioner2, EEV High Cond Temp" />
+		<signal equipid="13" sigid="177" reg_addr="0x034d" name="Air Conditioner2, EEV Superheat" />
+		<signal equipid="13" sigid="178" reg_addr="0x034e" name="Air Conditioner2, EEV Initial Opening" />
+		<signal equipid="13" sigid="179" reg_addr="0x034f" name="Air Conditioner2, EEV Initial Opening Working Time" />
+		<signal equipid="13" sigid="180" reg_addr="0x0350" name="Air Conditioner2, EEV Valve Min Step" />
+		<signal equipid="13" sigid="181" reg_addr="0x0351" name="Air Conditioner2, EEV Valve Max Step" />
+		<signal equipid="13" sigid="182" reg_addr="0x0352" name="Air Conditioner2, EEV Valve Stop Step" />
+		<signal equipid="13" sigid="183" reg_addr="0x0353" name="Air Conditioner2, EEV Evap Temp" />
+		<signal equipid="13" sigid="184" reg_addr="0x0354" name="Air Conditioner2, Cond Temp" />
+		<signal equipid="13" sigid="185" reg_addr="0x0355" name="Air Conditioner2, Oil Running Freq" />
+		<signal equipid="13" sigid="186" reg_addr="0x0356" name="Air Conditioner2, Min Comp Run Time" />
+		<signal equipid="13" sigid="187" reg_addr="0x0357" name="Air Conditioner2, Min Comp Off Time" />
+		<signal equipid="13" sigid="188" reg_addr="0x0358" name="Air Conditioner2, Heat ON Band" />
+		<signal equipid="13" sigid="189" reg_addr="0x0359" name="Air Conditioner2, Heat OFF Band" />
+		<signal equipid="13" sigid="190" reg_addr="0x035a" name="Air Conditioner2, Unit Running Time" />
+		<signal equipid="13" sigid="191" reg_addr="0x035b" name="Air Conditioner2, OD Fan Running Time" />
+		<signal equipid="13" sigid="192" reg_addr="0x035c" name="Air Conditioner2, Humid Running Time" />
+		<signal equipid="13" sigid="193" reg_addr="0x035d" name="Air Conditioner2, Unit Maint Time" />
+		<signal equipid="13" sigid="194" reg_addr="0x035e" name="Air Conditioner2, ID Fan Maint Time" />
+		<signal equipid="13" sigid="195" reg_addr="0x035f" name="Air Conditioner2, Comp Maint Time" />
+		<signal equipid="13" sigid="196" reg_addr="0x0360" name="Air Conditioner2, OD Fan Maint Time" />
+		<signal equipid="13" sigid="197" reg_addr="0x0361" name="Air Conditioner2, Humid Maint Time" />
+		<signal equipid="13" sigid="198" reg_addr="0x0362" name="Air Conditioner2, Manual Bypass Valve" />
+		<signal equipid="13" sigid="199" reg_addr="0x0363" name="Air Conditioner2, Unit type" />
+		<signal equipid="13" sigid="200" reg_addr="0x0364" name="Air Conditioner2, Recom Humid St" />
+		<signal equipid="13" sigid="201" reg_addr="0x0365" name="Air Conditioner2, Control Humid St" />
+		<signal equipid="13" sigid="202" reg_addr="0x0366" name="Air Conditioner2, Sofeware Version V1" />
+		<signal equipid="13" sigid="203" reg_addr="0x0367" name="Air Conditioner2, Sofeware Version V2" />
+		<signal equipid="13" sigid="204" reg_addr="0x0368" name="Air Conditioner2, Master/Standby Unit" />
+		<signal equipid="13" sigid="205" reg_addr="0x0369" name="Air Conditioner2, Group Unit Quan." />
+		<signal equipid="13" sigid="206" reg_addr="0x036a" name="Air Conditioner2, Standby Unit Quan." />
+		<signal equipid="13" sigid="207" reg_addr="0x036b" name="Air Conditioner2, Rotation Time" />
+		<signal equipid="13" sigid="208" reg_addr="0x036c" name="Air Conditioner2, IP-Section1" />
+		<signal equipid="13" sigid="209" reg_addr="0x036d" name="Air Conditioner2, IP-Section2" />
+		<signal equipid="13" sigid="210" reg_addr="0x036e" name="Air Conditioner2, IP-Section3" />
+		<signal equipid="13" sigid="211" reg_addr="0x036f" name="Air Conditioner2, IP-Section4" />
+		<signal equipid="13" sigid="212" reg_addr="0x0370" name="Air Conditioner2, Group" />
+		<signal equipid="13" sigid="213" reg_addr="0x0371" name="Air Conditioner2, Master Control" />
+		<signal equipid="13" sigid="214" reg_addr="0x0372" name="Air Conditioner2, Force Standby" />
+		<signal equipid="13" sigid="10001" reg_addr="0x0373" name="Air Conditioner2, Communication Status" />
+	</signals>
+	<controls>
+		<control equipid="1" ctrlid="1" reg_addr="0x0000" name="VTU-IO, DO1" />
+		<control equipid="1" ctrlid="2" reg_addr="0x0001" name="VTU-IO, DO2" />
+		<control equipid="4" ctrlid="1" reg_addr="0x0002" name="Primary Meter, Communication address1~247" />
+		<control equipid="4" ctrlid="6" reg_addr="0x0003" name="Primary Meter, PT1~10000" />
+		<control equipid="4" ctrlid="7" reg_addr="0x0004" name="Primary Meter, CT1~10000" />
+		<control equipid="4" ctrlid="9" reg_addr="0x0005" name="Primary Meter, DO1" />
+		<control equipid="4" ctrlid="10" reg_addr="0x0006" name="Primary Meter, DO2" />
+		<control equipid="5" ctrlid="1" reg_addr="0x0007" name="IT Meter, Communication address1~247" />
+		<control equipid="5" ctrlid="6" reg_addr="0x0008" name="IT Meter, PT1~10000" />
+		<control equipid="5" ctrlid="7" reg_addr="0x0009" name="IT Meter, CT1~10000" />
+		<control equipid="5" ctrlid="9" reg_addr="0x000a" name="IT Meter, DO1" />
+		<control equipid="5" ctrlid="10" reg_addr="0x000b" name="IT Meter, DO2" />
+		<control equipid="6" ctrlid="1" reg_addr="0x000c" name="Air Conditioner1, Water Leakage/Over Alarm" />
+		<control equipid="6" ctrlid="2" reg_addr="0x000d" name="Air Conditioner1, Heater Alarm" />
+		<control equipid="6" ctrlid="3" reg_addr="0x000e" name="Air Conditioner1, HP/HD Switch" />
+		<control equipid="6" ctrlid="4" reg_addr="0x000f" name="Air Conditioner1, Filter Maintenance" />
+		<control equipid="6" ctrlid="5" reg_addr="0x0010" name="Air Conditioner1, CPY Commun" />
+		<control equipid="6" ctrlid="6" reg_addr="0x0011" name="Air Conditioner1, Manual Drain Valve" />
+		<control equipid="6" ctrlid="7" reg_addr="0x0012" name="Air Conditioner1, Manual Drain Valve" />
+		<control equipid="6" ctrlid="8" reg_addr="0x0013" name="Air Conditioner1, Control Mode" />
+		<control equipid="6" ctrlid="9" reg_addr="0x0014" name="Air Conditioner1, Humid Control Mode" />
+		<control equipid="6" ctrlid="10" reg_addr="0x0015" name="Air Conditioner1, Enable Hum" />
+		<control equipid="6" ctrlid="11" reg_addr="0x0016" name="Air Conditioner1, Enable Dehum" />
+		<control equipid="6" ctrlid="12" reg_addr="0x0017" name="Air Conditioner1, Enable Heating" />
+		<control equipid="6" ctrlid="13" reg_addr="0x0018" name="Air Conditioner1, EEV Control Mode" />
+		<control equipid="6" ctrlid="14" reg_addr="0x0019" name="Air Conditioner1, EEV Enable Manual Mode" />
+		<control equipid="6" ctrlid="15" reg_addr="0x001a" name="Air Conditioner1, Correct LP" />
+		<control equipid="6" ctrlid="16" reg_addr="0x001b" name="Air Conditioner1, Correct HP" />
+		<control equipid="6" ctrlid="17" reg_addr="0x001c" name="Air Conditioner1, Correct Suction Temp" />
+		<control equipid="6" ctrlid="18" reg_addr="0x001d" name="Air Conditioner1, Correct Supply Temp" />
+		<control equipid="6" ctrlid="19" reg_addr="0x001e" name="Air Conditioner1, Correct Return Temp" />
+		<control equipid="6" ctrlid="20" reg_addr="0x001f" name="Air Conditioner1, Correct Return Hum" />
+		<control equipid="6" ctrlid="21" reg_addr="0x0020" name="Air Conditioner1, Correct Liquid Pipe Temp" />
+		<control equipid="6" ctrlid="22" reg_addr="0x0021" name="Air Conditioner1, Manual Indoor AC Fan" />
+		<control equipid="6" ctrlid="23" reg_addr="0x0022" name="Air Conditioner1, Manual Indoor EC Fan" />
+		<control equipid="6" ctrlid="24" reg_addr="0x0023" name="Air Conditioner1, Manual Fix Compressor" />
+		<control equipid="6" ctrlid="25" reg_addr="0x0024" name="Air Conditioner1, Manual Inverter Compressor Speed" />
+		<control equipid="6" ctrlid="26" reg_addr="0x0025" name="Air Conditioner1, Manual Heater" />
+		<control equipid="6" ctrlid="27" reg_addr="0x0026" name="Air Conditioner1, Manual Humidifier" />
+		<control equipid="6" ctrlid="28" reg_addr="0x0027" name="Air Conditioner1, Manual Humidifier Capacity" />
+		<control equipid="6" ctrlid="29" reg_addr="0x0028" name="Air Conditioner1, Manual Lee Valve" />
+		<control equipid="6" ctrlid="30" reg_addr="0x0029" name="Air Conditioner1, Manual Outdoor EC Fan" />
+		<control equipid="6" ctrlid="31" reg_addr="0x002a" name="Air Conditioner1, Manual EEV Manual Step" />
+		<control equipid="6" ctrlid="32" reg_addr="0x002b" name="Air Conditioner1, Manual Control" />
+		<control equipid="6" ctrlid="33" reg_addr="0x002c" name="Air Conditioner1, ON-OFF" />
+		<control equipid="6" ctrlid="34" reg_addr="0x002d" name="Air Conditioner1, Repower Auto-ON DT" />
+		<control equipid="6" ctrlid="35" reg_addr="0x002e" name="Air Conditioner1, Runing Time Reset" />
+		<control equipid="6" ctrlid="36" reg_addr="0x002f" name="Air Conditioner1, Clear Alarm" />
+		<control equipid="6" ctrlid="37" reg_addr="0x0030" name="Air Conditioner1, Factory Reset" />
+		<control equipid="6" ctrlid="38" reg_addr="0x0031" name="Air Conditioner1, LP Min Pres Range" />
+		<control equipid="6" ctrlid="39" reg_addr="0x0032" name="Air Conditioner1, LP Pres Range" />
+		<control equipid="6" ctrlid="40" reg_addr="0x0033" name="Air Conditioner1, HP Min Pres Range" />
+		<control equipid="6" ctrlid="41" reg_addr="0x0034" name="Air Conditioner1, HP Pres Range" />
+		<control equipid="6" ctrlid="42" reg_addr="0x0035" name="Air Conditioner1, Temp Setting" />
+		<control equipid="6" ctrlid="43" reg_addr="0x0036" name="Air Conditioner1, Temp Band" />
+		<control equipid="6" ctrlid="44" reg_addr="0x0037" name="Air Conditioner1, Min Freq" />
+		<control equipid="6" ctrlid="45" reg_addr="0x0038" name="Air Conditioner1, Max Freq" />
+		<control equipid="6" ctrlid="46" reg_addr="0x0039" name="Air Conditioner1, Oil Start Freq" />
+		<control equipid="6" ctrlid="47" reg_addr="0x003a" name="Air Conditioner1, Oil Interval Time" />
+		<control equipid="6" ctrlid="48" reg_addr="0x003b" name="Air Conditioner1, Oil Running Freq" />
+		<control equipid="6" ctrlid="49" reg_addr="0x003c" name="Air Conditioner1, Min Supply Temp" />
+		<control equipid="6" ctrlid="50" reg_addr="0x003d" name="Air Conditioner1, Max Supply Temp" />
+		<control equipid="6" ctrlid="51" reg_addr="0x003e" name="Air Conditioner1, Trun On Comp DT" />
+		<control equipid="6" ctrlid="52" reg_addr="0x003f" name="Air Conditioner1, Refrigerant" />
+		<control equipid="6" ctrlid="53" reg_addr="0x0040" name="Air Conditioner1, Dehum Limit Temp" />
+		<control equipid="6" ctrlid="54" reg_addr="0x0041" name="Air Conditioner1, Humid Setting" />
+		<control equipid="6" ctrlid="55" reg_addr="0x0042" name="Air Conditioner1, Humid Band" />
+		<control equipid="6" ctrlid="56" reg_addr="0x0043" name="Air Conditioner1, Heating Judge Time" />
+		<control equipid="6" ctrlid="57" reg_addr="0x0044" name="Air Conditioner1, High Temp Alarm Band" />
+		<control equipid="6" ctrlid="58" reg_addr="0x0045" name="Air Conditioner1, Low Temp Alarm Band" />
+		<control equipid="6" ctrlid="59" reg_addr="0x0046" name="Air Conditioner1, High Humid Alarm Band" />
+		<control equipid="6" ctrlid="60" reg_addr="0x0047" name="Air Conditioner1, Low Humid Alarm Band" />
+		<control equipid="6" ctrlid="61" reg_addr="0x0048" name="Air Conditioner1, LP Pres Alarm" />
+		<control equipid="6" ctrlid="62" reg_addr="0x0049" name="Air Conditioner1, LP Pres Recov" />
+		<control equipid="6" ctrlid="63" reg_addr="0x004a" name="Air Conditioner1, LP DT Setting" />
+		<control equipid="6" ctrlid="64" reg_addr="0x004b" name="Air Conditioner1, LP Alarm Time" />
+		<control equipid="6" ctrlid="65" reg_addr="0x004c" name="Air Conditioner1, HP Pres Alarm" />
+		<control equipid="6" ctrlid="66" reg_addr="0x004d" name="Air Conditioner1, HP Pres Recov" />
+		<control equipid="6" ctrlid="67" reg_addr="0x004e" name="Air Conditioner1, ID Fan Speed CR" />
+		<control equipid="6" ctrlid="68" reg_addr="0x004f" name="Air Conditioner1, Trun Off DT" />
+		<control equipid="6" ctrlid="69" reg_addr="0x0050" name="Air Conditioner1, ID Fan Min Speed" />
+		<control equipid="6" ctrlid="70" reg_addr="0x0051" name="Air Conditioner1, ID Fan Max Speed" />
+		<control equipid="6" ctrlid="71" reg_addr="0x0052" name="Air Conditioner1, Dehum Fan Speed" />
+		<control equipid="6" ctrlid="72" reg_addr="0x0053" name="Air Conditioner1, OD Fan Speed CR" />
+		<control equipid="6" ctrlid="73" reg_addr="0x0054" name="Air Conditioner1, OD Fan Min Speed" />
+		<control equipid="6" ctrlid="74" reg_addr="0x0055" name="Air Conditioner1, OD Fan Max Speed" />
+		<control equipid="6" ctrlid="75" reg_addr="0x0056" name="Air Conditioner1, Fan Pres Setting" />
+		<control equipid="6" ctrlid="76" reg_addr="0x0057" name="Air Conditioner1, Fan Pres Band" />
+		<control equipid="6" ctrlid="77" reg_addr="0x0058" name="Air Conditioner1, Humidifier Max Control Signal Setting" />
+		<control equipid="6" ctrlid="78" reg_addr="0x0059" name="Air Conditioner1, Humidifier Min Control Signal Setting" />
+		<control equipid="13" ctrlid="1" reg_addr="0x005a" name="Air Conditioner2, Water Leakage/Over Alarm" />
+		<control equipid="13" ctrlid="2" reg_addr="0x005b" name="Air Conditioner2, Heater Alarm" />
+		<control equipid="13" ctrlid="3" reg_addr="0x005c" name="Air Conditioner2, HP/HD Switch" />
+		<control equipid="13" ctrlid="4" reg_addr="0x005d" name="Air Conditioner2, Filter Maintenance" />
+		<control equipid="13" ctrlid="5" reg_addr="0x005e" name="Air Conditioner2, CPY Commun" />
+		<control equipid="13" ctrlid="6" reg_addr="0x005f" name="Air Conditioner2, Manual Drain Valve" />
+		<control equipid="13" ctrlid="7" reg_addr="0x0060" name="Air Conditioner2, Manual Drain Valve" />
+		<control equipid="13" ctrlid="8" reg_addr="0x0061" name="Air Conditioner2, Control Mode" />
+		<control equipid="13" ctrlid="9" reg_addr="0x0062" name="Air Conditioner2, Humid Control Mode" />
+		<control equipid="13" ctrlid="10" reg_addr="0x0063" name="Air Conditioner2, Enable Hum" />
+		<control equipid="13" ctrlid="11" reg_addr="0x0064" name="Air Conditioner2, Enable Dehum" />
+		<control equipid="13" ctrlid="12" reg_addr="0x0065" name="Air Conditioner2, Enable Heating" />
+		<control equipid="13" ctrlid="13" reg_addr="0x0066" name="Air Conditioner2, EEV Control Mode" />
+		<control equipid="13" ctrlid="14" reg_addr="0x0067" name="Air Conditioner2, EEV Enable Manual Mode" />
+		<control equipid="13" ctrlid="15" reg_addr="0x0068" name="Air Conditioner2, Correct LP" />
+		<control equipid="13" ctrlid="16" reg_addr="0x0069" name="Air Conditioner2, Correct HP" />
+		<control equipid="13" ctrlid="17" reg_addr="0x006a" name="Air Conditioner2, Correct Suction Temp" />
+		<control equipid="13" ctrlid="18" reg_addr="0x006b" name="Air Conditioner2, Correct Supply Temp" />
+		<control equipid="13" ctrlid="19" reg_addr="0x006c" name="Air Conditioner2, Correct Return Temp" />
+		<control equipid="13" ctrlid="20" reg_addr="0x006d" name="Air Conditioner2, Correct Return Hum" />
+		<control equipid="13" ctrlid="21" reg_addr="0x006e" name="Air Conditioner2, Correct Liquid Pipe Temp" />
+		<control equipid="13" ctrlid="22" reg_addr="0x006f" name="Air Conditioner2, Manual Indoor AC Fan" />
+		<control equipid="13" ctrlid="23" reg_addr="0x0070" name="Air Conditioner2, Manual Indoor EC Fan" />
+		<control equipid="13" ctrlid="24" reg_addr="0x0071" name="Air Conditioner2, Manual Fix Compressor" />
+		<control equipid="13" ctrlid="25" reg_addr="0x0072" name="Air Conditioner2, Manual Inverter Compressor Speed" />
+		<control equipid="13" ctrlid="26" reg_addr="0x0073" name="Air Conditioner2, Manual Heater" />
+		<control equipid="13" ctrlid="27" reg_addr="0x0074" name="Air Conditioner2, Manual Humidifier" />
+		<control equipid="13" ctrlid="28" reg_addr="0x0075" name="Air Conditioner2, Manual Humidifier Capacity" />
+		<control equipid="13" ctrlid="29" reg_addr="0x0076" name="Air Conditioner2, Manual Lee Valve" />
+		<control equipid="13" ctrlid="30" reg_addr="0x0077" name="Air Conditioner2, Manual Outdoor EC Fan" />
+		<control equipid="13" ctrlid="31" reg_addr="0x0078" name="Air Conditioner2, Manual EEV Manual Step" />
+		<control equipid="13" ctrlid="32" reg_addr="0x0079" name="Air Conditioner2, Manual Control" />
+		<control equipid="13" ctrlid="33" reg_addr="0x007a" name="Air Conditioner2, ON-OFF" />
+		<control equipid="13" ctrlid="34" reg_addr="0x007b" name="Air Conditioner2, Repower Auto-ON DT" />
+		<control equipid="13" ctrlid="35" reg_addr="0x007c" name="Air Conditioner2, Runing Time Reset" />
+		<control equipid="13" ctrlid="36" reg_addr="0x007d" name="Air Conditioner2, Clear Alarm" />
+		<control equipid="13" ctrlid="37" reg_addr="0x007e" name="Air Conditioner2, Factory Reset" />
+		<control equipid="13" ctrlid="38" reg_addr="0x007f" name="Air Conditioner2, LP Min Pres Range" />
+		<control equipid="13" ctrlid="39" reg_addr="0x0080" name="Air Conditioner2, LP Pres Range" />
+		<control equipid="13" ctrlid="40" reg_addr="0x0081" name="Air Conditioner2, HP Min Pres Range" />
+		<control equipid="13" ctrlid="41" reg_addr="0x0082" name="Air Conditioner2, HP Pres Range" />
+		<control equipid="13" ctrlid="42" reg_addr="0x0083" name="Air Conditioner2, Temp Setting" />
+		<control equipid="13" ctrlid="43" reg_addr="0x0084" name="Air Conditioner2, Temp Band" />
+		<control equipid="13" ctrlid="44" reg_addr="0x0085" name="Air Conditioner2, Min Freq" />
+		<control equipid="13" ctrlid="45" reg_addr="0x0086" name="Air Conditioner2, Max Freq" />
+		<control equipid="13" ctrlid="46" reg_addr="0x0087" name="Air Conditioner2, Oil Start Freq" />
+		<control equipid="13" ctrlid="47" reg_addr="0x0088" name="Air Conditioner2, Oil Interval Time" />
+		<control equipid="13" ctrlid="48" reg_addr="0x0089" name="Air Conditioner2, Oil Running Freq" />
+		<control equipid="13" ctrlid="49" reg_addr="0x008a" name="Air Conditioner2, Min Supply Temp" />
+		<control equipid="13" ctrlid="50" reg_addr="0x008b" name="Air Conditioner2, Max Supply Temp" />
+		<control equipid="13" ctrlid="51" reg_addr="0x008c" name="Air Conditioner2, Trun On Comp DT" />
+		<control equipid="13" ctrlid="52" reg_addr="0x008d" name="Air Conditioner2, Refrigerant" />
+		<control equipid="13" ctrlid="53" reg_addr="0x008e" name="Air Conditioner2, Dehum Limit Temp" />
+		<control equipid="13" ctrlid="54" reg_addr="0x008f" name="Air Conditioner2, Humid Setting" />
+		<control equipid="13" ctrlid="55" reg_addr="0x0090" name="Air Conditioner2, Humid Band" />
+		<control equipid="13" ctrlid="56" reg_addr="0x0091" name="Air Conditioner2, Heating Judge Time" />
+		<control equipid="13" ctrlid="57" reg_addr="0x0092" name="Air Conditioner2, High Temp Alarm Band" />
+		<control equipid="13" ctrlid="58" reg_addr="0x0093" name="Air Conditioner2, Low Temp Alarm Band" />
+		<control equipid="13" ctrlid="59" reg_addr="0x0094" name="Air Conditioner2, High Humid Alarm Band" />
+		<control equipid="13" ctrlid="60" reg_addr="0x0095" name="Air Conditioner2, Low Humid Alarm Band" />
+		<control equipid="13" ctrlid="61" reg_addr="0x0096" name="Air Conditioner2, LP Pres Alarm" />
+		<control equipid="13" ctrlid="62" reg_addr="0x0097" name="Air Conditioner2, LP Pres Recov" />
+		<control equipid="13" ctrlid="63" reg_addr="0x0098" name="Air Conditioner2, LP DT Setting" />
+		<control equipid="13" ctrlid="64" reg_addr="0x0099" name="Air Conditioner2, LP Alarm Time" />
+		<control equipid="13" ctrlid="65" reg_addr="0x009a" name="Air Conditioner2, HP Pres Alarm" />
+		<control equipid="13" ctrlid="66" reg_addr="0x009b" name="Air Conditioner2, HP Pres Recov" />
+		<control equipid="13" ctrlid="67" reg_addr="0x009c" name="Air Conditioner2, ID Fan Speed CR" />
+		<control equipid="13" ctrlid="68" reg_addr="0x009d" name="Air Conditioner2, Trun Off DT" />
+		<control equipid="13" ctrlid="69" reg_addr="0x009e" name="Air Conditioner2, ID Fan Min Speed" />
+		<control equipid="13" ctrlid="70" reg_addr="0x009f" name="Air Conditioner2, ID Fan Max Speed" />
+		<control equipid="13" ctrlid="71" reg_addr="0x00a0" name="Air Conditioner2, Dehum Fan Speed" />
+		<control equipid="13" ctrlid="72" reg_addr="0x00a1" name="Air Conditioner2, OD Fan Speed CR" />
+		<control equipid="13" ctrlid="73" reg_addr="0x00a2" name="Air Conditioner2, OD Fan Min Speed" />
+		<control equipid="13" ctrlid="74" reg_addr="0x00a3" name="Air Conditioner2, OD Fan Max Speed" />
+		<control equipid="13" ctrlid="75" reg_addr="0x00a4" name="Air Conditioner2, Fan Pres Setting" />
+		<control equipid="13" ctrlid="76" reg_addr="0x00a5" name="Air Conditioner2, Fan Pres Band" />
+		<control equipid="13" ctrlid="77" reg_addr="0x00a6" name="Air Conditioner2, Humidifier Max Control Signal Setting" />
+		<control equipid="13" ctrlid="78" reg_addr="0x00a7" name="Air Conditioner2, Humidifier Min Control Signal Setting" />
+	</controls>
+</conf>
